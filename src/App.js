@@ -1,31 +1,30 @@
-import React, { Component } from 'react';
-import HeaderContainer from './header/Header';
+import React from 'react';
+import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
+import Header from './header/Header';
 
-import { BrowserRouter, Route } from 'react-router-dom';
 import SignupPageAsync from './signup-page/SignupPageAsync';
 import HomePageAsync from './home-page/HomePageAsync';
+import withIntlManager from './provideIntlManager';
 
 import './App.scss';
 
-class App extends Component {
-  render() {
-    return (
-      <BrowserRouter>
-        <div className="App">
-          <header className="App-header">
-            <HeaderContainer />
-          </header>
-          <main className="App__Main">
-            <div className="App__MainContainer">
-              <Route exact path="/" component={HomePageAsync} />
-              <Route path={'/home'} component={HomePageAsync} />
-              <Route path={'/register'} component={SignupPageAsync} />
-            </div>
-          </main>
+const App = ({ handleChangeLocale, language }) => (
+  <BrowserRouter>
+    <div className="App">
+      <header className="App-header">
+        <Header handleChangeLocale={handleChangeLocale} />
+      </header>
+      <main className="App__Main">
+        <div className="App__MainContainer">
+          <Switch>
+            <Redirect exact={true} from="/" to={`home/${language}`} />
+            <Route path="/home/:locale" component={HomePageAsync} />
+            <Route path="/register/:locale" component={SignupPageAsync} />
+          </Switch>
         </div>
-      </BrowserRouter>
-    );
-  }
-}
+      </main>
+    </div>
+  </BrowserRouter>
+);
 
-export default App;
+export default withIntlManager(App);

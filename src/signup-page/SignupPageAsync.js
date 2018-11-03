@@ -6,7 +6,7 @@ function SignupPageAsync() {
   return (
     <div>
       <Suspense fallback={<div>Loading...</div>}>
-        <Lazy/>
+        <Lazy />
       </Suspense>
     </div>
   );

@@ -8,6 +8,7 @@ npm start
 ```
 
 ## Building with Docker
+
 ```bash
 yarn
 npm run build

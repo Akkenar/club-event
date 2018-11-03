@@ -46,7 +46,10 @@ const commonPlugins = [
   new bundle.BundleAnalyzerPlugin({
     analyzerMode: !isInspection ? 'disabled' : 'server',
   }),
-  new CopyWebpackPlugin([{ from: path.join(__dirname, 'src/assets') }]),
+  new CopyWebpackPlugin([
+    { from: path.join(__dirname, 'src/assets') },
+    { from: path.join(__dirname, '.htaccess') },
+  ]),
 ];
 
 const extraPlugins = isProduction ? prodPlugins : devPlugins;
@@ -162,9 +165,6 @@ export default {
           },
           {
             loader: 'markdown-loader',
-            options: {
-              /* your options here */
-            },
           },
         ],
       },

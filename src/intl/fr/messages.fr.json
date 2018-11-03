@@ -1,4 +1,13 @@
 {
   "header.information": "Information",
-  "header.register": "Register"
+  "header.register": "S'enregistrer",
+  "register.page.header": "S'enregistrer",
+  "register.form.firstName": "Prénom",
+  "register.form.firstName.placeholder": "Votre prénom",
+  "register.form.lastName": "Nom de famille",
+  "register.form.lastName.placeholder": "Votre nom de famille",
+  "register.form.validation.error": "Tous les champs sont obligatoires",
+  "register.form.error.title": "Une erreur est survenue",
+  "register.form.error.message": "Impossible de vous enregistrer. Merci d'essayer de nouveau.",
+  "register.form.submit": "S'enregistrer"
 }

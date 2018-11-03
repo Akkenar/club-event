@@ -1,5 +1,13 @@
 {
   "header.information": "Information",
   "header.register": "Register",
-  "register.form.firstName": "First Name"
+  "register.page.header": "Register to the event",
+  "register.form.firstName": "First Name",
+  "register.form.firstName.placeholder": "Enter your first name",
+  "register.form.lastName": "Last Name",
+  "register.form.lastName.placeholder": "Enter your last name",
+  "register.form.validation.error": "All fields must be filled",
+  "register.form.error.title": "Unexpected error",
+  "register.form.error.message": "We couldn't send your registration to the server. Please try again.",
+  "register.form.submit": "Submit"
 }

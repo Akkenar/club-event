@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { IntlProvider } from 'react-intl';
+import Loader from '../loader/Loader';
 
 const DEFAULT_LANGUAGE = 'de';
 const SUPPORTED_LANGUAGES = ['fr', 'en', 'it', DEFAULT_LANGUAGE];
@@ -25,13 +26,13 @@ function getDefaultLanguage() {
 function importLocale(locale) {
   switch (locale) {
     case 'en':
-      return import('./en');
+      return import(/* webpackChunkName: 'en' */ './en');
     case 'de':
-      return import('./de');
+      return import(/* webpackChunkName: 'de' */ './de');
     case 'fr':
-      return import('./fr');
+      return import(/* webpackChunkName: 'fr' */ './fr');
     case 'it':
-      return import('./it');
+      return import(/* webpackChunkName: 'it' */ './it');
     default:
       throw new Error(`${locale} not supported`);
   }
@@ -69,7 +70,7 @@ function withIntlManager(Component) {
 
     render() {
       if (!this.state.language) {
-        return null;
+        return <Loader />;
       }
 
       return (

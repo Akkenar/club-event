@@ -2,33 +2,55 @@ import React from 'react';
 
 import './Header.css';
 import { Menu } from 'semantic-ui-react';
-import { NavLink, withRouter } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { injectIntl } from 'react-intl';
+import getKey from '../intl/getKey';
 
 const Nav = props => <NavLink {...props} activeClassName={'active'} />;
 
-const Header = ({ intl, handleChangeLocale }) => {
+const Header = props => {
+  const { intl, handleChangeLocale } = props;
   const { locale } = intl;
   return (
     <Menu>
       <Menu.Item as={Nav} name="home" to={'/home/' + locale}>
-        Information
+        {getKey('header.information', props)}
       </Menu.Item>
 
       <Menu.Item as={Nav} name="register" to={'/register/' + locale}>
-        Register
+        {getKey('header.register', props)}
       </Menu.Item>
       <Menu.Menu position="right">
-        <Menu.Item as={Nav} to="fr" onClick={() => handleChangeLocale('fr')}>
+        <Menu.Item
+          title="Français"
+          as={Nav}
+          to="fr"
+          onClick={() => handleChangeLocale('fr')}
+        >
           FR
         </Menu.Item>
-        <Menu.Item as={Nav} to="de" onClick={() => handleChangeLocale('de')}>
+        <Menu.Item
+          title="Deutsch"
+          as={Nav}
+          to="de"
+          onClick={() => handleChangeLocale('de')}
+        >
           DE
         </Menu.Item>
-        <Menu.Item as={Nav} to="it" onClick={() => handleChangeLocale('it')}>
+        <Menu.Item
+          title="Italianno"
+          as={Nav}
+          to="it"
+          onClick={() => handleChangeLocale('it')}
+        >
           IT
         </Menu.Item>
-        <Menu.Item as={Nav} to="en" onClick={() => handleChangeLocale('en')}>
+        <Menu.Item
+          title="English"
+          as={Nav}
+          to="en"
+          onClick={() => handleChangeLocale('en')}
+        >
           EN
         </Menu.Item>
       </Menu.Menu>

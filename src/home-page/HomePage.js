@@ -1,7 +1,12 @@
 import React from 'react';
+import InformationSection from '../information-section/InformationSection';
 
-const HomePage = props => {
-  return <div>Home</div>;
+const HomePage = () => {
+  return (
+    <div>
+      <InformationSection />
+    </div>
+  );
 };
 
 export default HomePage;

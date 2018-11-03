@@ -1,28 +1,21 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
 
 import './Header.css';
+import { Menu } from 'semantic-ui-react';
+import { NavLink } from 'react-router-dom';
 
 const Header = () => {
+  const Nav = props => <NavLink {...props} activeClassName={'active'} />;
   return (
-    <AppBar position="relative">
-      <Toolbar>
-        <IconButton aria-label="Menu" />
-        <Typography variant="h6" color="inherit">
-          Test
-        </Typography>
-        <div className="Header--menu-container">
-          <Button component={Link} to="/home">
-            Home
-          </Button>
-        </div>
-      </Toolbar>
-    </AppBar>
+    <Menu>
+      <Menu.Item as={Nav} name="home" to="/home">
+        Information
+      </Menu.Item>
+
+      <Menu.Item as={Nav} name="register" to="/register">
+        Register
+      </Menu.Item>
+    </Menu>
   );
 };
 

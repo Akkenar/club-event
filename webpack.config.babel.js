@@ -4,6 +4,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
 import * as bundle from 'webpack-bundle-analyzer';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 
 const isInspection = process.env.NODE_ENV === 'inspect';
 const isProduction = isInspection || process.env.NODE_ENV === 'production';
@@ -14,7 +15,7 @@ console.log('Is Production?', isProduction);
 const devPlugins = [new webpack.HotModuleReplacementPlugin()];
 
 const prodPlugins = [
-   new webpack.DefinePlugin({
+  new webpack.DefinePlugin({
     'process.env.NODE_ENV': JSON.stringify('production'),
   }),
   new webpack.optimize.ModuleConcatenationPlugin(),
@@ -45,6 +46,7 @@ const commonPlugins = [
   new bundle.BundleAnalyzerPlugin({
     analyzerMode: !isInspection ? 'disabled' : 'server',
   }),
+  new CopyWebpackPlugin([{ from: path.join(__dirname, 'src/assets') }]),
 ];
 
 const extraPlugins = isProduction ? prodPlugins : devPlugins;
@@ -136,6 +138,26 @@ export default {
       {
         test: /\.s?css$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+      },
+      // "url" loader works like "file" loader except that it embeds assets
+      // smaller than specified limit in bytes as data URLs to avoid requests.
+      // A missing `test` is equivalent to a match.
+      {
+        test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
+        loader: require.resolve('url-loader'),
+        options: {
+          limit: 10000,
+          name: 'static/media/[name].[hash:8].[ext]',
+        },
+      },
+      // "file" loader makes sure assets end up in the `build` folder.
+      // When you `import` an asset, you get its filename.
+      {
+        test: [/\.eot$/, /\.ttf$/, /\.svg$/, /\.woff$/, /\.woff2$/],
+        loader: require.resolve('file-loader'),
+        options: {
+          name: 'static/media/[name].[hash:8].[ext]',
+        },
       },
     ],
   },

@@ -12,8 +12,7 @@ const Header = () => {
   return (
     <AppBar position="relative">
       <Toolbar>
-        <IconButton aria-label="Menu">
-        </IconButton>
+        <IconButton aria-label="Menu" />
         <Typography variant="h6" color="inherit">
           Test
         </Typography>

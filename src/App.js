@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import HeaderContainer from './header/Header';
 
 import { BrowserRouter, Route } from 'react-router-dom';
-import HomePage from './home-page/HomePage';
+import SignupPageAsync from './signup-page/SignupPageAsync';
+import HomePageAsync from './home-page/HomePageAsync';
 
 import './App.scss';
-import SignupPage from './signup-page/SignupPage';
 
 class App extends Component {
   render() {
@@ -17,9 +17,9 @@ class App extends Component {
           </header>
           <main className="App__Main">
             <div className="App__MainContainer">
-              <Route exact path="/" component={HomePage} />
-              <Route path={'/home'} component={HomePage} />
-              <Route path={'/register'} component={SignupPage} />
+              <Route exact path="/" component={HomePageAsync} />
+              <Route path={'/home'} component={HomePageAsync} />
+              <Route path={'/register'} component={SignupPageAsync} />
             </div>
           </main>
         </div>

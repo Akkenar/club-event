@@ -4,7 +4,7 @@ import Header from './header/Header';
 
 import SignupPageAsync from './signup-page/SignupPageAsync';
 import HomePageAsync from './home-page/HomePageAsync';
-import withIntlManager from './provideIntlManager';
+import withIntlManager from './intl/provideIntlManager';
 
 import './App.scss';
 

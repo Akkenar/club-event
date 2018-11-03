@@ -1,6 +1,8 @@
 import React from 'react';
 
 import { Button, Form } from 'semantic-ui-react';
+import { injectIntl } from 'react-intl';
+import getKey from '../intl/getKey';
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -30,29 +32,41 @@ class SignupForm extends React.Component {
     return (
       <Form onSubmit={this.handleSubmit}>
         <Form.Field>
-          <label htmlFor="firstName">First Name</label>
+          <label htmlFor="firstName">
+            {getKey('register.form.firstName', this.props)}
+          </label>
           <input
             id="firstName"
             name="firstName"
-            placeholder="First Name"
+            placeholder={getKey(
+              'register.form.firstName.placeholder',
+              this.props
+            )}
             value={this.state.firstName}
             onChange={this.handleChange}
           />
         </Form.Field>
         <Form.Field>
-          <label htmlFor="lastName">Last Name</label>
+          <label htmlFor="lastName">
+            {getKey('register.form.lastName', this.props)}
+          </label>
           <input
             id="lastName"
             name="lastName"
-            placeholder="Last Name"
+            placeholder={getKey(
+              'register.form.lastName.placeholder',
+              this.props
+            )}
             value={this.state.lastName}
             onChange={this.handleChange}
           />
         </Form.Field>
-        <Button type="submit">Submit</Button>
+        <Button type="submit">
+          {getKey('register.form.submit', this.props)}
+        </Button>
       </Form>
     );
   }
 }
 
-export default SignupForm;
+export default injectIntl(SignupForm);

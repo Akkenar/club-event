@@ -139,9 +139,6 @@ export default {
         test: /\.s?css$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
-      // "url" loader works like "file" loader except that it embeds assets
-      // smaller than specified limit in bytes as data URLs to avoid requests.
-      // A missing `test` is equivalent to a match.
       {
         test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
         loader: require.resolve('url-loader'),
@@ -150,14 +147,26 @@ export default {
           name: 'assets/media/[name].[hash:8].[ext]',
         },
       },
-      // "file" loader makes sure assets end up in the `build` folder.
-      // When you `import` an asset, you get its filename.
       {
         test: [/\.eot$/, /\.ttf$/, /\.svg$/, /\.woff$/, /\.woff2$/],
         loader: require.resolve('file-loader'),
         options: {
           name: 'assets/media/[name].[hash:8].[ext]',
         },
+      },
+      {
+        test: [/\.md/],
+        loader: [
+          {
+            loader: 'html-loader',
+          },
+          {
+            loader: 'markdown-loader',
+            options: {
+              /* your options here */
+            },
+          },
+        ],
       },
     ],
   },

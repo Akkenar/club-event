@@ -47,7 +47,7 @@ const commonPlugins = [
     analyzerMode: !isInspection ? 'disabled' : 'server',
   }),
   new CopyWebpackPlugin([
-    { from: path.join(__dirname, 'src/assets') },
+    { from: path.join(__dirname, 'src/favicon.ico') },
     { from: path.join(__dirname, '.htaccess') },
   ]),
 ];

@@ -2,7 +2,6 @@ import webpack from 'webpack';
 import path from 'path';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
 import * as bundle from 'webpack-bundle-analyzer';
 
@@ -15,32 +14,14 @@ console.log('Is Production?', isProduction);
 const devPlugins = [new webpack.HotModuleReplacementPlugin()];
 
 const prodPlugins = [
-  new UglifyJsPlugin({
-    parallel: true,
-    sourceMap: !isProduction,
-    cache: true,
-    uglifyOptions: {
-      ie8: false,
-      ecma: 5,
-      mangle: true,
-      output: {
-        comments: false,
-        beautify: false,
-      },
-      compress: true,
-      warnings: false,
-    },
+   new webpack.DefinePlugin({
+    'process.env.NODE_ENV': JSON.stringify('production'),
   }),
   new webpack.optimize.ModuleConcatenationPlugin(),
 ];
 
 const commonPlugins = [
   new CleanWebpackPlugin([buildPath], { verbose: false }),
-  new webpack.DefinePlugin({
-    'process.env': {
-      NODE_ENV: JSON.stringify(process.env.NODE_ENV),
-    },
-  }),
   new webpack.LoaderOptionsPlugin({
     minimize: true,
     debug: false,
@@ -89,6 +70,7 @@ export default {
   // ref: https://webpack.js.org/configuration/devtool/
   devtool: isProduction ? false : 'inline-cheap-module-eval-source-map',
   optimization: {
+    minimize: isProduction,
     splitChunks: {
       cacheGroups: {
         default: false,

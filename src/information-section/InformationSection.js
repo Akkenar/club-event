@@ -1,10 +1,10 @@
-import React from 'react';
-import { injectIntl } from 'react-intl';
+import React, { useContext } from 'react';
+import LanguageContext from '../intl/LanguageContext';
 
-const InformationSection = ({ intl }) => {
-  return (
-    <div dangerouslySetInnerHTML={{ __html: intl.messages.information }} />
-  );
+const InformationSection = () => {
+  const { messages } = useContext(LanguageContext);
+
+  return <div dangerouslySetInnerHTML={{ __html: messages.information }} />;
 };
 
-export default injectIntl(InformationSection);
+export default InformationSection;

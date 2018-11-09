@@ -1,9 +1,4 @@
-function getKey(key, props) {
-  if (!props) {
-    return key;
-  }
-  const { messages } = props.intl;
-
+function getKey(key, messages) {
   if (!messages) {
     return key;
   }

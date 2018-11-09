@@ -1,22 +1,22 @@
-import React, { useEffect } from 'react';
+import React, { useContext } from 'react';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import Header from './header/Header';
 
 import SignupPageAsync from './signup-page/SignupPageAsync';
 import HomePageAsync from './home-page/HomePageAsync';
-import withIntlManager from './intl/provideIntlManager';
-import { setPageDescription } from './page.lib';
-import getKey from './intl/getKey';
+import { withIntlManager } from './intl/provideIntlManager';
+import LanguageContext from './intl/LanguageContext';
 
 import './App.scss';
 
-const App = props => {
-  const { handleChangeLocale, language } = props;
+const App = () => {
+  const { language } = useContext(LanguageContext);
+
   return (
     <BrowserRouter>
       <div className="App">
         <header className="App-header">
-          <Header handleChangeLocale={handleChangeLocale} />
+          <Header />
         </header>
         <main className="App__Main">
           <div className="App__MainContainer">

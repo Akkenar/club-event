@@ -1,52 +1,54 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 
 import { Dropdown, Menu } from 'semantic-ui-react';
 import { NavLink } from 'react-router-dom';
-import { injectIntl } from 'react-intl';
 import getKey from '../intl/getKey';
 import { setPageDescription } from '../page.lib';
 
 import './Header.css';
 import logo from '../logo.svg';
+import LanguageContext from '../intl/LanguageContext';
 
 const Nav = props => <NavLink {...props} activeClassName={'active'} />;
 
-const Header = props => {
+const Header = () => {
+  const { handleChangeLanguage, language, messages } = useContext(
+    LanguageContext
+  );
+
   // Not the best place, but works fine
   useEffect(() => {
-    setPageDescription(getKey('description', props));
+    setPageDescription(getKey('description', messages));
   });
 
-  const { intl, handleChangeLocale } = props;
-  const { locale } = intl;
   return (
     <Menu>
-      <Nav to={'/home/' + locale}>
+      <Nav to={'/home/' + language}>
         <img
           className="Header--logo"
-          alt={getKey('header.logo', props)}
+          alt={getKey('header.logo', messages)}
           src={logo}
           width={60}
           height={45}
         />
       </Nav>
-      <Menu.Item as={Nav} name="home" to={'/home/' + locale}>
-        {getKey('header.information', props)}
+      <Menu.Item as={Nav} name="home" to={'/home/' + language}>
+        {getKey('header.information', messages)}
       </Menu.Item>
 
-      <Menu.Item as={Nav} name="register" to={'/register/' + locale}>
-        {getKey('header.register', props)}
+      <Menu.Item as={Nav} name="register" to={'/register/' + language}>
+        {getKey('header.register', messages)}
       </Menu.Item>
       <Dropdown
         className="link item right"
-        text={getKey('header.current.language', props)}
+        text={getKey('header.current.language', messages)}
       >
         <Dropdown.Menu>
           <Dropdown.Item
             title="Français"
             as={Nav}
             to="fr"
-            onClick={() => handleChangeLocale('fr')}
+            onClick={() => handleChangeLanguage('fr')}
           >
             FR
           </Dropdown.Item>
@@ -54,7 +56,7 @@ const Header = props => {
             title="Deutsch"
             as={Nav}
             to="de"
-            onClick={() => handleChangeLocale('de')}
+            onClick={() => handleChangeLanguage('de')}
           >
             DE
           </Dropdown.Item>
@@ -62,7 +64,7 @@ const Header = props => {
             title="Italianno"
             as={Nav}
             to="it"
-            onClick={() => handleChangeLocale('it')}
+            onClick={() => handleChangeLanguage('it')}
           >
             IT
           </Dropdown.Item>
@@ -70,7 +72,7 @@ const Header = props => {
             title="English"
             as={Nav}
             to="en"
-            onClick={() => handleChangeLocale('en')}
+            onClick={() => handleChangeLanguage('en')}
           >
             EN
           </Dropdown.Item>
@@ -80,4 +82,4 @@ const Header = props => {
   );
 };
 
-export default injectIntl(Header);
+export default Header;

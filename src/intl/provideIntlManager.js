@@ -1,27 +1,32 @@
 import React, { Component } from 'react';
-import { IntlProvider } from 'react-intl';
 import Loader from '../loader/Loader';
 import { setPageLangage } from '../page.lib';
+import LanguageContext from './LanguageContext';
 
-const DEFAULT_LANGUAGE = 'de';
+export const DEFAULT_LANGUAGE = 'de';
 const SUPPORTED_LANGUAGES = ['fr', 'en', 'it', DEFAULT_LANGUAGE];
 
 function getDefaultLanguage() {
-  const locale =
-    (navigator.languages && navigator.languages[0]) ||
-    navigator.language ||
-    navigator.userLanguage;
+  try {
+    const locale =
+      (navigator.languages && navigator.languages[0]) ||
+      navigator.language ||
+      navigator.userLanguage;
 
-  if (!locale) {
+    if (!locale) {
+      return DEFAULT_LANGUAGE;
+    }
+
+    const language = locale.split('-')[0];
+    if (!SUPPORTED_LANGUAGES.includes(language)) {
+      return DEFAULT_LANGUAGE;
+    }
+
+    return language;
+  } catch (e) {
+    // In case something really goes wrong.
     return DEFAULT_LANGUAGE;
   }
-
-  const language = locale.split('-')[0];
-  if (!SUPPORTED_LANGUAGES.includes(language)) {
-    return DEFAULT_LANGUAGE;
-  }
-
-  return language;
 }
 
 function importLocale(locale) {
@@ -39,7 +44,7 @@ function importLocale(locale) {
   }
 }
 
-function withIntlManager(Component) {
+export function withIntlManager(Component) {
   return class IntlManager extends React.Component {
     constructor(props) {
       super(props);
@@ -51,12 +56,11 @@ function withIntlManager(Component) {
         information: null,
       };
 
-      this.handleChangeLocale = this.handleChangeLocale.bind(this);
-
-      this.handleChangeLocale(getDefaultLanguage());
+      this.handleChangeLanguage = this.handleChangeLanguage.bind(this);
+      this.handleChangeLanguage(getDefaultLanguage());
     }
 
-    handleChangeLocale(lang) {
+    handleChangeLanguage(lang) {
       // For a11y reasons
       setPageLangage(lang);
 
@@ -78,19 +82,19 @@ function withIntlManager(Component) {
         return <Loader />;
       }
 
+      const { messages, language } = this.state;
+
       return (
-        <IntlProvider
-          locale={this.state.language}
-          messages={this.state.messages}
+        <LanguageContext.Provider
+          value={{
+            messages,
+            language,
+            handleChangeLanguage: this.handleChangeLanguage,
+          }}
         >
-          <Component
-            handleChangeLocale={this.handleChangeLocale}
-            language={this.state.language}
-          />
-        </IntlProvider>
+          <Component />
+        </LanguageContext.Provider>
       );
     }
   };
 }
-
-export default withIntlManager;

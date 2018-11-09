@@ -3,6 +3,16 @@ import Loader from '../loader/Loader';
 import { sendData } from './signup.service';
 import SignupForm from './SignupForm';
 
+const emailRegex = new RegExp(
+  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+);
+
+export const PRICES = {
+  dinner: 25,
+  sleeping: 10,
+  breakfast: 10,
+};
+
 class SignupFormContainer extends React.Component {
   constructor(props) {
     super(props);
@@ -10,6 +20,12 @@ class SignupFormContainer extends React.Component {
     this.state = {
       firstName: '',
       lastName: '',
+      club: '',
+      email: '',
+      comment: '',
+      dinner: '0',
+      sleeping: '0',
+      breakfast: '0',
       sending: false,
       transmitError: false,
       errors: {},
@@ -22,11 +38,14 @@ class SignupFormContainer extends React.Component {
   handleChange(event) {
     const { target } = event;
     const { name } = target;
+    const errorNameAttr = target.attributes['data-errorname'];
     const value = target.type === 'checkbox' ? target.checked : target.value;
+
+    const errorName = errorNameAttr ? errorNameAttr.value : name;
 
     this.setState(state => ({
       [name]: value,
-      errors: Object.assign({}, state.errors, { [name]: false }),
+      errors: Object.assign({}, state.errors, { [errorName]: false }),
     }));
   }
 
@@ -41,7 +60,8 @@ class SignupFormContainer extends React.Component {
       transmitError: false,
     });
 
-    sendData(this.state).then(
+    const data = { ...this.state, errors: undefined };
+    sendData(data).then(
       () => {
         this.setState({
           sending: false,
@@ -64,6 +84,9 @@ class SignupFormContainer extends React.Component {
     const errors = {
       firstName: !this.state.firstName,
       lastName: !this.state.lastName,
+      club: !this.state.club,
+      email: !this.state.email || !this.state.email.match(emailRegex),
+      counts: !this.getTotal(),
     };
 
     this.setState({
@@ -79,6 +102,19 @@ class SignupFormContainer extends React.Component {
     }, 0);
   }
 
+  getTotal() {
+    return (
+      this.getPrice('dinner') +
+      this.getPrice('sleeping') +
+      this.getPrice('breakfast')
+    );
+  }
+
+  getPrice(name) {
+    const value = this.state[name];
+    return parseInt(value) * PRICES[name];
+  }
+
   render() {
     return (
       <Fragment>
@@ -87,6 +123,7 @@ class SignupFormContainer extends React.Component {
           state={this.state}
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
+          total={this.getTotal()}
         />
       </Fragment>
     );

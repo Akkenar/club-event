@@ -25,7 +25,7 @@ const Header = () => {
     <Menu>
       <Nav to={'/home/' + language}>
         <img
-          className="Header--logo"
+          className="Header__logo"
           alt={getKey('header.logo', messages)}
           src={logo}
           width={60}
@@ -40,7 +40,7 @@ const Header = () => {
         {getKey('header.register', messages)}
       </Menu.Item>
       <Dropdown
-        className="link item right"
+        className="link item right Header__language-switcher"
         text={getKey('header.current.language', messages)}
       >
         <Dropdown.Menu>

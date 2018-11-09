@@ -1,6 +1,7 @@
 {
   "header.information": "Information",
   "header.register": "Register",
+  "header.current.language": "English",
   "register.page.header": "Register to the event",
   "register.form.firstName": "First Name",
   "register.form.firstName.placeholder": "Enter your first name",

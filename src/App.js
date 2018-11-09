@@ -9,6 +9,8 @@ import LanguageContext from './intl/LanguageContext';
 
 // CSS dependencies
 import './App.critical.scss';
+import './index.critical.scss';
+import './index.scss';
 
 const App = () => {
   const { language } = useContext(LanguageContext);

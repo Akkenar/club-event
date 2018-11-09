@@ -9,9 +9,9 @@
   <base href="/"/>
   <title>SSS AD</title>
 
-  <!-- Main CSS files, deferred -->
+  <!-- Main CSS files, deferred if not critical -->
   <% htmlWebpackPlugin.files.css.forEach(css => { %>
-  <% if (css.startsWith('async')) { %>
+  <% if (!css.includes('critical')) { %>
   <link
     href="<%= css %>"
     rel="stylesheet"

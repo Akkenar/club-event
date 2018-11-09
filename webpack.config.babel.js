@@ -71,7 +71,6 @@ export default {
 
   entry: {
     bundle: './entry.js',
-    asyncCss: './asyncCss.js'
   },
 
   // ref: https://webpack.js.org/configuration/devtool/

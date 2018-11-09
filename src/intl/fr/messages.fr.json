@@ -1,7 +1,7 @@
 {
   "header.information": "Information",
   "header.register": "S'enregistrer",
-  "register.page.header": "S'enregistrer",
+  "register.page.title": "S'enregistrer",
   "register.form.firstName": "Prénom",
   "register.form.firstName.placeholder": "Votre prénom",
   "register.form.lastName": "Nom de famille",

@@ -12,7 +12,7 @@ const SignupPage = props => {
 
   return (
     <div>
-      <Header as="h2">{getKey('register.page.header', props)}</Header>
+      <Header as="h1">{getKey('register.page.title', props)}</Header>
       <SignupForm />
     </div>
   );

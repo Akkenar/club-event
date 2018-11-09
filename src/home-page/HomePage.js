@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import InformationSection from '../information-section/InformationSection';
 import { setPageTitle } from '../page.lib';
 import getKey from '../intl/getKey';
 import { injectIntl } from 'react-intl';
+import { Header } from 'semantic-ui-react';
 
 const HomePage = props => {
   useEffect(() => {
@@ -10,9 +11,10 @@ const HomePage = props => {
   });
 
   return (
-    <div>
+    <Fragment>
+      <Header as="h1">{getKey('home.page.title', props)}</Header>
       <InformationSection />
-    </div>
+    </Fragment>
   );
 };
 

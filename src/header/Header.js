@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react';
 
-import './Header.css';
 import { Dropdown, Menu } from 'semantic-ui-react';
 import { NavLink } from 'react-router-dom';
 import { injectIntl } from 'react-intl';
 import getKey from '../intl/getKey';
 import { setPageDescription } from '../page.lib';
+
+import './Header.css';
+import logo from '../logo.svg';
 
 const Nav = props => <NavLink {...props} activeClassName={'active'} />;
 
@@ -19,6 +21,15 @@ const Header = props => {
   const { locale } = intl;
   return (
     <Menu>
+      <Nav to={'/home/' + locale}>
+        <img
+          className="Header--logo"
+          alt={getKey('header.logo', props)}
+          src={logo}
+          width={60}
+          height={45}
+        />
+      </Nav>
       <Menu.Item as={Nav} name="home" to={'/home/' + locale}>
         {getKey('header.information', props)}
       </Menu.Item>

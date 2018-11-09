@@ -70,10 +70,12 @@ const SignupForm = ({ handleSubmit, handleChange, state, total }) => {
           onChange={handleChange}
           required
           aria-invalid={state.errors.email}
+          aria-describedby={state.errors.email ? 'email-error' : null}
           type="email"
         />
         <Message
           error
+          id="email-error"
           visible={state.errors.email}
           content={getKey('register.form.email.error.message', messages)}
         />
@@ -92,6 +94,12 @@ const SignupForm = ({ handleSubmit, handleChange, state, total }) => {
           error={state.errors.counts}
           state={state}
           name="sleeping"
+          handleChange={handleChange}
+        />
+        <BookingField
+          error={state.errors.counts}
+          state={state}
+          name="camping"
           handleChange={handleChange}
         />
         <BookingField

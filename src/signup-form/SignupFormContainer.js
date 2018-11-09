@@ -8,9 +8,10 @@ const emailRegex = new RegExp(
 );
 
 export const PRICES = {
-  dinner: 25,
-  sleeping: 10,
+  dinner: 45,
+  sleeping: 15,
   breakfast: 10,
+  camping: 10,
 };
 
 class SignupFormContainer extends React.Component {
@@ -25,6 +26,7 @@ class SignupFormContainer extends React.Component {
       comment: '',
       dinner: '0',
       sleeping: '0',
+      camping: '0',
       breakfast: '0',
       sending: false,
       transmitError: false,
@@ -106,6 +108,7 @@ class SignupFormContainer extends React.Component {
     return (
       this.getPrice('dinner') +
       this.getPrice('sleeping') +
+      this.getPrice('camping') +
       this.getPrice('breakfast')
     );
   }

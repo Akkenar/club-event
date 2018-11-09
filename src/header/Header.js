@@ -1,14 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import './Header.css';
 import { Dropdown, Menu } from 'semantic-ui-react';
 import { NavLink } from 'react-router-dom';
 import { injectIntl } from 'react-intl';
 import getKey from '../intl/getKey';
+import { setPageDescription } from '../page.lib';
 
-const Nav = props => <NavLink {...props} activeClassName={'active'}/>;
+const Nav = props => <NavLink {...props} activeClassName={'active'} />;
 
 const Header = props => {
+  // Not the best place, but works fine
+  useEffect(() => {
+    setPageDescription(getKey('description', props));
+  });
+
   const { intl, handleChangeLocale } = props;
   const { locale } = intl;
   return (
@@ -20,7 +26,10 @@ const Header = props => {
       <Menu.Item as={Nav} name="register" to={'/register/' + locale}>
         {getKey('header.register', props)}
       </Menu.Item>
-      <Dropdown className="link item right" text={getKey('header.current.language', props)}>
+      <Dropdown
+        className="link item right"
+        text={getKey('header.current.language', props)}
+      >
         <Dropdown.Menu>
           <Dropdown.Item
             title="Français"

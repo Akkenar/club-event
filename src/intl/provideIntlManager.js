@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { IntlProvider } from 'react-intl';
 import Loader from '../loader/Loader';
+import { setPageLangage } from '../page.lib';
 
 const DEFAULT_LANGUAGE = 'de';
 const SUPPORTED_LANGUAGES = ['fr', 'en', 'it', DEFAULT_LANGUAGE];
@@ -56,6 +57,10 @@ function withIntlManager(Component) {
     }
 
     handleChangeLocale(lang) {
+      // For a11y reasons
+      setPageLangage(lang);
+
+      // Code splitting
       importLocale(lang).then(module => {
         const { messages, confirmation, information } = module.default;
         this.setState({

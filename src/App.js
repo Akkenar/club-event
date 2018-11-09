@@ -7,7 +7,8 @@ import HomePageAsync from './home-page/HomePageAsync';
 import { withIntlManager } from './intl/provideIntlManager';
 import LanguageContext from './intl/LanguageContext';
 
-import './App.scss';
+// CSS dependencies
+import './App.critical.scss';
 
 const App = () => {
   const { language } = useContext(LanguageContext);

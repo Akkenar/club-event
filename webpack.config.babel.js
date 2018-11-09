@@ -42,6 +42,7 @@ const commonPlugins = [
     filename: 'index.html',
     template: path.join(__dirname, 'src', 'index.html'),
     chunksSortMode: 'none',
+    inject: false,
   }),
   new bundle.BundleAnalyzerPlugin({
     analyzerMode: !isInspection ? 'disabled' : 'server',
@@ -70,6 +71,7 @@ export default {
 
   entry: {
     bundle: './entry.js',
+    asyncCss: './asyncCss.js'
   },
 
   // ref: https://webpack.js.org/configuration/devtool/

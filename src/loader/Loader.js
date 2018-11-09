@@ -1,7 +1,7 @@
 import React from 'react';
 import { Dimmer, Loader as SemanticLoader } from 'semantic-ui-react';
 
-import './Loader.scss';
+import './Loader.critical.scss';
 
 class Loader extends React.Component {
   constructor(props) {

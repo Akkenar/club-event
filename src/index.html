@@ -6,13 +6,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="theme-color" content="#000000">
   <meta name="description" content="">
-  <base href="/" />
+  <base href="/"/>
   <title>SSS AD</title>
+
+  <!-- Main CSS files, deferred -->
+  <% htmlWebpackPlugin.files.css.forEach(css => { %>
+  <% if (css.startsWith('async')) { %>
+  <link
+    href="<%= css %>"
+    rel="stylesheet"
+    media="none"
+    onload="if(media!='screen')media='screen'"
+  >
+  <% } else { %>
+   <link
+    href="<%= css %>"
+    rel="stylesheet"
+    media="screen"
+  >
+  <% } %>
+  <% }); %>
 </head>
 <body>
 <noscript>
   You need to enable JavaScript to run this app.
 </noscript>
 <div id="root"></div>
+
+<% Object.values(htmlWebpackPlugin.files.chunks).forEach(chunk => { %>
+<script
+  src="<%= chunk.entry %>"
+></script>
+<% }); %>
 </body>
 </html>

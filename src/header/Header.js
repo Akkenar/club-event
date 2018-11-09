@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 import getKey from '../intl/getKey';
 import { setPageDescription } from '../page.lib';
 
-import './Header.css';
+import './Header.scss';
 import logo from '../logo.svg';
 import LanguageContext from '../intl/LanguageContext';
 

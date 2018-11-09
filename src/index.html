@@ -33,6 +33,10 @@
 </noscript>
 <div id="root"></div>
 
+<!-- A custom polyfill loader will be implemented perhaps in the future -->
+<script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+
+<!-- Load JS -->
 <% Object.values(htmlWebpackPlugin.files.chunks).forEach(chunk => { %>
 <script
   src="<%= chunk.entry %>"

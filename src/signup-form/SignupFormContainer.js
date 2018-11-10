@@ -62,7 +62,12 @@ class SignupFormContainer extends React.Component {
       transmitError: false,
     });
 
-    const data = { ...this.state, errors: undefined };
+    const data = {
+      ...this.state,
+      recaptcha: grecaptcha.getResponse(),
+      errors: undefined,
+    };
+
     sendData(data).then(
       () => {
         this.setState({
@@ -89,6 +94,7 @@ class SignupFormContainer extends React.Component {
       club: !this.state.club,
       meeting: !+this.state.meeting,
       email: !this.state.email || !this.state.email.match(emailRegex),
+      recaptcha: !grecaptcha.getResponse(),
     };
 
     this.setState({

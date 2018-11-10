@@ -7,3 +7,4 @@ build
 *.report.html
 .idea/
 coverage
+api/credentials.properties

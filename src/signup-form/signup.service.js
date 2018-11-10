@@ -15,5 +15,5 @@ function postData(url = ``, data = {}) {
 }
 
 export function sendData(data) {
-  return postData('/register.php', data);
+  return postData('/api/register.php', data);
 }

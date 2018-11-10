@@ -21,6 +21,7 @@
   "register.form.validation.error": "Tous les champs doivent être remplis",
   "register.form.error.title": "Une erreur est survenue",
   "register.form.error.message": "Impossible de traiter votre inscription. Merci de ré-essayer plus tard.",
+  "register.form.error.recaptcha": "Vous devez valider le captcha",
   "register.form.email.error.message": "Ce champs doit être rempli avec une adresse email valide",
   "register.form.counts": "Reservations",
   "register.form.counts.description": "Afin de participer à l'assemblée, vous devez entrer le nombre de participants. Vous pouvez également vous inscrire pour le soupé ainsi que pour l'hébergement.",

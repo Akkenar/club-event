@@ -6,6 +6,7 @@ import LanguageContext from '../intl/LanguageContext';
 import BookingField from './BookingField';
 
 import './SignupForm.scss';
+import Recaptcha from '../recaptcha/Recaptcha';
 
 const SignupForm = ({ handleSubmit, handleChange, state, total }) => {
   const { messages } = useContext(LanguageContext);
@@ -186,6 +187,12 @@ const SignupForm = ({ handleSubmit, handleChange, state, total }) => {
         header={getKey('register.form.error.title', messages)}
         content={getKey('register.form.error.message', messages)}
       />
+      <Message
+        error
+        visible={state.errors.recaptcha}
+        content={getKey('register.form.error.recaptcha', messages)}
+      />
+      <Recaptcha />
       <div className="SignupForm__submit-button-container">
         <Button
           type="submit"

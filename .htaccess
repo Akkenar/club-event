@@ -34,3 +34,8 @@ RewriteRule . /index.html [L]
   Header append Vary User-Agent
 </IfModule>
 
+<Files "api/credentials.properties">
+Order Allow,Deny
+Deny from all
+</Files>
+

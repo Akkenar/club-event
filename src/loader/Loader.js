@@ -3,6 +3,8 @@ import { Dimmer, Loader as SemanticLoader } from 'semantic-ui-react';
 
 import './Loader.critical.scss';
 
+const BODY_HAS_DIMMER_CLASS = 'has-dimmer';
+
 class Loader extends React.Component {
   constructor(props) {
     super(props);
@@ -13,6 +15,7 @@ class Loader extends React.Component {
 
   showAfterDelay() {
     this.timeout = setTimeout(() => {
+      document.body.classList.add(BODY_HAS_DIMMER_CLASS);
       this.setState({
         active: true,
       });
@@ -23,6 +26,8 @@ class Loader extends React.Component {
     if (this.timeout) {
       clearTimeout(this.timeout);
     }
+
+    document.body.classList.remove(BODY_HAS_DIMMER_CLASS);
   }
 
   render() {

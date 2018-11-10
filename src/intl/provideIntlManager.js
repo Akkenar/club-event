@@ -84,7 +84,7 @@ export function withIntlManager(Component) {
 
     render() {
       if (!this.state.language) {
-        return <Loader/>;
+        return <Loader />;
       }
 
       const { messages, language } = this.state;
@@ -97,7 +97,7 @@ export function withIntlManager(Component) {
             handleChangeLanguage: this.handleChangeLanguage,
           }}
         >
-          <Component/>
+          <Component />
         </LanguageContext.Provider>
       );
     }

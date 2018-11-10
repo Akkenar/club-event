@@ -13,7 +13,7 @@ const InformationSection = () => {
 
   return (
     <Fragment>
-      <div dangerouslySetInnerHTML={{ __html: messages.information }}/>
+      <div dangerouslySetInnerHTML={{ __html: messages.information }} />
       <img
         className="InformationSection__logo"
         src={logo}

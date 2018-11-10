@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import SignupFormContainer from '../signup-form/SignupFormContainer';
 import { Header } from 'semantic-ui-react';
 import getKey from '../intl/getKey';
-import { setPageTitle } from '../page.lib';
+import { goToTop, setPageTitle } from '../page.lib';
 import LanguageContext from '../intl/LanguageContext';
 
 const SignupPage = () => {
@@ -10,6 +10,7 @@ const SignupPage = () => {
 
   useEffect(() => {
     setPageTitle(getKey('register.page.title', messages));
+    goToTop();
   });
 
   return (

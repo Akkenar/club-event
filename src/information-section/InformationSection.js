@@ -1,7 +1,7 @@
 import React, { Fragment, useContext } from 'react';
 import LanguageContext from '../intl/LanguageContext';
 
-import logo from '../logo.svg';
+import logo from '../assets/logo.svg';
 import getKey from '../intl/getKey';
 import { Link } from 'react-router-dom';
 import { Button } from 'semantic-ui-react';

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Loader from '../loader/Loader';
-import { setPageLangage } from '../page.lib';
+import { setPageLanguage } from '../page.lib';
 import LanguageContext from './LanguageContext';
 
 export const DEFAULT_LANGUAGE = 'de';
@@ -62,7 +62,7 @@ export function withIntlManager(Component) {
 
     handleChangeLanguage(lang) {
       // For a11y reasons
-      setPageLangage(lang);
+      setPageLanguage(lang);
 
       // Code splitting
       importLocale(lang).then(module => {

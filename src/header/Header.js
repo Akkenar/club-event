@@ -6,7 +6,7 @@ import getKey from '../intl/getKey';
 import { setPageDescription } from '../page.lib';
 
 import './Header.scss';
-import logo from '../logo.svg';
+import logo from '../assets/logo.svg';
 import LanguageContext from '../intl/LanguageContext';
 
 const Nav = props => <NavLink {...props} activeClassName={'active'} />;

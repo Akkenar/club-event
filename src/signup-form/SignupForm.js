@@ -4,20 +4,31 @@ import { Button, Form, Header, Message, Segment } from 'semantic-ui-react';
 import getKey from '../intl/getKey';
 import LanguageContext from '../intl/LanguageContext';
 import BookingField from './BookingField';
+import Recaptcha from '../recaptcha/Recaptcha';
+import { Redirect } from 'react-router-dom';
 
 import './SignupForm.scss';
-import Recaptcha from '../recaptcha/Recaptcha';
 
 const SignupForm = ({ handleSubmit, handleChange, state, total }) => {
-  const { messages } = useContext(LanguageContext);
+  const { messages, language } = useContext(LanguageContext);
 
   const hasErrors = () => {
     const { errors } = state;
     return Object.keys(errors).some(key => errors[key]);
   };
 
+  if (state.success) {
+    return <Redirect to={`/confirmation/${language}`} />;
+  }
+
   return (
     <Form onSubmit={handleSubmit} noValidate>
+      <Message
+        error
+        visible={!hasErrors() && state.transmitError}
+        header={getKey('register.form.error.title', messages)}
+        content={getKey('register.form.error.message', messages)}
+      />
       <p>{getKey('register.form.description', messages)}</p>
       <Segment>
         <Header dividing as={'h2'}>
@@ -180,12 +191,6 @@ const SignupForm = ({ handleSubmit, handleChange, state, total }) => {
         error
         visible={hasErrors()}
         content={getKey('register.form.validation.error', messages)}
-      />
-      <Message
-        error
-        visible={!hasErrors() && state.transmitError}
-        header={getKey('register.form.error.title', messages)}
-        content={getKey('register.form.error.message', messages)}
       />
       <Message
         error

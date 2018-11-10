@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { Fragment, useContext } from 'react';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import Header from './header/Header';
 
@@ -11,30 +11,37 @@ import LanguageContext from './intl/LanguageContext';
 import './App.critical.scss';
 import './index.critical.scss';
 import './index.scss';
+import ConfirmationPageAsync from './confirmation-page/ConfirmationPageAsync';
 
 const App = () => {
   const { language } = useContext(LanguageContext);
 
   return (
-    <BrowserRouter>
-      <div className="App">
-        <div id="top" tabIndex="-1" className="visually-hidden">
-          Top
-        </div>
-        <header className="App-header">
-          <Header />
-        </header>
-        <main className="App__Main">
-          <div className="App__MainContainer">
-            <Switch>
-              <Redirect exact={true} from="/" to={`home/${language}`} />
-              <Route path="/home/:locale" component={HomePageAsync} />
-              <Route path="/register/:locale" component={SignupPageAsync} />
-            </Switch>
-          </div>
-        </main>
+    <Fragment>
+      <div id="top" tabIndex="-1" className="visually-hidden">
+        Top
       </div>
-    </BrowserRouter>
+      <BrowserRouter>
+        <div className="App">
+          <header className="App-header">
+            <Header />
+          </header>
+          <main className="App__Main">
+            <div className="App__MainContainer">
+              <Switch>
+                <Redirect exact={true} from="/" to={`home/${language}`} />
+                <Route path="/home/:locale" component={HomePageAsync} />
+                <Route path="/register/:locale" component={SignupPageAsync} />
+                <Route
+                  path="/confirmation/:locale"
+                  component={ConfirmationPageAsync}
+                />
+              </Switch>
+            </div>
+          </main>
+        </div>
+      </BrowserRouter>
+    </Fragment>
   );
 };
 

@@ -2,6 +2,7 @@ import React from 'react';
 import { Dimmer, Loader as SemanticLoader } from 'semantic-ui-react';
 
 import './Loader.critical.scss';
+import { goToTop } from '../page.lib';
 
 const BODY_HAS_DIMMER_CLASS = 'has-dimmer';
 
@@ -16,6 +17,8 @@ class Loader extends React.Component {
   showAfterDelay() {
     this.timeout = setTimeout(() => {
       document.body.classList.add(BODY_HAS_DIMMER_CLASS);
+      goToTop();
+
       this.setState({
         active: true,
       });

@@ -106,7 +106,13 @@ class SignupFormContainer extends React.Component {
 
   setFocusOnError() {
     setTimeout(() => {
-      document.querySelector('*[aria-invalid="true"]').focus();
+      const element =
+        document.querySelector('*[aria-invalid="true"]') ||
+        document.querySelector('button[type=submit]');
+
+      if (element) {
+        element.focus();
+      }
     }, 0);
   }
 

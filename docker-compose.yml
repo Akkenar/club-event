@@ -10,6 +10,10 @@ services:
       - ./api:/var/www/html
     links:
       - db
+    extra_hosts:
+    - "hostname:8.8.8.8"
+    dns:
+      - 8.8.8.8
 
   db:
     image: mysql:5.7

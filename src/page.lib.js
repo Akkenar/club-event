@@ -13,10 +13,8 @@ export function setPageLanguage(lang) {
 }
 
 export function goToTop() {
-  document.getElementById('top').focus();
-  window.scrollTo({
-    top: 0,
-    left: 0,
-    behavior: 'smooth',
-  });
+  const top = document.getElementById('top');
+  if (top) {
+    top.focus();
+  }
 }

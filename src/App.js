@@ -17,7 +17,10 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      <div className="App" id="top" tabIndex="-1">
+      <div className="App">
+        <div id="top" tabIndex="-1" className="visually-hidden">
+          Top
+        </div>
         <header className="App-header">
           <Header />
         </header>

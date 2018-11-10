@@ -4,7 +4,7 @@ import { Form } from 'semantic-ui-react';
 import LanguageContext from '../intl/LanguageContext';
 import { PRICES } from './SignupFormContainer';
 
-const BookingField = ({ name, handleChange, state, error }) => {
+const BookingField = ({ name, handleChange, state }) => {
   const { messages } = useContext(LanguageContext);
   const itemPrice = PRICES[name];
 
@@ -15,20 +15,13 @@ const BookingField = ({ name, handleChange, state, error }) => {
   );
 
   return (
-    <Form.Field required error={error}>
+    <Form.Field>
       <label htmlFor={name}>
         {getKey(`register.form.counts.${name}`, messages)} (CHF {itemPrice})
       </label>
-      <select
-        id={name}
-        name={name}
-        value={state[name]}
-        onChange={handleChange}
-        required
-        aria-invalid={error}
-        data-errorname="counts"
-      >
+      <select id={name} name={name} value={state[name]} onChange={handleChange}>
         <option value="0">0</option>
+        {getOption(1)}
         {getOption(2)}
         {getOption(3)}
         {getOption(4)}

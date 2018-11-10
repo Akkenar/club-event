@@ -4,3 +4,12 @@
   font-size: 1.2em;
   text-align: right;
 }
+
+.SignupForm__submit-button-container {
+  display: flex;
+}
+
+.SignupForm__submit-button {
+  margin-right: 0 !important;
+  margin-left: auto !important;
+}

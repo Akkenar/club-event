@@ -25,6 +25,7 @@ class SignupFormContainer extends React.Component {
       club: '',
       email: '',
       comment: '',
+      meeting: '0',
       dinner: '0',
       sleeping: '0',
       camping: '0',
@@ -42,14 +43,11 @@ class SignupFormContainer extends React.Component {
   handleChange(event) {
     const { target } = event;
     const { name } = target;
-    const errorNameAttr = target.attributes['data-errorname'];
     const value = target.type === 'checkbox' ? target.checked : target.value;
-
-    const errorName = errorNameAttr ? errorNameAttr.value : name;
 
     this.setState(state => ({
       [name]: value,
-      errors: Object.assign({}, state.errors, { [errorName]: false }),
+      errors: Object.assign({}, state.errors, { [name]: false }),
     }));
   }
 
@@ -89,8 +87,8 @@ class SignupFormContainer extends React.Component {
       firstName: !this.state.firstName,
       lastName: !this.state.lastName,
       club: !this.state.club,
+      meeting: !+this.state.meeting,
       email: !this.state.email || !this.state.email.match(emailRegex),
-      counts: !this.getTotal(),
     };
 
     this.setState({

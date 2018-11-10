@@ -23,7 +23,7 @@ const InformationSection = () => {
         <Button
           color="black"
           as={Link}
-          className="InformationSection__register"
+          className="full-width"
           to={`/register/${language}`}
         >
           {getKey('register.now', messages)}

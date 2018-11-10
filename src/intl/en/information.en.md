@@ -2,7 +2,7 @@
 
 ## When?
 
-The **4 and 5 of May 2018**.
+The **4 and 5 of May 2019**.
 
 ## Where?
 

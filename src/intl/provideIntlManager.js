@@ -8,6 +8,11 @@ const SUPPORTED_LANGUAGES = ['fr', 'en', 'it', DEFAULT_LANGUAGE];
 
 function getDefaultLanguage() {
   try {
+    const [langFromUrl] = window.location.href.split('/').reverse();
+    if (SUPPORTED_LANGUAGES.includes(langFromUrl)) {
+      return langFromUrl;
+    }
+
     const locale =
       (navigator.languages && navigator.languages[0]) ||
       navigator.language ||
@@ -79,7 +84,7 @@ export function withIntlManager(Component) {
 
     render() {
       if (!this.state.language) {
-        return <Loader />;
+        return <Loader/>;
       }
 
       const { messages, language } = this.state;
@@ -92,7 +97,7 @@ export function withIntlManager(Component) {
             handleChangeLanguage: this.handleChangeLanguage,
           }}
         >
-          <Component />
+          <Component/>
         </LanguageContext.Provider>
       );
     }

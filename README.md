@@ -12,5 +12,5 @@ npm start
 ```bash
 yarn
 npm run build
-./start.sh
+docker-compose up
 ```

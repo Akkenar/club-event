@@ -1,7 +1,7 @@
 <?php
-require_once 'lib/recaptcha-1.2.1/src/autoload.php';
+require_once './lib/recaptcha-1.2.1/src/autoload.php';
 
-$config = parse_ini_file('credentials.properties');
+$config = parse_ini_file('./credentials.properties');
 
 $recaptcha = new \ReCaptcha\ReCaptcha($config['recaptcha.key']);
 $resp = $recaptcha->setExpectedHostname('ad-sss.speleo-lausanne.ch')

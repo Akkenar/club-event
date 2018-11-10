@@ -12,6 +12,7 @@ export const PRICES = {
   sleeping: 15,
   breakfast: 10,
   camping: 10,
+  picknick: 10,
 };
 
 class SignupFormContainer extends React.Component {
@@ -27,6 +28,7 @@ class SignupFormContainer extends React.Component {
       dinner: '0',
       sleeping: '0',
       camping: '0',
+      picknick: '0',
       breakfast: '0',
       sending: false,
       transmitError: false,
@@ -109,6 +111,7 @@ class SignupFormContainer extends React.Component {
       this.getPrice('dinner') +
       this.getPrice('sleeping') +
       this.getPrice('camping') +
+      this.getPrice('picknick') +
       this.getPrice('breakfast')
     );
   }

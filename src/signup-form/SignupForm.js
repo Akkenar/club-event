@@ -108,6 +108,12 @@ const SignupForm = ({ handleSubmit, handleChange, state, total }) => {
           name="breakfast"
           handleChange={handleChange}
         />
+        <BookingField
+          error={state.errors.counts}
+          state={state}
+          name="picknick"
+          handleChange={handleChange}
+        />
       </Form.Group>
       <div className="SignupForm__total-price">
         {getKey('register.form.counts.total', messages)} : CHF {total}

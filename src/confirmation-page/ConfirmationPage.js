@@ -10,7 +10,7 @@ import { getSimpleStore } from '../simpleStore';
 
 function format(confirmation, total, reference) {
   return confirmation
-    .replace('%DISPLAY_PAYMENT%', total ? 'block' : 'none')
+    .replace('%DISPLAY_PAYMENT%', +total ? 'block' : 'none')
     .replace('%TOTAL%', total)
     .replace('%REFERENCE%', reference);
 }

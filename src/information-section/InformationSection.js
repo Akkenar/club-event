@@ -13,12 +13,12 @@ const InformationSection = () => {
 
   return (
     <Fragment>
-      <div dangerouslySetInnerHTML={{ __html: messages.information }} />
       <img
         className="InformationSection__logo"
         src={logo}
         alt={getKey('logo.alt', messages)}
       />
+      <div dangerouslySetInnerHTML={{ __html: messages.information }} />
       <div className="InformationSection__register-container">
         <Button
           color="black"

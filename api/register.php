@@ -3,6 +3,13 @@ require_once './lib/recaptcha-1.2.1/src/autoload.php';
 include_once './database.php';
 include_once './email.php';
 
+$prices = [];
+$prices['dinner'] = 45;
+$prices['sleeping'] = 15;
+$prices['breakfast'] = 10;
+$prices['camping'] = 10;
+$prices['picknick'] = 10;
+
 // We need the Db asap.
 $db = connectDb();
 
@@ -15,7 +22,7 @@ $language = $DATA['language'];
 validateCaptcha($DATA['recaptcha']);
 
 // Compute the total based on the prices
-$total = getTotal();
+$total = getTotal($data, $prices);
 
 // Generate a reference number.
 $reference = uniqid();
@@ -26,8 +33,10 @@ saveData($db, $DATA, $reference, $total);
 // At this stage we don't need the Db anymore
 disconnectDB();
 
-// Confirm the registration to the user.
-sendEmail($email, $total, $reference, $language);
+// Confirm the registration to the user, only if there's a total
+if ($total !== '0') {
+  //sendEmail($email, $total, $reference, $language);
+}
 
 // Success!
 echo '{"result": "success", "reference": "' .
@@ -57,9 +66,19 @@ function validateCaptcha($recaptchaResponse)
   }
 }
 
-function getTotal()
+function getTotal($data, $prices)
 {
-  return '0';
+  $dinner = getTotalForItem($data, $prices, 'dinner');
+  $sleeping = getTotalForItem($data, $prices, 'sleeping');
+  $camping = getTotalForItem($data, $prices, 'camping');
+  $picknick = getTotalForItem($data, $prices, 'picknick');
+  $breakfast = getTotalForItem($data, $prices, 'breakfast');
+
+  return $dinner + $sleeping + $camping + $picknick + $breakfast;
+}
+
+function getTotalForItem($data, $prices, $itemName) {
+  return intval($data[$itemName]) * $prices[$itemName];
 }
 
 function saveData($db, $data, $reference, $total)
@@ -107,4 +126,5 @@ function saveData($db, $data, $reference, $total)
   )";
   sendRequestDB($sql);
 }
+
 ?>

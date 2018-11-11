@@ -1,4 +1,4 @@
-import React, { Fragment, useContext } from 'react';
+import React, { Fragment, useContext, useEffect } from 'react';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import Header from './header/Header';
 
@@ -15,6 +15,9 @@ import './index.scss';
 
 const App = () => {
   const { language } = useContext(LanguageContext);
+  useEffect(() => {
+    alert('Site de test, les inscriptions ne sont pas encore ouvertes');
+  });
 
   return (
     <Fragment>

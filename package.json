@@ -9,9 +9,9 @@
     "start": "webpack-dev-server --config webpack.config.babel.js",
     "test": "jest --coverage",
     "lint:js": "eslint --ext .js,.jsx src",
-    "lint:format": "prettier --config ./.prettierrc -l \"{,!(target|coverage|node_modules|api)/**/,.}/*{.ts,.js,.jsx,.json,.css,.scss,.md}\"",
+    "lint:format": "prettier --config ./.prettierrc -l \"{,!(target|coverage|node_modules)/**/,.}/*{.ts,.js,.jsx,.json,.css,.scss,.md,.php}\"",
     "validate": "npm-run-all lint:* test",
-    "format": "prettier --config ./.prettierrc --write \"{,!(target|coverage|node_modules|api)/**/,.}/*{.ts,.js,.jsx,.json,.css,.scss,.md}\""
+    "format": "prettier --config ./.prettierrc --write \"{,!(target|coverage|node_modules)/**/,.}/*{.ts,.js,.jsx,.json,.css,.scss,.md,.php}\""
   },
   "author": "",
   "license": "ISC",
@@ -22,6 +22,7 @@
     "@babel/preset-env": "7.1.5",
     "@babel/preset-react": "7.0.0",
     "@babel/register": "7.0.0",
+    "@prettier/plugin-php": "0.9.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "10.0.1",
     "babel-jest": "23.6.0",

@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 
-import { Dropdown, Menu } from 'semantic-ui-react';
+import { Menu } from 'semantic-ui-react';
 import { NavLink } from 'react-router-dom';
 import getKey from '../intl/getKey';
 import { setPageDescription } from '../page.lib';

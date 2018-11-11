@@ -33,12 +33,18 @@ RewriteRule . /index.html [L]
   BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
 </IfModule>
 
+# Obviously it would be embarassing to have the properties accessible...
+# Let's hope this works.
 <Files "api/credentials.properties">
-Order Allow,Deny
-Deny from all
+  Order Allow,Deny
+  Deny from all
 </Files>
 
-Header set Cache-Control "max-age=2628000, public"
+# js and css have cache busting hash
+<filesMatch "\.(js|css)$">
+  Header set Cache-Control "max-age=2628000, public"
+</filesMatch>
 
+# Because the hosting provider doesn't enable this by default
 php_value allow_url_fopen On
 

@@ -6,9 +6,11 @@ import { setPageTitle } from '../page.lib';
 import { Header } from 'semantic-ui-react';
 
 import './ConfirmationPage.scss';
+import { getSimpleStore } from '../simpleStore';
 
 function format(confirmation, total, reference) {
   return confirmation
+    .replace('%DISPLAY_PAYMENT%', total ? 'block' : 'none')
     .replace('%TOTAL%', total)
     .replace('%REFERENCE%', reference);
 }
@@ -19,11 +21,9 @@ const ConfirmationPage = () => {
     setPageTitle(getKey('confirmation.page.title', messages));
   });
 
-  const confirmationMessage = format(
-    messages.confirmation,
-    '10',
-    'ABCD-123123'
-  );
+  // From the signup form.
+  const { total, reference } = getSimpleStore();
+  const confirmationMessage = format(messages.confirmation, total, reference);
 
   return (
     <Fragment>

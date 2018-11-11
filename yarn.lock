@@ -668,6 +668,14 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
+"@prettier/plugin-php@0.9.0":
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/@prettier/plugin-php/-/plugin-php-0.9.0.tgz#c83e5d57af08c2f01016800d708bfad755276d4a"
+  integrity sha512-x3RS9P2W8jRseHa1wecmZnzh9w2kLUJIR6//CroHZtagFSgnGLRNvReDZLlT1PJtTMPVacluPOjY2BFPapO9bw==
+  dependencies:
+    mem "^3.0.1"
+    php-parser glayzzle/php-parser#ca007c812e9920bcf1ae9fd24f1a92f5d5906a5e
+
 "@semantic-ui-react/event-stack@^3.0.0":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@semantic-ui-react/event-stack/-/event-stack-3.0.0.tgz#fde997c4613328b4f85cacfe8feaf1f4dcf53f6f"
@@ -5303,6 +5311,14 @@ mem@^1.1.0:
   dependencies:
     mimic-fn "^1.0.0"
 
+mem@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/mem/-/mem-3.0.1.tgz#152410d0d7e835e4a4363e626238d9e5be3d6f5a"
+  integrity sha512-QKs47bslvOE0NbXOqG6lMxn6Bk0Iuw0vfrIeLykmQle2LkCw1p48dZDdzE+D88b/xqRJcZGcMNeDvSVma+NuIQ==
+  dependencies:
+    mimic-fn "^1.0.0"
+    p-is-promise "^1.1.0"
+
 mem@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/mem/-/mem-4.0.0.tgz#6437690d9471678f6cc83659c00cbafcd6b0cdaf"
@@ -6315,6 +6331,10 @@ performance-now@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
   integrity sha1-Ywn04OX6kT7BxpMHrjZLSzd8nns=
+
+"php-parser@github:glayzzle/php-parser#ca007c812e9920bcf1ae9fd24f1a92f5d5906a5e":
+  version "3.0.0-prerelease.5"
+  resolved "https://codeload.github.com/glayzzle/php-parser/tar.gz/ca007c812e9920bcf1ae9fd24f1a92f5d5906a5e"
 
 pify@^2.0.0:
   version "2.3.0"

@@ -11,8 +11,6 @@ services:
       - ./api:/var/www/html/api
     links:
       - db
-    extra_hosts:
-    - "hostname:8.8.8.8"
     dns:
       - 8.8.8.8
 
@@ -20,8 +18,10 @@ services:
     image: mysql:5.7
     ports:
       - "3306:3306"
+    command: --init-file /database/init.sql
     volumes:
      - /var/lib/mysql
+     - ./database:/database
     environment:
      - MYSQL_ROOT_PASSWORD=toor
      - MYSQL_DATABASE=adsss

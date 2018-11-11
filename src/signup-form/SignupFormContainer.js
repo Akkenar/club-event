@@ -5,6 +5,7 @@ import SignupForm from './SignupForm';
 import { goToTop, setFocusOnError } from '../page.lib';
 import { PRICES } from './prices';
 import LanguageContext from '../intl/LanguageContext';
+import { setSimpleStore } from '../simpleStore';
 
 const emailRegex = new RegExp(
   /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
@@ -59,7 +60,13 @@ class SignupFormContainer extends React.Component {
     goToTop();
   }
 
-  handleSuccess({ result }) {
+  handleSuccess({ result, total, reference }) {
+    // To be able to share data between pages.
+    setSimpleStore({
+      total,
+      reference,
+    });
+
     if (result === 'success') {
       this.setState({
         sending: false,

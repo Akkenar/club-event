@@ -40,3 +40,5 @@ Deny from all
 
 Header set Cache-Control "max-age=2628000, public"
 
+php_value allow_url_fopen On
+

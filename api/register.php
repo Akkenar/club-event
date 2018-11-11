@@ -37,7 +37,7 @@ saveData($db, $DATA, $reference, $total);
 disconnectDB();
 
 // Confirm the registration to the user, only if there's a total
-if ($total !== '0') {
+if ($total !== 0) {
   sendEmail($email, $total, $reference, $language);
 }
 
@@ -62,9 +62,7 @@ function validateCaptcha($recaptchaResponse)
   if (!$resp->isSuccess()) {
     $errors = $resp->getErrorCodes();
     http_response_code(500);
-    echo '{"result": "error", "reason": "' .
-      json_encode($errors) .
-      '"}';
+    echo '{"result": "error", "reason": "' . json_encode($errors) . '"}';
     die();
   }
 }

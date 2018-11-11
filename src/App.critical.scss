@@ -1,20 +1,9 @@
 .App__Main {
   max-width: 900px;
   margin: 0 auto;
-  padding-bottom: 1em;
-  flex: 1 0 auto;
+  min-height: calc(100vh - 10.5em);
 }
 
 .App__MainContainer {
   margin: 2em;
-}
-
-.App {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.App__Footer {
-  flex-shrink: 0;
 }

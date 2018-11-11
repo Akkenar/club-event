@@ -1,7 +1,9 @@
 <?php
+require_once './config.php';
+
 function connectDB()
 {
-  $config = parse_ini_file('./credentials.properties');
+  $config = readConfig();
   $host = $config['db.host'];
   $user = $config['db.user'];
   $password = $config['db.password'];

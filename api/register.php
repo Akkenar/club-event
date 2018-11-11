@@ -2,13 +2,16 @@
 require_once './lib/recaptcha-1.2.1/src/autoload.php';
 include_once './database.php';
 include_once './email.php';
+require_once './config.php';
 
-$prices = [];
-$prices['dinner'] = 45;
-$prices['sleeping'] = 15;
-$prices['breakfast'] = 10;
-$prices['camping'] = 10;
-$prices['picknick'] = 10;
+// In CHF. Must match what's in the front in prices.js
+$prices = array(
+  'dinner' => 45,
+  'sleeping' => 15,
+  'breakfast' => 10,
+  'camping' => 10,
+  'picknick' => 10
+);
 
 // We need the Db asap.
 $db = connectDb();
@@ -35,7 +38,7 @@ disconnectDB();
 
 // Confirm the registration to the user, only if there's a total
 if ($total !== '0') {
-  //sendEmail($email, $total, $reference, $language);
+  sendEmail($email, $total, $reference, $language);
 }
 
 // Success!
@@ -49,7 +52,7 @@ echo '{"result": "success", "reference": "' .
 
 function validateCaptcha($recaptchaResponse)
 {
-  $config = parse_ini_file('./credentials.properties');
+  $config = readConfig();
 
   // Recaptcha utils
   $recaptcha = new \ReCaptcha\ReCaptcha($config['recaptcha.key']);
@@ -60,7 +63,7 @@ function validateCaptcha($recaptchaResponse)
     $errors = $resp->getErrorCodes();
     http_response_code(500);
     echo '{"result": "error", "reason": "' .
-      json_encode(print_r($errors)) .
+      json_encode($errors) .
       '"}';
     die();
   }
@@ -77,7 +80,8 @@ function getTotal($data, $prices)
   return $dinner + $sleeping + $camping + $picknick + $breakfast;
 }
 
-function getTotalForItem($data, $prices, $itemName) {
+function getTotalForItem($data, $prices, $itemName)
+{
   return intval($data[$itemName]) * $prices[$itemName];
 }
 
@@ -126,5 +130,4 @@ function saveData($db, $data, $reference, $total)
   )";
   sendRequestDB($sql);
 }
-
 ?>

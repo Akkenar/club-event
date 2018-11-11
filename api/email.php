@@ -2,6 +2,7 @@
 
 require_once './lib/phpmailer/PHPMailerAutoload.php';
 require_once './class.template.php';
+require_once './config.php';
 
 $globalTPL = new Template('templates');
 
@@ -11,7 +12,7 @@ function sendEmail($email, $total, $reference, $language)
     die("Email missing");
   }
 
-  $config = parse_ini_file('./credentials.properties');
+  $config = readConfig();
 
   // Sujet et message.
   $message = getBody($total, $reference, $language);

@@ -35,10 +35,7 @@ RewriteRule . /index.html [L]
 
 # Obviously it would be embarassing to have the properties accessible...
 # Let's hope this works.
-<Files "api/credentials.properties">
-  Order Allow,Deny
-  Deny from all
-</Files>
+RedirectMatch 403 \.properties$
 
 # js and css have cache busting hash
 <filesMatch "\.(js|css)$">

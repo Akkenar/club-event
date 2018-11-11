@@ -4,10 +4,12 @@ import { Menu } from 'semantic-ui-react';
 import { NavLink } from 'react-router-dom';
 import getKey from '../intl/getKey';
 import { setPageDescription } from '../page.lib';
+import configuration from '../configuration';
 
-import './Header.scss';
 import logo from '../assets/logo.svg';
 import LanguageContext from '../intl/LanguageContext';
+
+import './Header.scss';
 
 const Nav = props => <NavLink {...props} activeClassName={'active'} />;
 
@@ -34,9 +36,11 @@ const Header = () => {
         {getKey('header.information', messages)}
       </Menu.Item>
 
-      <Menu.Item as={Nav} name="register" to={'/register/' + language}>
-        {getKey('header.register', messages)}
-      </Menu.Item>
+      {configuration.registration.enabled ? (
+        <Menu.Item as={Nav} name="register" to={'/register/' + language}>
+          {getKey('header.register', messages)}
+        </Menu.Item>
+      ) : null}
     </Menu>
   );
 };

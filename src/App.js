@@ -6,12 +6,12 @@ import SignupPageAsync from './signup-page/SignupPageAsync';
 import HomePageAsync from './home-page/HomePageAsync';
 import { withIntlManager } from './intl/provideIntlManager';
 import LanguageContext from './intl/LanguageContext';
+import ConfirmationPageAsync from './confirmation-page/ConfirmationPageAsync';
+import FooterAsync from './footer/FooterAsync';
 
-// CSS dependencies
 import './App.critical.scss';
 import './index.critical.scss';
 import './index.scss';
-import ConfirmationPageAsync from './confirmation-page/ConfirmationPageAsync';
 
 const App = () => {
   const { language } = useContext(LanguageContext);
@@ -23,7 +23,7 @@ const App = () => {
       </div>
       <BrowserRouter>
         <div className="App">
-          <header className="App-header">
+          <header className="App__Header">
             <Header />
           </header>
           <main className="App__Main">
@@ -39,6 +39,9 @@ const App = () => {
               </Switch>
             </div>
           </main>
+          <footer className="App__Footer">
+            <FooterAsync />
+          </footer>
         </div>
       </BrowserRouter>
     </Fragment>

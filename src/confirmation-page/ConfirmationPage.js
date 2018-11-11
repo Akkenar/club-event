@@ -32,7 +32,7 @@ const ConfirmationPage = () => {
       <img
         className="Confirmation__logo"
         src={logo}
-        alt={getKey('header.logo', messages)}
+        alt={getKey('logo.alt', messages)}
       />
     </Fragment>
   );

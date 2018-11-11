@@ -17,7 +17,7 @@ const InformationSection = () => {
       <img
         className="InformationSection__logo"
         src={logo}
-        alt={getKey('header.logo', messages)}
+        alt={getKey('logo.alt', messages)}
       />
       <div className="InformationSection__register-container">
         <Button

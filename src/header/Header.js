@@ -12,9 +12,7 @@ import LanguageContext from '../intl/LanguageContext';
 const Nav = props => <NavLink {...props} activeClassName={'active'} />;
 
 const Header = () => {
-  const { handleChangeLanguage, language, messages } = useContext(
-    LanguageContext
-  );
+  const { language, messages } = useContext(LanguageContext);
 
   // Not the best place, but works fine
   useEffect(() => {
@@ -26,7 +24,7 @@ const Header = () => {
       <Nav to={'/home/' + language}>
         <img
           className="Header__logo"
-          alt={getKey('header.logo', messages)}
+          alt={getKey('logo.alt', messages)}
           src={logo}
           width={60}
           height={45}
@@ -39,45 +37,6 @@ const Header = () => {
       <Menu.Item as={Nav} name="register" to={'/register/' + language}>
         {getKey('header.register', messages)}
       </Menu.Item>
-      <Dropdown
-        className="link item right Header__language-switcher"
-        text={getKey('header.current.language', messages)}
-      >
-        <Dropdown.Menu>
-          <Dropdown.Item
-            title="Français"
-            as={Nav}
-            to="fr"
-            onClick={() => handleChangeLanguage('fr')}
-          >
-            FR
-          </Dropdown.Item>
-          <Dropdown.Item
-            title="Deutsch"
-            as={Nav}
-            to="de"
-            onClick={() => handleChangeLanguage('de')}
-          >
-            DE
-          </Dropdown.Item>
-          <Dropdown.Item
-            title="Italianno"
-            as={Nav}
-            to="it"
-            onClick={() => handleChangeLanguage('it')}
-          >
-            IT
-          </Dropdown.Item>
-          <Dropdown.Item
-            title="English"
-            as={Nav}
-            to="en"
-            onClick={() => handleChangeLanguage('en')}
-          >
-            EN
-          </Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown>
     </Menu>
   );
 };

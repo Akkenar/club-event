@@ -1,8 +1,20 @@
 .App__Main {
   max-width: 900px;
   margin: 0 auto;
+  padding-bottom: 1em;
+  flex: 1 0 auto;
 }
 
 .App__MainContainer {
   margin: 2em;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+}
+
+.App__Footer {
+  flex-shrink: 0;
+  padding-bottom: 0.1em;
 }

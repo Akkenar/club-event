@@ -35,3 +35,5 @@ Order Allow,Deny
 Deny from all
 </Files>
 
+#Header set Cache-Control "max-age=2628000, public"
+

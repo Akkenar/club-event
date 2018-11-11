@@ -1,0 +1,12 @@
+.Logo {
+  display: block;
+}
+
+.Logo--big {
+  margin: 2em auto;
+  max-width: 30em;
+}
+
+.Logo--inverted {
+  filter: invert(100%);
+}

@@ -11,7 +11,7 @@ const Footer = () => {
 
   return (
     <Menu inverted className="Footer">
-      <Menu.Item>Copyright GSL 2019</Menu.Item>
+      <Menu.Item>&#169; GSL 2019</Menu.Item>
       <Menu.Item>
         <a href="mailto:info@speleo-lausanne.ch">Contact</a>
       </Menu.Item>

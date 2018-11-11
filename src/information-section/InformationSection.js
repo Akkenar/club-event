@@ -1,24 +1,19 @@
 import React, { Fragment, useContext } from 'react';
 import LanguageContext from '../intl/LanguageContext';
-
-import logo from '../assets/logo.svg';
 import getKey from '../intl/getKey';
 import { Link } from 'react-router-dom';
 import { Button, Header } from 'semantic-ui-react';
 import configuration from '../configuration';
 
 import './InformationSection.scss';
+import Logo from '../logo/Logo';
 
 const InformationSection = () => {
   const { messages, language } = useContext(LanguageContext);
 
   return (
     <Fragment>
-      <img
-        className="InformationSection__logo"
-        src={logo}
-        alt={getKey('logo.alt', messages)}
-      />
+      <Logo big />
       <div dangerouslySetInnerHTML={{ __html: messages.information }} />
       <Header as="h2">{getKey('home.page.register', messages)}</Header>
       {configuration.registration.enabled ? (

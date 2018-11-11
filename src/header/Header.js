@@ -5,11 +5,10 @@ import { NavLink } from 'react-router-dom';
 import getKey from '../intl/getKey';
 import { setPageDescription } from '../page.lib';
 import configuration from '../configuration';
-
-import logo from '../assets/logo.svg';
 import LanguageContext from '../intl/LanguageContext';
 
 import './Header.scss';
+import Logo from '../logo/Logo';
 
 const Nav = props => <NavLink {...props} activeClassName={'active'} />;
 
@@ -24,13 +23,7 @@ const Header = () => {
   return (
     <Menu inverted className="Header">
       <Nav to={'/home/' + language} color="white">
-        <img
-          className="Header__logo"
-          alt={getKey('logo.alt', messages)}
-          src={logo}
-          width={60}
-          height={45}
-        />
+        <Logo className="Header__logo" width={60} height={45} inverted />
       </Nav>
       <Menu.Item as={Nav} name="home" to={'/home/' + language}>
         {getKey('header.information', messages)}

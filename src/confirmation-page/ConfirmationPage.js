@@ -1,12 +1,11 @@
 import React, { Fragment, useContext, useEffect } from 'react';
-import logo from '../assets/logo.svg';
 import getKey from '../intl/getKey';
 import LanguageContext from '../intl/LanguageContext';
 import { setPageTitle } from '../page.lib';
 import { Header } from 'semantic-ui-react';
 
-import './ConfirmationPage.scss';
 import { getSimpleStore } from '../simpleStore';
+import Logo from '../logo/Logo';
 
 function format(confirmation, total, reference) {
   return confirmation
@@ -29,11 +28,7 @@ const ConfirmationPage = () => {
     <Fragment>
       <Header as="h1">{getKey('confirmation.page.title', messages)}</Header>
       <div dangerouslySetInnerHTML={{ __html: confirmationMessage }} />
-      <img
-        className="Confirmation__logo"
-        src={logo}
-        alt={getKey('logo.alt', messages)}
-      />
+      <Logo big />
     </Fragment>
   );
 };

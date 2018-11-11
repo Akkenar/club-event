@@ -28,6 +28,13 @@ const DEFAULT_STATE = {
   errors: {},
 };
 
+function getCaptchaResponse() {
+  if (typeof grecaptcha === 'undefined') {
+    return '';
+  }
+  return grecaptcha.getResponse();
+}
+
 class SignupFormContainer extends React.Component {
   constructor(props) {
     super(props);
@@ -100,7 +107,7 @@ class SignupFormContainer extends React.Component {
     return {
       ...this.state,
       language: this.context.language,
-      recaptcha: grecaptcha.getResponse(),
+      recaptcha: getCaptchaResponse(),
       errors: undefined,
     };
   }
@@ -112,7 +119,7 @@ class SignupFormContainer extends React.Component {
       club: !this.state.club,
       meeting: !+this.state.meeting,
       email: !this.state.email || !this.state.email.match(emailRegex),
-      recaptcha: !grecaptcha.getResponse(),
+      recaptcha: !getCaptchaResponse(),
     };
 
     this.setState({

@@ -11,7 +11,9 @@ function postData(url = '', data = {}) {
     redirect: 'follow', // manual, *follow, error
     referrer: 'no-referrer', // no-referrer, *client
     body: JSON.stringify(data), // body data type must match "Content-Type" header
-  });
+  })
+    .then(response => response.text())
+    .then(text => JSON.parse(text));
 }
 
 export function sendData(data) {

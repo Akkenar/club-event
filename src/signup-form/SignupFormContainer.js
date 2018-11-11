@@ -2,9 +2,10 @@ import React, { Fragment } from 'react';
 import Loader from '../loader/Loader';
 import { sendData } from './signup.service';
 import SignupForm from './SignupForm';
+import { goToTop } from '../page.lib';
 
 const emailRegex = new RegExp(
-  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
 );
 
 export const PRICES = {
@@ -68,22 +69,30 @@ class SignupFormContainer extends React.Component {
       errors: undefined,
     };
 
-    sendData(data).then(
-      () => {
+    const errorHandler = () => {
+      this.setState({
+        sending: false,
+        success: false,
+        transmitError: true,
+      });
+      goToTop();
+    };
+
+    const successHandler = ({ result }) => {
+      if (result === 'success') {
         this.setState({
           sending: false,
           success: true,
           transmitError: false,
         });
-      },
-      () => {
-        this.setState({
-          sending: false,
-          success: false,
-          transmitError: true,
-        });
+      } else {
+        errorHandler();
       }
-    );
+    };
+
+    sendData(data)
+      .then(successHandler, errorHandler)
+      .catch(errorHandler);
   }
 
   validateForm() {
@@ -133,7 +142,7 @@ class SignupFormContainer extends React.Component {
   render() {
     return (
       <Fragment>
-        {this.state.sending ? <Loader delay={0} /> : null}
+        {this.state.sending ? <Loader delay={0}/> : null}
         <SignupForm
           state={this.state}
           handleChange={this.handleChange}

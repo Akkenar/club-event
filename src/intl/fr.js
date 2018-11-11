@@ -1,5 +1,5 @@
 import messages from './fr/messages.fr.json';
-import confirmation from './fr/confirmation-email.fr.md';
+import confirmation from './fr/confirmation.fr.md';
 import information from './fr/information.fr.md';
 
 const intl = {

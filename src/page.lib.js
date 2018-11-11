@@ -18,3 +18,15 @@ export function goToTop() {
     top.focus();
   }
 }
+
+export function setFocusOnError() {
+  setTimeout(() => {
+    const element =
+      document.querySelector('*[aria-invalid="true"]') ||
+      document.querySelector('button[type=submit]');
+
+    if (element) {
+      element.focus();
+    }
+  }, 0);
+}

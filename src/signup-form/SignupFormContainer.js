@@ -2,10 +2,10 @@ import React, { Fragment } from 'react';
 import Loader from '../loader/Loader';
 import { sendData } from './signup.service';
 import SignupForm from './SignupForm';
-import { goToTop } from '../page.lib';
+import { goToTop, setFocusOnError } from '../page.lib';
 
 const emailRegex = new RegExp(
-  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 );
 
 export const PRICES = {
@@ -52,9 +52,30 @@ class SignupFormContainer extends React.Component {
     }));
   }
 
+  handleError() {
+    this.setState({
+      sending: false,
+      success: false,
+      transmitError: true,
+    });
+    goToTop();
+  }
+
+  handleSuccess({ result }) {
+    if (result === 'success') {
+      this.setState({
+        sending: false,
+        success: true,
+        transmitError: false,
+      });
+    } else {
+      this.handleError();
+    }
+  }
+
   handleSubmit() {
     if (this.validateForm()) {
-      this.setFocusOnError();
+      setFocusOnError();
       return;
     }
 
@@ -69,30 +90,9 @@ class SignupFormContainer extends React.Component {
       errors: undefined,
     };
 
-    const errorHandler = () => {
-      this.setState({
-        sending: false,
-        success: false,
-        transmitError: true,
-      });
-      goToTop();
-    };
-
-    const successHandler = ({ result }) => {
-      if (result === 'success') {
-        this.setState({
-          sending: false,
-          success: true,
-          transmitError: false,
-        });
-      } else {
-        errorHandler();
-      }
-    };
-
     sendData(data)
-      .then(successHandler, errorHandler)
-      .catch(errorHandler);
+      .then(this.handleSuccess, this.handleError)
+      .catch(this.handleError);
   }
 
   validateForm() {
@@ -110,18 +110,6 @@ class SignupFormContainer extends React.Component {
     });
 
     return Object.keys(errors).some(key => errors[key]);
-  }
-
-  setFocusOnError() {
-    setTimeout(() => {
-      const element =
-        document.querySelector('*[aria-invalid="true"]') ||
-        document.querySelector('button[type=submit]');
-
-      if (element) {
-        element.focus();
-      }
-    }, 0);
   }
 
   getTotal() {
@@ -142,7 +130,7 @@ class SignupFormContainer extends React.Component {
   render() {
     return (
       <Fragment>
-        {this.state.sending ? <Loader delay={0}/> : null}
+        {this.state.sending ? <Loader delay={0} /> : null}
         <SignupForm
           state={this.state}
           handleChange={this.handleChange}

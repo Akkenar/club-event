@@ -9,7 +9,7 @@ const SUPPORTED_LANGUAGES = ['fr', 'en', 'it', DEFAULT_LANGUAGE];
 function getDefaultLanguage() {
   try {
     const [langFromUrl] = window.location.href.split('/').reverse();
-    if (SUPPORTED_LANGUAGES.includes(langFromUrl)) {
+    if (SUPPORTED_LANGUAGES.indexOf(langFromUrl) > -1) {
       return langFromUrl;
     }
 
@@ -23,7 +23,7 @@ function getDefaultLanguage() {
     }
 
     const language = locale.split('-')[0];
-    if (!SUPPORTED_LANGUAGES.includes(language)) {
+    if (SUPPORTED_LANGUAGES.indexOf(language) === -1) {
       return DEFAULT_LANGUAGE;
     }
 

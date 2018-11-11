@@ -1,8 +1,4 @@
-FROM nginx:alpine
+FROM php:5.6-apache
 
-COPY nginx.conf /etc/nginx/nginx.conf
-COPY certificates/localhost.crt /etc/nginx/certificates/localhost.crt
-COPY certificates/localhost.key /etc/nginx/certificates/localhost.key
-
-WORKDIR /usr/share/nginx/html
-COPY target/build .
+RUN a2enmod rewrite
+RUN docker-php-ext-install mysqli

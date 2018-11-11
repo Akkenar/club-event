@@ -2,12 +2,13 @@ version: '2'
 
 services:
   php:
-    build: php
+    build: .
     ports:
       - "80:80"
       - "443:443"
     volumes:
-      - ./api:/var/www/html
+      - ./target/build:/var/www/html
+      - ./api:/var/www/html/api
     links:
       - db
     extra_hosts:
@@ -24,8 +25,3 @@ services:
     environment:
      - MYSQL_ROOT_PASSWORD=toor
      - MYSQL_DATABASE=adsss
-
-  front:
-    build: .
-    ports:
-      - "3000:443"

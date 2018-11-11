@@ -2,7 +2,6 @@ import webpack from 'webpack';
 import path from 'path';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import CleanWebpackPlugin from 'clean-webpack-plugin';
 import * as bundle from 'webpack-bundle-analyzer';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 
@@ -22,7 +21,6 @@ const prodPlugins = [
 ];
 
 const commonPlugins = [
-  new CleanWebpackPlugin([buildPath], { verbose: false }),
   new webpack.LoaderOptionsPlugin({
     minimize: true,
     debug: false,

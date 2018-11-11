@@ -20,8 +20,8 @@ const Header = () => {
   });
 
   return (
-    <Menu>
-      <Nav to={'/home/' + language}>
+    <Menu inverted className="Header">
+      <Nav to={'/home/' + language} color="white">
         <img
           className="Header__logo"
           alt={getKey('logo.alt', messages)}

@@ -39,6 +39,8 @@ class SignupFormContainer extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleError = this.handleError.bind(this);
+    this.handleSuccess = this.handleSuccess.bind(this);
   }
 
   handleChange(event) {

@@ -1,3 +1,7 @@
+.Header {
+  border-radius: 0 !important;
+}
+
 .Header__menu-container {
   margin: 0 0 0 auto;
 }
@@ -5,4 +9,5 @@
 .Header__logo {
   margin: 0 1em;
   padding-top: 0.2em;
+  filter: invert(100%);
 }

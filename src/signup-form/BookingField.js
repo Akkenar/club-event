@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import getKey from '../intl/getKey';
 import { Form } from 'semantic-ui-react';
 import LanguageContext from '../intl/LanguageContext';
-import { PRICES } from './SignupFormContainer';
+import { PRICES } from './prices';
 
 const BookingField = ({ name, handleChange, state }) => {
   const { messages } = useContext(LanguageContext);

@@ -3,39 +3,35 @@ import Loader from '../loader/Loader';
 import { sendData } from './signup.service';
 import SignupForm from './SignupForm';
 import { goToTop, setFocusOnError } from '../page.lib';
+import { PRICES } from './prices';
+import LanguageContext from '../intl/LanguageContext';
 
 const emailRegex = new RegExp(
   /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 );
 
-export const PRICES = {
-  dinner: 45,
-  sleeping: 15,
-  breakfast: 10,
-  camping: 10,
-  picknick: 10,
+const DEFAULT_STATE = {
+  firstName: '',
+  lastName: '',
+  club: '',
+  email: '',
+  comment: '',
+  meeting: '0',
+  dinner: '0',
+  sleeping: '0',
+  camping: '0',
+  picknick: '0',
+  breakfast: '0',
+  sending: false,
+  transmitError: false,
+  errors: {},
 };
 
 class SignupFormContainer extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      firstName: '',
-      lastName: '',
-      club: '',
-      email: '',
-      comment: '',
-      meeting: '0',
-      dinner: '0',
-      sleeping: '0',
-      camping: '0',
-      picknick: '0',
-      breakfast: '0',
-      sending: false,
-      transmitError: false,
-      errors: {},
-    };
+    this.state = DEFAULT_STATE;
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -86,15 +82,20 @@ class SignupFormContainer extends React.Component {
       transmitError: false,
     });
 
-    const data = {
-      ...this.state,
-      recaptcha: grecaptcha.getResponse(),
-      errors: undefined,
-    };
+    const data = this.getFormData();
 
     sendData(data)
       .then(this.handleSuccess, this.handleError)
       .catch(this.handleError);
+  }
+
+  getFormData() {
+    return {
+      ...this.state,
+      language: this.context.language,
+      recaptcha: grecaptcha.getResponse(),
+      errors: undefined,
+    };
   }
 
   validateForm() {
@@ -114,17 +115,17 @@ class SignupFormContainer extends React.Component {
     return Object.keys(errors).some(key => errors[key]);
   }
 
-  getTotal() {
+  getTotalPrice() {
     return (
-      this.getPrice('dinner') +
-      this.getPrice('sleeping') +
-      this.getPrice('camping') +
-      this.getPrice('picknick') +
-      this.getPrice('breakfast')
+      this.getPriceForItem('dinner') +
+      this.getPriceForItem('sleeping') +
+      this.getPriceForItem('camping') +
+      this.getPriceForItem('picknick') +
+      this.getPriceForItem('breakfast')
     );
   }
 
-  getPrice(name) {
+  getPriceForItem(name) {
     const value = this.state[name];
     return parseInt(value) * PRICES[name];
   }
@@ -137,11 +138,13 @@ class SignupFormContainer extends React.Component {
           state={this.state}
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
-          total={this.getTotal()}
+          total={this.getTotalPrice()}
         />
       </Fragment>
     );
   }
 }
+
+SignupFormContainer.contextType = LanguageContext;
 
 export default SignupFormContainer;

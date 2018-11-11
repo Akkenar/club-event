@@ -76,8 +76,7 @@ class SignupFormContainer extends React.Component {
           transmitError: false,
         });
       },
-      e => {
-        console.error(e);
+      () => {
         this.setState({
           sending: false,
           success: false,

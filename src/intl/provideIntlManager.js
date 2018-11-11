@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Loader from '../loader/Loader';
 import { setPageLanguage } from '../page.lib';
 import LanguageContext from './LanguageContext';

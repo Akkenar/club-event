@@ -40,7 +40,7 @@ const Recaptcha = () => {
     }
   });
 
-  return <div id={CONTAINER_ID} className="g-recaptcha"/>;
+  return <div id={CONTAINER_ID} className="g-recaptcha" />;
 };
 
 export default Recaptcha;

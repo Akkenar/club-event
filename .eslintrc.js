@@ -19,4 +19,7 @@ module.exports = {
     quotes: ['error', 'single'],
     semi: ['error', 'always'],
   },
+  globals: {
+    grecaptcha: true,
+  },
 };

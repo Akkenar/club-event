@@ -25,7 +25,7 @@ $language = $DATA['language'];
 validateCaptcha($DATA['recaptcha']);
 
 // Compute the total based on the prices
-$total = getTotal($data, $prices);
+$total = getTotal($DATA, $prices);
 
 // Generate a reference number.
 $reference = uniqid();

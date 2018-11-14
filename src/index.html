@@ -9,7 +9,7 @@
   <base href="/"/>
   <title>SSS AD</title>
 
-  <!-- Main CSS files, deferred if not critical -->
+  <!-- Main CSS files, deferred if not critical, inlined if critical -->
   <% htmlWebpackPlugin.files.css.forEach(css => { %>
   <% if (!css.includes('critical')) { %>
   <link
@@ -18,23 +18,17 @@
     media="none"
     onload="if(media!='screen')media='screen'"
   >
-  <% } else { %>
-  <link
-    href="<%= css %>"
-    rel="stylesheet"
-    media="screen"
-  >
   <% } %>
   <% }); %>
 
-  <!-- Load JS -->
-<% Object.values(htmlWebpackPlugin.files.chunks).forEach(chunk => { %>
-<script
-  src="<%= chunk.entry %>"
-  async
-  defer
-></script>
-<% }); %>
+  <!-- Load JS, not the silly critical.js file though -->
+  <% Object.values(htmlWebpackPlugin.files.chunks).forEach(chunk => { %>
+  <script
+    src="<%= chunk.entry %>"
+    async
+    defer
+  ></script>
+  <% }); %>
 </head>
 <body>
 <noscript>
@@ -43,7 +37,7 @@
 <div id="root"></div>
 
 <script>
-      alert('Site de test, les inscriptions ne sont pas encore ouvertes');
+  alert('Site de test, les inscriptions ne sont pas encore ouvertes');
 </script>
 </body>
 </html>

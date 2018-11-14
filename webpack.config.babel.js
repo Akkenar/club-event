@@ -4,6 +4,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import * as bundle from 'webpack-bundle-analyzer';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
+import HTMLInlineCSSWebpackPlugin from 'html-inline-css-webpack-plugin';
 
 const isInspection = process.env.NODE_ENV === 'inspect';
 const isProduction = isInspection || process.env.NODE_ENV === 'production';
@@ -41,6 +42,11 @@ const commonPlugins = [
     template: path.join(__dirname, 'src', 'index.html'),
     chunksSortMode: 'none',
     inject: false,
+  }),
+  new HTMLInlineCSSWebpackPlugin({
+    filter(fileName) {
+      return fileName.includes('critical');
+    },
   }),
   new bundle.BundleAnalyzerPlugin({
     analyzerMode: !isInspection ? 'disabled' : 'server',

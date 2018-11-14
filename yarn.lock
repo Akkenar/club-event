@@ -3858,6 +3858,11 @@ html-entities@^1.2.0:
   resolved "https://registry.yarnpkg.com/html-entities/-/html-entities-1.2.1.tgz#0df29351f0721163515dfb9e5543e5f6eed5162f"
   integrity sha1-DfKTUfByEWNRXfueVUPl9u7VFi8=
 
+html-inline-css-webpack-plugin@1.3.2:
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/html-inline-css-webpack-plugin/-/html-inline-css-webpack-plugin-1.3.2.tgz#40ce776a6c308d69d6be0b7daf32168291a6999f"
+  integrity sha512-21qamuQRYoj16TAlOFI6bc7LWRzRQ1mNaRbcZ6/84usKTwXadhUNY7SGR7aTH6zIUkJmzFtXrbTxjy52oBmz9Q==
+
 html-loader@0.5.5:
   version "0.5.5"
   resolved "https://registry.yarnpkg.com/html-loader/-/html-loader-0.5.5.tgz#6356dbeb0c49756d8ebd5ca327f16ff06ab5faea"
@@ -6339,7 +6344,7 @@ performance-now@^2.1.0:
   resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
   integrity sha1-Ywn04OX6kT7BxpMHrjZLSzd8nns=
 
-"php-parser@github:glayzzle/php-parser#ca007c812e9920bcf1ae9fd24f1a92f5d5906a5e":
+php-parser@glayzzle/php-parser#ca007c812e9920bcf1ae9fd24f1a92f5d5906a5e:
   version "3.0.0-prerelease.5"
   resolved "https://codeload.github.com/glayzzle/php-parser/tar.gz/ca007c812e9920bcf1ae9fd24f1a92f5d5906a5e"
 

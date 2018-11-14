@@ -4,7 +4,7 @@ import { goToTop } from '../page.lib';
 const BODY_HAS_DIMMER_CLASS = 'has-dimmer';
 
 const Lazy = React.lazy(() =>
-  import(/* webpackChunkName: 'loader', webpackPrefetch: true */ './LoaderAsync'),
+  import(/* webpackChunkName: 'loader', webpackPrefetch: true */ './LoaderAsync')
 );
 
 class Loader extends React.Component {
@@ -41,7 +41,7 @@ class Loader extends React.Component {
 
     return (
       <Suspense fallback={null}>
-        <Lazy/>
+        <Lazy />
       </Suspense>
     );
   }

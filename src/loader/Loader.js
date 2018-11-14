@@ -1,10 +1,11 @@
-import React from 'react';
-import { Dimmer, Loader as SemanticLoader } from 'semantic-ui-react';
-
-import './Loader.critical.scss';
+import React, { Suspense } from 'react';
 import { goToTop } from '../page.lib';
 
 const BODY_HAS_DIMMER_CLASS = 'has-dimmer';
+
+const Lazy = React.lazy(() =>
+  import(/* webpackChunkName: 'loader', webpackPrefetch: true */ './LoaderAsync'),
+);
 
 class Loader extends React.Component {
   constructor(props) {
@@ -34,12 +35,14 @@ class Loader extends React.Component {
   }
 
   render() {
+    if (!this.state.active) {
+      return null;
+    }
+
     return (
-      <div className="Loader">
-        <Dimmer active={this.state.active}>
-          <SemanticLoader />
-        </Dimmer>
-      </div>
+      <Suspense fallback={null}>
+        <Lazy/>
+      </Suspense>
     );
   }
 }

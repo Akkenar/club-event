@@ -15,9 +15,6 @@ import './index.scss';
 
 const App = () => {
   const { language } = useContext(LanguageContext);
-  useEffect(() => {
-    alert('Site de test, les inscriptions ne sont pas encore ouvertes');
-  });
 
   return (
     <Fragment>

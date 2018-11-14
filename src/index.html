@@ -26,6 +26,15 @@
   >
   <% } %>
   <% }); %>
+
+  <!-- Load JS -->
+<% Object.values(htmlWebpackPlugin.files.chunks).forEach(chunk => { %>
+<script
+  src="<%= chunk.entry %>"
+  async
+  defer
+></script>
+<% }); %>
 </head>
 <body>
 <noscript>
@@ -33,11 +42,8 @@
 </noscript>
 <div id="root"></div>
 
-<!-- Load JS -->
-<% Object.values(htmlWebpackPlugin.files.chunks).forEach(chunk => { %>
-<script
-  src="<%= chunk.entry %>"
-></script>
-<% }); %>
+<script>
+      alert('Site de test, les inscriptions ne sont pas encore ouvertes');
+</script>
 </body>
 </html>

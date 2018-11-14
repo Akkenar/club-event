@@ -13,8 +13,8 @@ const Logo = ({ height, width, inverted, big, className = '' }) => {
   return (
     <img
       className={`Logo ${invertedClassname} ${bigClassname} ${className}`.trim()}
-      height={height || 'auto'}
-      width={width || '100%'}
+      height={height}
+      width={width}
       src={logo}
       alt={getKey('logo.alt', messages)}
       title={getKey('logo.alt', messages)}

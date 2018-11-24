@@ -94,19 +94,6 @@ export default {
           reuseExistingChunk: false,
           priority: -30,
         },
-        // Extract the critical CSS into a dedicated file
-        styles: {
-          name: 'critical',
-          test: /(\.critical)\.s?css$/,
-          chunks: 'all',
-          minChunks: 1,
-          reuseExistingChunk: true,
-          enforce: true,
-          // It's essential that the priority of the critical styles is
-          // greater than the priority of the commons, otherwise
-          // Webpack will put critical styles in commons.css.
-          priority: -20,
-        },
       },
     },
   },

@@ -9,19 +9,17 @@
   <base href="/"/>
   <title>SSS AD</title>
 
-  <!-- Main CSS files, deferred if not critical, inlined if critical -->
+  <!-- Main CSS files, deferred -->
   <% htmlWebpackPlugin.files.css.forEach(css => { %>
-  <% if (!css.includes('critical')) { %>
   <link
     href="<%= css %>"
     rel="stylesheet"
     media="none"
     onload="if(media!='screen')media='screen'"
   >
-  <% } %>
   <% }); %>
 
-  <!-- Load JS, not the silly critical.js file though -->
+  <!-- Load JS -->
   <% Object.values(htmlWebpackPlugin.files.chunks).forEach(chunk => { %>
   <script
     src="<%= chunk.entry %>"

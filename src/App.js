@@ -9,9 +9,8 @@ import LanguageContext from './intl/LanguageContext';
 import ConfirmationPageAsync from './confirmation-page/ConfirmationPageAsync';
 import FooterAsync from './footer/FooterAsync';
 
-import './App.critical.scss';
-import './index.critical.scss';
-import './index.scss';
+import './App.scss';
+import './semantic.scss';
 
 const App = () => {
   const { language } = useContext(LanguageContext);

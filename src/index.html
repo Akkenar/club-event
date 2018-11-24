@@ -34,8 +34,10 @@
 </noscript>
 <div id="root"></div>
 
+<% if (htmlWebpackPlugin.options.production){ %>
 <script>
   alert('Site de test, les inscriptions ne sont pas encore ouvertes');
 </script>
+<% }%>
 </body>
 </html>

@@ -42,6 +42,7 @@ const commonPlugins = [
     template: path.join(__dirname, 'src', 'index.html'),
     chunksSortMode: 'none',
     inject: false,
+    production: isProduction,
   }),
   new HTMLInlineCSSWebpackPlugin({
     filter(fileName) {

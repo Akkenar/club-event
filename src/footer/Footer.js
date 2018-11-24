@@ -24,7 +24,7 @@ const Footer = () => {
           <Dropdown.Item
             title="Français"
             as={NavLink}
-            to="fr"
+            to="/fr"
             onClick={() => handleChangeLanguage('fr')}
           >
             FR
@@ -32,7 +32,7 @@ const Footer = () => {
           <Dropdown.Item
             title="Deutsch"
             as={NavLink}
-            to="de"
+            to="/de"
             onClick={() => handleChangeLanguage('de')}
           >
             DE
@@ -40,7 +40,7 @@ const Footer = () => {
           <Dropdown.Item
             title="Italianno"
             as={NavLink}
-            to="it"
+            to="/it"
             onClick={() => handleChangeLanguage('it')}
           >
             IT
@@ -48,7 +48,7 @@ const Footer = () => {
           <Dropdown.Item
             title="English"
             as={NavLink}
-            to="en"
+            to="/en"
             onClick={() => handleChangeLanguage('en')}
           >
             EN

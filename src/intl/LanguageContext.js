@@ -1,5 +1,5 @@
 import React from 'react';
-import { DEFAULT_LANGUAGE } from './provideIntlManager';
+import { DEFAULT_LANGUAGE } from './provideLanguageInRoute';
 
 const LanguageContext = React.createContext({
   messages: {},

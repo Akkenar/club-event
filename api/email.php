@@ -43,8 +43,7 @@ function sendEmail($email, $total, $reference, $language)
   // Set email format to HTML
   $mail->isHTML(true);
 
-  // TODO i18n
-  $mail->Subject = utf8_decode("AD SSS 2019 - Confirmation");
+  $mail->Subject = utf8_decode("AD SSS 2019 - Zahlung/Payment");
   $mail->Body = $message;
 
   if (!$mail->send()) {

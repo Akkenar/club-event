@@ -1,38 +1,6 @@
 import React from 'react';
-import Loader from '../loader/Loader';
 import { setPageLanguage } from '../page.lib';
 import LanguageContext from './LanguageContext';
-
-export const DEFAULT_LANGUAGE = 'de';
-const SUPPORTED_LANGUAGES = ['fr', 'en', 'it', DEFAULT_LANGUAGE];
-
-function getDefaultLanguage() {
-  try {
-    const [langFromUrl] = window.location.href.split('/').reverse();
-    if (SUPPORTED_LANGUAGES.indexOf(langFromUrl) > -1) {
-      return langFromUrl;
-    }
-
-    const locale =
-      (navigator.languages && navigator.languages[0]) ||
-      navigator.language ||
-      navigator.userLanguage;
-
-    if (!locale) {
-      return DEFAULT_LANGUAGE;
-    }
-
-    const language = locale.split('-')[0];
-    if (SUPPORTED_LANGUAGES.indexOf(language) === -1) {
-      return DEFAULT_LANGUAGE;
-    }
-
-    return language;
-  } catch (e) {
-    // In case something really goes wrong.
-    return DEFAULT_LANGUAGE;
-  }
-}
 
 function importLocale(locale) {
   switch (locale) {
@@ -49,8 +17,8 @@ function importLocale(locale) {
   }
 }
 
-export function withIntlManager(Component) {
-  return class IntlManager extends React.Component {
+export default function provideMessages(Component) {
+  return class LanguageAndMessages extends React.Component {
     constructor(props) {
       super(props);
 
@@ -62,7 +30,6 @@ export function withIntlManager(Component) {
       };
 
       this.handleChangeLanguage = this.handleChangeLanguage.bind(this);
-      this.handleChangeLanguage(getDefaultLanguage());
     }
 
     handleChangeLanguage(lang) {
@@ -82,12 +49,15 @@ export function withIntlManager(Component) {
       });
     }
 
-    render() {
-      if (!this.state.language) {
-        return <Loader />;
-      }
+    componentDidMount() {
+      this.handleChangeLanguage(this.props.match.params.language);
+    }
 
+    render() {
       const { messages, language } = this.state;
+      if (!language) {
+        return null;
+      }
 
       return (
         <LanguageContext.Provider

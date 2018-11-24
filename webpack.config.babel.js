@@ -10,8 +10,6 @@ const isInspection = process.env.NODE_ENV === 'inspect';
 const isProduction = isInspection || process.env.NODE_ENV === 'production';
 const buildPath = path.join(__dirname, 'target', 'build');
 
-console.log('Is Production?', isProduction);
-
 const devPlugins = [new webpack.HotModuleReplacementPlugin()];
 
 const prodPlugins = [

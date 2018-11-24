@@ -4,17 +4,17 @@ import Header from './header/Header';
 
 import SignupPageAsync from './signup-page/SignupPageAsync';
 import HomePageAsync from './home-page/HomePageAsync';
-import { withIntlManager } from './intl/provideIntlManager';
+import { provideLanguageInRoute } from './intl/provideLanguageInRoute';
 import LanguageContext from './intl/LanguageContext';
 import ConfirmationPageAsync from './confirmation-page/ConfirmationPageAsync';
 import FooterAsync from './footer/FooterAsync';
 
 import './App.scss';
 import './semantic.scss';
+import provideLanguage from './intl/provideLanguage';
 
 const App = () => {
   const { language } = useContext(LanguageContext);
-
   return (
     <Fragment>
       <div id="top" tabIndex="-1" className="visually-hidden">
@@ -28,13 +28,16 @@ const App = () => {
           <main className="App__Main">
             <div className="App__MainContainer">
               <Switch>
-                <Redirect exact={true} from="/" to={`home/${language}`} />
-                <Route path="/home/:locale" component={HomePageAsync} />
-                <Route path="/register/:locale" component={SignupPageAsync} />
+                <Route path={`/${language}/home`} component={HomePageAsync} />
                 <Route
-                  path="/confirmation/:locale"
+                  path={`/${language}/register`}
+                  component={SignupPageAsync}
+                />
+                <Route
+                  path={`/${language}/confirmation`}
                   component={ConfirmationPageAsync}
                 />
+                <Redirect to={`/${language}/home`} />
               </Switch>
             </div>
           </main>
@@ -47,4 +50,4 @@ const App = () => {
   );
 };
 
-export default withIntlManager(App);
+export default provideLanguage(App);

@@ -20,17 +20,21 @@ const Header = () => {
     setPageDescription(getKey('description', messages));
   });
 
+  const getUrlWithLanguage = url => {
+    return `/${language}/${url}`;
+  };
+
   return (
     <Menu inverted className="Header">
-      <Nav to={'/home/' + language} color="white">
+      <Nav to={getUrlWithLanguage('home')} color="white">
         <Logo className="Header__logo" width={60} height={45} inverted />
       </Nav>
-      <Menu.Item as={Nav} name="home" to={'/home/' + language}>
+      <Menu.Item as={Nav} name="home" to={getUrlWithLanguage('home')}>
         {getKey('header.information', messages)}
       </Menu.Item>
 
       {configuration.registration.enabled ? (
-        <Menu.Item as={Nav} name="register" to={'/register/' + language}>
+        <Menu.Item as={Nav} name="register" to={getUrlWithLanguage('register')}>
           {getKey('header.register', messages)}
         </Menu.Item>
       ) : null}

@@ -18,7 +18,7 @@ const SignupForm = ({ handleSubmit, handleChange, state, total }) => {
   };
 
   if (state.success) {
-    return <Redirect to={`/confirmation/${language}`} />;
+    return <Redirect to={`/${language}/confirmation`} />;
   }
 
   return (

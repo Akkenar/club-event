@@ -1,5 +1,4 @@
 import React, { Suspense } from 'react';
-import Loader from '../loader/Loader';
 
 const Lazy = React.lazy(() =>
   import(/* webpackChunkName: 'signup', webpackPrefetch: true */ './SignupPage')
@@ -8,7 +7,7 @@ const Lazy = React.lazy(() =>
 function SignupPageAsync() {
   return (
     <div>
-      <Suspense fallback={<Loader />}>
+      <Suspense fallback={null}>
         <Lazy />
       </Suspense>
     </div>

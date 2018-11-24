@@ -16,6 +16,7 @@ const DEFAULT_STATE = {
   lastName: '',
   club: '',
   email: '',
+  address: '',
   comment: '',
   meeting: '0',
   dinner: '0',
@@ -116,6 +117,7 @@ class SignupFormContainer extends React.Component {
     const errors = {
       firstName: !this.state.firstName,
       lastName: !this.state.lastName,
+      address: !this.state.address,
       club: !this.state.club,
       meeting: !+this.state.meeting,
       email: !this.state.email || !this.state.email.match(emailRegex),

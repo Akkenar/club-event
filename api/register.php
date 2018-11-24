@@ -90,6 +90,7 @@ function saveData($db, $data, $reference, $total)
   $club = $db->real_escape_string($data['club']);
   $email = $db->real_escape_string($data['email']);
   $comment = $db->real_escape_string($data['comment']);
+  $address = $db->real_escape_string($data['address']);
   $meeting = $db->real_escape_string($data['meeting']);
   $dinner = $db->real_escape_string($data['dinner']);
   $sleeping = $db->real_escape_string($data['sleeping']);
@@ -105,6 +106,7 @@ function saveData($db, $data, $reference, $total)
     club,
     email,
     comment,
+    address,
     meeting,
     dinner,
     sleeping,
@@ -119,6 +121,7 @@ function saveData($db, $data, $reference, $total)
     \"$club\",
     \"$email\",
     \"$comment\",
+    \"$address\",
     \"$meeting\",
     \"$dinner\",
     \"$sleeping\",

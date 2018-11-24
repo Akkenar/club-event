@@ -50,6 +50,7 @@ const SignupForm = ({ handleSubmit, handleChange, state, total }) => {
               onChange={handleChange}
               required
               aria-invalid={state.errors.firstName}
+              maxLength={255}
             />
           </Form.Field>
           <Form.Field required error={state.errors.lastName}>
@@ -67,6 +68,7 @@ const SignupForm = ({ handleSubmit, handleChange, state, total }) => {
               onChange={handleChange}
               required
               aria-invalid={state.errors.lastName}
+              maxLength={255}
             />
           </Form.Field>
         </Form.Group>
@@ -80,6 +82,7 @@ const SignupForm = ({ handleSubmit, handleChange, state, total }) => {
             onChange={handleChange}
             required
             aria-invalid={state.errors.club}
+            maxLength={255}
           />
         </Form.Field>
         <Form.Field required error={state.errors.email}>
@@ -96,12 +99,30 @@ const SignupForm = ({ handleSubmit, handleChange, state, total }) => {
             aria-invalid={state.errors.email}
             aria-describedby={state.errors.email ? 'email-error' : null}
             type="email"
+            maxLength={255}
           />
           <Message
             error
             id="email-error"
             visible={state.errors.email}
             content={getKey('register.form.email.error.message', messages)}
+          />
+        </Form.Field>
+        <Form.Field required error={state.errors.address}>
+          <label htmlFor="address">
+            {getKey('register.form.address', messages)}
+          </label>
+          <textarea
+            id="address"
+            name="address"
+            placeholder={getKey('register.form.address.placeholder', messages)}
+            value={state.address}
+            onChange={handleChange}
+            required
+            aria-invalid={state.errors.address}
+            maxLength={500}
+            aria-multiline={true}
+            rows={4}
           />
         </Form.Field>
       </Segment>
@@ -134,9 +155,9 @@ const SignupForm = ({ handleSubmit, handleChange, state, total }) => {
           </select>
         </Form.Field>
         <Header dividing as={'h3'}>
-          {getKey('register.form.saturday', messages)}
+          {getKey('register.form.food', messages)}
         </Header>
-        <p>{getKey('register.form.saturday.description', messages)}</p>
+        <p>{getKey('register.form.food.description', messages)}</p>
         <Form.Group widths="equal">
           <BookingField
             state={state}
@@ -145,28 +166,28 @@ const SignupForm = ({ handleSubmit, handleChange, state, total }) => {
           />
           <BookingField
             state={state}
-            name="sleeping"
-            handleChange={handleChange}
-          />
-          <BookingField
-            state={state}
-            name="camping"
-            handleChange={handleChange}
-          />
-        </Form.Group>
-        <Header dividing as={'h3'}>
-          {getKey('register.form.sunday', messages)}
-        </Header>
-        <p>{getKey('register.form.sunday.description', messages)}</p>
-        <Form.Group widths="equal">
-          <BookingField
-            state={state}
             name="breakfast"
             handleChange={handleChange}
           />
           <BookingField
             state={state}
             name="picknick"
+            handleChange={handleChange}
+          />
+        </Form.Group>
+        <Header dividing as={'h3'}>
+          {getKey('register.form.accommodation', messages)}
+        </Header>
+        <p>{getKey('register.form.accommodation.description', messages)}</p>
+        <Form.Group widths="equal">
+          <BookingField
+            state={state}
+            name="sleeping"
+            handleChange={handleChange}
+          />
+          <BookingField
+            state={state}
+            name="camping"
             handleChange={handleChange}
           />
         </Form.Group>
@@ -184,6 +205,7 @@ const SignupForm = ({ handleSubmit, handleChange, state, total }) => {
             placeholder={getKey('register.form.comment.placeholder', messages)}
             value={state.comment}
             onChange={handleChange}
+            maxLength={255}
           />
         </Form.Field>
       </Segment>

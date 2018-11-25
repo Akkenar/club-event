@@ -149,7 +149,7 @@ class SignupFormContainer extends React.Component {
   render() {
     return (
       <Fragment>
-        {this.state.sending ? <Loader delay={0} /> : null}
+        {this.state.sending ? <Loader /> : null}
         <SignupForm
           state={this.state}
           handleChange={this.handleChange}

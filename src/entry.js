@@ -1,18 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// IE sucks...
+
+// Because IE doesn't support promises, we need to load this polyfill
+// in all cases as our strategy for loading the file depends on promises.
 import 'es6-promise/auto';
 
 import App from './App';
 
 function renderApp() {
-  const AppWithStore = () => <App />;
-
-  ReactDOM.render(<AppWithStore />, document.getElementById('root'));
+  ReactDOM.render(<App />, document.getElementById('root'));
 }
 
 // Simple way to detect whether the browser needs polyfill.
-if (typeof window.fetch === 'function') {
+const requiresPolyfill =
+  typeof window.fetch !== 'function' ||
+  typeof window.IntersectionObserver !== 'function';
+
+if (!requiresPolyfill) {
   renderApp();
 } else {
   import(/* webpackChunkName: 'polyfill' */ './polyfill').then(() => {

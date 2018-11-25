@@ -136,7 +136,7 @@ export default {
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
       {
-        test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
+        test: [/\.webp$/, /\.jpe?g$/, /\.png$/],
         loader: require.resolve('url-loader'),
         options: {
           limit: 10000,

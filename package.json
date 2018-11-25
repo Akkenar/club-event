@@ -59,6 +59,7 @@
   "dependencies": {
     "corejs": "1.0.0",
     "es6-promise": "4.2.5",
+    "intersection-observer": "0.5.1",
     "react": "16.7.0-alpha.2",
     "react-dom": "16.7.0-alpha.2",
     "react-router-dom": "4.3.1",

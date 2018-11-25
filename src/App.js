@@ -4,7 +4,6 @@ import Header from './header/Header';
 
 import SignupPageAsync from './signup-page/SignupPageAsync';
 import HomePageAsync from './home-page/HomePageAsync';
-import { provideLanguageInRoute } from './intl/provideLanguageInRoute';
 import LanguageContext from './intl/LanguageContext';
 import ConfirmationPageAsync from './confirmation-page/ConfirmationPageAsync';
 import FooterAsync from './footer/FooterAsync';

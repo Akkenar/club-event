@@ -36,7 +36,5 @@
   "register.form.counts.camping": "Camping",
   "register.form.counts.breakfast": "Breakfast",
   "register.form.counts.picknick": "Picknick for Sunday lunch",
-  "register.form.counts.total": "Total price",
-  "register.form.comment": "Comment",
-  "register.form.comment.placeholder": "Any extra comment, such as allergies, etc..."
+  "register.form.counts.total": "Total price"
 }

@@ -17,7 +17,6 @@ const DEFAULT_STATE = {
   club: '',
   email: '',
   address: '',
-  comment: '',
   meeting: '0',
   dinner: '0',
   sleeping: '0',

@@ -40,7 +40,5 @@
   "register.form.counts.breakfast": "Petit déjeuné",
   "register.form.counts.picknick": "Pick-nick pour dimanche midi",
   "register.form.counts.total": "Prix total",
-  "register.form.comment": "Commentaire",
-  "register.form.comment.placeholder": "Un commentaire, tel qu'une mention d'une allergie",
   "confirmation.page.title": "Confirmation de votre inscription"
 }

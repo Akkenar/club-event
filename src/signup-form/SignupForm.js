@@ -194,20 +194,6 @@ const SignupForm = ({ handleSubmit, handleChange, state, total }) => {
         <div className="SignupForm__total-price">
           {getKey('register.form.counts.total', messages)} : CHF {total}
         </div>
-        <Form.Field>
-          <label htmlFor="comment">
-            {getKey('register.form.comment', messages)}
-          </label>
-          <textarea
-            aria-multiline={true}
-            id="comment"
-            name="comment"
-            placeholder={getKey('register.form.comment.placeholder', messages)}
-            value={state.comment}
-            onChange={handleChange}
-            maxLength={255}
-          />
-        </Form.Field>
       </Segment>
       <Message
         error

@@ -9,7 +9,6 @@ CREATE TABLE inscriptions (
   lastName varchar(255) not null,
   email varchar(255) not null,
   club varchar(255) not null,
-  comment varchar(255) not null,
   address varchar(500) not null,
   total smallint unsigned not null,
   meeting smallint unsigned not null,

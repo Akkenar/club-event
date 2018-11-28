@@ -2,6 +2,8 @@ import React from 'react';
 import Image from './Image';
 import Placeholder from './Placeholder';
 
+import './LazyImage.scss';
+
 const OBSERVER_OPTIONS = {
   rootMargin: '0px 0px 0px 50px',
 };
@@ -63,6 +65,7 @@ class LazyImage extends React.Component {
     if (!isDisplayed) {
       return (
         <Placeholder
+          className="LazyImage"
           src={src}
           height={height}
           width={width}
@@ -74,6 +77,7 @@ class LazyImage extends React.Component {
 
     return (
       <Image
+        className="LazyImage"
         src={src}
         srcwebp={srcwebp}
         height={height}

@@ -5,7 +5,10 @@ import { setPageTitle } from '../page.lib';
 import { Header } from 'semantic-ui-react';
 
 import { getSimpleStore } from '../simpleStore';
-import Logo from '../logo/Logo';
+import LazyImage from '../lazy-image/LazyImage';
+
+import img from '../assets/Zsolt-Sarkozi-Grottes-aux-Fees-17.jpg';
+import imgwebp from '../assets/Zsolt-Sarkozi-Grottes-aux-Fees-17.webp';
 
 function format(confirmation, total, reference) {
   return confirmation
@@ -28,7 +31,12 @@ const ConfirmationPage = () => {
     <Fragment>
       <Header as="h1">{getKey('confirmation.page.title', messages)}</Header>
       <div dangerouslySetInnerHTML={{ __html: confirmationMessage }} />
-      <Logo big />
+      <LazyImage
+        width={320}
+        src={img}
+        srcwebp={imgwebp}
+        alt={'Photo: Zsolt Sarkozi'}
+      />
     </Fragment>
   );
 };

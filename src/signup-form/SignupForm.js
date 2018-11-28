@@ -137,7 +137,6 @@ const SignupForm = ({ handleSubmit, handleChange, state, total }) => {
               {getKey('register.form.address.no', messages)}
             </label>
             <input
-              type="number"
               id="no"
               name="no"
               placeholder={getKey(

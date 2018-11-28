@@ -129,7 +129,7 @@ export default {
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        use: ['babel-loader?cacheDirectory'],
+        use: ['babel-loader'],
       },
       {
         test: /\.s?css$/,

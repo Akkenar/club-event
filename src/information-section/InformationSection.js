@@ -2,7 +2,7 @@ import React, { Fragment, useContext } from 'react';
 import LanguageContext from '../intl/LanguageContext';
 import getKey from '../intl/getKey';
 import { Link } from 'react-router-dom';
-import { Button, Header } from 'semantic-ui-react';
+import { Button, Header, Message } from 'semantic-ui-react';
 import configuration from '../configuration';
 
 import './InformationSection.scss';
@@ -26,7 +26,9 @@ const InformationSection = () => {
           </Button>
         </div>
       ) : (
-        <p>{getKey('home.page.startofregistration', messages)}</p>
+        <Message warning>
+          {getKey('home.page.startofregistration', messages)}
+        </Message>
       )}
     </Fragment>
   );

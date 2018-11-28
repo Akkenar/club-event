@@ -1,7 +1,7 @@
 {
   "name": "club-event-subscription",
   "version": "1.0.0",
-  "description": "Registrer to a club event",
+  "description": "Register to a club event",
   "main": "index.js",
   "scripts": {
     "build": "NODE_ENV=production webpack --config webpack.config.babel.js",

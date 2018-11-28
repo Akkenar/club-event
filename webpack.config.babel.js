@@ -5,6 +5,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import * as bundle from 'webpack-bundle-analyzer';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import HTMLInlineCSSWebpackPlugin from 'html-inline-css-webpack-plugin';
+import OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 
 const isInspection = process.env.NODE_ENV === 'inspect';
 const isProduction = isInspection || process.env.NODE_ENV === 'production';
@@ -17,6 +18,13 @@ const prodPlugins = [
     'process.env.NODE_ENV': JSON.stringify('production'),
   }),
   new webpack.optimize.ModuleConcatenationPlugin(),
+  new OptimizeCssAssetsPlugin({
+    cssProcessor: require('cssnano'),
+    cssProcessorPluginOptions: {
+      preset: ['default', { discardComments: { removeAll: true } }],
+    },
+    canPrint: true,
+  }),
 ];
 
 const commonPlugins = [

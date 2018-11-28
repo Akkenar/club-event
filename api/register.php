@@ -87,7 +87,10 @@ function saveData($db, $data, $reference, $total)
   $lastName = $db->real_escape_string($data['lastName']);
   $club = $db->real_escape_string($data['club']);
   $email = $db->real_escape_string($data['email']);
-  $address = $db->real_escape_string($data['address']);
+  $street = $db->real_escape_string($data['street']);
+  $no = $db->real_escape_string($data['no']);
+  $npa = $db->real_escape_string($data['npa']);
+  $locality = $db->real_escape_string($data['locality']);
   $dinner = $db->real_escape_string($data['dinner']);
   $sleeping = $db->real_escape_string($data['sleeping']);
   $camping = $db->real_escape_string($data['camping']);
@@ -101,7 +104,10 @@ function saveData($db, $data, $reference, $total)
     lastName,
     club,
     email,
-    address,
+    street,
+    no,
+    npa,
+    locality,
     dinner,
     sleeping,
     camping,
@@ -114,7 +120,10 @@ function saveData($db, $data, $reference, $total)
     \"$lastName\",
     \"$club\",
     \"$email\",
-    \"$address\",
+    \"$street\",
+    \"$no\",
+    \"$npa\",
+    \"$locality\",
     \"$dinner\",
     \"$sleeping\",
     \"$camping\",

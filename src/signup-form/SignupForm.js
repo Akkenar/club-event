@@ -100,6 +100,7 @@ const SignupForm = ({ handleSubmit, handleChange, state, total }) => {
             aria-describedby={state.errors.email ? 'email-error' : null}
             type="email"
             maxLength={255}
+            autoComplete="email"
           />
           <Message
             error
@@ -108,23 +109,89 @@ const SignupForm = ({ handleSubmit, handleChange, state, total }) => {
             content={getKey('register.form.email.error.message', messages)}
           />
         </Form.Field>
-        <Form.Field required error={state.errors.address}>
-          <label htmlFor="address">
-            {getKey('register.form.address', messages)}
-          </label>
-          <textarea
-            id="address"
-            name="address"
-            placeholder={getKey('register.form.address.placeholder', messages)}
-            value={state.address}
-            onChange={handleChange}
-            required
-            aria-invalid={state.errors.address}
-            maxLength={500}
-            aria-multiline={true}
-            rows={4}
-          />
-        </Form.Field>
+        <Header dividing as={'h3'}>
+          {getKey('register.form.address', messages)}
+        </Header>
+        <Form.Group widths={16}>
+          <Form.Field width={13} required error={state.errors.street}>
+            <label htmlFor="street">
+              {getKey('register.form.address.street', messages)}
+            </label>
+            <input
+              id="street"
+              name="street"
+              placeholder={getKey(
+                'register.form.address.street.placeholder',
+                messages
+              )}
+              value={state.street}
+              onChange={handleChange}
+              required
+              aria-invalid={state.errors.street}
+              maxLength={255}
+              autoComplete="street-address"
+            />
+          </Form.Field>
+          <Form.Field width={3} required error={state.errors.no}>
+            <label htmlFor="no">
+              {getKey('register.form.address.no', messages)}
+            </label>
+            <input
+              type="number"
+              id="no"
+              name="no"
+              placeholder={getKey(
+                'register.form.address.no.placeholder',
+                messages
+              )}
+              value={state.no}
+              onChange={handleChange}
+              required
+              aria-invalid={state.errors.no}
+              maxLength={10}
+            />
+          </Form.Field>
+        </Form.Group>
+        <Form.Group widths="equal">
+          <Form.Field required error={state.errors.npa}>
+            <label htmlFor="npa">
+              {getKey('register.form.address.npa', messages)}
+            </label>
+            <input
+              id="npa"
+              name="npa"
+              placeholder={getKey(
+                'register.form.address.npa.placeholder',
+                messages
+              )}
+              value={state.npa}
+              onChange={handleChange}
+              required
+              aria-invalid={state.errors.npa}
+              maxLength={255}
+              type="number"
+              autoComplete="postal-code"
+            />
+          </Form.Field>
+          <Form.Field required error={state.errors.locality}>
+            <label htmlFor="locality">
+              {getKey('register.form.address.locality', messages)}
+            </label>
+            <input
+              id="locality"
+              name="locality"
+              placeholder={getKey(
+                'register.form.address.locality.placeholder',
+                messages
+              )}
+              value={state.locality}
+              onChange={handleChange}
+              required
+              aria-invalid={state.errors.locality}
+              maxLength={255}
+            />
+          </Form.Field>
+        </Form.Group>
       </Segment>
       <Segment>
         <Header dividing as={'h2'}>

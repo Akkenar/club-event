@@ -1,4 +1,3 @@
-import React from 'react';
 import { provideLanguageInRoute } from './provideLanguageInRoute';
 import provideMessages from './provideMessages';
 

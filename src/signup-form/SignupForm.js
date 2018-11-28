@@ -131,29 +131,6 @@ const SignupForm = ({ handleSubmit, handleChange, state, total }) => {
           {getKey('register.form.counts', messages)}
         </Header>
         <p>{getKey('register.form.counts.description', messages)}</p>
-        <Form.Field required error={state.errors.meeting}>
-          <label htmlFor="meeting">
-            {getKey('register.form.meeting', messages)}
-          </label>
-          <select
-            id="meeting"
-            name="meeting"
-            value={state.meeting}
-            onChange={handleChange}
-            required
-            aria-invalid={state.errors.meeting}
-          >
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-          </select>
-        </Form.Field>
         <Header dividing as={'h3'}>
           {getKey('register.form.food', messages)}
         </Header>
@@ -191,6 +168,11 @@ const SignupForm = ({ handleSubmit, handleChange, state, total }) => {
             handleChange={handleChange}
           />
         </Form.Group>
+        <Message
+          error
+          visible={state.errors.total}
+          content={getKey('register.form.error.total', messages)}
+        />
         <div className="SignupForm__total-price">
           {getKey('register.form.counts.total', messages)} : CHF {total}
         </div>

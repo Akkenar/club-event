@@ -36,10 +36,8 @@ saveData($db, $DATA, $reference, $total);
 // At this stage we don't need the Db anymore
 disconnectDB();
 
-// Confirm the registration to the user, only if there's a total
-if ($total !== 0) {
-  sendEmail($email, $total, $reference, $language);
-}
+// Confirm the registration to the user
+sendEmail($email, $total, $reference, $language);
 
 // Success!
 echo '{"result": "success", "reference": "' .
@@ -90,7 +88,6 @@ function saveData($db, $data, $reference, $total)
   $club = $db->real_escape_string($data['club']);
   $email = $db->real_escape_string($data['email']);
   $address = $db->real_escape_string($data['address']);
-  $meeting = $db->real_escape_string($data['meeting']);
   $dinner = $db->real_escape_string($data['dinner']);
   $sleeping = $db->real_escape_string($data['sleeping']);
   $camping = $db->real_escape_string($data['camping']);
@@ -105,7 +102,6 @@ function saveData($db, $data, $reference, $total)
     club,
     email,
     address,
-    meeting,
     dinner,
     sleeping,
     camping,
@@ -118,9 +114,7 @@ function saveData($db, $data, $reference, $total)
     \"$lastName\",
     \"$club\",
     \"$email\",
-    \"$comment\",
     \"$address\",
-    \"$meeting\",
     \"$dinner\",
     \"$sleeping\",
     \"$camping\",

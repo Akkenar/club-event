@@ -11,7 +11,6 @@ CREATE TABLE inscriptions (
   club varchar(255) not null,
   address varchar(500) not null,
   total smallint unsigned not null,
-  meeting smallint unsigned not null,
   dinner smallint unsigned not null,
   sleeping smallint unsigned not null,
   camping smallint unsigned not null,

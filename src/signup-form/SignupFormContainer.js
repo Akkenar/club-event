@@ -17,7 +17,6 @@ const DEFAULT_STATE = {
   club: '',
   email: '',
   address: '',
-  meeting: '0',
   dinner: '0',
   sleeping: '0',
   camping: '0',
@@ -118,8 +117,8 @@ class SignupFormContainer extends React.Component {
       lastName: !this.state.lastName,
       address: !this.state.address,
       club: !this.state.club,
-      meeting: !+this.state.meeting,
       email: !this.state.email || !this.state.email.match(emailRegex),
+      total: !this.getTotalPrice(),
       recaptcha: !getCaptchaResponse(),
     };
 

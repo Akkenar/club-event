@@ -12,7 +12,6 @@ import imgwebp from '../assets/Zsolt-Sarkozi-Grottes-aux-Fees-17.webp';
 
 function format(confirmation, total, reference) {
   return confirmation
-    .replace('%DISPLAY_PAYMENT%', +total ? 'block' : 'none')
     .replace('%TOTAL%', total)
     .replace('%REFERENCE%', reference);
 }
@@ -23,7 +22,7 @@ const ConfirmationPage = () => {
     setPageTitle(getKey('confirmation.page.title', messages));
   });
 
-  // From the signup form.
+  // From the register form.
   const { total, reference } = getSimpleStore();
   const confirmationMessage = format(messages.confirmation, total, reference);
 

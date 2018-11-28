@@ -27,8 +27,8 @@ validateCaptcha($DATA['recaptcha']);
 // Compute the total based on the prices
 $total = getTotal($DATA, $prices);
 
-// Generate a reference number.
-$reference = uniqid();
+// Generate a reference number based on the last name to ease payment reconciliation
+$reference = getUniqId($DATA['lastName']);
 
 // Save the data
 saveData($db, $DATA, $reference, $total);
@@ -131,5 +131,12 @@ function saveData($db, $data, $reference, $total)
     \"$breakfast\"
   )";
   sendRequestDB($sql);
+}
+
+function getUniqId($lastName)
+{
+  $prefix = substr($lastName, 0, 3);
+  $id = substr(uniqid(), 0, 7);
+  return strtoupper($prefix . '-' . $id);
 }
 ?>

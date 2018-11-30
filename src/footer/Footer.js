@@ -13,7 +13,7 @@ const Footer = () => {
     <Menu inverted className="Footer">
       <Menu.Item>&#169; GSL 2019</Menu.Item>
       <Menu.Item>
-        <a href="mailto:info@speleo-lausanne.ch">Contact</a>
+        <a href="mailto:ad-sss-info@speleo-lausanne.ch">Contact</a>
       </Menu.Item>
       <Dropdown
         className="link item right Footer__language-switcher"

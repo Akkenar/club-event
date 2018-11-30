@@ -9,6 +9,7 @@ import LazyImage from '../lazy-image/LazyImage';
 
 import img from '../assets/Zsolt-Sarkozi-Grottes-aux-Fees-17.jpg';
 import imgwebp from '../assets/Zsolt-Sarkozi-Grottes-aux-Fees-17.webp';
+import OrderRecap from '../order-recap/OrderRecap';
 
 function format(confirmation, total, reference) {
   return confirmation
@@ -23,13 +24,15 @@ const ConfirmationPage = () => {
   });
 
   // From the register form.
-  const { total, reference } = getSimpleStore();
+  const data = getSimpleStore();
+  const { total, reference } = data;
   const confirmationMessage = format(messages.confirmation, total, reference);
 
   return (
     <Fragment>
       <Header as="h1">{getKey('confirmation.page.title', messages)}</Header>
       <div dangerouslySetInnerHTML={{ __html: confirmationMessage }} />
+      <OrderRecap {...data} />
       <LazyImage
         width={320}
         src={img}

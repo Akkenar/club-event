@@ -1,0 +1,32 @@
+.OrderRecap {
+  width: 100%;
+}
+@import url('~semantic-ui-css/components/segment.min.css');
+
+.OrderRecap__container {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+}
+
+.OrderRecap__title {
+  font-weight: bold;
+  text-align: right;
+  margin: 0.2em 0;
+  flex: 0 0 30%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+
+  &::after {
+    content: ' : ';
+  }
+}
+
+.OrderRecap__value {
+  flex: 0 0 70%;
+  margin: 0.2em 0 0.2em auto;
+  padding-left: 1em;
+  text-align: left;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

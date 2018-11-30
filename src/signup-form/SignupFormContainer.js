@@ -69,12 +69,9 @@ class SignupFormContainer extends React.Component {
     goToTop();
   }
 
-  handleSuccess({ result, total, reference }) {
+  handleSuccess({ result, total, reference }, data) {
     // To be able to share data between pages.
-    setSimpleStore({
-      total,
-      reference,
-    });
+    setSimpleStore(Object.assign({}, data, { total, reference }));
 
     if (result === 'success') {
       this.setState({
@@ -101,7 +98,7 @@ class SignupFormContainer extends React.Component {
     const data = this.getFormData();
 
     sendData(data)
-      .then(this.handleSuccess, this.handleError)
+      .then(result => this.handleSuccess(result, data), this.handleError)
       .catch(this.handleError);
   }
 

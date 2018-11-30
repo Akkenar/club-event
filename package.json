@@ -9,9 +9,9 @@
     "start": "webpack-dev-server --config webpack.config.babel.js",
     "test": "jest --coverage",
     "lint:js": "eslint --ext .js,.jsx src",
-    "lint:format": "prettier --config ./.prettierrc -l \"{,!(target|coverage|node_modules)/**/,.}/*{.ts,.js,.jsx,.json,.css,.scss,.md,.php}\"",
+    "lint:format": "prettier --config ./.prettierrc -l \"{,!(target|coverage|node_modules)/**/,.}/*{.ts,.js,.jsx,.json,.css,.scss,.md,.php,.html}\"",
     "validate": "npm-run-all lint:* test",
-    "format": "prettier --config ./.prettierrc --write \"{,!(target|coverage|node_modules)/**/,.}/*{.ts,.js,.jsx,.json,.css,.scss,.md,.php}\""
+    "format": "prettier --config ./.prettierrc --write \"{,!(target|coverage|node_modules)/**/,.}/*{.ts,.js,.jsx,.json,.css,.scss,.md,.php,.html}\""
   },
   "author": "",
   "license": "ISC",

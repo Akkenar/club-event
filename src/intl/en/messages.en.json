@@ -43,5 +43,7 @@
   "register.form.counts.camping": "Camping",
   "register.form.counts.breakfast": "Breakfast",
   "register.form.counts.picknick": "Picknick for Sunday lunch",
-  "register.form.counts.total": "Total price"
+  "register.form.counts.total": "Total price",
+  "confirmation.page.title": "Confirmation Page",
+  "confirmation.page.print": "Print the page"
 }

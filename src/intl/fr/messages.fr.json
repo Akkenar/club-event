@@ -47,5 +47,6 @@
   "register.form.counts.breakfast": "Petit déjeuner",
   "register.form.counts.picknick": "Pick-nick pour dimanche midi",
   "register.form.counts.total": "Prix total",
-  "confirmation.page.title": "Confirmation de votre inscription"
+  "confirmation.page.title": "Confirmation de votre inscription",
+  "confirmation.page.print": "Imprimer la page"
 }

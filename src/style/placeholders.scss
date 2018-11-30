@@ -1,0 +1,14 @@
+@import './mixins';
+
+%no-print {
+  @media print {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
+
+%full-width {
+  @include on-narrow-and-medium {
+    width: 100% !important;
+  }
+}

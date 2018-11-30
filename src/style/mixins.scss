@@ -1,0 +1,32 @@
+$breakpoint__narrow-medium: 500px;
+$breakpoint__medium-wide: 768px;
+
+@mixin on-narrow {
+  @media (max-width: $breakpoint__narrow-medium - 1) {
+    @content;
+  }
+}
+
+@mixin on-medium {
+  @media (min-width: $breakpoint__narrow-medium) and (max-width: $breakpoint__medium-wide - 1) {
+    @content;
+  }
+}
+
+@mixin on-wide {
+  @media (min-width: $breakpoint__medium-wide) {
+    @content;
+  }
+}
+
+@mixin on-narrow-and-medium {
+  @media (max-width: $breakpoint__medium-wide - 1) {
+    @content;
+  }
+}
+
+@mixin on-medium-and-wide {
+  @media (min-width: $breakpoint__narrow-medium) {
+    @content;
+  }
+}

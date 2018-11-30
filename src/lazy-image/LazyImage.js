@@ -77,7 +77,7 @@ class LazyImage extends React.Component {
 
     return (
       <Image
-        className="LazyImage"
+        className="LazyImage no-print"
         src={src}
         srcwebp={srcwebp}
         height={height}

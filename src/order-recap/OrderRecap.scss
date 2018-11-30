@@ -1,32 +1,42 @@
+@import url('~semantic-ui-css/components/segment.min.css');
+@import '../style/mixins';
+
 .OrderRecap {
   width: 100%;
 }
-@import url('~semantic-ui-css/components/segment.min.css');
 
 .OrderRecap__container {
-  display: flex;
-  flex-flow: row;
-  flex-wrap: wrap;
+  @include on-medium-and-wide {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+  }
 }
 
 .OrderRecap__title {
   font-weight: bold;
-  text-align: right;
   margin: 0.2em 0;
-  flex: 0 0 30%;
-  text-overflow: ellipsis;
-  overflow: hidden;
 
-  &::after {
-    content: ' : ';
+  @include on-medium-and-wide {
+    flex: 0 0 35%;
+    text-align: right;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+    &::after {
+      content: ' : ';
+    }
   }
 }
 
 .OrderRecap__value {
-  flex: 0 0 70%;
+  flex: 0 0 65%;
   margin: 0.2em 0 0.2em auto;
-  padding-left: 1em;
-  text-align: left;
-  text-overflow: ellipsis;
-  overflow: hidden;
+
+  @include on-medium-and-wide {
+    padding-left: 1em;
+    text-align: left;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
 }

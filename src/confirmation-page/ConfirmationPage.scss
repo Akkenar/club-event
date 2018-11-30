@@ -1,0 +1,9 @@
+@import '../style/placeholders';
+
+.ConfirmationPage__print {
+  @extend %no-print;
+  @extend %full-width;
+
+  display: block !important;
+  margin: 0 auto !important;
+}

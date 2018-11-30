@@ -9,7 +9,9 @@ import ConfirmationPageAsync from './confirmation-page/ConfirmationPageAsync';
 import FooterAsync from './footer/FooterAsync';
 
 import './App.scss';
-import './semantic.scss';
+import './style/semantic.scss';
+import './style/main.scss';
+
 import provideLanguage from './intl/provideLanguage';
 
 const App = () => {
@@ -21,7 +23,7 @@ const App = () => {
       </div>
       <BrowserRouter>
         <div className="App">
-          <header className="App__Header">
+          <header className="App__Header no-print">
             <Header />
           </header>
           <main className="App__Main">
@@ -40,7 +42,7 @@ const App = () => {
               </Switch>
             </div>
           </main>
-          <footer className="App__Footer">
+          <footer className="App__Footer no-print">
             <FooterAsync />
           </footer>
         </div>

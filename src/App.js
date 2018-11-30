@@ -1,7 +1,6 @@
 import React, { Fragment, useContext } from 'react';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
-import Header from './header/Header';
-
+import HeaderAsync from './header/HeaderAsync';
 import SignupPageAsync from './signup-page/SignupPageAsync';
 import HomePageAsync from './home-page/HomePageAsync';
 import LanguageContext from './intl/LanguageContext';
@@ -24,7 +23,7 @@ const App = () => {
       <BrowserRouter>
         <div className="App">
           <header className="App__Header no-print">
-            <Header />
+            <HeaderAsync />
           </header>
           <main className="App__Main">
             <div className="App__MainContainer">

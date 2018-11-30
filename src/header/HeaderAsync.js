@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react';
 
 const Lazy = React.lazy(() =>
-  import(/* webpackChunkName: 'footer', webpackPrefetch: true */ './Footer')
+  import(/* webpackChunkName: 'header', webpackPrefetch: true */ './Header')
 );
 
 function HomePageAsync() {

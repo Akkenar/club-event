@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 import LanguageContext from '../intl/LanguageContext';
 import getKey from '../intl/getKey';
+import { Segment } from 'semantic-ui-react';
 
 import './OrderRecap.scss';
-import { Segment } from 'semantic-ui-react';
 
 const OrderRecap = ({
   firstName,

@@ -21,7 +21,7 @@ $DATA = json_decode(file_get_contents('php://input'), true);
 $email = $DATA['email'];
 $language = $DATA['language'];
 
-// This will break of the captcha isn't valid.
+// This will break if the captcha isn't valid.
 validateCaptcha($DATA['recaptcha']);
 
 // Compute the total based on the prices
@@ -37,7 +37,7 @@ saveData($db, $DATA, $reference, $total);
 disconnectDB();
 
 // Confirm the registration to the user
-sendEmail($email, $total, $reference, $language);
+sendEmail($email, $total, $reference, $language, $DATA);
 
 // Success!
 echo '{"result": "success", "reference": "' .

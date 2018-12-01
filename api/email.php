@@ -6,7 +6,7 @@ require_once './config.php';
 
 $globalTPL = new Template('templates');
 
-function sendEmail($email, $total, $reference, $language)
+function sendEmail($email, $total, $reference, $language, $data)
 {
   if (!$email) {
     die("Email missing");
@@ -15,7 +15,7 @@ function sendEmail($email, $total, $reference, $language)
   $config = readConfig();
 
   // Sujet et message.
-  $message = getBody($total, $reference, $language);
+  $message = getBody($total, $reference, $language, $data);
 
   // Envoi du mail.
   $mail = new PHPMailer();
@@ -51,13 +51,28 @@ function sendEmail($email, $total, $reference, $language)
   }
 }
 
-function getBody($total, $reference, $language)
+function getBody($total, $reference, $language, $data)
 {
   global $globalTPL;
   $globalTPL->set_file('email', 'confirmation_email_' . $language . '.html');
 
+  // Computed fields by the backend
   $globalTPL->set_var('total', $total);
   $globalTPL->set_var('reference', $reference);
+
+  // Data send by the frontend
+  $globalTPL->set_var('firstName', $data['firstName']);
+  $globalTPL->set_var('lastName', $data['lastName']);
+  $globalTPL->set_var('club', $data['club']);
+  $globalTPL->set_var('street', $data['street']);
+  $globalTPL->set_var('no', $data['no']);
+  $globalTPL->set_var('npa', $data['npa']);
+  $globalTPL->set_var('locality', $data['locality']);
+  $globalTPL->set_var('dinner', $data['dinner']);
+  $globalTPL->set_var('sleeping', $data['sleeping']);
+  $globalTPL->set_var('camping', $data['camping']);
+  $globalTPL->set_var('picknick', $data['picknick']);
+  $globalTPL->set_var('breakfast', $data['breakfast']);
 
   return $globalTPL->finish($globalTPL->parse('email', 'email', true));
 }

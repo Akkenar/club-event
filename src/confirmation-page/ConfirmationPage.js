@@ -38,7 +38,7 @@ const ConfirmationPage = () => {
   const { total, reference } = data;
   const confirmationMessage = format(messages.confirmation, total, reference);
 
-  const printButton = typeof supportsPrint() ? (
+  const printButton = supportsPrint() ? (
     <Button
       color="green"
       onClick={printPage}
@@ -52,6 +52,9 @@ const ConfirmationPage = () => {
     <Fragment>
       <Header as="h1">{getKey('confirmation.page.title', messages)}</Header>
       <div dangerouslySetInnerHTML={{ __html: confirmationMessage }} />
+      <Header as="h2">
+        {getKey('confirmation.page.recap.title', messages)}
+      </Header>
       <OrderRecap {...data} />
       {printButton}
       <LazyImage

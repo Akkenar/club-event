@@ -31,6 +31,17 @@ function sendRequestDB($request, $line = __LINE__, $file = __FILE__)
   return $rep;
 }
 
+function fieldNames($result)
+{
+  return mysqli_fetch_fields($result);
+}
+
+function fieldName($result, $field_offset)
+{
+  $properties = mysqli_fetch_field_direct($result, $field_offset);
+  return is_object($properties) ? $properties->name : null;
+}
+
 function manageSQLError($line, $file, $error, $request)
 {
   echo '<div class="sqlerror"><p>SQL Error at line <b>' .

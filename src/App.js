@@ -1,17 +1,17 @@
 import React, { Fragment, useContext } from 'react';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
-import HeaderAsync from './header/HeaderAsync';
+import HeaderAsync from './core/header/HeaderAsync';
 import SignupPageAsync from './signup-page/SignupPageAsync';
 import HomePageAsync from './home-page/HomePageAsync';
-import LanguageContext from './intl/LanguageContext';
+import LanguageContext from './core/intl/LanguageContext';
 import ConfirmationPageAsync from './confirmation-page/ConfirmationPageAsync';
-import FooterAsync from './footer/FooterAsync';
+import FooterAsync from './core/footer/FooterAsync';
 
 import './App.scss';
 import './style/semantic.scss';
 import './style/main.scss';
 
-import provideLanguage from './intl/provideLanguage';
+import provideLanguage from './core/intl/provideLanguage';
 
 const App = () => {
   const { language } = useContext(LanguageContext);

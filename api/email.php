@@ -4,7 +4,7 @@ require_once './lib/phpmailer/PHPMailerAutoload.php';
 require_once './class.template.php';
 require_once './config.php';
 
-$globalTPL = new Template('templates');
+$globalTPL = new Template('../translations');
 
 function sendEmail($email, $total, $reference, $language, $data)
 {
@@ -54,7 +54,7 @@ function sendEmail($email, $total, $reference, $language, $data)
 function getBody($total, $reference, $language, $data)
 {
   global $globalTPL;
-  $globalTPL->set_file('email', 'confirmation_email_' . $language . '.html');
+  $globalTPL->set_file('email', $language . '/confirmation_email.html');
 
   // Computed fields by the backend
   $globalTPL->set_var('total', $total);

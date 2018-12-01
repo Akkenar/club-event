@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
 
 import { Button, Form, Header, Message, Segment } from 'semantic-ui-react';
-import getKey from '../intl/getKey';
-import LanguageContext from '../intl/LanguageContext';
+import getKey from '../../core/intl/getKey';
+import LanguageContext from '../../core/intl/LanguageContext';
 import BookingField from './BookingField';
-import Recaptcha from '../recaptcha/Recaptcha';
+import Recaptcha from '../../core/recaptcha/Recaptcha';
 import { Redirect } from 'react-router-dom';
 
 import './SignupForm.scss';

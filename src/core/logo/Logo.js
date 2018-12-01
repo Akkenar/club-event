@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import logo from '../assets/logo.svg';
+import logo from '../../assets/logo.svg';
 import getKey from '../intl/getKey';
 import LanguageContext from '../intl/LanguageContext';
 

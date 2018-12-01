@@ -1,5 +1,5 @@
 import React from 'react';
-import { goToTop } from '../page.lib';
+import { goToTop } from '../../page.lib';
 import { Dimmer, Loader as SemanticLoader } from 'semantic-ui-react';
 import './Loader.scss';
 

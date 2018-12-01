@@ -1,11 +1,11 @@
 import React, { Fragment } from 'react';
-import Loader from '../loader/Loader';
+import Loader from '../../core/loader/Loader';
 import { sendData } from './signup.service';
 import SignupForm from './SignupForm';
-import { goToTop, setFocusOnError } from '../page.lib';
+import { goToTop, setFocusOnError } from '../../page.lib';
 import { PRICES } from './prices';
-import LanguageContext from '../intl/LanguageContext';
-import { setSimpleStore } from '../simpleStore';
+import LanguageContext from '../../core/intl/LanguageContext';
+import { setSimpleStore } from '../../simpleStore';
 
 const emailRegex = new RegExp(
   /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/

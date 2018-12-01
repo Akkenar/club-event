@@ -1,5 +1,5 @@
 import React from 'react';
-import { setPageLanguage } from '../page.lib';
+import { setPageLanguage } from '../../page.lib';
 import LanguageContext from './LanguageContext';
 
 function importLocale(locale) {

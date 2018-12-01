@@ -61,6 +61,10 @@ const commonPlugins = [
   new CopyWebpackPlugin([
     { from: path.join(__dirname, 'src/favicon.ico') },
     { from: path.join(__dirname, 'api/**/*'), to: 'api' },
+    {
+      from: path.join(__dirname, 'translations/**/*.html'),
+      to: 'translations',
+    },
     { from: path.join(__dirname, '.htaccess') },
     { from: path.join(__dirname, 'robots.txt') },
   ]),

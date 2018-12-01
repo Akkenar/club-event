@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
-import getKey from '../intl/getKey';
+import getKey from '../../core/intl/getKey';
 import { Form } from 'semantic-ui-react';
-import LanguageContext from '../intl/LanguageContext';
+import LanguageContext from '../../core/intl/LanguageContext';
 import { PRICES } from './prices';
 
 const BookingField = ({ name, handleChange, state }) => {

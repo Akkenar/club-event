@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import LanguageContext from '../intl/LanguageContext';
-import getKey from '../intl/getKey';
+import LanguageContext from '../../core/intl/LanguageContext';
+import getKey from '../../core/intl/getKey';
 import { Segment } from 'semantic-ui-react';
 
 import './OrderRecap.scss';

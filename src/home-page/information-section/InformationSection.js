@@ -1,9 +1,9 @@
 import React, { Fragment, useContext } from 'react';
-import LanguageContext from '../intl/LanguageContext';
-import getKey from '../intl/getKey';
+import LanguageContext from '../../core/intl/LanguageContext';
+import getKey from '../../core/intl/getKey';
 import { Link } from 'react-router-dom';
 import { Button, Header, Message } from 'semantic-ui-react';
-import configuration from '../configuration';
+import configuration from '../../configuration';
 
 import './InformationSection.scss';
 

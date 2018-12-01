@@ -1,15 +1,15 @@
 import React, { Fragment, useContext, useEffect } from 'react';
-import getKey from '../intl/getKey';
-import LanguageContext from '../intl/LanguageContext';
+import getKey from '../core/intl/getKey';
+import LanguageContext from '../core/intl/LanguageContext';
 import { setPageTitle } from '../page.lib';
 import { Button, Header } from 'semantic-ui-react';
 
 import { getSimpleStore } from '../simpleStore';
-import LazyImage from '../lazy-image/LazyImage';
+import LazyImage from '../core/lazy-image/LazyImage';
 
 import img from '../assets/Zsolt-Sarkozi-Grottes-aux-Fees-17.jpg';
 import imgwebp from '../assets/Zsolt-Sarkozi-Grottes-aux-Fees-17.webp';
-import OrderRecap from '../order-recap/OrderRecap';
+import OrderRecap from './order-recap/OrderRecap';
 
 import './ConfirmationPage.scss';
 

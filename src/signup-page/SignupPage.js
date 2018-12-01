@@ -1,9 +1,9 @@
 import React, { useContext, useEffect } from 'react';
-import SignupFormContainer from '../signup-form/SignupFormContainer';
+import SignupFormContainer from './signup-form/SignupFormContainer';
 import { Header } from 'semantic-ui-react';
-import getKey from '../intl/getKey';
+import getKey from '../core/intl/getKey';
 import { goToTop, setPageTitle } from '../page.lib';
-import LanguageContext from '../intl/LanguageContext';
+import LanguageContext from '../core/intl/LanguageContext';
 
 const SignupPage = () => {
   const { messages } = useContext(LanguageContext);

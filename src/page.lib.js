@@ -1,5 +1,5 @@
 export function setPageTitle(pageTitle) {
-  document.querySelector('title').innerHTML = pageTitle;
+  document.title = pageTitle;
 }
 
 export function setPageDescription(description) {

@@ -14,6 +14,10 @@ import OrderRecap from './order-recap/OrderRecap';
 import './ConfirmationPage.scss';
 
 function format(confirmation, total, reference) {
+  if (!confirmation) {
+    return confirmation;
+  }
+
   return confirmation
     .replace('%TOTAL%', total)
     .replace('%REFERENCE%', reference);

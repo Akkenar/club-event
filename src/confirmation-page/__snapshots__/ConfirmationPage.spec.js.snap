@@ -1,0 +1,133 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConfirmationPage should match the snapshot 1`] = `
+<body>
+  <div>
+    <h1
+      class="ui header"
+    >
+      confirmation.page.title
+    </h1>
+    <div />
+    <h2
+      class="ui header"
+    >
+      confirmation.page.recap.title
+    </h2>
+    <div
+      class="ui raised segment OrderRecap"
+    >
+      <dl
+        class="OrderRecap__container"
+      >
+        <dd
+          class="OrderRecap__title"
+        >
+          register.form.firstName
+        </dd>
+        <dt
+          class="OrderRecap__value"
+        />
+        <dd
+          class="OrderRecap__title"
+        >
+          register.form.lastName
+        </dd>
+        <dt
+          class="OrderRecap__value"
+        />
+        <dd
+          class="OrderRecap__title"
+        >
+          register.form.club
+        </dd>
+        <dt
+          class="OrderRecap__value"
+        />
+        <dd
+          class="OrderRecap__title"
+        >
+          register.form.address
+        </dd>
+        <dt
+          class="OrderRecap__value"
+        >
+          <address>
+            <div>
+               
+            </div>
+            <div>
+               
+            </div>
+          </address>
+        </dt>
+        <dd
+          class="OrderRecap__title"
+        >
+          register.form.counts.total
+        </dd>
+        <dt
+          class="OrderRecap__value"
+        >
+          CHF 
+        </dt>
+      </dl>
+      <dl
+        class="OrderRecap__container"
+      >
+        <dd
+          class="OrderRecap__title"
+        >
+          register.form.counts.dinner
+        </dd>
+        <dt
+          class="OrderRecap__value"
+        />
+        <dd
+          class="OrderRecap__title"
+        >
+          register.form.counts.picknick
+        </dd>
+        <dt
+          class="OrderRecap__value"
+        />
+        <dd
+          class="OrderRecap__title"
+        >
+          register.form.counts.breakfast
+        </dd>
+        <dt
+          class="OrderRecap__value"
+        />
+        <dd
+          class="OrderRecap__title"
+        >
+          register.form.counts.sleeping
+        </dd>
+        <dt
+          class="OrderRecap__value"
+        />
+        <dd
+          class="OrderRecap__title"
+        >
+          register.form.counts.camping
+        </dd>
+        <dt
+          class="OrderRecap__value"
+        />
+      </dl>
+    </div>
+    <svg
+      aria-label="Photo: Zsolt Sarkozi"
+      class="LazyImage"
+      viewBox="0 0 1024 1024"
+      width="320"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d=""
+      />
+    </svg>
+  </div>
+</body>
+`;

@@ -1,6 +1,9 @@
 <?php
 include_once './database.php';
 include_once './csv.php';
+include_once './password.php';
+
+protectWithPassword();
 
 $db = connectDb();
 

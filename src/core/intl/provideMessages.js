@@ -1,21 +1,7 @@
 import React from 'react';
 import { setPageLanguage } from '../../page.lib';
 import LanguageContext from './LanguageContext';
-
-function importLocale(locale) {
-  switch (locale) {
-    case 'en':
-      return import(/* webpackChunkName: 'en' */ './en');
-    case 'de':
-      return import(/* webpackChunkName: 'de' */ './de');
-    case 'fr':
-      return import(/* webpackChunkName: 'fr' */ './fr');
-    case 'it':
-      return import(/* webpackChunkName: 'it' */ './it');
-    default:
-      throw new Error(`${locale} not supported`);
-  }
-}
+import { importLanguage } from './importLanguage';
 
 export default function provideMessages(Component) {
   return class LanguageAndMessages extends React.Component {
@@ -37,7 +23,7 @@ export default function provideMessages(Component) {
       setPageLanguage(lang);
 
       // Code splitting
-      importLocale(lang).then(module => {
+      importLanguage(lang).then(module => {
         const { messages, confirmation, information } = module.default;
         this.setState({
           language: lang,

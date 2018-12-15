@@ -656,7 +656,6 @@ exports[`SignupPage should match the snapshot 1`] = `
         >
           <button
             class="ui black button full-width SignupForm__submit-button"
-            role="button"
             type="submit"
           >
             register.form.submit

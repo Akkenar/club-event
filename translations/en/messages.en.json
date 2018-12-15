@@ -39,6 +39,7 @@
   "register.form.counts": "Bookings for the AD, food and accommodation",
   "register.form.counts.description": "You must book a seat for the AD. Optionally, you can book accommodations and food.",
   "register.form.counts.dinner": "Dinner",
+  "register.form.counts.vegetarian": "Dinner (vegetarian)",
   "register.form.counts.sleeping": "Sleeping",
   "register.form.counts.camping": "Camping",
   "register.form.counts.breakfast": "Breakfast",

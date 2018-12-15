@@ -10,6 +10,7 @@ const OrderRecap = ({
   lastName,
   club,
   dinner,
+  vegetarian,
   sleeping,
   camping,
   picknick,
@@ -64,6 +65,11 @@ const OrderRecap = ({
           {getKey('register.form.counts.dinner', messages)}
         </dd>
         <dt className="OrderRecap__value">{dinner}</dt>
+
+        <dd className="OrderRecap__title">
+          {getKey('register.form.counts.vegetarian', messages)}
+        </dd>
+        <dt className="OrderRecap__value">{vegetarian}</dt>
 
         <dd className="OrderRecap__title">
           {getKey('register.form.counts.picknick', messages)}

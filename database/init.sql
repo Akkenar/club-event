@@ -23,6 +23,7 @@ CREATE TABLE inscriptions
   locality  varchar(255) not null,
   total     smallint unsigned not null,
   dinner    smallint unsigned not null,
+  vegetarian    smallint unsigned not null,
   sleeping  smallint unsigned not null,
   camping   smallint unsigned not null,
   picknick  smallint unsigned not null,

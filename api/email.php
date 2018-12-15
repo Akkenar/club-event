@@ -69,6 +69,7 @@ function getBody($total, $reference, $language, $data)
   $globalTPL->set_var('npa', $data['npa']);
   $globalTPL->set_var('locality', $data['locality']);
   $globalTPL->set_var('dinner', $data['dinner']);
+  $globalTPL->set_var('vegetarian', $data['vegetarian']);
   $globalTPL->set_var('sleeping', $data['sleeping']);
   $globalTPL->set_var('camping', $data['camping']);
   $globalTPL->set_var('picknick', $data['picknick']);

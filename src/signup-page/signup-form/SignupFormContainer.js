@@ -21,6 +21,7 @@ const DEFAULT_STATE = {
   npa: '',
   locality: '',
   dinner: '0',
+  vegetarian: '0',
   sleeping: '0',
   camping: '0',
   picknick: '0',
@@ -135,6 +136,7 @@ class SignupFormContainer extends React.Component {
   getTotalPrice() {
     return (
       this.getPriceForItem('dinner') +
+      this.getPriceForItem('vegetarian') +
       this.getPriceForItem('sleeping') +
       this.getPriceForItem('camping') +
       this.getPriceForItem('picknick') +

@@ -209,6 +209,13 @@ const SignupForm = ({ handleSubmit, handleChange, state, total }) => {
           />
           <BookingField
             state={state}
+            name="vegetarian"
+            handleChange={handleChange}
+          />
+        </Form.Group>
+        <Form.Group widths="equal">
+          <BookingField
+            state={state}
             name="breakfast"
             handleChange={handleChange}
           />

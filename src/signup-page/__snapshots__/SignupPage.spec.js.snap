@@ -309,6 +309,82 @@ exports[`SignupPage should match the snapshot 1`] = `
               class="field"
             >
               <label
+                for="vegetarian"
+              >
+                register.form.counts.vegetarian
+                 (CHF 
+                45
+                )
+              </label>
+              <select
+                id="vegetarian"
+                name="vegetarian"
+              >
+                <option
+                  value="0"
+                >
+                  0
+                </option>
+                <option
+                  value="1"
+                >
+                  1 (CHF 45)
+                </option>
+                <option
+                  value="2"
+                >
+                  2 (CHF 90)
+                </option>
+                <option
+                  value="3"
+                >
+                  3 (CHF 135)
+                </option>
+                <option
+                  value="4"
+                >
+                  4 (CHF 180)
+                </option>
+                <option
+                  value="5"
+                >
+                  5 (CHF 225)
+                </option>
+                <option
+                  value="6"
+                >
+                  6 (CHF 270)
+                </option>
+                <option
+                  value="7"
+                >
+                  7 (CHF 315)
+                </option>
+                <option
+                  value="8"
+                >
+                  8 (CHF 360)
+                </option>
+                <option
+                  value="9"
+                >
+                  9 (CHF 405)
+                </option>
+                <option
+                  value="10"
+                >
+                  10 (CHF 450)
+                </option>
+              </select>
+            </div>
+          </div>
+          <div
+            class="equal width fields"
+          >
+            <div
+              class="field"
+            >
+              <label
                 for="breakfast"
               >
                 register.form.counts.breakfast

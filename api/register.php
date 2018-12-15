@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 require_once './lib/recaptcha-1.2.1/src/autoload.php';
 include_once './database.php';
 include_once './email.php';
@@ -7,6 +8,7 @@ require_once './config.php';
 // In CHF. Must match what's in the front in prices.js
 $prices = array(
   'dinner' => 45,
+  'vegetarian' => 45,
   'sleeping' => 15,
   'breakfast' => 10,
   'camping' => 10,
@@ -68,12 +70,13 @@ function validateCaptcha($recaptchaResponse)
 function getTotal($data, $prices)
 {
   $dinner = getTotalForItem($data, $prices, 'dinner');
+  $vegetarian = getTotalForItem($data, $prices, 'vegetarian');
   $sleeping = getTotalForItem($data, $prices, 'sleeping');
   $camping = getTotalForItem($data, $prices, 'camping');
   $picknick = getTotalForItem($data, $prices, 'picknick');
   $breakfast = getTotalForItem($data, $prices, 'breakfast');
 
-  return $dinner + $sleeping + $camping + $picknick + $breakfast;
+  return $dinner + $vegetarian + $sleeping + $camping + $picknick + $breakfast;
 }
 
 function getTotalForItem($data, $prices, $itemName)
@@ -92,6 +95,7 @@ function saveData($db, $data, $reference, $total)
   $npa = $db->real_escape_string($data['npa']);
   $locality = $db->real_escape_string($data['locality']);
   $dinner = $db->real_escape_string($data['dinner']);
+  $vegetarian = $db->real_escape_string($data['vegetarian']);
   $sleeping = $db->real_escape_string($data['sleeping']);
   $camping = $db->real_escape_string($data['camping']);
   $picknick = $db->real_escape_string($data['picknick']);
@@ -109,6 +113,7 @@ function saveData($db, $data, $reference, $total)
     npa,
     locality,
     dinner,
+    vegetarian,
     sleeping,
     camping,
     picknick,
@@ -125,6 +130,7 @@ function saveData($db, $data, $reference, $total)
     \"$npa\",
     \"$locality\",
     \"$dinner\",
+    \"$vegetarian\",
     \"$sleeping\",
     \"$camping\",
     \"$picknick\",

@@ -42,6 +42,7 @@
   "register.form.accommodation.description": "Hébergement pour samedi soir",
   "register.form.submit": "Soumettre votre inscription",
   "register.form.counts.dinner": "Souper",
+  "register.form.counts.vegetarian": "Souper (végétarien)",
   "register.form.counts.sleeping": "Nuit en abri PC",
   "register.form.counts.camping": "Camping",
   "register.form.counts.breakfast": "Petit déjeuner",

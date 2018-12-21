@@ -12,13 +12,11 @@
     <base href="/" />
     <title>SSS AD</title>
 
-    <!-- Main CSS files, deferred -->
+    <!-- Critical CSS files -->
     <% htmlWebpackPlugin.files.css.forEach(css => { %>
     <link
       href="<%= css %>"
       rel="stylesheet"
-      media="none"
-      onload="if(media!='all')media='all'"
     />
     <% }); %>
 

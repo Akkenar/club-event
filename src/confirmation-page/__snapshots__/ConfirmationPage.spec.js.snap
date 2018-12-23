@@ -125,6 +125,11 @@ exports[`ConfirmationPage should match the snapshot 1`] = `
         />
       </dl>
     </div>
+    <button
+      class="ui green button ConfirmationPage__print"
+    >
+      confirmation.page.print
+    </button>
     <svg
       aria-label="Photo: Zsolt Sarkozi"
       class="LazyImage"

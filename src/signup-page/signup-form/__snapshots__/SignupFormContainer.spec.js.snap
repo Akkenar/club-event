@@ -1,0 +1,737 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SignupFormContainer should match snapshot 1`] = `
+<body>
+  <div>
+    <form
+      class="ui form"
+      novalidate=""
+    >
+      <div
+        class="ui error message"
+      >
+        <div
+          class="content"
+        >
+          <div
+            class="header"
+          >
+            register.form.error.title
+          </div>
+          <p>
+            register.form.error.message
+          </p>
+        </div>
+      </div>
+      <p>
+        register.form.description
+      </p>
+      <div
+        class="ui segment"
+      >
+        <h2
+          class="ui dividing header"
+        >
+          register.form.personalInfo
+        </h2>
+        <div
+          class="equal width fields"
+        >
+          <div
+            class="required field"
+          >
+            <label
+              for="firstName"
+            >
+              register.form.firstName
+            </label>
+            <input
+              id="firstName"
+              maxlength="255"
+              name="firstName"
+              placeholder="register.form.firstName.placeholder"
+              required=""
+              value=""
+            />
+          </div>
+          <div
+            class="required field"
+          >
+            <label
+              for="lastName"
+            >
+              register.form.lastName
+            </label>
+            <input
+              id="lastName"
+              maxlength="255"
+              name="lastName"
+              placeholder="register.form.lastName.placeholder"
+              required=""
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="required field"
+        >
+          <label
+            for="club"
+          >
+            register.form.club
+          </label>
+          <input
+            id="club"
+            maxlength="255"
+            name="club"
+            placeholder="register.form.club.placeholder"
+            required=""
+            value=""
+          />
+        </div>
+        <div
+          class="required field"
+        >
+          <label
+            for="email"
+          >
+            register.form.email
+          </label>
+          <input
+            autocomplete="email"
+            id="email"
+            maxlength="255"
+            name="email"
+            placeholder="register.form.email.placeholder"
+            required=""
+            type="email"
+            value=""
+          />
+          <div
+            class="ui error message"
+            id="email-error"
+          >
+            <div
+              class="content"
+            >
+              <p>
+                register.form.email.error.message
+              </p>
+            </div>
+          </div>
+        </div>
+        <h3
+          class="ui dividing header"
+        >
+          register.form.address
+        </h3>
+        <div
+          class="sixteen fields"
+        >
+          <div
+            class="required thirteen wide field"
+          >
+            <label
+              for="street"
+            >
+              register.form.address.street
+            </label>
+            <input
+              autocomplete="street-address"
+              id="street"
+              maxlength="255"
+              name="street"
+              placeholder="register.form.address.street.placeholder"
+              required=""
+              value=""
+            />
+          </div>
+          <div
+            class="required three wide field"
+          >
+            <label
+              for="no"
+            >
+              register.form.address.no
+            </label>
+            <input
+              id="no"
+              maxlength="10"
+              name="no"
+              placeholder="register.form.address.no.placeholder"
+              required=""
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="equal width fields"
+        >
+          <div
+            class="required field"
+          >
+            <label
+              for="npa"
+            >
+              register.form.address.npa
+            </label>
+            <input
+              autocomplete="postal-code"
+              id="npa"
+              maxlength="255"
+              name="npa"
+              placeholder="register.form.address.npa.placeholder"
+              required=""
+              type="number"
+              value=""
+            />
+          </div>
+          <div
+            class="required field"
+          >
+            <label
+              for="locality"
+            >
+              register.form.address.locality
+            </label>
+            <input
+              id="locality"
+              maxlength="255"
+              name="locality"
+              placeholder="register.form.address.locality.placeholder"
+              required=""
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="ui segment"
+      >
+        <h2
+          class="ui dividing header"
+        >
+          register.form.counts
+        </h2>
+        <p>
+          register.form.counts.description
+        </p>
+        <h3
+          class="ui dividing header"
+        >
+          register.form.food
+        </h3>
+        <p>
+          register.form.food.description
+        </p>
+        <div
+          class="equal width fields"
+        >
+          <div
+            class="field"
+          >
+            <label
+              for="dinner"
+            >
+              register.form.counts.dinner
+               (CHF 
+              45
+              )
+            </label>
+            <select
+              id="dinner"
+              name="dinner"
+            >
+              <option
+                value="0"
+              >
+                0
+              </option>
+              <option
+                value="1"
+              >
+                1 (CHF 45)
+              </option>
+              <option
+                value="2"
+              >
+                2 (CHF 90)
+              </option>
+              <option
+                value="3"
+              >
+                3 (CHF 135)
+              </option>
+              <option
+                value="4"
+              >
+                4 (CHF 180)
+              </option>
+              <option
+                value="5"
+              >
+                5 (CHF 225)
+              </option>
+              <option
+                value="6"
+              >
+                6 (CHF 270)
+              </option>
+              <option
+                value="7"
+              >
+                7 (CHF 315)
+              </option>
+              <option
+                value="8"
+              >
+                8 (CHF 360)
+              </option>
+              <option
+                value="9"
+              >
+                9 (CHF 405)
+              </option>
+              <option
+                value="10"
+              >
+                10 (CHF 450)
+              </option>
+            </select>
+          </div>
+          <div
+            class="field"
+          >
+            <label
+              for="vegetarian"
+            >
+              register.form.counts.vegetarian
+               (CHF 
+              45
+              )
+            </label>
+            <select
+              id="vegetarian"
+              name="vegetarian"
+            >
+              <option
+                value="0"
+              >
+                0
+              </option>
+              <option
+                value="1"
+              >
+                1 (CHF 45)
+              </option>
+              <option
+                value="2"
+              >
+                2 (CHF 90)
+              </option>
+              <option
+                value="3"
+              >
+                3 (CHF 135)
+              </option>
+              <option
+                value="4"
+              >
+                4 (CHF 180)
+              </option>
+              <option
+                value="5"
+              >
+                5 (CHF 225)
+              </option>
+              <option
+                value="6"
+              >
+                6 (CHF 270)
+              </option>
+              <option
+                value="7"
+              >
+                7 (CHF 315)
+              </option>
+              <option
+                value="8"
+              >
+                8 (CHF 360)
+              </option>
+              <option
+                value="9"
+              >
+                9 (CHF 405)
+              </option>
+              <option
+                value="10"
+              >
+                10 (CHF 450)
+              </option>
+            </select>
+          </div>
+        </div>
+        <div
+          class="equal width fields"
+        >
+          <div
+            class="field"
+          >
+            <label
+              for="breakfast"
+            >
+              register.form.counts.breakfast
+               (CHF 
+              10
+              )
+            </label>
+            <select
+              id="breakfast"
+              name="breakfast"
+            >
+              <option
+                value="0"
+              >
+                0
+              </option>
+              <option
+                value="1"
+              >
+                1 (CHF 10)
+              </option>
+              <option
+                value="2"
+              >
+                2 (CHF 20)
+              </option>
+              <option
+                value="3"
+              >
+                3 (CHF 30)
+              </option>
+              <option
+                value="4"
+              >
+                4 (CHF 40)
+              </option>
+              <option
+                value="5"
+              >
+                5 (CHF 50)
+              </option>
+              <option
+                value="6"
+              >
+                6 (CHF 60)
+              </option>
+              <option
+                value="7"
+              >
+                7 (CHF 70)
+              </option>
+              <option
+                value="8"
+              >
+                8 (CHF 80)
+              </option>
+              <option
+                value="9"
+              >
+                9 (CHF 90)
+              </option>
+              <option
+                value="10"
+              >
+                10 (CHF 100)
+              </option>
+            </select>
+          </div>
+          <div
+            class="field"
+          >
+            <label
+              for="picknick"
+            >
+              register.form.counts.picknick
+               (CHF 
+              10
+              )
+            </label>
+            <select
+              id="picknick"
+              name="picknick"
+            >
+              <option
+                value="0"
+              >
+                0
+              </option>
+              <option
+                value="1"
+              >
+                1 (CHF 10)
+              </option>
+              <option
+                value="2"
+              >
+                2 (CHF 20)
+              </option>
+              <option
+                value="3"
+              >
+                3 (CHF 30)
+              </option>
+              <option
+                value="4"
+              >
+                4 (CHF 40)
+              </option>
+              <option
+                value="5"
+              >
+                5 (CHF 50)
+              </option>
+              <option
+                value="6"
+              >
+                6 (CHF 60)
+              </option>
+              <option
+                value="7"
+              >
+                7 (CHF 70)
+              </option>
+              <option
+                value="8"
+              >
+                8 (CHF 80)
+              </option>
+              <option
+                value="9"
+              >
+                9 (CHF 90)
+              </option>
+              <option
+                value="10"
+              >
+                10 (CHF 100)
+              </option>
+            </select>
+          </div>
+        </div>
+        <h3
+          class="ui dividing header"
+        >
+          register.form.accommodation
+        </h3>
+        <p>
+          register.form.accommodation.description
+        </p>
+        <div
+          class="equal width fields"
+        >
+          <div
+            class="field"
+          >
+            <label
+              for="sleeping"
+            >
+              register.form.counts.sleeping
+               (CHF 
+              15
+              )
+            </label>
+            <select
+              id="sleeping"
+              name="sleeping"
+            >
+              <option
+                value="0"
+              >
+                0
+              </option>
+              <option
+                value="1"
+              >
+                1 (CHF 15)
+              </option>
+              <option
+                value="2"
+              >
+                2 (CHF 30)
+              </option>
+              <option
+                value="3"
+              >
+                3 (CHF 45)
+              </option>
+              <option
+                value="4"
+              >
+                4 (CHF 60)
+              </option>
+              <option
+                value="5"
+              >
+                5 (CHF 75)
+              </option>
+              <option
+                value="6"
+              >
+                6 (CHF 90)
+              </option>
+              <option
+                value="7"
+              >
+                7 (CHF 105)
+              </option>
+              <option
+                value="8"
+              >
+                8 (CHF 120)
+              </option>
+              <option
+                value="9"
+              >
+                9 (CHF 135)
+              </option>
+              <option
+                value="10"
+              >
+                10 (CHF 150)
+              </option>
+            </select>
+          </div>
+          <div
+            class="field"
+          >
+            <label
+              for="camping"
+            >
+              register.form.counts.camping
+               (CHF 
+              10
+              )
+            </label>
+            <select
+              id="camping"
+              name="camping"
+            >
+              <option
+                value="0"
+              >
+                0
+              </option>
+              <option
+                value="1"
+              >
+                1 (CHF 10)
+              </option>
+              <option
+                value="2"
+              >
+                2 (CHF 20)
+              </option>
+              <option
+                value="3"
+              >
+                3 (CHF 30)
+              </option>
+              <option
+                value="4"
+              >
+                4 (CHF 40)
+              </option>
+              <option
+                value="5"
+              >
+                5 (CHF 50)
+              </option>
+              <option
+                value="6"
+              >
+                6 (CHF 60)
+              </option>
+              <option
+                value="7"
+              >
+                7 (CHF 70)
+              </option>
+              <option
+                value="8"
+              >
+                8 (CHF 80)
+              </option>
+              <option
+                value="9"
+              >
+                9 (CHF 90)
+              </option>
+              <option
+                value="10"
+              >
+                10 (CHF 100)
+              </option>
+            </select>
+          </div>
+        </div>
+        <div
+          class="ui error message"
+        >
+          <div
+            class="content"
+          >
+            <p>
+              register.form.error.total
+            </p>
+          </div>
+        </div>
+        <div
+          class="SignupForm__total-price"
+        >
+          register.form.counts.total
+           : CHF 
+          0
+        </div>
+      </div>
+      <div
+        class="ui error message"
+      >
+        <div
+          class="content"
+        >
+          <p>
+            register.form.validation.error
+          </p>
+        </div>
+      </div>
+      <div
+        class="ui error message"
+      >
+        <div
+          class="content"
+        >
+          <p>
+            register.form.error.recaptcha
+          </p>
+        </div>
+      </div>
+      <div
+        class="g-recaptcha"
+        id="recaptcha-container"
+      />
+      <div
+        class="SignupForm__submit-button-container"
+      >
+        <button
+          class="ui black button full-width SignupForm__submit-button"
+          type="submit"
+        >
+          register.form.submit
+        </button>
+      </div>
+    </form>
+  </div>
+</body>
+`;

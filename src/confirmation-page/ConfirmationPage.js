@@ -28,7 +28,7 @@ function printPage() {
 }
 
 function supportsPrint() {
-  return window.print === 'function';
+  return typeof window.print === 'function';
 }
 
 const ConfirmationPage = () => {

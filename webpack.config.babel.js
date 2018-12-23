@@ -4,8 +4,8 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import * as bundle from 'webpack-bundle-analyzer';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
-import HTMLInlineCSSWebpackPlugin from 'html-inline-css-webpack-plugin';
 import OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin';
+import PreloadCssPlugin from './buildExtra/preload-css-webpack-plugin';
 
 const isInspection = process.env.NODE_ENV === 'inspect';
 const isProduction = isInspection || process.env.NODE_ENV === 'production';
@@ -25,6 +25,7 @@ const prodPlugins = [
     },
     canPrint: true,
   }),
+  new PreloadCssPlugin(),
 ];
 
 const commonPlugins = [
@@ -49,11 +50,6 @@ const commonPlugins = [
     chunksSortMode: 'none',
     inject: false,
     production: isProduction,
-  }),
-  new HTMLInlineCSSWebpackPlugin({
-    filter(fileName) {
-      return fileName.includes('critical');
-    },
   }),
   new bundle.BundleAnalyzerPlugin({
     analyzerMode: !isInspection ? 'disabled' : 'server',

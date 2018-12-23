@@ -11,6 +11,10 @@
     <meta name="description" content="" />
     <base href="/" />
     <title>SSS AD</title>
+    <!-- Preload CSS chunks -->
+    <% (htmlWebpackPlugin.files.preloadChunks || []).forEach(chunk => { %>
+    <link rel="preload" as="style" href="<%= chunk.href %>" />
+    <% }); %>
 
     <!-- Critical CSS files -->
     <% htmlWebpackPlugin.files.css.forEach(css => { %>
@@ -23,7 +27,7 @@
     <% }); %>
   </head>
   <body>
-    <noscript> You need to enable JavaScript to run this app. </noscript>
+    <noscript> You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
   </body>
 </html>

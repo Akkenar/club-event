@@ -1,4 +1,5 @@
 @import '../style/placeholders';
+@import url('../../node_modules/semantic-ui-css/components/button.min.css');
 
 .ConfirmationPage__print {
   @extend %no-print;

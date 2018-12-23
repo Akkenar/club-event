@@ -14,10 +14,7 @@
 
     <!-- Critical CSS files -->
     <% htmlWebpackPlugin.files.css.forEach(css => { %>
-    <link
-      href="<%= css %>"
-      rel="stylesheet"
-    />
+    <link href="<%= css %>" rel="stylesheet" />
     <% }); %>
 
     <!-- Load JS -->

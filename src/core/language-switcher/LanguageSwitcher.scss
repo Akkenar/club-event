@@ -1,0 +1,8 @@
+@import url('../../../node_modules/semantic-ui-css/components/dropdown.min.css');
+
+.LanguageSwitcher .text {
+  width: 2em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LanguageSwitcher should match snapshot 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      class="ui dropdown link item right LanguageSwitcher"
+      role="listbox"
+      tabindex="0"
+    >
+      <div
+        aria-live="polite"
+        class="text"
+        role="alert"
+      >
+        current.language
+      </div>
+      <i
+        aria-hidden="true"
+        class="dropdown icon"
+      />
+      <div
+        class="menu transition"
+      >
+        <a
+          class="item"
+          href="/fr"
+          role="option"
+          title="Français"
+        >
+          FR
+        </a>
+        <a
+          class="item"
+          href="/de"
+          role="option"
+          title="Deutsch"
+        >
+          DE
+        </a>
+        <a
+          class="item"
+          href="/it"
+          role="option"
+          title="Italianno"
+        >
+          IT
+        </a>
+        <a
+          class="item"
+          href="/en"
+          role="option"
+          title="English"
+        >
+          EN
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+`;

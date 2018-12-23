@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { Fragment, useContext } from 'react';
 import LanguageContext from '../../core/intl/LanguageContext';
 import getKey from '../../core/intl/getKey';
 import { Segment } from 'semantic-ui-react';
@@ -9,19 +9,25 @@ const OrderRecap = ({
   firstName,
   lastName,
   club,
-  dinner,
-  vegetarian,
-  sleeping,
-  camping,
-  picknick,
-  breakfast,
   total,
   street,
   no,
   npa,
   locality,
+  products,
 }) => {
   const { messages } = useContext(LanguageContext);
+
+  const productContent = Object.keys(products).map(name => {
+    return (
+      <Fragment key={name}>
+        <dd className="OrderRecap__title">
+          {getKey(`register.form.counts.${name}`, messages)}
+        </dd>
+        <dt className="OrderRecap__value">{products[name]}</dt>
+      </Fragment>
+    );
+  });
 
   return (
     <Segment raised className="OrderRecap">
@@ -60,37 +66,7 @@ const OrderRecap = ({
         </dd>
         <dt className="OrderRecap__value">CHF {total}</dt>
       </dl>
-      <dl className="OrderRecap__container">
-        <dd className="OrderRecap__title">
-          {getKey('register.form.counts.dinner', messages)}
-        </dd>
-        <dt className="OrderRecap__value">{dinner}</dt>
-
-        <dd className="OrderRecap__title">
-          {getKey('register.form.counts.vegetarian', messages)}
-        </dd>
-        <dt className="OrderRecap__value">{vegetarian}</dt>
-
-        <dd className="OrderRecap__title">
-          {getKey('register.form.counts.picknick', messages)}
-        </dd>
-        <dt className="OrderRecap__value">{picknick}</dt>
-
-        <dd className="OrderRecap__title">
-          {getKey('register.form.counts.breakfast', messages)}
-        </dd>
-        <dt className="OrderRecap__value">{breakfast}</dt>
-
-        <dd className="OrderRecap__title">
-          {getKey('register.form.counts.sleeping', messages)}
-        </dd>
-        <dt className="OrderRecap__value">{sleeping}</dt>
-
-        <dd className="OrderRecap__title">
-          {getKey('register.form.counts.camping', messages)}
-        </dd>
-        <dt className="OrderRecap__value">{camping}</dt>
-      </dl>
+      <dl className="OrderRecap__container">{productContent}</dl>
     </Segment>
   );
 };

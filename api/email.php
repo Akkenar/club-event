@@ -9,12 +9,15 @@ $globalTPL = new Template('../translations');
 function sendEmail($email, $total, $reference, $language, $data)
 {
   if (!$email) {
+    error_log('Missing email address', 0);
     return;
   }
 
   $config = readConfig();
 
-  if ($config['email.disable']) {
+  error_log($config['email.disabled'], 0);
+  if ($config['email.disabled']) {
+    error_log('No email send', 0);
     // By configuration
     return;
   }
@@ -40,8 +43,8 @@ function sendEmail($email, $total, $reference, $language, $data)
   // SMTP password
   $mail->Password = $config['email.password'];
 
-  $mail->From = 'webmaster@speleo-lausanne.ch';
-  $mail->FromName = 'AD SSS 2019';
+  $mail->From = 'ad-sss-info@speleo-lausanne.ch';
+  $mail->FromName = 'AD SSS Valorbe 2019';
   // Add a recipient
   $mail->addAddress($email, $email);
 
@@ -75,12 +78,18 @@ function getBody($total, $reference, $language, $data)
   $globalTPL->set_var('no', $data['no']);
   $globalTPL->set_var('npa', $data['npa']);
   $globalTPL->set_var('locality', $data['locality']);
-  $globalTPL->set_var('dinner', $data['dinner']);
-  $globalTPL->set_var('vegetarian', $data['vegetarian']);
-  $globalTPL->set_var('sleeping', $data['sleeping']);
-  $globalTPL->set_var('camping', $data['camping']);
-  $globalTPL->set_var('picknick', $data['picknick']);
-  $globalTPL->set_var('breakfast', $data['breakfast']);
+
+  $products = $data['products'];
+  $globalTPL->set_var('dinner', $products['dinner']);
+  $globalTPL->set_var('vegetarian', $products['vegetarian']);
+  $globalTPL->set_var('sleeping', $products['sleeping']);
+  $globalTPL->set_var('camping', $products['camping']);
+  $globalTPL->set_var('picknick', $products['picknick']);
+  $globalTPL->set_var('breakfast', $products['breakfast']);
+  $globalTPL->set_var('itemSize1', $products['itemSize1']);
+  $globalTPL->set_var('itemSize2', $products['itemSize2']);
+  $globalTPL->set_var('itemSize3', $products['itemSize3']);
+  $globalTPL->set_var('itemSize4', $products['itemSize4']);
 
   return $globalTPL->finish($globalTPL->parse('email', 'email', true));
 }

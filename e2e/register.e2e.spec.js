@@ -8,7 +8,7 @@ const personalData = {
   firstName: faker.name.firstName(),
   lastName: faker.name.lastName(),
   club: 'GSL',
-  email: faker.internet.email(),
+  email: 'pierredominique.putallaz@gmail.com',
   street: faker.address.streetName(),
   no: '5A',
   npa: '1018',

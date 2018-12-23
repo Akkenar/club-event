@@ -3,13 +3,19 @@ import React, { useContext } from 'react';
 import { Button, Form, Header, Message, Segment } from 'semantic-ui-react';
 import getKey from '../../core/intl/getKey';
 import LanguageContext from '../../core/intl/LanguageContext';
-import BookingField from './BookingField';
 import Recaptcha from '../../core/recaptcha/Recaptcha';
+
 import { Redirect } from 'react-router-dom';
-
 import './RegisterForm.scss';
+import Products from './Products';
 
-const RegisterForm = ({ handleSubmit, handleChange, state, total }) => {
+const RegisterForm = ({
+  handleSubmit,
+  handleChange,
+  handleChangeProduct,
+  state,
+  total,
+}) => {
   const { messages, language } = useContext(LanguageContext);
 
   const hasErrors = () => {
@@ -202,62 +208,11 @@ const RegisterForm = ({ handleSubmit, handleChange, state, total }) => {
         </Form.Group>
       </Segment>
       <Segment>
-        <Header dividing as={'h2'}>
-          {getKey('register.form.counts', messages)}
-        </Header>
-        <p>{getKey('register.form.counts.description', messages)}</p>
-        <Header dividing as={'h3'}>
-          {getKey('register.form.food', messages)}
-        </Header>
-        <p>{getKey('register.form.food.description', messages)}</p>
-        <Form.Group widths="equal">
-          <BookingField
-            state={state}
-            name="dinner"
-            handleChange={handleChange}
-          />
-          <BookingField
-            state={state}
-            name="vegetarian"
-            handleChange={handleChange}
-          />
-        </Form.Group>
-        <Form.Group widths="equal">
-          <BookingField
-            state={state}
-            name="breakfast"
-            handleChange={handleChange}
-          />
-          <BookingField
-            state={state}
-            name="picknick"
-            handleChange={handleChange}
-          />
-        </Form.Group>
-        <Header dividing as={'h3'}>
-          {getKey('register.form.accommodation', messages)}
-        </Header>
-        <p>{getKey('register.form.accommodation.description', messages)}</p>
-        <Form.Group widths="equal">
-          <BookingField
-            state={state}
-            name="sleeping"
-            handleChange={handleChange}
-          />
-          <BookingField
-            state={state}
-            name="camping"
-            handleChange={handleChange}
-          />
-        </Form.Group>
-        <Message
-          error
-          visible={state.errors.total}
-          content={getKey('register.form.error.total', messages)}
+        <Products
+          handleChange={handleChangeProduct}
+          state={state}
+          total={total}
         />
-        <div className="RegisterForm__total-price">
-          {getKey('register.form.counts.total', messages)} : CHF {total}
-        </div>
       </Segment>
       <Message
         data-testid="validation-error"

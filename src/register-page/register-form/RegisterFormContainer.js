@@ -20,12 +20,7 @@ const DEFAULT_STATE = {
   no: '',
   npa: '',
   locality: '',
-  dinner: '0',
-  vegetarian: '0',
-  sleeping: '0',
-  camping: '0',
-  picknick: '0',
-  breakfast: '0',
+  products: {},
   sending: false,
   transmitError: false,
   errors: {},
@@ -46,6 +41,7 @@ class RegisterFormContainer extends React.Component {
     this.state = DEFAULT_STATE;
 
     this.handleChange = this.handleChange.bind(this);
+    this.handleChangeProduct = this.handleChangeProduct.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleError = this.handleError.bind(this);
     this.handleSuccess = this.handleSuccess.bind(this);
@@ -59,6 +55,17 @@ class RegisterFormContainer extends React.Component {
     this.setState(state => ({
       [name]: value,
       errors: Object.assign({}, state.errors, { [name]: false }),
+    }));
+  }
+
+  handleChangeProduct(event) {
+    const { target } = event;
+    const { name } = target;
+
+    this.setState(state => ({
+      products: Object.assign({}, state.products, {
+        [name]: target.value,
+      }),
     }));
   }
 
@@ -135,19 +142,11 @@ class RegisterFormContainer extends React.Component {
   }
 
   getTotalPrice() {
-    return (
-      this.getPriceForItem('dinner') +
-      this.getPriceForItem('vegetarian') +
-      this.getPriceForItem('sleeping') +
-      this.getPriceForItem('camping') +
-      this.getPriceForItem('picknick') +
-      this.getPriceForItem('breakfast')
-    );
-  }
-
-  getPriceForItem(name) {
-    const value = this.state[name];
-    return parseInt(value) * PRICES[name];
+    return Object.keys(this.state.products).reduce((total, itemName) => {
+      const value = this.state.products[itemName];
+      const itemPrice = PRICES[itemName];
+      return total + parseInt(value, 10) * itemPrice;
+    }, 0);
   }
 
   render() {
@@ -157,6 +156,7 @@ class RegisterFormContainer extends React.Component {
         <RegisterForm
           state={this.state}
           handleChange={this.handleChange}
+          handleChangeProduct={this.handleChangeProduct}
           handleSubmit={this.handleSubmit}
           total={this.getTotalPrice()}
         />

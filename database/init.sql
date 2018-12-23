@@ -22,12 +22,7 @@ CREATE TABLE inscriptions
   npa       varchar(255) not null,
   locality  varchar(255) not null,
   total     smallint unsigned not null,
-  dinner    smallint unsigned not null,
-  vegetarian    smallint unsigned not null,
-  sleeping  smallint unsigned not null,
-  camping   smallint unsigned not null,
-  picknick  smallint unsigned not null,
-  breakfast smallint unsigned not null,
+  products  JSON not null,
   constraint inscriptions_key primary key (id)
 );
 

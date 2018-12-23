@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import Loader from '../../core/loader/Loader';
-import { sendData } from './signup.service';
-import SignupForm from './SignupForm';
+import { sendData } from './register.service';
+import RegisterForm from './RegisterForm';
 import { goToTop, setFocusOnError } from '../../page.lib';
 import { PRICES } from './prices';
 import LanguageContext from '../../core/intl/LanguageContext';
@@ -38,7 +38,7 @@ function getCaptchaResponse() {
   return grecaptcha.getResponse();
 }
 
-class SignupFormContainer extends React.Component {
+class RegisterFormContainer extends React.Component {
   constructor(props) {
     super(props);
 
@@ -153,7 +153,7 @@ class SignupFormContainer extends React.Component {
     return (
       <Fragment>
         {this.state.sending ? <Loader /> : null}
-        <SignupForm
+        <RegisterForm
           state={this.state}
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
@@ -164,6 +164,6 @@ class SignupFormContainer extends React.Component {
   }
 }
 
-SignupFormContainer.contextType = LanguageContext;
+RegisterFormContainer.contextType = LanguageContext;
 
-export default SignupFormContainer;
+export default RegisterFormContainer;

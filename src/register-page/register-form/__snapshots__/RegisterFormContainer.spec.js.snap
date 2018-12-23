@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SignupFormContainer should match snapshot 1`] = `
+exports[`RegisterFormContainer should match snapshot 1`] = `
 <body>
   <div>
     <form
@@ -688,7 +688,7 @@ exports[`SignupFormContainer should match snapshot 1`] = `
           </div>
         </div>
         <div
-          class="SignupForm__total-price"
+          class="RegisterForm__total-price"
         >
           register.form.counts.total
            : CHF 
@@ -722,10 +722,10 @@ exports[`SignupFormContainer should match snapshot 1`] = `
         id="recaptcha-container"
       />
       <div
-        class="SignupForm__submit-button-container"
+        class="RegisterForm__submit-button-container"
       >
         <button
-          class="ui black button full-width SignupForm__submit-button"
+          class="ui black button full-width RegisterForm__submit-button"
           type="submit"
         >
           register.form.submit

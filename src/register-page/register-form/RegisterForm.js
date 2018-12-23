@@ -7,9 +7,9 @@ import BookingField from './BookingField';
 import Recaptcha from '../../core/recaptcha/Recaptcha';
 import { Redirect } from 'react-router-dom';
 
-import './SignupForm.scss';
+import './RegisterForm.scss';
 
-const SignupForm = ({ handleSubmit, handleChange, state, total }) => {
+const RegisterForm = ({ handleSubmit, handleChange, state, total }) => {
   const { messages, language } = useContext(LanguageContext);
 
   const hasErrors = () => {
@@ -246,7 +246,7 @@ const SignupForm = ({ handleSubmit, handleChange, state, total }) => {
           visible={state.errors.total}
           content={getKey('register.form.error.total', messages)}
         />
-        <div className="SignupForm__total-price">
+        <div className="RegisterForm__total-price">
           {getKey('register.form.counts.total', messages)} : CHF {total}
         </div>
       </Segment>
@@ -261,11 +261,11 @@ const SignupForm = ({ handleSubmit, handleChange, state, total }) => {
         content={getKey('register.form.error.recaptcha', messages)}
       />
       <Recaptcha />
-      <div className="SignupForm__submit-button-container">
+      <div className="RegisterForm__submit-button-container">
         <Button
           type="submit"
           color="black"
-          className="full-width SignupForm__submit-button"
+          className="full-width RegisterForm__submit-button"
         >
           {getKey('register.form.submit', messages)}
         </Button>
@@ -274,4 +274,4 @@ const SignupForm = ({ handleSubmit, handleChange, state, total }) => {
   );
 };
 
-export default SignupForm;
+export default RegisterForm;

@@ -1,7 +1,7 @@
 import React, { Fragment, useContext } from 'react';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import HeaderAsync from './core/header/HeaderAsync';
-import SignupPageAsync from './signup-page/SignupPageAsync';
+import RegisterPageAsync from './register-page/RegisterPageAsync';
 import HomePageAsync from './home-page/HomePageAsync';
 import LanguageContext from './core/intl/LanguageContext';
 import ConfirmationPageAsync from './confirmation-page/ConfirmationPageAsync';
@@ -31,7 +31,7 @@ const App = () => {
                 <Route path={`/${language}/home`} component={HomePageAsync} />
                 <Route
                   path={`/${language}/register`}
-                  component={SignupPageAsync}
+                  component={RegisterPageAsync}
                 />
                 <Route
                   path={`/${language}/confirmation`}

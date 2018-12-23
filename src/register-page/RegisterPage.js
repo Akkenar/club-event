@@ -1,11 +1,11 @@
 import React, { useContext, useEffect } from 'react';
-import SignupFormContainer from './signup-form/SignupFormContainer';
+import RegisterFormContainer from './register-form/RegisterFormContainer';
 import { Header } from 'semantic-ui-react';
 import getKey from '../core/intl/getKey';
 import { goToTop, setPageTitle } from '../page.lib';
 import LanguageContext from '../core/intl/LanguageContext';
 
-const SignupPage = () => {
+const RegisterPage = () => {
   const { messages } = useContext(LanguageContext);
 
   useEffect(() => {
@@ -16,9 +16,9 @@ const SignupPage = () => {
   return (
     <div>
       <Header as="h1">{getKey('register.page.title', messages)}</Header>
-      <SignupFormContainer />
+      <RegisterFormContainer />
     </div>
   );
 };
 
-export default SignupPage;
+export default RegisterPage;

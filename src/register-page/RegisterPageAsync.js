@@ -1,10 +1,10 @@
 import React, { Suspense } from 'react';
 
 const Lazy = React.lazy(() =>
-  import(/* webpackChunkName: 'signup', webpackPrefetch: true */ './SignupPage')
+  import(/* webpackChunkName: 'register', webpackPrefetch: true */ './RegisterPage')
 );
 
-function SignupPageAsync() {
+function RegisterPageAsync() {
   return (
     <div>
       <Suspense fallback={null}>
@@ -14,4 +14,4 @@ function SignupPageAsync() {
   );
 }
 
-export default SignupPageAsync;
+export default RegisterPageAsync;

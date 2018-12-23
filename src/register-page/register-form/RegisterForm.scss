@@ -4,18 +4,18 @@
 @import url('../../../node_modules/semantic-ui-css/components/checkbox.min.css');
 @import url('../../../node_modules/semantic-ui-css/components/segment.min.css');
 
-.SignupForm__total-price {
+.RegisterForm__total-price {
   margin-bottom: 2em;
   font-weight: bold;
   font-size: 1.2em;
   text-align: right;
 }
 
-.SignupForm__submit-button-container {
+.RegisterForm__submit-button-container {
   display: flex;
 }
 
-.SignupForm__submit-button {
+.RegisterForm__submit-button {
   margin-right: 0 !important;
   margin-left: auto !important;
   margin-top: 1em !important;

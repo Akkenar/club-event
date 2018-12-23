@@ -1,10 +1,10 @@
 import React from 'react';
 import { render } from 'react-testing-library';
-import SignupFormContainer from './SignupFormContainer';
+import RegisterFormContainer from './RegisterFormContainer';
 
-describe('SignupFormContainer', () => {
+describe('RegisterFormContainer', () => {
   it('should match snapshot', () => {
-    const wrapper = render(<SignupFormContainer/>);
+    const wrapper = render(<RegisterFormContainer />);
     expect(wrapper.baseElement).toMatchSnapshot();
   });
 });

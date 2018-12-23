@@ -2,9 +2,15 @@ import React, { useContext } from 'react';
 import getKey from '../intl/getKey';
 import { Dropdown } from 'semantic-ui-react';
 import LanguageContext from '../intl/LanguageContext';
-import { NavLink } from 'react-router-dom';
 
 import './LanguageSwitcher.scss';
+
+const Button = props => (
+  <button
+    {...props}
+    className={`${props.className} LanguageSwitcher__button`}
+  />
+);
 
 const LanguageSwitcher = () => {
   const { handleChangeLanguage, messages } = useContext(LanguageContext);
@@ -17,32 +23,28 @@ const LanguageSwitcher = () => {
       <Dropdown.Menu>
         <Dropdown.Item
           title="Français"
-          as={NavLink}
-          to="/fr"
+          as={Button}
           onClick={() => handleChangeLanguage('fr')}
         >
           FR
         </Dropdown.Item>
         <Dropdown.Item
           title="Deutsch"
-          as={NavLink}
-          to="/de"
+          as={Button}
           onClick={() => handleChangeLanguage('de')}
         >
           DE
         </Dropdown.Item>
         <Dropdown.Item
           title="Italianno"
-          as={NavLink}
-          to="/it"
+          as={Button}
           onClick={() => handleChangeLanguage('it')}
         >
           IT
         </Dropdown.Item>
         <Dropdown.Item
           title="English"
-          as={NavLink}
-          to="/en"
+          as={Button}
           onClick={() => handleChangeLanguage('en')}
         >
           EN

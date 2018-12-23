@@ -1,8 +1,13 @@
 @import url('../../../node_modules/semantic-ui-css/components/dropdown.min.css');
+@import url('../../../node_modules/semantic-ui-css/components/transition.min.css');
 
 .LanguageSwitcher .text {
   width: 2em;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.LanguageSwitcher__button {
+  width: 100%;
 }

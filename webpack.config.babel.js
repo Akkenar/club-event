@@ -35,8 +35,8 @@ const commonPlugins = [
   }),
   new webpack.NoEmitOnErrorsPlugin(),
   new MiniCssExtractPlugin({
-    filename: '[name].[hash].css',
-    chunkFilename: '[name].[hash].css',
+    filename: '[name].[contenthash].css',
+    chunkFilename: '[name].[contenthash].css',
   }),
   new HtmlWebpackPlugin({
     // Looks prettier
@@ -174,8 +174,8 @@ export default {
 
   context: path.join(__dirname, 'src'),
   output: {
-    filename: '[name].[hash].js',
-    chunkFilename: '[name].[hash].js',
+    filename: '[name].[contenthash].js',
+    chunkFilename: '[name].[contenthash].js',
     path: buildPath,
   },
   profile: false,

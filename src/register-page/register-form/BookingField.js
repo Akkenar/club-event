@@ -19,7 +19,13 @@ const BookingField = ({ name, handleChange, state }) => {
       <label htmlFor={name}>
         {getKey(`register.form.counts.${name}`, messages)} (CHF {itemPrice})
       </label>
-      <select id={name} name={name} value={state[name]} onChange={handleChange}>
+      <select
+        id={name}
+        name={name}
+        value={state[name]}
+        onChange={handleChange}
+        data-testid={name}
+      >
         <option value="0">0</option>
         {getOption(1)}
         {getOption(2)}

@@ -8,37 +8,22 @@ const BODY_HAS_DIMMER_CLASS = 'has-dimmer';
 class Loader extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { active: false };
 
-    this.showAfterDelay();
+    this.show();
   }
 
-  showAfterDelay() {
-    this.timeout = setTimeout(() => {
-      document.body.classList.add(BODY_HAS_DIMMER_CLASS);
-      goToTop();
-
-      this.setState({
-        active: true,
-      });
-    }, this.props.delay || 150);
+  show() {
+    document.body.classList.add(BODY_HAS_DIMMER_CLASS);
+    goToTop();
   }
 
   componentWillUnmount() {
-    if (this.timeout) {
-      clearTimeout(this.timeout);
-    }
-
     document.body.classList.remove(BODY_HAS_DIMMER_CLASS);
   }
 
   render() {
-    if (!this.state.active) {
-      return null;
-    }
-
     return (
-      <div className="Loader">
+      <div className="Loader" data-testid="loader">
         <Dimmer active={true}>
           <SemanticLoader />
         </Dimmer>

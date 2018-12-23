@@ -25,6 +25,7 @@ const RegisterForm = ({ handleSubmit, handleChange, state, total }) => {
     <Form onSubmit={handleSubmit} noValidate>
       <Message
         error
+        data-testid="backend-error"
         visible={!hasErrors() && state.transmitError}
         header={getKey('register.form.error.title', messages)}
         content={getKey('register.form.error.message', messages)}
@@ -41,6 +42,7 @@ const RegisterForm = ({ handleSubmit, handleChange, state, total }) => {
             </label>
             <input
               id="firstName"
+              data-testid="firstName"
               name="firstName"
               placeholder={getKey(
                 'register.form.firstName.placeholder',
@@ -59,6 +61,7 @@ const RegisterForm = ({ handleSubmit, handleChange, state, total }) => {
             </label>
             <input
               id="lastName"
+              data-testid="lastName"
               name="lastName"
               placeholder={getKey(
                 'register.form.lastName.placeholder',
@@ -76,6 +79,7 @@ const RegisterForm = ({ handleSubmit, handleChange, state, total }) => {
           <label htmlFor="club">{getKey('register.form.club', messages)}</label>
           <input
             id="club"
+            data-testid="club"
             name="club"
             placeholder={getKey('register.form.club.placeholder', messages)}
             value={state.club}
@@ -91,6 +95,7 @@ const RegisterForm = ({ handleSubmit, handleChange, state, total }) => {
           </label>
           <input
             id="email"
+            data-testid="email"
             name="email"
             placeholder={getKey('register.form.email.placeholder', messages)}
             value={state.email}
@@ -119,6 +124,7 @@ const RegisterForm = ({ handleSubmit, handleChange, state, total }) => {
             </label>
             <input
               id="street"
+              data-testid="street"
               name="street"
               placeholder={getKey(
                 'register.form.address.street.placeholder',
@@ -138,6 +144,7 @@ const RegisterForm = ({ handleSubmit, handleChange, state, total }) => {
             </label>
             <input
               id="no"
+              data-testid="no"
               name="no"
               placeholder={getKey(
                 'register.form.address.no.placeholder',
@@ -158,6 +165,7 @@ const RegisterForm = ({ handleSubmit, handleChange, state, total }) => {
             </label>
             <input
               id="npa"
+              data-testid="npa"
               name="npa"
               placeholder={getKey(
                 'register.form.address.npa.placeholder',
@@ -178,6 +186,7 @@ const RegisterForm = ({ handleSubmit, handleChange, state, total }) => {
             </label>
             <input
               id="locality"
+              data-testid="locality"
               name="locality"
               placeholder={getKey(
                 'register.form.address.locality.placeholder',
@@ -251,6 +260,7 @@ const RegisterForm = ({ handleSubmit, handleChange, state, total }) => {
         </div>
       </Segment>
       <Message
+        data-testid="validation-error"
         error
         visible={hasErrors()}
         content={getKey('register.form.validation.error', messages)}

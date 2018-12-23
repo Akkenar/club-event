@@ -15,6 +15,7 @@ exports[`RegisterPage should match the snapshot 1`] = `
       >
         <div
           class="ui error message"
+          data-testid="backend-error"
         >
           <div
             class="content"
@@ -52,6 +53,7 @@ exports[`RegisterPage should match the snapshot 1`] = `
                 register.form.firstName
               </label>
               <input
+                data-testid="firstName"
                 id="firstName"
                 maxlength="255"
                 name="firstName"
@@ -69,6 +71,7 @@ exports[`RegisterPage should match the snapshot 1`] = `
                 register.form.lastName
               </label>
               <input
+                data-testid="lastName"
                 id="lastName"
                 maxlength="255"
                 name="lastName"
@@ -87,6 +90,7 @@ exports[`RegisterPage should match the snapshot 1`] = `
               register.form.club
             </label>
             <input
+              data-testid="club"
               id="club"
               maxlength="255"
               name="club"
@@ -105,6 +109,7 @@ exports[`RegisterPage should match the snapshot 1`] = `
             </label>
             <input
               autocomplete="email"
+              data-testid="email"
               id="email"
               maxlength="255"
               name="email"
@@ -144,6 +149,7 @@ exports[`RegisterPage should match the snapshot 1`] = `
               </label>
               <input
                 autocomplete="street-address"
+                data-testid="street"
                 id="street"
                 maxlength="255"
                 name="street"
@@ -161,6 +167,7 @@ exports[`RegisterPage should match the snapshot 1`] = `
                 register.form.address.no
               </label>
               <input
+                data-testid="no"
                 id="no"
                 maxlength="10"
                 name="no"
@@ -183,6 +190,7 @@ exports[`RegisterPage should match the snapshot 1`] = `
               </label>
               <input
                 autocomplete="postal-code"
+                data-testid="npa"
                 id="npa"
                 maxlength="255"
                 name="npa"
@@ -201,6 +209,7 @@ exports[`RegisterPage should match the snapshot 1`] = `
                 register.form.address.locality
               </label>
               <input
+                data-testid="locality"
                 id="locality"
                 maxlength="255"
                 name="locality"
@@ -245,6 +254,7 @@ exports[`RegisterPage should match the snapshot 1`] = `
                 )
               </label>
               <select
+                data-testid="dinner"
                 id="dinner"
                 name="dinner"
               >
@@ -317,6 +327,7 @@ exports[`RegisterPage should match the snapshot 1`] = `
                 )
               </label>
               <select
+                data-testid="vegetarian"
                 id="vegetarian"
                 name="vegetarian"
               >
@@ -393,6 +404,7 @@ exports[`RegisterPage should match the snapshot 1`] = `
                 )
               </label>
               <select
+                data-testid="breakfast"
                 id="breakfast"
                 name="breakfast"
               >
@@ -465,6 +477,7 @@ exports[`RegisterPage should match the snapshot 1`] = `
                 )
               </label>
               <select
+                data-testid="picknick"
                 id="picknick"
                 name="picknick"
               >
@@ -549,6 +562,7 @@ exports[`RegisterPage should match the snapshot 1`] = `
                 )
               </label>
               <select
+                data-testid="sleeping"
                 id="sleeping"
                 name="sleeping"
               >
@@ -621,6 +635,7 @@ exports[`RegisterPage should match the snapshot 1`] = `
                 )
               </label>
               <select
+                data-testid="camping"
                 id="camping"
                 name="camping"
               >
@@ -703,6 +718,7 @@ exports[`RegisterPage should match the snapshot 1`] = `
         </div>
         <div
           class="ui error message"
+          data-testid="validation-error"
         >
           <div
             class="content"

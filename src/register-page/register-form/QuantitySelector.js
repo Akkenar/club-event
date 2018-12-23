@@ -4,7 +4,7 @@ import { Form } from 'semantic-ui-react';
 import LanguageContext from '../../core/intl/LanguageContext';
 import { PRICES } from './prices';
 
-const BookingField = ({ name, handleChange, state }) => {
+const QuantitySelector = ({ name, handleChange, state }) => {
   const { messages } = useContext(LanguageContext);
   const itemPrice = PRICES[name];
 
@@ -22,7 +22,7 @@ const BookingField = ({ name, handleChange, state }) => {
       <select
         id={name}
         name={name}
-        value={state[name]}
+        value={state.products[name]}
         onChange={handleChange}
         data-testid={name}
       >
@@ -42,4 +42,4 @@ const BookingField = ({ name, handleChange, state }) => {
   );
 };
 
-export default BookingField;
+export default QuantitySelector;

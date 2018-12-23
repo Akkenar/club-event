@@ -691,6 +691,310 @@ exports[`RegisterFormContainer should match snapshot 1`] = `
             </select>
           </div>
         </div>
+        <h3
+          class="ui dividing header"
+        >
+          register.form.goodies
+        </h3>
+        <p>
+          register.form.goodies.description
+        </p>
+        <div
+          class="equal width fields"
+        >
+          <div
+            class="field"
+          >
+            <label
+              for="itemSize1"
+            >
+              register.form.counts.itemSize1
+               (CHF 
+              20
+              )
+            </label>
+            <select
+              data-testid="itemSize1"
+              id="itemSize1"
+              name="itemSize1"
+            >
+              <option
+                value="0"
+              >
+                0
+              </option>
+              <option
+                value="1"
+              >
+                1 (CHF 20)
+              </option>
+              <option
+                value="2"
+              >
+                2 (CHF 40)
+              </option>
+              <option
+                value="3"
+              >
+                3 (CHF 60)
+              </option>
+              <option
+                value="4"
+              >
+                4 (CHF 80)
+              </option>
+              <option
+                value="5"
+              >
+                5 (CHF 100)
+              </option>
+              <option
+                value="6"
+              >
+                6 (CHF 120)
+              </option>
+              <option
+                value="7"
+              >
+                7 (CHF 140)
+              </option>
+              <option
+                value="8"
+              >
+                8 (CHF 160)
+              </option>
+              <option
+                value="9"
+              >
+                9 (CHF 180)
+              </option>
+              <option
+                value="10"
+              >
+                10 (CHF 200)
+              </option>
+            </select>
+          </div>
+          <div
+            class="field"
+          >
+            <label
+              for="itemSize2"
+            >
+              register.form.counts.itemSize2
+               (CHF 
+              20
+              )
+            </label>
+            <select
+              data-testid="itemSize2"
+              id="itemSize2"
+              name="itemSize2"
+            >
+              <option
+                value="0"
+              >
+                0
+              </option>
+              <option
+                value="1"
+              >
+                1 (CHF 20)
+              </option>
+              <option
+                value="2"
+              >
+                2 (CHF 40)
+              </option>
+              <option
+                value="3"
+              >
+                3 (CHF 60)
+              </option>
+              <option
+                value="4"
+              >
+                4 (CHF 80)
+              </option>
+              <option
+                value="5"
+              >
+                5 (CHF 100)
+              </option>
+              <option
+                value="6"
+              >
+                6 (CHF 120)
+              </option>
+              <option
+                value="7"
+              >
+                7 (CHF 140)
+              </option>
+              <option
+                value="8"
+              >
+                8 (CHF 160)
+              </option>
+              <option
+                value="9"
+              >
+                9 (CHF 180)
+              </option>
+              <option
+                value="10"
+              >
+                10 (CHF 200)
+              </option>
+            </select>
+          </div>
+          <div
+            class="field"
+          >
+            <label
+              for="itemSize3"
+            >
+              register.form.counts.itemSize3
+               (CHF 
+              20
+              )
+            </label>
+            <select
+              data-testid="itemSize3"
+              id="itemSize3"
+              name="itemSize3"
+            >
+              <option
+                value="0"
+              >
+                0
+              </option>
+              <option
+                value="1"
+              >
+                1 (CHF 20)
+              </option>
+              <option
+                value="2"
+              >
+                2 (CHF 40)
+              </option>
+              <option
+                value="3"
+              >
+                3 (CHF 60)
+              </option>
+              <option
+                value="4"
+              >
+                4 (CHF 80)
+              </option>
+              <option
+                value="5"
+              >
+                5 (CHF 100)
+              </option>
+              <option
+                value="6"
+              >
+                6 (CHF 120)
+              </option>
+              <option
+                value="7"
+              >
+                7 (CHF 140)
+              </option>
+              <option
+                value="8"
+              >
+                8 (CHF 160)
+              </option>
+              <option
+                value="9"
+              >
+                9 (CHF 180)
+              </option>
+              <option
+                value="10"
+              >
+                10 (CHF 200)
+              </option>
+            </select>
+          </div>
+          <div
+            class="field"
+          >
+            <label
+              for="itemSize4"
+            >
+              register.form.counts.itemSize4
+               (CHF 
+              20
+              )
+            </label>
+            <select
+              data-testid="itemSize4"
+              id="itemSize4"
+              name="itemSize4"
+            >
+              <option
+                value="0"
+              >
+                0
+              </option>
+              <option
+                value="1"
+              >
+                1 (CHF 20)
+              </option>
+              <option
+                value="2"
+              >
+                2 (CHF 40)
+              </option>
+              <option
+                value="3"
+              >
+                3 (CHF 60)
+              </option>
+              <option
+                value="4"
+              >
+                4 (CHF 80)
+              </option>
+              <option
+                value="5"
+              >
+                5 (CHF 100)
+              </option>
+              <option
+                value="6"
+              >
+                6 (CHF 120)
+              </option>
+              <option
+                value="7"
+              >
+                7 (CHF 140)
+              </option>
+              <option
+                value="8"
+              >
+                8 (CHF 160)
+              </option>
+              <option
+                value="9"
+              >
+                9 (CHF 180)
+              </option>
+              <option
+                value="10"
+              >
+                10 (CHF 200)
+              </option>
+            </select>
+          </div>
+        </div>
         <div
           class="ui error message"
         >

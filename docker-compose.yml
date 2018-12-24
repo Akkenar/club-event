@@ -1,8 +1,10 @@
-version: '2'
+version: '3'
 
 services:
   php:
-    build: .
+    build:
+      context: .
+      dockerfile: ./Dockerfile
     ports:
       - "80:80"
       - "443:443"
@@ -25,3 +27,16 @@ services:
     environment:
      - MYSQL_ROOT_PASSWORD=toor
      - MYSQL_DATABASE=adsss
+
+  e2e:
+    build:
+      context: .
+      dockerfile: e2e/Dockerfile-e2e
+    volumes:
+      - .:/opt
+    command: /bin/wait-for-it.sh -h php -p 80 -s -- npm run e2e
+    links:
+      - php
+    dns:
+      - 8.8.8.8
+

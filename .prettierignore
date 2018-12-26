@@ -6,3 +6,4 @@ package.json
 src/assets/_generated
 dist
 build
+.dpkg-manifest.json

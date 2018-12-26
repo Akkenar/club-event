@@ -2,7 +2,7 @@ import puppeteer from 'puppeteer';
 import faker from 'faker';
 
 const pageUrl = 'http://php/en/register?ignoreCaptcha';
-const timeout = 10000;
+const timeout = 60 * 60 * 1000;
 const personalData = {
   firstName: faker.name.firstName(),
   lastName: faker.name.lastName(),
@@ -42,9 +42,7 @@ describe('Register', () => {
       },
       userAgent: '',
     });
-
-    await page.goto(pageUrl);
-  });
+  }, timeout);
 
   afterEach(() => {
     if (browser) {
@@ -53,6 +51,8 @@ describe('Register', () => {
   });
 
   it('should open the register page', async () => {
+    await page.goto(pageUrl);
+
     await page.waitForSelector('h1');
     const html = await page.$eval('h1', e => e.innerHTML);
     expect(html).toBe('Register to the event');
@@ -62,6 +62,8 @@ describe('Register', () => {
     'should register',
     async () => {
       try {
+        await page.goto(pageUrl);
+
         await page.waitForSelector('.RegisterForm');
         await filePersonalData(page);
         await page.select('*[name=dinner]', '1');

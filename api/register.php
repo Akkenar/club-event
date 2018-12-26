@@ -1,5 +1,6 @@
 <?php
 error_reporting(0);
+openlog('Register', LOG_CONS | LOG_NDELAY | LOG_PID, LOG_USER | LOG_PERROR);
 require_once './lib/recaptcha-1.2.1/src/autoload.php';
 include_once './database.php';
 include_once './email.php';
@@ -34,12 +35,14 @@ $reference = getUniqId($DATA['lastName']);
 
 // Save the data
 saveData($db, $DATA, $reference, $total);
+syslog(LOG_INFO, "Data saved for " . $reference);
 
 // At this stage we don't need the Db anymore
 disconnectDB();
 
 // Confirm the registration to the user
 sendEmail($email, $total, $reference, $language, $DATA);
+syslog(LOG_INFO, "Email send for " . $reference);
 
 // Success!
 echo '{"result": "success", "reference": "' .
@@ -50,10 +53,14 @@ echo '{"result": "success", "reference": "' .
   $email .
   '"}';
 
+syslog(LOG_INFO, "Registration successful for " . $reference);
+closelog();
+
 function validateCaptcha($recaptchaResponse)
 {
   $config = readConfig();
   if ($config['recaptcha.ignore'] && $recaptchaResponse === 'no-captcha') {
+    syslog(LOG_INFO, "Ignoring captcha");
     // By configuration.
     return;
   }
@@ -68,7 +75,7 @@ function validateCaptcha($recaptchaResponse)
     http_response_code(500);
     $error_json =
       '{"result": "error", "reason": "' . json_encode($errors) . '"}';
-    error_log($error_json, 0);
+    syslog(LOG_ERR, $error_json);
     echo $error_json;
     die();
   }

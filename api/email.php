@@ -9,10 +9,15 @@ $globalTPL = new Template('../translations');
 function sendEmail($email, $total, $reference, $language, $data)
 {
   if (!$email) {
-    die("Email missing");
+    return;
   }
 
   $config = readConfig();
+
+  if ($config['email.disable']) {
+    // By configuration
+    return;
+  }
 
   // Sujet et message.
   $message = getBody($total, $reference, $language, $data);
@@ -47,6 +52,8 @@ function sendEmail($email, $total, $reference, $language, $data)
   $mail->Body = $message;
 
   if (!$mail->send()) {
+    http_response_code(500);
+    error_log($mail->ErrorInfo, 0);
     die('Mailer Error: ' . $mail->ErrorInfo);
   }
 }

@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import puppeteer from 'puppeteer';
 import faker from 'faker';
 
@@ -42,6 +43,7 @@ describe('Register', () => {
       },
       userAgent: '',
     });
+    page.on('console', msg => console.log('PAGE LOG:', msg.text()));
   }, timeout);
 
   afterEach(() => {
@@ -61,24 +63,23 @@ describe('Register', () => {
   it(
     'should register',
     async () => {
-      try {
-        await page.goto(pageUrl);
+      await page.goto(pageUrl);
+      await page.evaluate(() => console.log(`url is ${window.location.href}`));
 
-        await page.waitForSelector('.RegisterForm');
-        await filePersonalData(page);
-        await page.select('*[name=dinner]', '1');
+      await page.waitForSelector('.RegisterForm');
+      await filePersonalData(page);
+      await page.select('*[name=dinner]', '1');
 
-        // Submit
-        await page.click('button[type=submit]');
+      // Submit
+      console.log('Submitting the form.', JSON.stringify(personalData));
+      await page.click('button[type=submit]');
 
-        // Ensures that we're on the right page.
-        await page.waitForSelector('.ConfirmationPage');
-        const html = await page.$eval('h1', e => e.innerHTML);
-        expect(html).toBe('Confirmation Page');
-      } catch (e) {
-        page.screenshot();
-        throw e;
-      }
+      // Ensures that we're on the right page.
+      await page.waitForSelector('.ConfirmationPage');
+      await page.evaluate(() => console.log(`url is ${window.location.href}`));
+
+      const html = await page.$eval('h1', e => e.innerHTML);
+      expect(html).toBe('Confirmation Page');
     },
     timeout
   );

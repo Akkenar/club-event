@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 function postData(url = '', data = {}) {
   // Default options are marked with *
   return fetch(url, {
@@ -13,7 +14,10 @@ function postData(url = '', data = {}) {
     body: JSON.stringify(data), // body data type must match "Content-Type" header
   })
     .then(response => response.text())
-    .then(text => JSON.parse(text));
+    .then(text => {
+      console.log(`Getting data from ${url}`, text);
+      return JSON.parse(text);
+    });
 }
 
 export function sendData(data) {

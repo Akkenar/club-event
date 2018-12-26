@@ -1,6 +1,6 @@
-import messages from '../../../translations/en/messages.en.json';
-import confirmation from '../../../translations/en/confirmation.en.md';
-import information from '../../../translations/en/information.en.md';
+import messages from '../../../translations/en/messages.json';
+import confirmation from '../../../translations/en/confirmation.md';
+import information from '../../../translations/en/information.md';
 
 const intl = {
   messages,

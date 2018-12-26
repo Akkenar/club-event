@@ -76,6 +76,10 @@ export default {
   stats: {
     // Disable the verbose output on build
     children: false,
+    entrypoints: false,
+    warnings: false,
+    modules: false,
+    excludeAssets: name => name.startsWith('api/'),
   },
 
   resolve: {

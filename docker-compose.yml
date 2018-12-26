@@ -22,7 +22,6 @@ services:
       - "3307:3307"
     command: --init-file /database/init.sql
     volumes:
-     - /var/lib/mysql
      - ./database:/database
     environment:
      - MYSQL_ROOT_PASSWORD=toor

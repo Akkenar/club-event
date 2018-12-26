@@ -53,7 +53,7 @@ echo '{"result": "success", "reference": "' .
 function validateCaptcha($recaptchaResponse)
 {
   $config = readConfig();
-  if ($config['recaptcha.ignore']) {
+  if ($config['recaptcha.ignore'] && $recaptchaResponse === 'no-captcha') {
     // By configuration.
     return;
   }

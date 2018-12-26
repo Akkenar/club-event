@@ -8,9 +8,10 @@ function connectDB()
   $user = $config['db.user'];
   $password = $config['db.password'];
   $name = $config['db.name'];
+  $port = $config['db.port'];
 
   global $db;
-  $db = new mysqli($host, $user, $password, $name, 3306);
+  $db = new mysqli($host, $user, $password, $name, $port);
   $db->query("SET lc_time_names = 'fr_CH';");
   return $db;
 }
@@ -26,6 +27,8 @@ function sendRequestDB($request, $line = __LINE__, $file = __FILE__)
   global $db;
   $rep = $db->query($request);
   if (!$rep) {
+    http_response_code(500);
+    error_log($request, 0);
     die(manageSQLError($line, $file, $db->error, $request));
   }
   return $rep;

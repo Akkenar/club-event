@@ -15,9 +15,8 @@ function sendEmail($email, $total, $reference, $language, $data)
 
   $config = readConfig();
 
-  error_log($config['email.disabled'], 0);
-  if ($config['email.disabled']) {
-    error_log('No email send', 0);
+  if ($config['email.ignore']) {
+    error_log('No email send, disabled by configuration', 0);
     // By configuration
     return;
   }

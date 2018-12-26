@@ -5,7 +5,6 @@ include_once './database.php';
 include_once './email.php';
 include_once './products.php';
 include_once './captcha.php';
-require_once './config.php';
 
 // We need the Db asap.
 $db = connectDb();

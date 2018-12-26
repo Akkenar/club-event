@@ -7,5 +7,5 @@ build
 *.report.html
 .idea/
 coverage
-api/credentials.local.properties
-api/credentials.properties
+api/configuration/configuration.local.properties
+api/configuration/configuration.properties

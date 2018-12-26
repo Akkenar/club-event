@@ -13,6 +13,8 @@ services:
       - ./api:/var/www/html/api
     links:
       - db
+    depends_on:
+      - db
     dns:
       - 8.8.8.8
 
@@ -34,9 +36,13 @@ services:
       dockerfile: e2e/Dockerfile-e2e
     volumes:
       - .:/opt
-    command: /bin/wait-for-it.sh -h php -p 80 -s -- npm run e2e
+    command: /bin/wait-for-it.sh -h db -p 3307 -s -- /bin/wait-for-it.sh -h php -p 80 -s -- npm run e2e
     links:
       - php
+      - db
+    depends_on:
+      - php
+      - db
     dns:
       - 8.8.8.8
 

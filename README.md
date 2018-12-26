@@ -20,7 +20,7 @@ To test the PHP stuff.
 ```bash
 yarn
 yarn build
-docker-compose up php db
+docker-compose up php
 ```
 
 ## Full validation

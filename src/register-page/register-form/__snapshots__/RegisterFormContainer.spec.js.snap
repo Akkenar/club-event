@@ -4,7 +4,7 @@ exports[`RegisterFormContainer should match snapshot 1`] = `
 <body>
   <div>
     <form
-      class="ui form"
+      class="ui form RegisterForm"
       novalidate=""
     >
       <div

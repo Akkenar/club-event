@@ -3,144 +3,148 @@
 exports[`ConfirmationPage should match the snapshot 1`] = `
 <body>
   <div>
-    <h1
-      class="ui header"
-    >
-      confirmation.page.title
-    </h1>
-    <div />
-    <h2
-      class="ui header"
-    >
-      confirmation.page.recap.title
-    </h2>
     <div
-      class="ui raised segment OrderRecap"
+      class="ConfirmationPage"
     >
-      <dl
-        class="OrderRecap__container"
+      <h1
+        class="ui header"
       >
-        <dd
-          class="OrderRecap__title"
-        >
-          register.form.firstName
-        </dd>
-        <dt
-          class="OrderRecap__value"
-        />
-        <dd
-          class="OrderRecap__title"
-        >
-          register.form.lastName
-        </dd>
-        <dt
-          class="OrderRecap__value"
-        />
-        <dd
-          class="OrderRecap__title"
-        >
-          register.form.club
-        </dd>
-        <dt
-          class="OrderRecap__value"
-        />
-        <dd
-          class="OrderRecap__title"
-        >
-          register.form.address
-        </dd>
-        <dt
-          class="OrderRecap__value"
-        >
-          <address>
-            <div>
-               
-            </div>
-            <div>
-               
-            </div>
-          </address>
-        </dt>
-        <dd
-          class="OrderRecap__title"
-        >
-          register.form.counts.total
-        </dd>
-        <dt
-          class="OrderRecap__value"
-        >
-          CHF 
-        </dt>
-      </dl>
-      <dl
-        class="OrderRecap__container"
+        confirmation.page.title
+      </h1>
+      <div />
+      <h2
+        class="ui header"
       >
-        <dd
-          class="OrderRecap__title"
+        confirmation.page.recap.title
+      </h2>
+      <div
+        class="ui raised segment OrderRecap"
+      >
+        <dl
+          class="OrderRecap__container"
         >
-          register.form.counts.dinner
-        </dd>
-        <dt
-          class="OrderRecap__value"
-        />
-        <dd
-          class="OrderRecap__title"
+          <dd
+            class="OrderRecap__title"
+          >
+            register.form.firstName
+          </dd>
+          <dt
+            class="OrderRecap__value"
+          />
+          <dd
+            class="OrderRecap__title"
+          >
+            register.form.lastName
+          </dd>
+          <dt
+            class="OrderRecap__value"
+          />
+          <dd
+            class="OrderRecap__title"
+          >
+            register.form.club
+          </dd>
+          <dt
+            class="OrderRecap__value"
+          />
+          <dd
+            class="OrderRecap__title"
+          >
+            register.form.address
+          </dd>
+          <dt
+            class="OrderRecap__value"
+          >
+            <address>
+              <div>
+                 
+              </div>
+              <div>
+                 
+              </div>
+            </address>
+          </dt>
+          <dd
+            class="OrderRecap__title"
+          >
+            register.form.counts.total
+          </dd>
+          <dt
+            class="OrderRecap__value"
+          >
+            CHF 
+          </dt>
+        </dl>
+        <dl
+          class="OrderRecap__container"
         >
-          register.form.counts.vegetarian
-        </dd>
-        <dt
-          class="OrderRecap__value"
+          <dd
+            class="OrderRecap__title"
+          >
+            register.form.counts.dinner
+          </dd>
+          <dt
+            class="OrderRecap__value"
+          />
+          <dd
+            class="OrderRecap__title"
+          >
+            register.form.counts.vegetarian
+          </dd>
+          <dt
+            class="OrderRecap__value"
+          />
+          <dd
+            class="OrderRecap__title"
+          >
+            register.form.counts.picknick
+          </dd>
+          <dt
+            class="OrderRecap__value"
+          />
+          <dd
+            class="OrderRecap__title"
+          >
+            register.form.counts.breakfast
+          </dd>
+          <dt
+            class="OrderRecap__value"
+          />
+          <dd
+            class="OrderRecap__title"
+          >
+            register.form.counts.sleeping
+          </dd>
+          <dt
+            class="OrderRecap__value"
+          />
+          <dd
+            class="OrderRecap__title"
+          >
+            register.form.counts.camping
+          </dd>
+          <dt
+            class="OrderRecap__value"
+          />
+        </dl>
+      </div>
+      <button
+        class="ui green button ConfirmationPage__print"
+      >
+        confirmation.page.print
+      </button>
+      <svg
+        aria-label="Photo: Zsolt Sarkozi"
+        class="LazyImage"
+        viewBox="0 0 1024 1024"
+        width="320"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d=""
         />
-        <dd
-          class="OrderRecap__title"
-        >
-          register.form.counts.picknick
-        </dd>
-        <dt
-          class="OrderRecap__value"
-        />
-        <dd
-          class="OrderRecap__title"
-        >
-          register.form.counts.breakfast
-        </dd>
-        <dt
-          class="OrderRecap__value"
-        />
-        <dd
-          class="OrderRecap__title"
-        >
-          register.form.counts.sleeping
-        </dd>
-        <dt
-          class="OrderRecap__value"
-        />
-        <dd
-          class="OrderRecap__title"
-        >
-          register.form.counts.camping
-        </dd>
-        <dt
-          class="OrderRecap__value"
-        />
-      </dl>
+      </svg>
     </div>
-    <button
-      class="ui green button ConfirmationPage__print"
-    >
-      confirmation.page.print
-    </button>
-    <svg
-      aria-label="Photo: Zsolt Sarkozi"
-      class="LazyImage"
-      viewBox="0 0 1024 1024"
-      width="320"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d=""
-      />
-    </svg>
   </div>
 </body>
 `;

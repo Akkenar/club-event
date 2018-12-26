@@ -53,6 +53,10 @@ echo '{"result": "success", "reference": "' .
 function validateCaptcha($recaptchaResponse)
 {
   $config = readConfig();
+  if ($config['recaptcha.ignore']) {
+    // By configuration.
+    return;
+  }
 
   // Recaptcha utils
   $recaptcha = new \ReCaptcha\ReCaptcha($config['recaptcha.key']);
@@ -62,7 +66,10 @@ function validateCaptcha($recaptchaResponse)
   if (!$resp->isSuccess()) {
     $errors = $resp->getErrorCodes();
     http_response_code(500);
-    echo '{"result": "error", "reason": "' . json_encode($errors) . '"}';
+    $error_json =
+      '{"result": "error", "reason": "' . json_encode($errors) . '"}';
+    error_log($error_json, 0);
+    echo $error_json;
     die();
   }
 }

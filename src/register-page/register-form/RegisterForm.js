@@ -22,7 +22,7 @@ const RegisterForm = ({ handleSubmit, handleChange, state, total }) => {
   }
 
   return (
-    <Form onSubmit={handleSubmit} noValidate>
+    <Form onSubmit={handleSubmit} noValidate className="RegisterForm">
       <Message
         error
         data-testid="backend-error"

@@ -1,4 +1,4 @@
-import React, { Fragment, useContext, useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import getKey from '../core/intl/getKey';
 import LanguageContext from '../core/intl/LanguageContext';
 import { setPageTitle } from '../page.lib';
@@ -53,7 +53,7 @@ const ConfirmationPage = () => {
   ) : null;
 
   return (
-    <Fragment>
+    <div className="ConfirmationPage">
       <Header as="h1">{getKey('confirmation.page.title', messages)}</Header>
       <div dangerouslySetInnerHTML={{ __html: confirmationMessage }} />
       <Header as="h2">
@@ -68,7 +68,7 @@ const ConfirmationPage = () => {
         srcwebp={imgwebp}
         alt={'Photo: Zsolt Sarkozi'}
       />
-    </Fragment>
+    </div>
   );
 };
 

@@ -10,7 +10,7 @@ exports[`RegisterPage should match the snapshot 1`] = `
         register.page.title
       </h1>
       <form
-        class="ui form"
+        class="ui form RegisterForm"
         novalidate=""
       >
         <div

@@ -35,4 +35,4 @@ CREATE TABLE users
   constraint inscriptions_key primary key (id)
 );
 
-INSERT INTO users (username, password) VALUE ('foo', 'bar');
+INSERT INTO users (username, password) VALUE ('foo', PASSWORD('bar'));

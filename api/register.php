@@ -47,13 +47,12 @@ sendEmail($email, $total, $reference, $language, $DATA);
 syslog(LOG_INFO, "Email send for " . $reference);
 
 // Success!
-echo '{"result": "success", "reference": "' .
-  $reference .
-  '", "total": "' .
-  $total .
-  '", "email": "' .
-  $email .
-  '"}';
+$result = [];
+$result['result'] = 'success';
+$result['reference'] = $reference;
+$result['total'] = $total;
+$result['email'] = $email;
+echo json_encode($result);
 
 syslog(LOG_INFO, "Registration successful for " . $reference);
 closelog();

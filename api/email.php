@@ -1,10 +1,9 @@
 <?php
 
-require_once './vendor/phpmailer/phpmailer/PHPMailerAutoload.php';
-require_once './class.template.php';
+require_once './vendor/autoload.php';
 require_once './config.php';
 
-$globalTPL = new Template('../translations');
+$globalTPL = new HTML_Template_PHPLIB('../translations', 'keep');
 
 function sendEmail($email, $total, $reference, $language, $data)
 {
@@ -63,32 +62,32 @@ function sendEmail($email, $total, $reference, $language, $data)
 function getBody($total, $reference, $language, $data)
 {
   global $globalTPL;
-  $globalTPL->set_file('email', $language . '/confirmation_email.html');
+  $globalTPL->setFile('email', $language . '/confirmation_email.html');
 
   // Computed fields by the backend
-  $globalTPL->set_var('total', $total);
-  $globalTPL->set_var('reference', $reference);
+  $globalTPL->setVar('total', $total);
+  $globalTPL->setVar('reference', $reference);
 
   // Data send by the frontend
-  $globalTPL->set_var('firstName', $data['firstName']);
-  $globalTPL->set_var('lastName', $data['lastName']);
-  $globalTPL->set_var('club', $data['club']);
-  $globalTPL->set_var('street', $data['street']);
-  $globalTPL->set_var('no', $data['no']);
-  $globalTPL->set_var('npa', $data['npa']);
-  $globalTPL->set_var('locality', $data['locality']);
+  $globalTPL->setVar('firstName', $data['firstName']);
+  $globalTPL->setVar('lastName', $data['lastName']);
+  $globalTPL->setVar('club', $data['club']);
+  $globalTPL->setVar('street', $data['street']);
+  $globalTPL->setVar('no', $data['no']);
+  $globalTPL->setVar('npa', $data['npa']);
+  $globalTPL->setVar('locality', $data['locality']);
 
   $products = $data['products'];
-  $globalTPL->set_var('dinner', $products['dinner']);
-  $globalTPL->set_var('vegetarian', $products['vegetarian']);
-  $globalTPL->set_var('sleeping', $products['sleeping']);
-  $globalTPL->set_var('camping', $products['camping']);
-  $globalTPL->set_var('picknick', $products['picknick']);
-  $globalTPL->set_var('breakfast', $products['breakfast']);
-  $globalTPL->set_var('itemSize1', $products['itemSize1']);
-  $globalTPL->set_var('itemSize2', $products['itemSize2']);
-  $globalTPL->set_var('itemSize3', $products['itemSize3']);
-  $globalTPL->set_var('itemSize4', $products['itemSize4']);
+  $globalTPL->setVar('dinner', $products['dinner']);
+  $globalTPL->setVar('vegetarian', $products['vegetarian']);
+  $globalTPL->setVar('sleeping', $products['sleeping']);
+  $globalTPL->setVar('camping', $products['camping']);
+  $globalTPL->setVar('picknick', $products['picknick']);
+  $globalTPL->setVar('breakfast', $products['breakfast']);
+  $globalTPL->setVar('itemSize1', $products['itemSize1']);
+  $globalTPL->setVar('itemSize2', $products['itemSize2']);
+  $globalTPL->setVar('itemSize3', $products['itemSize3']);
+  $globalTPL->setVar('itemSize4', $products['itemSize4']);
 
   return $globalTPL->finish($globalTPL->parse('email', 'email', true));
 }

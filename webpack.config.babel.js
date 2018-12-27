@@ -83,15 +83,15 @@ export default {
   },
 
   resolve: {
-    extensions: ['.js', '.jsx', '.json', '.scss'],
+    extensions: ['.js', '.ts', '.tsx', '.json', '.scss'],
   },
 
   entry: {
-    bundle: './entry.js',
+    bundle: './entry.tsx',
   },
 
   // ref: https://webpack.js.org/configuration/devtool/
-  devtool: isProduction ? false : 'inline-cheap-module-eval-source-map',
+  devtool: isProduction ? false : 'source-map',
   optimization: {
     minimize: isProduction,
     splitChunks: {
@@ -143,6 +143,8 @@ export default {
         exclude: /node_modules/,
         use: ['babel-loader'],
       },
+      { test: /\.tsx?$/, loader: 'awesome-typescript-loader' },
+      { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' },
       {
         test: /\.s?css$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],

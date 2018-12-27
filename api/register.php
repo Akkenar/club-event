@@ -1,11 +1,15 @@
 <?php
-error_reporting(0);
-openlog('Register', LOG_CONS | LOG_NDELAY | LOG_PID, LOG_USER | LOG_PERROR);
+error_reporting(E_ERROR);
+openlog(
+  'Register',
+  LOG_CONS | LOG_NDELAY | LOG_PID,
+  LOG_USER | LOG_PERROR | LOG_LPR
+);
 
-include_once './database.php';
-include_once './email.php';
-include_once './products.php';
-include_once './captcha.php';
+include_once './core/database.php';
+include_once './core/email.php';
+include_once './core/products.php';
+include_once './core/captcha.php';
 
 syslog(LOG_INFO, 'Registering an event');
 

@@ -48,5 +48,9 @@ function getTotal($data, $prices)
 
 function getTotalForItem($data, $prices, $itemName)
 {
+  if (!array_key_exists($itemName, $data)) {
+    return 0;
+  }
+
   return intval($data[$itemName]) * $prices[$itemName];
 }

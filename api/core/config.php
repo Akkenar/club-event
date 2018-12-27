@@ -2,7 +2,7 @@
 function readConfig()
 {
   $serverName = trim($_SERVER['SERVER_NAME']);
-  $basePath = './configuration/';
+  $basePath = __DIR__ . '/../configuration/';
 
   // Docker sets the server name to "php" per docker-compose configuration
   if ($serverName === 'php') {
@@ -20,6 +20,7 @@ function readConfig()
 
 function parseFile($filename)
 {
+  syslog(LOG_INFO, 'Loading configuration from ' . $filename);
   $value = parse_ini_file($filename);
 
   if (!$value) {

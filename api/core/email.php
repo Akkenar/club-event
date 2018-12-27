@@ -1,9 +1,9 @@
 <?php
 
-require_once './vendor/autoload.php';
-require_once './config.php';
+require_once __DIR__ . '/../vendor/autoload.php';
+require_once 'config.php';
 
-$globalTPL = new HTML_Template_PHPLIB('../translations', 'keep');
+$globalTPL = new HTML_Template_PHPLIB(__DIR__ . '/../../translations', 'keep');
 
 function sendEmail($email, $total, $reference, $language, $data)
 {
@@ -13,12 +13,6 @@ function sendEmail($email, $total, $reference, $language, $data)
   }
 
   $config = readConfig();
-
-  if ($config['email.ignore']) {
-    error_log('No email send, disabled by configuration', 0);
-    // By configuration
-    return;
-  }
 
   // Sujet et message.
   $message = getBody($total, $reference, $language, $data);
@@ -52,6 +46,12 @@ function sendEmail($email, $total, $reference, $language, $data)
   $mail->Subject = utf8_decode("AD SSS 2019 - Zahlung/Payment");
   $mail->Body = $message;
 
+  if ($config['email.ignore']) {
+    error_log('No email send, disabled by configuration. ' . $message, 0);
+    // By configuration
+    return;
+  }
+
   if (!$mail->send()) {
     http_response_code(500);
     error_log($mail->ErrorInfo, 0);
@@ -78,17 +78,24 @@ function getBody($total, $reference, $language, $data)
   $globalTPL->setVar('locality', $data['locality']);
 
   $products = $data['products'];
-  $globalTPL->setVar('dinner', $products['dinner']);
-  $globalTPL->setVar('vegetarian', $products['vegetarian']);
-  $globalTPL->setVar('sleeping', $products['sleeping']);
-  $globalTPL->setVar('camping', $products['camping']);
-  $globalTPL->setVar('picknick', $products['picknick']);
-  $globalTPL->setVar('breakfast', $products['breakfast']);
-  $globalTPL->setVar('itemSize1', $products['itemSize1']);
-  $globalTPL->setVar('itemSize2', $products['itemSize2']);
-  $globalTPL->setVar('itemSize3', $products['itemSize3']);
-  $globalTPL->setVar('itemSize4', $products['itemSize4']);
+  setVarIfExists($globalTPL, $products, 'dinner');
+  setVarIfExists($globalTPL, $products, 'vegetarian');
+  setVarIfExists($globalTPL, $products, 'sleeping');
+  setVarIfExists($globalTPL, $products, 'camping');
+  setVarIfExists($globalTPL, $products, 'picknick');
+  setVarIfExists($globalTPL, $products, 'breakfast');
+  setVarIfExists($globalTPL, $products, 'itemSize1');
+  setVarIfExists($globalTPL, $products, 'itemSize2');
+  setVarIfExists($globalTPL, $products, 'itemSize3');
+  setVarIfExists($globalTPL, $products, 'itemSize4');
 
   return $globalTPL->finish($globalTPL->parse('email', 'email', true));
+}
+
+function setVarIfExists($globalTPL, $products, $key)
+{
+  if (array_key_exists($key, $products)) {
+    $globalTPL->setVar($key, $products[$key]);
+  }
 }
 ?>

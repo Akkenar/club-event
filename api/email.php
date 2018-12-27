@@ -1,6 +1,6 @@
 <?php
 
-require_once './lib/phpmailer/PHPMailerAutoload.php';
+require_once './vendor/phpmailer/phpmailer/PHPMailerAutoload.php';
 require_once './class.template.php';
 require_once './config.php';
 

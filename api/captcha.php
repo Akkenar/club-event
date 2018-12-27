@@ -1,6 +1,6 @@
 <?php
 require_once './config.php';
-require_once './lib/recaptcha-1.2.1/src/autoload.php';
+require_once './vendor/google/recaptcha/src/autoload.php';
 
 function validateCaptcha($recaptchaResponse)
 {

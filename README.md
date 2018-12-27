@@ -15,11 +15,13 @@ npm start
 
 ## Starting frontend and backend with Docker
 
-To test the PHP stuff.
+To test the PHP stuff. The php image contains Composer and
+should install the dependencies upon starting.
 
 ```bash
 yarn
 yarn build
+docker-compose -f docker-compose.composer.yml up composer
 docker-compose up php
 ```
 

@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  composer:
+    build:
+      context: .
+      dockerfile: ./Dockerfile.composer.template
+    volumes:
+      - ./api:/var/www/html
+    dns:
+      - 8.8.8.8
+    command:
+      - install
+

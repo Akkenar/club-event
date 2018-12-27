@@ -1,0 +1,14 @@
+FROM php:5.6-apache
+
+# Install git, required for Composer
+RUN apt-get update \
+    && apt-get -y install git \
+    && apt-get clean; rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/*
+
+# Composer for php dependencies
+RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+RUN php composer-setup.php --no-ansi --install-dir=/usr/local/bin --filename=composer
+RUN php -r "unlink('composer-setup.php');"
+
+ENTRYPOINT ["composer"]
+CMD ["--version"]

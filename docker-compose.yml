@@ -4,7 +4,7 @@ services:
   php:
     build:
       context: .
-      dockerfile: ./Dockerfile
+      dockerfile: Dockerfile.php.template
     ports:
       - "80:80"
       - "443:443"
@@ -33,7 +33,7 @@ services:
   e2e:
     build:
       context: .
-      dockerfile: e2e/Dockerfile-e2e
+      dockerfile: e2e/Dockerfile.e2e.template
     volumes:
       - .:/opt
     command: /bin/wait-for-it.sh -h db -p 3307 -t 60 -- /bin/wait-for-it.sh -h php -p 80 -- npm run e2e

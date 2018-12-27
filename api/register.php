@@ -1,27 +1,35 @@
 <?php
 error_reporting(0);
 openlog('Register', LOG_CONS | LOG_NDELAY | LOG_PID, LOG_USER | LOG_PERROR);
+
 include_once './database.php';
 include_once './email.php';
 include_once './products.php';
 include_once './captcha.php';
 
+syslog(LOG_INFO, 'Registering an event');
+
 // We need the Db asap.
 $db = connectDb();
+syslog(LOG_INFO, 'Db connected');
 
 // Data from the post.
 $DATA = json_decode(file_get_contents('php://input'), true);
 $email = $DATA['email'];
 $language = $DATA['language'];
+syslog(LOG_INFO, 'Language: ' . $language);
 
 // This will break if the captcha isn't valid.
 validateCaptcha($DATA['recaptcha']);
+syslog(LOG_INFO, 'captcha validated');
 
 // Compute the total based on the prices
 $total = getTotal($DATA, $prices);
+syslog(LOG_INFO, 'Total: ' . $total);
 
 // Generate a reference number based on the last name to ease payment reconciliation
 $reference = getUniqId($DATA['lastName']);
+syslog(LOG_INFO, 'Reference: ' . $reference);
 
 // Save the data
 saveData($db, $DATA, $reference, $total);

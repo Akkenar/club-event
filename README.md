@@ -1,6 +1,6 @@
 # Club Event
 
-A simple form to register to a club event.
+A simple form to register a person to a club event, with basic products management.
 
 Not generic at all.
 
@@ -41,6 +41,22 @@ Run the e2e tests in Docker with:
 yarn build
 yarn test:e2e
 ```
+
+## Contributing
+
+Push any change in a branch and use the Pull Request system to ensure
+Travis builds are being run before merging.
+
+## Releasing a version
+
+To build a version deployable on the remote server:
+
+* Copy `api/configuration/_configuration.properties` to `api/configuration/configuration.properties`
+* Update `api/configuration/configuration.properties` with production values
+* Run `yarn validate`
+* Upon completion, deploy `target/build` to the root of the remote server
+
+Requires PHP 5.2 and Apache2.
 
 ## Acknowledgements
 

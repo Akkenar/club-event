@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginPage should match snapshot 1`] = `
+<body>
+  <div>
+    <div
+      class="LoginPage"
+    >
+      <div
+        class="ui segment"
+      >
+        <h1
+          class="ui header"
+        >
+          login.page.title
+        </h1>
+        <form
+          class="ui form LoginForm"
+          novalidate=""
+        >
+          <div
+            class="field"
+          >
+            <label
+              for="username"
+            >
+              login.form.username
+            </label>
+            <input
+              aria-invalid="false"
+              autocomplete="username"
+              data-testid="username"
+              id="username"
+              maxlength="255"
+              name="username"
+              required=""
+              value=""
+            />
+          </div>
+          <div
+            class="field"
+          >
+            <label
+              for="password"
+            >
+              login.form.password
+            </label>
+            <input
+              aria-invalid="false"
+              autocomplete="current-password"
+              data-testid="password"
+              id="password"
+              maxlength="255"
+              name="password"
+              required=""
+              type="password"
+              value=""
+            />
+          </div>
+          <div
+            class="ui error message"
+            data-testid="backend-error"
+          />
+          <div
+            class="g-recaptcha"
+            id="recaptcha-container"
+          />
+          <div
+            class="LoginForm__submit-button-container"
+          >
+            <button
+              class="ui black button full-width LoginForm__submit-button"
+              type="submit"
+            >
+              login.form.submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+`;

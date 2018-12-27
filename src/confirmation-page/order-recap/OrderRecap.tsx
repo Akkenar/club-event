@@ -3,7 +3,7 @@ import { Fragment, useContext } from 'react';
 import { Segment } from 'semantic-ui-react';
 import getKey from '../../core/intl/getKey';
 import LanguageContext from '../../core/intl/LanguageContext';
-import { Products } from '../../register-page/register-form/register.type';
+import { Products } from '../../register-page/register.type';
 
 import './OrderRecap.scss';
 

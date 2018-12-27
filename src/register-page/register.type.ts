@@ -1,3 +1,5 @@
+import { ApiResponse } from '../core/api.type';
+
 export interface Products {
   breakfast?: number | string;
   camping?: number | string;
@@ -30,4 +32,9 @@ export interface Registration {
   sending: boolean;
   street: string;
   errors?: Errors;
+}
+
+export interface RegistrationResult extends ApiResponse {
+  total: number;
+  reference: string;
 }

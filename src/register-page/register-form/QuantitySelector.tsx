@@ -3,8 +3,8 @@ import { useContext } from 'react';
 import { Form } from 'semantic-ui-react';
 import getKey from '../../core/intl/getKey';
 import LanguageContext from '../../core/intl/LanguageContext';
-import { PRICES } from './prices';
-import { Registration } from './register.type';
+import { PRICES } from '../prices';
+import { Registration } from '../register.type';
 
 export interface QuantitySelectorProps {
   name: string;

@@ -1,29 +1,15 @@
 import 'jest-dom/extend-expect';
 import * as React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import { fireEvent, render, wait, waitForElement } from 'react-testing-library';
+import { render, wait, waitForElement } from 'react-testing-library';
+import {
+  mockGrecaptcha,
+  mockResponse,
+  setValidInputData,
+} from '../../test-utils/test-utils.lib';
 import RegisterFormContainer from './RegisterFormContainer';
 
-// Mock the Google captcha
-(window as any).grecaptcha = {
-  getResponse: () => 'response',
-  render: jest.fn(),
-};
-
-function mockResponse(result: any) {
-  // Mock the fetch data as JSDom doesn't implement fetch.
-  window.fetch = jest.fn(() =>
-    Promise.resolve({
-      text: () =>
-        new Promise(resolve => {
-          const mockResult = JSON.stringify({ result });
-          setTimeout(() => {
-            resolve(mockResult);
-          }, 50);
-        }),
-    })
-  );
-}
+mockGrecaptcha();
 
 const validData = {
   breakfast: '1',
@@ -42,15 +28,6 @@ const validData = {
   vegetarian: '1',
 };
 
-function setValidInputData({ getByTestId }: { getByTestId: any }) {
-  Object.keys(validData).forEach((key: string) => {
-    fireEvent.change(getByTestId(key), {
-      // @ts-ignore
-      target: { value: validData[key] },
-    });
-  });
-}
-
 const ContainerWithRouter = () => {
   return (
     <BrowserRouter>
@@ -60,11 +37,6 @@ const ContainerWithRouter = () => {
 };
 
 describe('RegisterFormContainer', () => {
-  it('should match snapshot', () => {
-    const wrapper = render(<RegisterFormContainer />);
-    expect(wrapper.baseElement).toMatchSnapshot();
-  });
-
   it('should add errors to all fields when the form is empty', () => {
     const wrapper = render(<RegisterFormContainer />);
 
@@ -80,7 +52,7 @@ describe('RegisterFormContainer', () => {
     const wrapper = render(<ContainerWithRouter />);
 
     // Set data in the fields.
-    setValidInputData(wrapper);
+    setValidInputData(validData, wrapper);
 
     // Submit the form!
     wrapper.queryByText('register.form.submit').click();
@@ -101,7 +73,7 @@ describe('RegisterFormContainer', () => {
     const wrapper = render(<ContainerWithRouter />);
 
     // Set data in the fields.
-    setValidInputData(wrapper);
+    setValidInputData(validData, wrapper);
 
     // Submit the form!
     wrapper.queryByText('register.form.submit').click();

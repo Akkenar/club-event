@@ -15,7 +15,9 @@
     "lint:ts": "tslint -c tslint.json 'src/**/*{.ts,.tsx}'",
     "lint:format": "prettier --config ./.prettierrc -l \"{,!(target|coverage|node_modules)/**/,.}/*{.ts,.tsx,.js,.jsx,.json,.css,.scss,.md,.php,.html}\"",
     "validate": "npm-run-all lint:* test build test:e2e",
-    "format": "prettier --config ./.prettierrc --write \"{,!(target|coverage|node_modules)/**/,.}/*{.ts,.tsx,.js,.jsx,.json,.css,.scss,.md,.php,.html}\""
+    "format": "npm-run-all format:*",
+    "format:ts": "yarn lint:ts --fix",
+    "format:prettier": "prettier --config ./.prettierrc --write \"{,!(target|coverage|node_modules)/**/,.}/*{.ts,.tsx,.js,.jsx,.json,.css,.scss,.md,.php,.html}\""
   },
   "author": "",
   "license": "ISC",

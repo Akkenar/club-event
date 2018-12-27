@@ -14,8 +14,14 @@ function appendRecaptchaScript() {
 }
 
 function renderCaptcha() {
+  const { grecaptcha } = window as any;
+  if (!grecaptcha) {
+    // On the unlikely case google.com couldn't be reached
+    return;
+  }
+
   // Render the captcha
-  (window as any).grecaptcha.render(CONTAINER_ID, {
+  grecaptcha.render(CONTAINER_ID, {
     sitekey: '6LeZ23kUAAAAALdlAuJg3X0MTmPelUzvJ4dAMpK-',
   });
 }

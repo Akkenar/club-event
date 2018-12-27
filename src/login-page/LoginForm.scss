@@ -1,0 +1,16 @@
+@import url('../../node_modules/semantic-ui-css/components/input.min.css');
+@import url('../../node_modules/semantic-ui-css/components/form.min.css');
+@import url('../../node_modules/semantic-ui-css/components/placeholder.min.css');
+@import url('../../node_modules/semantic-ui-css/components/segment.min.css');
+@import url('../../node_modules/semantic-ui-css/components/button.min.css');
+@import url('../../node_modules/semantic-ui-css/components/message.min.css');
+
+.LoginForm__submit-button-container {
+  display: flex;
+}
+
+.LoginForm__submit-button {
+  margin-right: 0 !important;
+  margin-left: auto !important;
+  margin-top: 1em !important;
+}

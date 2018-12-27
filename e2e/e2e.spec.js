@@ -2,7 +2,9 @@
 import puppeteer from 'puppeteer';
 import faker from 'faker';
 
-const pageUrl = 'http://php/en/register?ignoreCaptcha';
+const registerPageUrl = 'http://php/en/register?ignoreCaptcha';
+const loginPageUrl = 'http://php/en/login?ignoreCaptcha';
+
 const timeout = 60 * 60 * 1000;
 const personalData = {
   firstName: faker.name.firstName(),
@@ -24,7 +26,7 @@ async function filePersonalData(page) {
   }
 }
 
-describe('Register', () => {
+describe('e2e', () => {
   let browser;
   let page;
 
@@ -53,7 +55,7 @@ describe('Register', () => {
   });
 
   it('should open the register page', async () => {
-    await page.goto(pageUrl);
+    await page.goto(registerPageUrl);
 
     await page.waitForSelector('h1');
     const html = await page.$eval('h1', e => e.innerHTML);
@@ -63,7 +65,7 @@ describe('Register', () => {
   it(
     'should register',
     async () => {
-      await page.goto(pageUrl);
+      await page.goto(registerPageUrl);
       await page.evaluate(() => console.log(`url is ${window.location.href}`));
 
       await page.waitForSelector('.RegisterForm');
@@ -71,7 +73,6 @@ describe('Register', () => {
       await page.select('*[name=dinner]', '1');
 
       // Submit
-      console.log('Submitting the form.', JSON.stringify(personalData));
       await page.click('button[type=submit]');
 
       // Ensures that we're on the right page.
@@ -80,6 +81,26 @@ describe('Register', () => {
 
       const html = await page.$eval('h1', e => e.innerHTML);
       expect(html).toBe('Confirmation Page');
+    },
+    timeout
+  );
+
+  it(
+    'should login',
+    async () => {
+      await page.goto(loginPageUrl);
+
+      await page.waitForSelector('.LoginPage');
+
+      // Credentials, as defined in the init.sql script
+      await page.type('*[name=username]', 'foo');
+      await page.type('*[name=password]', 'bar');
+
+      // Submit
+      await page.click('button[type=submit]');
+
+      // Ensures that we're on the right page.
+      await page.waitForSelector('.RegistrationsPage');
     },
     timeout
   );

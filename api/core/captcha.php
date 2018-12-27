@@ -19,8 +19,11 @@ function validateCaptcha($recaptchaResponse)
   if (!$resp->isSuccess()) {
     $errors = $resp->getErrorCodes();
     http_response_code(500);
-    $error_json =
-      '{"result": "error", "reason": "' . json_encode($errors) . '"}';
+    $result = [];
+    $result['result'] = 'error';
+    $result['reason'] = $errors;
+    $result['message'] = 'Captcha invalide';
+    $error_json = json_encode($result);
     syslog(LOG_ERR, $error_json);
     echo $error_json;
     die();

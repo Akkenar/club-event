@@ -3,8 +3,8 @@ import { useContext } from 'react';
 import { Form, Header, Message } from 'semantic-ui-react';
 import getKey from '../../core/intl/getKey';
 import LanguageContext from '../../core/intl/LanguageContext';
+import { Registration } from '../register.type';
 import QuantitySelector from './QuantitySelector';
-import { Registration } from './register.type';
 
 export interface ProductsProps {
   handleChange: any;

@@ -5,9 +5,9 @@ docker-compose \
   -f docker-compose.composer.yml \
   up composer
 
-# Starts everything
+# Starts the e2e container with just the logs for this container.
+# The php and db container are implicitly launched and killed when
+# the e2e container starts respectively stops.
 docker-compose \
   -f docker-compose.yml \
-  up \
-  --exit-code-from e2e \
-  --abort-on-container-exit
+  up e2e

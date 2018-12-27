@@ -38,7 +38,7 @@ disconnectDB();
 
 // Success.
 $result = [];
-$result['status'] = 'success';
+$result['result'] = 'success';
 echo json_encode($result);
 exit();
 
@@ -47,10 +47,13 @@ exit();
  */
 function error($message)
 {
-  session_destroy();
   http_response_code(500);
   error_log($message, 0);
-  die($message);
+  $result = [];
+  $result['result'] = 'error';
+  $result['message'] = $message;
+  echo json_encode($result);
+  exit();
 }
 
 /**
@@ -66,6 +69,6 @@ function checkLoginOrDie($username, $password)
 
   $response = sendRequestDB($sql);
   if ($response->num_rows === 0) {
-    error('Invalid login');
+    error('Mot de passe invalide');
   }
 }

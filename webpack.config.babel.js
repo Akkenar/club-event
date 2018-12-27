@@ -94,19 +94,6 @@ export default {
   devtool: isProduction ? false : 'source-map',
   optimization: {
     minimize: isProduction,
-    splitChunks: {
-      cacheGroups: {
-        default: false,
-        // Custom common chunk
-        bundle: {
-          name: 'commons',
-          chunks: 'all',
-          minChunks: 3,
-          reuseExistingChunk: false,
-          priority: -30,
-        },
-      },
-    },
   },
 
   // Remove support for node libraries in our build

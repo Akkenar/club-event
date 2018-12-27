@@ -1,12 +1,22 @@
 import * as React from 'react';
 import { Fragment } from 'react';
+import { Results } from '../../core/api.type';
 import LanguageContext from '../../core/intl/LanguageContext';
 import Loader from '../../core/loader/Loader';
 import { goToTop, setFocusOnError } from '../../core/page.lib';
+import {
+  getCaptchaResponse,
+  resetCaptcha,
+} from '../../core/recaptcha/recaptcha.lib';
 import { setSimpleStore } from '../../core/simpleStore';
-import { PRICES } from './prices';
-import { sendData } from './register.service';
-import { Errors, Products, Registration } from './register.type';
+import { PRICES } from '../prices';
+import { sendData } from '../register.service';
+import {
+  Errors,
+  Products,
+  Registration,
+  RegistrationResult,
+} from '../register.type';
 import RegisterForm from './RegisterForm';
 
 const emailRegex = new RegExp(
@@ -45,14 +55,6 @@ export interface RegisterFormContainerState {
   [key: string]: any;
 }
 
-function getCaptchaResponse() {
-  const noCaptcha = window.location.href.includes('ignoreCaptcha');
-  if (noCaptcha || typeof (window as any).grecaptcha === 'undefined') {
-    return 'no-captcha';
-  }
-  return (window as any).grecaptcha.getResponse();
-}
-
 class RegisterFormContainer extends React.Component<
   any,
   RegisterFormContainerState
@@ -85,10 +87,10 @@ class RegisterFormContainer extends React.Component<
 
   public handleChangeProduct(event: any) {
     const { target } = event;
-    const { name } = target;
+    const { name, value } = target;
 
     this.setState(state => ({
-      products: { ...state.products, [name]: target.value },
+      products: { ...state.products, [name]: value },
     }));
   }
 
@@ -101,11 +103,14 @@ class RegisterFormContainer extends React.Component<
     goToTop();
   }
 
-  public handleSuccess({ result, total, reference }: any, data: any) {
+  public handleSuccess(
+    { result, total, reference }: RegistrationResult,
+    data: Registration
+  ) {
     // To be able to share data between pages.
     setSimpleStore({ ...data, total, reference });
 
-    if (result === 'success') {
+    if (result === Results.SUCCESS) {
       this.setState({
         sending: false,
         success: true,
@@ -119,6 +124,7 @@ class RegisterFormContainer extends React.Component<
   public handleSubmit() {
     if (this.validateForm()) {
       setFocusOnError();
+      resetCaptcha();
       return;
     }
 

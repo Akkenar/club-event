@@ -7,11 +7,15 @@ import HeaderAsync from './core/header/HeaderAsync';
 import LanguageContext from './core/intl/LanguageContext';
 import provideLanguage from './core/intl/provideLanguage';
 import HomePageAsync from './home-page/HomePageAsync';
+import LoginPageAsync from './login-page/LoginPageAsync';
 import RegisterPageAsync from './register-page/RegisterPageAsync';
 
 import './App.scss';
 import './style/main.scss';
 import './style/semantic.scss';
+
+// TODO to implement.
+const RegistrationsPageAsync = () => <div className="RegistrationsPage" />;
 
 const AppContainer = () => {
   const { language } = useContext(LanguageContext);
@@ -36,6 +40,11 @@ const AppContainer = () => {
                 <Route
                   path={`/${language}/confirmation`}
                   component={ConfirmationPageAsync}
+                />
+                <Route path={`/${language}/login`} component={LoginPageAsync} />
+                <Route
+                  path={`/${language}/registrations`}
+                  component={RegistrationsPageAsync}
                 />
                 <Redirect to={`/${language}/home`} />
               </Switch>

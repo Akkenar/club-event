@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { render } from 'react-testing-library';
-import { setSimpleStore } from '../simpleStore';
+import { setSimpleStore } from '../core/simpleStore';
 import ConfirmationPage from './ConfirmationPage';
 
 describe('ConfirmationPage', () => {

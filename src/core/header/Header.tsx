@@ -3,11 +3,11 @@ import { useContext, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Menu } from 'semantic-ui-react';
 import * as configuration from '../../configuration.json';
-import { setPageDescription } from '../../page.lib';
 import getKey from '../intl/getKey';
 import LanguageContext from '../intl/LanguageContext';
 import LanguageSwitcher from '../language-switcher/LanguageSwitcher';
 import Logo from '../logo/Logo';
+import { setPageDescription } from '../page.lib';
 
 import './Header.scss';
 

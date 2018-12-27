@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Dimmer, Loader as SemanticLoader } from 'semantic-ui-react';
-import { goToTop } from '../../page.lib';
+import { goToTop } from '../page.lib';
 import './Loader.scss';
 
 const BODY_HAS_DIMMER_CLASS = 'has-dimmer';

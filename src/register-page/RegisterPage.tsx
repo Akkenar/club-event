@@ -3,7 +3,7 @@ import { useContext, useEffect } from 'react';
 import { Header } from 'semantic-ui-react';
 import getKey from '../core/intl/getKey';
 import LanguageContext from '../core/intl/LanguageContext';
-import { goToTop, setPageTitle } from '../page.lib';
+import { goToTop, setPageTitle } from '../core/page.lib';
 import RegisterFormContainer from './register-form/RegisterFormContainer';
 
 const RegisterPage = () => {

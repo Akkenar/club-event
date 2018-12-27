@@ -7,7 +7,7 @@ import getKey from '../core/intl/getKey';
 import LanguageContext from '../core/intl/LanguageContext';
 import LazyImage from '../core/lazy-image/LazyImage';
 import Logo from '../core/logo/Logo';
-import { goToTop, setPageTitle } from '../page.lib';
+import { goToTop, setPageTitle } from '../core/page.lib';
 import InformationSection from './information-section/InformationSection';
 
 const HomePage = () => {

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { setPageLanguage } from '../../page.lib';
+import { setPageLanguage } from '../page.lib';
 import { importLanguage } from './importLanguage';
 import { IntlType } from './intl.type';
 import LanguageContext from './LanguageContext';

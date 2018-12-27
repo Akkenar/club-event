@@ -6,8 +6,8 @@ import * as imgwebp from '../assets/Zsolt-Sarkozi-Grottes-aux-Fees-17.webp';
 import getKey from '../core/intl/getKey';
 import LanguageContext from '../core/intl/LanguageContext';
 import LazyImage from '../core/lazy-image/LazyImage';
-import { setPageTitle } from '../page.lib';
-import { getSimpleStore } from '../simpleStore';
+import { setPageTitle } from '../core/page.lib';
+import { getSimpleStore } from '../core/simpleStore';
 import OrderRecap from './order-recap/OrderRecap';
 
 import './ConfirmationPage.scss';

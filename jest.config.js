@@ -2,6 +2,14 @@
 // https://jestjs.io/docs/en/configuration.html
 
 module.exports = {
+  preset: 'ts-jest',
+
+  globals: {
+    'ts-jest': {
+      tsConfig: 'tsconfig.spec.json',
+    },
+  },
+
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
@@ -63,12 +71,7 @@ module.exports = {
   // ],
 
   // An array of file extensions your modules use
-  // moduleFileExtensions: [
-  //   "js",
-  //   "json",
-  //   "jsx",
-  //   "node"
-  // ],
+  moduleFileExtensions: ['js', 'json', 'jsx', 'node', 'ts', 'tsx'],
 
   // A map from regular expressions to module names that allow to stub out resources with a single module
   moduleNameMapper: {
@@ -137,10 +140,11 @@ module.exports = {
   // testLocationInResults: false,
 
   // The glob patterns Jest uses to detect test files
-  // testMatch: [
-  //   "**/__tests__/**/*.js?(x)",
-  //   "**/?(*.)+(spec|test).js?(x)"
-  // ],
+  testMatch: [
+    '**/__tests__/**/*.js?(x)',
+    '**/?(*.)+(spec|test).js?(x)',
+    '**/?(*.)+(spec|test).ts?(x)',
+  ],
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
   testPathIgnorePatterns: ['/node_modules/', '/e2e/'],
@@ -163,6 +167,7 @@ module.exports = {
   // A map from regular expressions to paths to transformers
   transform: {
     '^.+\\.js$': 'babel-jest',
+    '^.+\\.tsx?$': 'ts-jest',
   },
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation

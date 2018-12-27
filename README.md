@@ -51,10 +51,10 @@ Travis builds are being run before merging.
 
 To build a version deployable on the remote server:
 
-* Copy `api/configuration/_configuration.properties` to `api/configuration/configuration.properties`
-* Update `api/configuration/configuration.properties` with production values
-* Run `yarn validate`
-* Upon completion, deploy `target/build` to the root of the remote server
+- Copy `api/configuration/_configuration.properties` to `api/configuration/configuration.properties`
+- Update `api/configuration/configuration.properties` with production values
+- Run `yarn validate`
+- Upon completion, deploy `target/build` to the root of the remote server
 
 Requires PHP 5.2 and Apache2.
 

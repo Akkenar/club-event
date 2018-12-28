@@ -96,6 +96,8 @@ function setVarIfExists($globalTPL, $products, $key)
 {
   if (array_key_exists($key, $products)) {
     $globalTPL->setVar($key, $products[$key]);
+  } else {
+    $globalTPL->setVar($key, '0');
   }
 }
 ?>

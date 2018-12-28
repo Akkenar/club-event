@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RegistrationsPage should match the snapshot 1`] = `
+<body
+  class="has-dimmer"
+>
+  <div>
+    <div
+      class="RegistrationPage"
+    >
+      <h1
+        class="ui header"
+      >
+        registrations.page.title
+      </h1>
+      <div
+        class="Loader"
+        data-testid="loader"
+      >
+        <div
+          class="ui active transition visible dimmer"
+          style="display: flex;"
+        >
+          <div
+            class="content"
+          >
+            <div
+              class="ui loader"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

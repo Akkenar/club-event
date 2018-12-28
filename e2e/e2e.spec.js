@@ -86,7 +86,7 @@ describe('e2e', () => {
   );
 
   it(
-    'should login',
+    'should login and display the registrations',
     async () => {
       await page.goto(loginPageUrl);
 
@@ -100,7 +100,13 @@ describe('e2e', () => {
       await page.click('button[type=submit]');
 
       // Ensures that we're on the right page.
-      await page.waitForSelector('.RegistrationsPage');
+      await page.waitForSelector('.Registrations__Total');
+      const totalRegistrations = await page.$eval(
+        '.Registrations__Total',
+        e => e.innerText
+      );
+      // TODO to fix once the backend actually sends some data
+      expect(totalRegistrations).toEqual('0');
     },
     timeout
   );

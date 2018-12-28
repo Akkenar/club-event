@@ -2,6 +2,7 @@
 
 include_once './core/database.php';
 include_once './core/captcha.php';
+include_once './core/error.php';
 
 $DATA = json_decode(file_get_contents('php://input'), true);
 
@@ -25,15 +26,11 @@ checkLoginOrDie($username, $password);
 // PHP Session
 session_start();
 
-// In case the user is already logged in
-session_destroy();
-
 // Set the session data if the script reaches this point
 $_SESSION['group'] = "admin";
 $_SESSION['username'] = $username;
 
 // Cleanup before exiting.
-session_write_close();
 disconnectDB();
 
 // Success.
@@ -41,20 +38,6 @@ $result = [];
 $result['result'] = 'success';
 echo json_encode($result);
 exit();
-
-/**
- * @param $message
- */
-function error($message)
-{
-  http_response_code(500);
-  error_log($message, 0);
-  $result = [];
-  $result['result'] = 'error';
-  $result['message'] = $message;
-  echo json_encode($result);
-  exit();
-}
 
 /**
  * @param $username

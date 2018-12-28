@@ -1,11 +1,9 @@
 import * as React from 'react';
 import { render } from 'react-testing-library';
+import { mockGrecaptcha } from '../test-utils/test-utils.lib';
 import RegisterPage from './RegisterPage';
 
-// Mock the Google recaptcha
-(window as any).grecaptcha = {
-  render: jest.fn(),
-};
+mockGrecaptcha();
 
 describe('RegisterPage', () => {
   it('should match the snapshot', () => {

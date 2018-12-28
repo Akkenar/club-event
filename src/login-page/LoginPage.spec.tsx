@@ -26,6 +26,12 @@ describe('LoginPage', () => {
     expect(wrapper.baseElement).toMatchSnapshot();
   });
 
+  it('should set the page title', () => {
+    // Will be set by side effect through a hook
+    render(<LoginPageWithRouter />);
+    expect(document.title).toEqual('login.page.title');
+  });
+
   it('should submit the login', async () => {
     const wrapper = render(<LoginPageWithRouter />);
     mockResponse(Results.SUCCESS);

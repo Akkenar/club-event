@@ -22,10 +22,32 @@ export async function postData<T extends ApiResponse>(
     });
 
     const text = await response.text();
-    console.log(`Getting data from ${url}`, text || 'NO DATA');
+    console.log(`[API POST] Data from ${url}`, text || 'NO DATA');
     return JSON.parse(text);
   } catch (e) {
-    console.error(`Error getting data from ${url}`, e);
+    console.error(`[API POST] Error posting data to ${url}`, e);
+    return Promise.reject({ result: Results.ERROR, message: e.message });
+  }
+}
+
+export async function getData<T>(url: string): Promise<T> {
+  try {
+    const response = await fetch(url, {
+      credentials: 'same-origin', // include, *same-origin, omit
+      headers: {
+        accept: 'application/json',
+      },
+      method: 'GET',
+      mode: 'no-cors', // no-cors, cors, *same-origin
+      redirect: 'follow', // manual, *follow, error
+      referrer: 'no-referrer', // no-referrer, *client
+    });
+
+    const text = await response.text();
+    console.log(`[API GET] Data from ${url}`, text || 'NO DATA');
+    return JSON.parse(text);
+  } catch (e) {
+    console.error(`[API GET] Error getting data from ${url}`, e);
     return Promise.reject({ result: Results.ERROR, message: e.message });
   }
 }

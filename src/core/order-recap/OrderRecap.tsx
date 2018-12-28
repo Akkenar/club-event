@@ -75,8 +75,8 @@ const OrderRecap = ({ registration }: OrderRecapProps) => {
           {getKey('register.form.counts.total', messages)}
         </dd>
         <dt className="OrderRecap__value">CHF {total}</dt>
+        {productContent}
       </dl>
-      <dl className="OrderRecap__container">{productContent}</dl>
     </Segment>
   );
 };

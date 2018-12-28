@@ -1,0 +1,12 @@
+.RegistrationsProducts {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.RegistrationsProducts__Table {
+  align-self: flex-start;
+  margin: 0 0.5em !important;
+  padding: 1em;
+}

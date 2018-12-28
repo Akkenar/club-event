@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useContext } from 'react';
-import { Button, Icon } from 'semantic-ui-react';
+import { Button, Icon, Segment } from 'semantic-ui-react';
 import getKey from '../core/intl/getKey';
 import LanguageContext from '../core/intl/LanguageContext';
 import { Registration } from '../register-page/register.type';
@@ -19,7 +19,7 @@ const RegistrationsOverview = ({
   const save = () => exportToCsv(registrations);
 
   return (
-    <div className="RegistrationsOverview">
+    <Segment className="RegistrationsOverview">
       <div
         data-testid="registrations-total"
         className="RegistrationsOverview__Total"
@@ -32,7 +32,7 @@ const RegistrationsOverview = ({
           <Icon name="download" />
         </Button>
       </div>
-    </div>
+    </Segment>
   );
 };
 

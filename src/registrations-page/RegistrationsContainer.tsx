@@ -8,6 +8,7 @@ import { Registration } from '../register-page/register.type';
 import { getRegistrations } from './registrations.service';
 import RegistrationsDetails from './RegistrationsDetails';
 import RegistrationsOverview from './RegistrationsOverview';
+import RegistrationsProducts from './RegistrationsProducts';
 
 const INITIAL_STATE: Registration[] = [];
 
@@ -34,6 +35,7 @@ const RegistrationsContainer = () => {
   return (
     <Fragment>
       <RegistrationsOverview registrations={registrations} />
+      <RegistrationsProducts registrations={registrations} />
       <RegistrationsDetails registrations={registrations} />
     </Fragment>
   );

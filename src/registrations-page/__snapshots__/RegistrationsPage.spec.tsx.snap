@@ -14,7 +14,7 @@ exports[`RegistrationsPage should match the snapshot 1`] = `
         registrations.page.title
       </h1>
       <div
-        class="RegistrationsOverview"
+        class="ui segment RegistrationsOverview"
       >
         <div
           class="RegistrationsOverview__Total"
@@ -40,6 +40,174 @@ exports[`RegistrationsPage should match the snapshot 1`] = `
             />
           </button>
         </div>
+      </div>
+      <div
+        class="ui segment RegistrationsProducts"
+      >
+        <table
+          class="ui celled collapsing very basic table RegistrationsProducts__Table"
+        >
+          <tbody
+            class=""
+          >
+            <tr
+              class=""
+            >
+              <td
+                class=""
+              >
+                register.form.counts.dinner
+              </td>
+              <td
+                class=""
+              >
+                7
+              </td>
+            </tr>
+            <tr
+              class=""
+            >
+              <td
+                class=""
+              >
+                register.form.counts.vegetarian
+              </td>
+              <td
+                class=""
+              >
+                7
+              </td>
+            </tr>
+            <tr
+              class=""
+            >
+              <td
+                class=""
+              >
+                register.form.counts.breakfast
+              </td>
+              <td
+                class=""
+              >
+                4
+              </td>
+            </tr>
+            <tr
+              class=""
+            >
+              <td
+                class=""
+              >
+                register.form.counts.picknick
+              </td>
+              <td
+                class=""
+              >
+                7
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table
+          class="ui celled collapsing very basic table RegistrationsProducts__Table"
+        >
+          <tbody
+            class=""
+          >
+            <tr
+              class=""
+            >
+              <td
+                class=""
+              >
+                register.form.counts.sleeping
+              </td>
+              <td
+                class=""
+              >
+                8
+              </td>
+            </tr>
+            <tr
+              class=""
+            >
+              <td
+                class=""
+              >
+                register.form.counts.camping
+              </td>
+              <td
+                class=""
+              >
+                14
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table
+          class="ui celled collapsing very basic table RegistrationsProducts__Table"
+        >
+          <tbody
+            class=""
+          >
+            <tr
+              class=""
+            >
+              <td
+                class=""
+              >
+                register.form.counts.itemSize1
+              </td>
+              <td
+                class=""
+              >
+                5
+              </td>
+            </tr>
+            <tr
+              class=""
+            >
+              <td
+                class=""
+              >
+                register.form.counts.itemSize2
+              </td>
+              <td
+                class=""
+              >
+                6
+              </td>
+            </tr>
+            <tr
+              class=""
+            >
+              <td
+                class=""
+              >
+                register.form.counts.itemSize3
+              </td>
+              <td
+                class=""
+              >
+                20
+              </td>
+            </tr>
+            <tr
+              class=""
+            >
+              <td
+                class=""
+              >
+                register.form.counts.itemSize4
+              </td>
+              <td
+                class=""
+              >
+                7
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
       <table
         class="ui celled compact table"
@@ -261,7 +429,7 @@ exports[`RegistrationsPage should show the details 1`] = `
         registrations.page.title
       </h1>
       <div
-        class="RegistrationsOverview"
+        class="ui segment RegistrationsOverview"
       >
         <div
           class="RegistrationsOverview__Total"
@@ -287,6 +455,174 @@ exports[`RegistrationsPage should show the details 1`] = `
             />
           </button>
         </div>
+      </div>
+      <div
+        class="ui segment RegistrationsProducts"
+      >
+        <table
+          class="ui celled collapsing very basic table RegistrationsProducts__Table"
+        >
+          <tbody
+            class=""
+          >
+            <tr
+              class=""
+            >
+              <td
+                class=""
+              >
+                register.form.counts.dinner
+              </td>
+              <td
+                class=""
+              >
+                7
+              </td>
+            </tr>
+            <tr
+              class=""
+            >
+              <td
+                class=""
+              >
+                register.form.counts.vegetarian
+              </td>
+              <td
+                class=""
+              >
+                7
+              </td>
+            </tr>
+            <tr
+              class=""
+            >
+              <td
+                class=""
+              >
+                register.form.counts.breakfast
+              </td>
+              <td
+                class=""
+              >
+                4
+              </td>
+            </tr>
+            <tr
+              class=""
+            >
+              <td
+                class=""
+              >
+                register.form.counts.picknick
+              </td>
+              <td
+                class=""
+              >
+                7
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table
+          class="ui celled collapsing very basic table RegistrationsProducts__Table"
+        >
+          <tbody
+            class=""
+          >
+            <tr
+              class=""
+            >
+              <td
+                class=""
+              >
+                register.form.counts.sleeping
+              </td>
+              <td
+                class=""
+              >
+                8
+              </td>
+            </tr>
+            <tr
+              class=""
+            >
+              <td
+                class=""
+              >
+                register.form.counts.camping
+              </td>
+              <td
+                class=""
+              >
+                14
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table
+          class="ui celled collapsing very basic table RegistrationsProducts__Table"
+        >
+          <tbody
+            class=""
+          >
+            <tr
+              class=""
+            >
+              <td
+                class=""
+              >
+                register.form.counts.itemSize1
+              </td>
+              <td
+                class=""
+              >
+                5
+              </td>
+            </tr>
+            <tr
+              class=""
+            >
+              <td
+                class=""
+              >
+                register.form.counts.itemSize2
+              </td>
+              <td
+                class=""
+              >
+                6
+              </td>
+            </tr>
+            <tr
+              class=""
+            >
+              <td
+                class=""
+              >
+                register.form.counts.itemSize3
+              </td>
+              <td
+                class=""
+              >
+                20
+              </td>
+            </tr>
+            <tr
+              class=""
+            >
+              <td
+                class=""
+              >
+                register.form.counts.itemSize4
+              </td>
+              <td
+                class=""
+              >
+                7
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
       <table
         class="ui celled compact table"
@@ -454,10 +790,6 @@ exports[`RegistrationsPage should show the details 1`] = `
                     CHF 
                     65
                   </dt>
-                </dl>
-                <dl
-                  class="OrderRecap__container"
-                >
                   <dd
                     class="OrderRecap__title"
                   >

@@ -21,7 +21,8 @@ const Logo = ({ height, width, inverted, big, className = '' }: LogoType) => {
   const bigClassname = big ? 'Logo--big' : '';
   return (
     <img
-      className={`Logo ${invertedClassname} ${bigClassname} ${className}`.trim()}
+      className={`Logo ${invertedClassname} ${bigClassname} ${className ||
+        ''}`.trim()}
       height={height}
       width={width}
       src={logo as any}

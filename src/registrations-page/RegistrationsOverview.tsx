@@ -28,7 +28,7 @@ const RegistrationsOverview = ({
         {registrations.length}
       </div>
       <div className="RegistrationsOverview__Export">
-        <Button icon={true} onClick={save}>
+        <Button icon={true} onClick={save} data-testid="download-registrations">
           <Icon name="download" />
         </Button>
       </div>

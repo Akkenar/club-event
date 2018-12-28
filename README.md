@@ -2,6 +2,8 @@
 
 A simple form to register a person to a club event, with basic products management.
 
+The backend is written in PHP. The frontend in React+Typescript.
+
 Not generic at all.
 
 ## Getting Started

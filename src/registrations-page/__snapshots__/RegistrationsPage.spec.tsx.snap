@@ -32,6 +32,7 @@ exports[`RegistrationsPage should match the snapshot 1`] = `
         >
           <button
             class="ui icon button"
+            data-testid="download-registrations"
           >
             <i
               aria-hidden="true"
@@ -278,6 +279,7 @@ exports[`RegistrationsPage should show the details 1`] = `
         >
           <button
             class="ui icon button"
+            data-testid="download-registrations"
           >
             <i
               aria-hidden="true"

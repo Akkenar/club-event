@@ -40,14 +40,11 @@ function addFilePrefix(data: string) {
   if (!data.match(/^data:text\/csv/i)) {
     return 'data:text/csv;charset=utf-8,' + data;
   }
+
   return data;
 }
 
 function downloadFile(data: string, filename: string) {
-  if (!data) {
-    return;
-  }
-
   const encodedData = encodeURI(addFilePrefix(data));
 
   const link = document.createElement('a');

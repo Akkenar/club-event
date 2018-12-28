@@ -80,7 +80,7 @@ class LazyImage extends React.Component<LazyImageProps, LazyImageState> {
     if (!isDisplayed) {
       return (
         <Placeholder
-          className={`LazyImage ${className}`}
+          className={`LazyImage ${className || ''}`}
           src={src}
           height={height}
           width={width}
@@ -92,7 +92,7 @@ class LazyImage extends React.Component<LazyImageProps, LazyImageState> {
 
     return (
       <Image
-        className={`LazyImage no-print ${className}`}
+        className={`LazyImage no-print ${className || ''}`}
         src={src}
         srcwebp={srcwebp}
         height={height}

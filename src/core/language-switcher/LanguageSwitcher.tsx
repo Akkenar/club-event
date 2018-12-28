@@ -9,7 +9,7 @@ import './LanguageSwitcher.scss';
 const Button = (props: any) => (
   <button
     {...props}
-    className={`${props.className} LanguageSwitcher__button`}
+    className={`${props.className || ''} LanguageSwitcher__button`}
   />
 );
 

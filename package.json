@@ -4,6 +4,7 @@
   "description": "Register to a club event",
   "main": "index.js",
   "scripts": {
+    "start:int": "yarn build && docker-compose -f docker-compose.composer.yml up composer && docker-compose up php",
     "build": "NODE_ENV=production webpack --config webpack.config.babel.js",
     "inspect": "NODE_ENV=inspect webpack --config webpack.config.babel.js",
     "start": "webpack-dev-server --config webpack.config.babel.js",

@@ -20,9 +20,7 @@ should install the dependencies upon starting.
 
 ```bash
 yarn
-yarn build
-docker-compose -f docker-compose.composer.yml up composer
-docker-compose up php
+yarn start:int
 ```
 
 ## Full validation

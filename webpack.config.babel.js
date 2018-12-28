@@ -26,6 +26,10 @@ const prodPlugins = [
     canPrint: true,
   }),
   new PreloadCssPlugin(),
+  new webpack.NormalModuleReplacementPlugin(
+    /src\/environment\/environment\.ts/,
+    './environment.prod.ts'
+  ),
 ];
 
 const commonPlugins = [

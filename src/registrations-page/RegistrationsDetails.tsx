@@ -30,10 +30,7 @@ const RegistrationsDetails = ({ registrations }: RegistrationsDetailsProps) => {
             {getKey('register.form.counts.total', messages)}
           </Table.HeaderCell>
           <Table.HeaderCell>
-            {getKey('register.form.lastName', messages)}
-          </Table.HeaderCell>
-          <Table.HeaderCell>
-            {getKey('register.form.firstName', messages)}
+            {getKey('registrations.identification', messages)}
           </Table.HeaderCell>
           <Table.HeaderCell />
         </Table.Row>
@@ -45,8 +42,15 @@ const RegistrationsDetails = ({ registrations }: RegistrationsDetailsProps) => {
             <Table.Cell>{registration.reference}</Table.Cell>
             <Table.Cell>{registration.date}</Table.Cell>
             <Table.Cell>{registration.total} CHF</Table.Cell>
-            <Table.Cell>{registration.lastName}</Table.Cell>
-            <Table.Cell>{registration.firstName}</Table.Cell>
+            <Table.Cell>
+              <strong>
+                {registration.firstName} {registration.lastName}
+              </strong>
+              <address>
+                <div>{registration.street} {registration.no}</div>
+                <div>{registration.npa} {registration.locality}</div>
+              </address>
+            </Table.Cell>
             <Table.Cell collapsing={true}>
               <Button color="black" icon={true}>
                 <Icon name="magnify" />

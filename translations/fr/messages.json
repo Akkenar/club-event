@@ -59,5 +59,6 @@
   "registrations.page.title": "Liste des inscriptions",
   "registrations.total": "Nombre d'inscriptions",
   "registrations.reference": "Référence",
-  "registrations.date": "Date d'inscription"
+  "registrations.date": "Date d'inscription",
+  "registrations.identification": "Identification"
 }

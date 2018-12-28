@@ -67,12 +67,7 @@ exports[`RegistrationsPage should match the snapshot 1`] = `
             <th
               class=""
             >
-              register.form.lastName
-            </th>
-            <th
-              class=""
-            >
-              register.form.firstName
+              registrations.identification
             </th>
             <th
               class=""
@@ -104,12 +99,23 @@ exports[`RegistrationsPage should match the snapshot 1`] = `
             <td
               class=""
             >
-              Roob
-            </td>
-            <td
-              class=""
-            >
-              Tia
+              <strong>
+                Tia
+                 
+                Roob
+              </strong>
+              <address>
+                <div>
+                  Maggie Haven
+                   
+                  5A
+                </div>
+                <div>
+                  1018
+                   
+                  Barrowshaven
+                </div>
+              </address>
             </td>
             <td
               class="collapsing"
@@ -146,12 +152,23 @@ exports[`RegistrationsPage should match the snapshot 1`] = `
             <td
               class=""
             >
-              Konopelski
-            </td>
-            <td
-              class=""
-            >
-              Cayla
+              <strong>
+                Cayla
+                 
+                Konopelski
+              </strong>
+              <address>
+                <div>
+                  Parker Expressway
+                   
+                  5A
+                </div>
+                <div>
+                  1018
+                   
+                  Port Margueritemouth
+                </div>
+              </address>
             </td>
             <td
               class="collapsing"
@@ -188,12 +205,23 @@ exports[`RegistrationsPage should match the snapshot 1`] = `
             <td
               class=""
             >
-              Streich
-            </td>
-            <td
-              class=""
-            >
-              Paige
+              <strong>
+                Paige
+                 
+                Streich
+              </strong>
+              <address>
+                <div>
+                  Randi Knolls
+                   
+                  5A
+                </div>
+                <div>
+                  1018
+                   
+                  Nolanside
+                </div>
+              </address>
             </td>
             <td
               class="collapsing"

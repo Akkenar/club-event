@@ -41,7 +41,7 @@ exports[`RegistrationsPage should match the snapshot 1`] = `
         </div>
       </div>
       <table
-        class="ui celled striped table"
+        class="ui celled compact table"
       >
         <thead
           class=""
@@ -122,6 +122,7 @@ exports[`RegistrationsPage should match the snapshot 1`] = `
             >
               <button
                 class="ui black icon button"
+                data-testid="details-1"
               >
                 <i
                   aria-hidden="true"
@@ -175,6 +176,7 @@ exports[`RegistrationsPage should match the snapshot 1`] = `
             >
               <button
                 class="ui black icon button"
+                data-testid="details-2"
               >
                 <i
                   aria-hidden="true"
@@ -228,6 +230,356 @@ exports[`RegistrationsPage should match the snapshot 1`] = `
             >
               <button
                 class="ui black icon button"
+                data-testid="details-3"
+              >
+                <i
+                  aria-hidden="true"
+                  class="magnify icon"
+                />
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`RegistrationsPage should show the details 1`] = `
+<body
+  class=""
+>
+  <div>
+    <div
+      class="RegistrationPage"
+    >
+      <h1
+        class="ui header"
+      >
+        registrations.page.title
+      </h1>
+      <div
+        class="RegistrationsOverview"
+      >
+        <div
+          class="RegistrationsOverview__Total"
+          data-testid="registrations-total"
+        >
+          <strong>
+            registrations.total
+            :
+          </strong>
+           
+          3
+        </div>
+        <div
+          class="RegistrationsOverview__Export"
+        >
+          <button
+            class="ui icon button"
+          >
+            <i
+              aria-hidden="true"
+              class="download icon"
+            />
+          </button>
+        </div>
+      </div>
+      <table
+        class="ui celled compact table"
+      >
+        <thead
+          class=""
+        >
+          <tr
+            class=""
+          >
+            <th
+              class=""
+            >
+              registrations.reference
+            </th>
+            <th
+              class=""
+            >
+              registrations.date
+            </th>
+            <th
+              class=""
+            >
+              register.form.counts.total
+            </th>
+            <th
+              class=""
+            >
+              registrations.identification
+            </th>
+            <th
+              class=""
+            />
+          </tr>
+        </thead>
+        <tbody
+          class=""
+        >
+          <tr
+            class=""
+          >
+            <td
+              class=""
+            >
+              ROO-5C26315
+            </td>
+            <td
+              class=""
+            >
+              2018-12-28 14:21:04
+            </td>
+            <td
+              class=""
+            >
+              65
+               CHF
+            </td>
+            <td
+              class=""
+            >
+              <strong>
+                Tia
+                 
+                Roob
+              </strong>
+              <address>
+                <div>
+                  Maggie Haven
+                   
+                  5A
+                </div>
+                <div>
+                  1018
+                   
+                  Barrowshaven
+                </div>
+              </address>
+            </td>
+            <td
+              class="collapsing"
+            >
+              <button
+                class="ui black icon button"
+                data-testid="details-1"
+              >
+                <i
+                  aria-hidden="true"
+                  class="magnify icon"
+                />
+              </button>
+            </td>
+          </tr>
+          <tr
+            class=""
+          >
+            <td
+              class=""
+              colspan="5"
+            >
+              <div
+                class="ui raised segment OrderRecap"
+              >
+                <dl
+                  class="OrderRecap__container"
+                >
+                  <dd
+                    class="OrderRecap__title"
+                  >
+                    register.form.firstName
+                  </dd>
+                  <dt
+                    class="OrderRecap__value"
+                  >
+                    Tia
+                  </dt>
+                  <dd
+                    class="OrderRecap__title"
+                  >
+                    register.form.lastName
+                  </dd>
+                  <dt
+                    class="OrderRecap__value"
+                  >
+                    Roob
+                  </dt>
+                  <dd
+                    class="OrderRecap__title"
+                  >
+                    register.form.club
+                  </dd>
+                  <dt
+                    class="OrderRecap__value"
+                  >
+                    GSL
+                  </dt>
+                  <dd
+                    class="OrderRecap__title"
+                  >
+                    register.form.address
+                  </dd>
+                  <dt
+                    class="OrderRecap__value"
+                  >
+                    <address>
+                      <div>
+                        Maggie Haven
+                         
+                        5A
+                      </div>
+                      <div>
+                        1018
+                         
+                        Barrowshaven
+                      </div>
+                    </address>
+                  </dt>
+                  <dd
+                    class="OrderRecap__title"
+                  >
+                    register.form.counts.total
+                  </dd>
+                  <dt
+                    class="OrderRecap__value"
+                  >
+                    CHF 
+                    65
+                  </dt>
+                </dl>
+                <dl
+                  class="OrderRecap__container"
+                >
+                  <dd
+                    class="OrderRecap__title"
+                  >
+                    register.form.counts.dinner
+                  </dd>
+                  <dt
+                    class="OrderRecap__value"
+                  >
+                    1
+                  </dt>
+                  <dd
+                    class="OrderRecap__title"
+                  >
+                    register.form.counts.itemSize3
+                  </dd>
+                  <dt
+                    class="OrderRecap__value"
+                  >
+                    1
+                  </dt>
+                </dl>
+              </div>
+            </td>
+          </tr>
+          <tr
+            class=""
+          >
+            <td
+              class=""
+            >
+              KON-5C26335
+            </td>
+            <td
+              class=""
+            >
+              2018-12-28 14:29:48
+            </td>
+            <td
+              class=""
+            >
+              1080
+               CHF
+            </td>
+            <td
+              class=""
+            >
+              <strong>
+                Cayla
+                 
+                Konopelski
+              </strong>
+              <address>
+                <div>
+                  Parker Expressway
+                   
+                  5A
+                </div>
+                <div>
+                  1018
+                   
+                  Port Margueritemouth
+                </div>
+              </address>
+            </td>
+            <td
+              class="collapsing"
+            >
+              <button
+                class="ui black icon button"
+                data-testid="details-2"
+              >
+                <i
+                  aria-hidden="true"
+                  class="magnify icon"
+                />
+              </button>
+            </td>
+          </tr>
+          <tr
+            class=""
+          >
+            <td
+              class=""
+            >
+              STR-5C26337
+            </td>
+            <td
+              class=""
+            >
+              2018-12-28 14:30:19
+            </td>
+            <td
+              class=""
+            >
+              745
+               CHF
+            </td>
+            <td
+              class=""
+            >
+              <strong>
+                Paige
+                 
+                Streich
+              </strong>
+              <address>
+                <div>
+                  Randi Knolls
+                   
+                  5A
+                </div>
+                <div>
+                  1018
+                   
+                  Nolanside
+                </div>
+              </address>
+            </td>
+            <td
+              class="collapsing"
+            >
+              <button
+                class="ui black icon button"
+                data-testid="details-3"
               >
                 <i
                   aria-hidden="true"

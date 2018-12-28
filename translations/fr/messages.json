@@ -18,7 +18,7 @@
   "register.form.club.placeholder": "Entrez le nom de votre club",
   "register.form.email": "Adresse email",
   "register.form.email.placeholder": "Entrez votre adresse email pour le courrier de confirmation",
-  "register.form.address": "Votre adresse postale",
+  "register.form.address": "Adresse postale",
   "register.form.address.street": "Rue",
   "register.form.address.street.placeholder": "Ex: Rue de Lausanne",
   "register.form.address.no": "Numéro",

@@ -19,4 +19,12 @@ describe('RegistrationsPage', () => {
     render(<RegistrationsPage />);
     expect(document.title).toEqual('registrations.page.title');
   });
+
+  it('should show the details', async () => {
+    const wrapper = render(<RegistrationsPage />);
+    await waitForElement(() => wrapper.queryByTestId('details-1'));
+
+    wrapper.queryByTestId('details-1').click();
+    expect(wrapper.baseElement).toMatchSnapshot();
+  });
 });

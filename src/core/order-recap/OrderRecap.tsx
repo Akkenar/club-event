@@ -1,36 +1,30 @@
 import * as React from 'react';
 import { Fragment, useContext } from 'react';
 import { Segment } from 'semantic-ui-react';
-import getKey from '../../core/intl/getKey';
-import LanguageContext from '../../core/intl/LanguageContext';
-import { Products } from '../../register-page/register.type';
+import { Products, Registration } from '../../register-page/register.type';
+import getKey from '../intl/getKey';
+import LanguageContext from '../intl/LanguageContext';
 
 import './OrderRecap.scss';
 
 export interface OrderRecapProps {
-  firstName: string;
-  lastName: string;
-  club: string;
-  total: string;
-  street: string;
-  no: string;
-  npa: string;
-  locality: string;
-  products: Products;
+  registration: Registration;
 }
 
-const OrderRecap = ({
-  firstName,
-  lastName,
-  club,
-  total,
-  street,
-  no,
-  npa,
-  locality,
-  products,
-}: OrderRecapProps) => {
+const OrderRecap = ({ registration }: OrderRecapProps) => {
   const { messages } = useContext(LanguageContext);
+
+  const {
+    firstName,
+    lastName,
+    club,
+    total,
+    street,
+    no,
+    npa,
+    locality,
+    products,
+  } = registration;
 
   const productContent =
     products &&

@@ -6,9 +6,9 @@ import * as imgwebp from '../assets/Zsolt-Sarkozi-Grottes-aux-Fees-17.webp';
 import getKey from '../core/intl/getKey';
 import LanguageContext from '../core/intl/LanguageContext';
 import LazyImage from '../core/lazy-image/LazyImage';
+import OrderRecap from '../core/order-recap/OrderRecap';
 import { setPageTitle } from '../core/page.lib';
 import { getSimpleStore } from '../core/simpleStore';
-import OrderRecap from './order-recap/OrderRecap';
 
 import './ConfirmationPage.scss';
 
@@ -41,8 +41,8 @@ const ConfirmationPage = () => {
   });
 
   // From the register form.
-  const data = getSimpleStore();
-  const { total, reference } = data;
+  const registration = getSimpleStore();
+  const { total, reference } = registration;
   const confirmationMessage = format(messages.confirmation, total, reference);
 
   const printButton = supportsPrint() ? (
@@ -62,7 +62,7 @@ const ConfirmationPage = () => {
       <Header as="h2">
         {getKey('confirmation.page.recap.title', messages)}
       </Header>
-      <OrderRecap {...data} />
+      <OrderRecap registration={registration} />
       {printButton}
       <LazyImage
         className="no-print"

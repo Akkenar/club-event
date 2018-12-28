@@ -1,17 +1,19 @@
 import * as React from 'react';
-import { useContext, useEffect, useState } from 'react';
+import { Fragment, useContext, useEffect, useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import { ApiResponse, Results } from '../core/api.type';
 import LanguageContext from '../core/intl/LanguageContext';
 import Loader from '../core/loader/Loader';
 import { Registration } from '../register-page/register.type';
 import { getRegistrations } from './registrations.service';
+import RegistrationsDetails from './RegistrationsDetails';
+import RegistrationsOverview from './RegistrationsOverview';
 
 const INITIAL_STATE: Registration[] = [];
 
 const RegistrationsContainer = () => {
   const [registrations, setRegistrations] = useState(INITIAL_STATE);
-  const { messages, language } = useContext(LanguageContext);
+  const { language } = useContext(LanguageContext);
 
   useEffect(() => {
     if (registrations === INITIAL_STATE) {
@@ -29,11 +31,11 @@ const RegistrationsContainer = () => {
     return <Loader />;
   }
 
-  // Different bits of the page.
   return (
-    <div data-testid="registrations-total" className="Registrations__Total">
-      {registrations.length}
-    </div>
+    <Fragment>
+      <RegistrationsOverview registrations={registrations} />
+      <RegistrationsDetails registrations={registrations} />
+    </Fragment>
   );
 };
 

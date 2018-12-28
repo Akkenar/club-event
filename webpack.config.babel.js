@@ -7,6 +7,8 @@ import CopyWebpackPlugin from 'copy-webpack-plugin';
 import OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 import PreloadCssPlugin from './buildExtra/preload-css-webpack-plugin';
 
+const cssOrJsRegex = /((.*)\.)(js|css)$/;
+
 const isInspection = process.env.NODE_ENV === 'inspect';
 const isProduction = isInspection || process.env.NODE_ENV === 'production';
 const buildPath = path.join(__dirname, 'target', 'build');
@@ -83,7 +85,8 @@ export default {
     entrypoints: false,
     warnings: false,
     modules: false,
-    excludeAssets: name => name.startsWith('api/'),
+    // Only display css and js assets
+    excludeAssets: name => name.startsWith('api/') || !name.match(cssOrJsRegex),
   },
 
   resolve: {

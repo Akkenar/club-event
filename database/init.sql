@@ -13,6 +13,7 @@ CREATE TABLE inscriptions
   id        smallint unsigned not null auto_increment,
   date      TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   reference varchar(255) not null,
+  language varchar(255) not null,
   firstName varchar(255) not null,
   lastName  varchar(255) not null,
   email     varchar(255) not null,

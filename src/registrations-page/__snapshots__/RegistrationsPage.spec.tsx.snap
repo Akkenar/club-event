@@ -14,11 +14,202 @@ exports[`RegistrationsPage should match the snapshot 1`] = `
         registrations.page.title
       </h1>
       <div
-        class="Registrations__Total"
-        data-testid="registrations-total"
+        class="RegistrationsOverview"
       >
-        3
+        <div
+          class="RegistrationsOverview__Total"
+          data-testid="registrations-total"
+        >
+          <strong>
+            registrations.total
+            :
+          </strong>
+           
+          3
+        </div>
+        <div
+          class="RegistrationsOverview__Export"
+        >
+          <button
+            class="ui icon button"
+          >
+            <i
+              aria-hidden="true"
+              class="download icon"
+            />
+          </button>
+        </div>
       </div>
+      <table
+        class="ui celled striped table"
+      >
+        <thead
+          class=""
+        >
+          <tr
+            class=""
+          >
+            <th
+              class=""
+            >
+              registrations.reference
+            </th>
+            <th
+              class=""
+            >
+              registrations.date
+            </th>
+            <th
+              class=""
+            >
+              register.form.counts.total
+            </th>
+            <th
+              class=""
+            >
+              register.form.lastName
+            </th>
+            <th
+              class=""
+            >
+              register.form.firstName
+            </th>
+            <th
+              class=""
+            />
+          </tr>
+        </thead>
+        <tbody
+          class=""
+        >
+          <tr
+            class=""
+          >
+            <td
+              class=""
+            >
+              ROO-5C26315
+            </td>
+            <td
+              class=""
+            >
+              2018-12-28 14:21:04
+            </td>
+            <td
+              class=""
+            >
+              65
+               CHF
+            </td>
+            <td
+              class=""
+            >
+              Roob
+            </td>
+            <td
+              class=""
+            >
+              Tia
+            </td>
+            <td
+              class="collapsing"
+            >
+              <button
+                class="ui black icon button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="magnify icon"
+                />
+              </button>
+            </td>
+          </tr>
+          <tr
+            class=""
+          >
+            <td
+              class=""
+            >
+              KON-5C26335
+            </td>
+            <td
+              class=""
+            >
+              2018-12-28 14:29:48
+            </td>
+            <td
+              class=""
+            >
+              1080
+               CHF
+            </td>
+            <td
+              class=""
+            >
+              Konopelski
+            </td>
+            <td
+              class=""
+            >
+              Cayla
+            </td>
+            <td
+              class="collapsing"
+            >
+              <button
+                class="ui black icon button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="magnify icon"
+                />
+              </button>
+            </td>
+          </tr>
+          <tr
+            class=""
+          >
+            <td
+              class=""
+            >
+              STR-5C26337
+            </td>
+            <td
+              class=""
+            >
+              2018-12-28 14:30:19
+            </td>
+            <td
+              class=""
+            >
+              745
+               CHF
+            </td>
+            <td
+              class=""
+            >
+              Streich
+            </td>
+            <td
+              class=""
+            >
+              Paige
+            </td>
+            <td
+              class="collapsing"
+            >
+              <button
+                class="ui black icon button"
+              >
+                <i
+                  aria-hidden="true"
+                  class="magnify icon"
+                />
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </body>

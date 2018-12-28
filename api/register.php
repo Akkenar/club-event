@@ -36,7 +36,7 @@ $reference = getUniqId($DATA['lastName']);
 syslog(LOG_INFO, 'Reference: ' . $reference);
 
 // Save the data
-saveData($db, $DATA, $reference, $total);
+saveData($db, $DATA, $reference, $total, $language);
 syslog(LOG_INFO, "Data saved for " . $reference);
 
 // At this stage we don't need the Db anymore
@@ -57,7 +57,7 @@ echo json_encode($result);
 syslog(LOG_INFO, "Registration successful for " . $reference);
 closelog();
 
-function saveData($db, $data, $reference, $total)
+function saveData($db, $data, $reference, $total, $language)
 {
   $firstName = $db->real_escape_string($data['firstName']);
   $lastName = $db->real_escape_string($data['lastName']);
@@ -71,6 +71,7 @@ function saveData($db, $data, $reference, $total)
 
   $sql = "INSERT INTO inscriptions (
     reference,
+    language,
     total,
     firstName,
     lastName,
@@ -83,6 +84,7 @@ function saveData($db, $data, $reference, $total)
     products
   ) VALUES(
     \"$reference\",
+    \"$language\",
     \"$total\",
     \"$firstName\",
     \"$lastName\",

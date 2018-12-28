@@ -19,6 +19,10 @@ export interface Errors {
 }
 
 export interface Registration {
+  id?: string;
+  reference?: string;
+  date?: string;
+  total?: number;
   language: string;
   recaptcha: string;
   club: string;

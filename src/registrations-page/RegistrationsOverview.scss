@@ -1,0 +1,15 @@
+@import url('../../node_modules/semantic-ui-css/components/button.min.css');
+@import url('../../node_modules/semantic-ui-css/components/icon.min.css');
+
+.RegistrationsOverview {
+  display: flex;
+}
+
+.RegistrationsOverview__Export {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.RegistrationsOverview__Total {
+  margin-top: 0.5em;
+}

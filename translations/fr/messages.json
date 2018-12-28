@@ -55,5 +55,9 @@
   "register.form.counts.itemSize4": "T-Shirt Taille 4",
   "confirmation.page.title": "Confirmation de votre inscription",
   "confirmation.page.print": "Imprimer la page",
-  "confirmation.page.recap.title": "Votre inscription"
+  "confirmation.page.recap.title": "Votre inscription",
+  "registrations.page.title": "Liste des inscriptions",
+  "registrations.total": "Nombre d'inscriptions",
+  "registrations.reference": "Référence",
+  "registrations.date": "Date d'inscription"
 }

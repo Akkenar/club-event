@@ -122,12 +122,12 @@ describe('e2e', () => {
       await page.click('button[type=submit]');
 
       // Ensures that we're on the right page.
-      await page.waitForSelector('.Registrations__Total');
+      await page.waitForSelector('.RegistrationsOverview__Total');
       const totalRegistrations = await page.$eval(
-        '.Registrations__Total',
+        '.RegistrationsOverview__Total',
         e => e.innerText
       );
-      expect(totalRegistrations).toEqual('1');
+      expect(totalRegistrations).toEqual('registrations.total: 1');
     },
     timeout
   );

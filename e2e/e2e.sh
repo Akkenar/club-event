@@ -10,4 +10,6 @@ docker-compose \
 # the e2e container starts respectively stops.
 docker-compose \
   -f docker-compose.yml \
-  up e2e
+  up \
+  --exit-code-from e2e \
+  --abort-on-container-exit

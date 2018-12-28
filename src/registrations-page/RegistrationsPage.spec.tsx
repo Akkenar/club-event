@@ -1,15 +1,16 @@
 import * as React from 'react';
-import { render } from 'react-testing-library';
-import { Results } from '../core/api.type';
+import { render, waitForElement } from 'react-testing-library';
+import mockRegistrations from '../../mocks/registrations.json';
 import { mockGrecaptcha, mockResponse } from '../test-utils/test-utils.lib';
 import RegistrationsPage from './RegistrationsPage';
 
 mockGrecaptcha();
-mockResponse(Results.ERROR);
+mockResponse(mockRegistrations);
 
 describe('RegistrationsPage', () => {
-  it('should match the snapshot', () => {
+  it('should match the snapshot', async () => {
     const wrapper = render(<RegistrationsPage />);
+    await waitForElement(() => wrapper.queryByTestId('registrations-total'));
     expect(wrapper.baseElement).toMatchSnapshot();
   });
 

@@ -53,7 +53,7 @@ describe('LoginPage', () => {
 
   it('should handle login error', async () => {
     const wrapper = render(<LoginPageWithRouter />);
-    mockResponse(Results.ERROR, 'Error');
+    mockResponse({ result: Results.ERROR, message: 'Error' });
     setValidInputData({ username: 'Foo', password: 'Bar' }, wrapper);
 
     // Submit the form!

@@ -8,13 +8,15 @@ export function mockGrecaptcha() {
   };
 }
 
-export function mockResponse(result: any, message: string | null = null) {
+export function mockResponse(response: any) {
+  const mock = typeof response === 'string' ? { result: response } : response;
+
   // Mock the fetch data as JSDom doesn't implement fetch.
   window.fetch = jest.fn(() =>
     Promise.resolve({
       text: () =>
         new Promise(resolve => {
-          const mockResult = JSON.stringify({ result, message });
+          const mockResult = JSON.stringify(mock);
           setTimeout(() => {
             resolve(mockResult);
           }, 50);

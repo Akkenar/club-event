@@ -2,7 +2,7 @@
 
 exports[`RegistrationsPage should match the snapshot 1`] = `
 <body
-  class="has-dimmer"
+  class=""
 >
   <div>
     <div
@@ -14,21 +14,10 @@ exports[`RegistrationsPage should match the snapshot 1`] = `
         registrations.page.title
       </h1>
       <div
-        class="Loader"
-        data-testid="loader"
+        class="Registrations__Total"
+        data-testid="registrations-total"
       >
-        <div
-          class="ui active transition visible dimmer"
-          style="display: flex;"
-        >
-          <div
-            class="content"
-          >
-            <div
-              class="ui loader"
-            />
-          </div>
-        </div>
+        3
       </div>
     </div>
   </div>

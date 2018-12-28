@@ -30,7 +30,11 @@ const RegistrationsContainer = () => {
   }
 
   // Different bits of the page.
-  return <div className="Registrations__Total">{registrations.length}</div>;
+  return (
+    <div data-testid="registrations-total" className="Registrations__Total">
+      {registrations.length}
+    </div>
+  );
 };
 
 export default RegistrationsContainer;

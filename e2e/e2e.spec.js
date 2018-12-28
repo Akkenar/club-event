@@ -17,12 +17,34 @@ const personalData = {
   locality: faker.address.city(),
 };
 
-async function filePersonalData(page) {
+const products = {
+  dinner: faker.random.number(10),
+  picknick: faker.random.number(10),
+  itemSize1: faker.random.number(10),
+  itemSize2: faker.random.number(10),
+  itemSize3: faker.random.number(10),
+  itemSize4: faker.random.number(10),
+  breakfast: faker.random.number(10),
+  camping: faker.random.number(10),
+  sleeping: faker.random.number(10),
+  vegetarian: faker.random.number(10),
+};
+
+async function setPersonalData(page) {
   const keys = Object.keys(personalData);
   for (const key of keys) {
     const selector = `*[name=${key}]`;
     await page.waitForSelector(selector);
     await page.type(selector, personalData[key]);
+  }
+}
+
+async function setProductData(page) {
+  const keys = Object.keys(products);
+  for (const key of keys) {
+    const selector = `*[name=${key}]`;
+    await page.waitForSelector(selector);
+    await page.select(selector, products[key].toString());
   }
 }
 
@@ -69,8 +91,8 @@ describe('e2e', () => {
       await page.evaluate(() => console.log(`url is ${window.location.href}`));
 
       await page.waitForSelector('.RegisterForm');
-      await filePersonalData(page);
-      await page.select('*[name=dinner]', '1');
+      await setPersonalData(page);
+      await setProductData(page);
 
       // Submit
       await page.click('button[type=submit]');
@@ -105,8 +127,7 @@ describe('e2e', () => {
         '.Registrations__Total',
         e => e.innerText
       );
-      // TODO to fix once the backend actually sends some data
-      expect(totalRegistrations).toEqual('0');
+      expect(totalRegistrations).toEqual('1');
     },
     timeout
   );

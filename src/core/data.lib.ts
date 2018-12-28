@@ -33,6 +33,7 @@ export async function postData<T extends ApiResponse>(
 export async function getData<T>(url: string): Promise<T> {
   try {
     const response = await fetch(url, {
+      cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
       credentials: 'same-origin', // include, *same-origin, omit
       headers: {
         accept: 'application/json',

@@ -60,5 +60,9 @@
   "registrations.total": "Nombre d'inscriptions",
   "registrations.reference": "Référence",
   "registrations.date": "Date d'inscription",
-  "registrations.identification": "Identification"
+  "registrations.identification": "Identification",
+  "login.page.title": "Accéder aux inscriptions",
+  "login.form.username": "Nom d'utilisateur",
+  "login.form.password": "Mot de passe",
+  "login.form.submit": "S'authentifier"
 }

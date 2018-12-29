@@ -43,8 +43,8 @@
 RedirectMatch 403 \.properties$
 
 # js and css have cache busting hash
-<filesMatch "\.(js|css)$">
-  Header set Cache-Control "max-age=2628000, public"
+<filesMatch "\.(js|css|svg|woff|woff2|jpg|webp)$">
+  Header set Cache-Control "max-age=31536000, public"
 </filesMatch>
 
 # Because the hosting provider doesn't enable this by default

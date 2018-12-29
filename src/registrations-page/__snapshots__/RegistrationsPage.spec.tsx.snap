@@ -73,6 +73,7 @@ exports[`RegistrationsPage should match the snapshot 1`] = `
             <button
               class="ui vk icon button"
               data-testid="toggle-products"
+              title="registrations.details"
             >
               <i
                 aria-hidden="true"
@@ -86,6 +87,7 @@ exports[`RegistrationsPage should match the snapshot 1`] = `
             <button
               class="ui vk icon right labeled button"
               data-testid="download-registrations"
+              title="registrations.download"
             >
               registrations.download
               <i
@@ -179,6 +181,7 @@ exports[`RegistrationsPage should match the snapshot 1`] = `
               <button
                 class="ui black icon button"
                 data-testid="details-1"
+                title="registrations.details"
               >
                 <i
                   aria-hidden="true"
@@ -233,6 +236,7 @@ exports[`RegistrationsPage should match the snapshot 1`] = `
               <button
                 class="ui black icon button"
                 data-testid="details-2"
+                title="registrations.details"
               >
                 <i
                   aria-hidden="true"
@@ -287,6 +291,7 @@ exports[`RegistrationsPage should match the snapshot 1`] = `
               <button
                 class="ui black icon button"
                 data-testid="details-3"
+                title="registrations.details"
               >
                 <i
                   aria-hidden="true"
@@ -338,6 +343,7 @@ exports[`RegistrationsPage should show the details 1`] = `
             <button
               class="ui vk icon button"
               data-testid="toggle-products"
+              title="registrations.details"
             >
               <i
                 aria-hidden="true"
@@ -351,6 +357,7 @@ exports[`RegistrationsPage should show the details 1`] = `
             <button
               class="ui vk icon right labeled button"
               data-testid="download-registrations"
+              title="registrations.download"
             >
               registrations.download
               <i
@@ -444,10 +451,11 @@ exports[`RegistrationsPage should show the details 1`] = `
               <button
                 class="ui black icon button"
                 data-testid="details-1"
+                title="registrations.details"
               >
                 <i
                   aria-hidden="true"
-                  class="magnify icon"
+                  class="minus icon"
                 />
               </button>
             </td>
@@ -597,6 +605,7 @@ exports[`RegistrationsPage should show the details 1`] = `
               <button
                 class="ui black icon button"
                 data-testid="details-2"
+                title="registrations.details"
               >
                 <i
                   aria-hidden="true"
@@ -651,6 +660,7 @@ exports[`RegistrationsPage should show the details 1`] = `
               <button
                 class="ui black icon button"
                 data-testid="details-3"
+                title="registrations.details"
               >
                 <i
                   aria-hidden="true"
@@ -702,6 +712,7 @@ exports[`RegistrationsPage should show the products 1`] = `
             <button
               class="ui vk icon button"
               data-testid="toggle-products"
+              title="registrations.details"
             >
               <i
                 aria-hidden="true"
@@ -715,6 +726,7 @@ exports[`RegistrationsPage should show the products 1`] = `
             <button
               class="ui vk icon right labeled button"
               data-testid="download-registrations"
+              title="registrations.download"
             >
               registrations.download
               <i
@@ -976,6 +988,7 @@ exports[`RegistrationsPage should show the products 1`] = `
               <button
                 class="ui black icon button"
                 data-testid="details-1"
+                title="registrations.details"
               >
                 <i
                   aria-hidden="true"
@@ -1030,6 +1043,7 @@ exports[`RegistrationsPage should show the products 1`] = `
               <button
                 class="ui black icon button"
                 data-testid="details-2"
+                title="registrations.details"
               >
                 <i
                   aria-hidden="true"
@@ -1084,6 +1098,7 @@ exports[`RegistrationsPage should show the products 1`] = `
               <button
                 class="ui black icon button"
                 data-testid="details-3"
+                title="registrations.details"
               >
                 <i
                   aria-hidden="true"

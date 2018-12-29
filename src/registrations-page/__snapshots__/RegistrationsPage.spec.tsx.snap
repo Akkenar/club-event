@@ -30,33 +30,6 @@ exports[`RegistrationsPage should handle no registrations 1`] = `
              
             0
           </div>
-          <div
-            class="RegistrationsOverview_MoreDetails"
-          >
-            <button
-              class="ui vk icon button"
-              data-testid="toggle-products"
-            >
-              <i
-                aria-hidden="true"
-                class="magnify icon"
-              />
-            </button>
-          </div>
-          <div
-            class="RegistrationsOverview__Export"
-          >
-            <button
-              class="ui vk icon right labeled button"
-              data-testid="download-registrations"
-            >
-              registrations.download
-              <i
-                aria-hidden="true"
-                class="download icon"
-              />
-            </button>
-          </div>
         </div>
       </div>
     </div>

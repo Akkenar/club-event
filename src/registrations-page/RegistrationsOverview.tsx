@@ -9,7 +9,6 @@ import { exportToCsv } from './csv.lib';
 import RegistrationsProducts from './RegistrationsProducts';
 
 import './RegistrationsOverview.scss';
-import get = Reflect.get;
 
 interface RegistrationsOverviewProps {
   registrations: Registration[];
@@ -23,6 +22,7 @@ const RegistrationsOverview = ({
 
   const save = () => exportToCsv(registrations);
   const toggleProducts = () => setShowProducts(!showProducts);
+  const hasRegistrations = !!registrations && !!registrations.length;
 
   return (
     <Segment>
@@ -32,30 +32,34 @@ const RegistrationsOverview = ({
           className="RegistrationsOverview__Total"
         >
           <strong>{getKey('registrations.total', messages)}:</strong>{' '}
-          {registrations.length}
+          {hasRegistrations ? registrations.length : '0'}
         </div>
-        <div className="RegistrationsOverview_MoreDetails">
-          <Button
-            icon={true}
-            color="vk"
-            onClick={toggleProducts}
-            data-testid="toggle-products"
-          >
-            {showProducts ? <Icon name="minus" /> : <Icon name="magnify" />}
-          </Button>
-        </div>
-        <div className="RegistrationsOverview__Export">
-          <Button
-            labelPosition="right"
-            color="vk"
-            icon={true}
-            onClick={save}
-            data-testid="download-registrations"
-          >
-            {getKey('registrations.download', messages)}
-            <Icon name="download" />
-          </Button>
-        </div>
+        {hasRegistrations ? (
+          <Fragment>
+            <div className="RegistrationsOverview_MoreDetails">
+              <Button
+                icon={true}
+                color="vk"
+                onClick={toggleProducts}
+                data-testid="toggle-products"
+              >
+                {showProducts ? <Icon name="minus" /> : <Icon name="magnify" />}
+              </Button>
+            </div>
+            <div className="RegistrationsOverview__Export">
+              <Button
+                labelPosition="right"
+                color="vk"
+                icon={true}
+                onClick={save}
+                data-testid="download-registrations"
+              >
+                {getKey('registrations.download', messages)}
+                <Icon name="download" />
+              </Button>
+            </div>
+          </Fragment>
+        ) : null}
       </div>
       {showProducts ? (
         <RegistrationsProducts registrations={registrations} />

@@ -155,7 +155,7 @@ export default {
         test: [/\.eot$/, /\.ttf$/, /\.svg$/, /\.woff$/, /\.woff2$/],
         loader: require.resolve('file-loader'),
         options: {
-          name: 'assets/media/[name].[hash:8].[ext]',
+          name: 'assets/fonts/[name].[hash:8].[ext]',
         },
       },
       {

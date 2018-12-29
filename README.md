@@ -6,6 +6,13 @@ The backend is written in PHP. The frontend in React+Typescript.
 
 Not generic at all.
 
+## Requirements
+
+- Node 10+
+- Docker
+- docker-compose
+- yarn
+
 ## Getting Started
 
 To start the dev server.

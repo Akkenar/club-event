@@ -35,7 +35,6 @@ const RegistrationsContainer = () => {
   return (
     <Fragment>
       <RegistrationsOverview registrations={registrations} />
-      <RegistrationsProducts registrations={registrations} />
       <RegistrationsDetails registrations={registrations} />
     </Fragment>
   );

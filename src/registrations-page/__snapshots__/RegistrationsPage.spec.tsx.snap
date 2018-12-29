@@ -1,5 +1,69 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`RegistrationsPage should handle no registrations 1`] = `
+<body
+  class=""
+>
+  <div>
+    <div
+      class="RegistrationPage"
+    >
+      <h1
+        class="ui header"
+      >
+        registrations.page.title
+      </h1>
+      <div
+        class="ui segment"
+      >
+        <div
+          class="RegistrationsOverview"
+        >
+          <div
+            class="RegistrationsOverview__Total"
+            data-testid="registrations-total"
+          >
+            <strong>
+              registrations.total
+              :
+            </strong>
+             
+            0
+          </div>
+          <div
+            class="RegistrationsOverview_MoreDetails"
+          >
+            <button
+              class="ui vk icon button"
+              data-testid="toggle-products"
+            >
+              <i
+                aria-hidden="true"
+                class="magnify icon"
+              />
+            </button>
+          </div>
+          <div
+            class="RegistrationsOverview__Export"
+          >
+            <button
+              class="ui vk icon right labeled button"
+              data-testid="download-registrations"
+            >
+              registrations.download
+              <i
+                aria-hidden="true"
+                class="download icon"
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
 exports[`RegistrationsPage should match the snapshot 1`] = `
 <body
   class=""
@@ -14,200 +78,50 @@ exports[`RegistrationsPage should match the snapshot 1`] = `
         registrations.page.title
       </h1>
       <div
-        class="ui segment RegistrationsOverview"
+        class="ui segment"
       >
         <div
-          class="RegistrationsOverview__Total"
-          data-testid="registrations-total"
+          class="RegistrationsOverview"
         >
-          <strong>
-            registrations.total
-            :
-          </strong>
-           
-          3
+          <div
+            class="RegistrationsOverview__Total"
+            data-testid="registrations-total"
+          >
+            <strong>
+              registrations.total
+              :
+            </strong>
+             
+            3
+          </div>
+          <div
+            class="RegistrationsOverview_MoreDetails"
+          >
+            <button
+              class="ui vk icon button"
+              data-testid="toggle-products"
+            >
+              <i
+                aria-hidden="true"
+                class="magnify icon"
+              />
+            </button>
+          </div>
+          <div
+            class="RegistrationsOverview__Export"
+          >
+            <button
+              class="ui vk icon right labeled button"
+              data-testid="download-registrations"
+            >
+              registrations.download
+              <i
+                aria-hidden="true"
+                class="download icon"
+              />
+            </button>
+          </div>
         </div>
-        <div
-          class="RegistrationsOverview__Export"
-        >
-          <button
-            class="ui icon button"
-            data-testid="download-registrations"
-          >
-            <i
-              aria-hidden="true"
-              class="download icon"
-            />
-          </button>
-        </div>
-      </div>
-      <div
-        class="ui segment RegistrationsProducts"
-      >
-        <table
-          class="ui celled collapsing very basic table RegistrationsProducts__Table"
-        >
-          <tbody
-            class=""
-          >
-            <tr
-              class=""
-            >
-              <td
-                class=""
-              >
-                register.form.counts.dinner
-              </td>
-              <td
-                class=""
-              >
-                7
-              </td>
-            </tr>
-            <tr
-              class=""
-            >
-              <td
-                class=""
-              >
-                register.form.counts.vegetarian
-              </td>
-              <td
-                class=""
-              >
-                7
-              </td>
-            </tr>
-            <tr
-              class=""
-            >
-              <td
-                class=""
-              >
-                register.form.counts.breakfast
-              </td>
-              <td
-                class=""
-              >
-                4
-              </td>
-            </tr>
-            <tr
-              class=""
-            >
-              <td
-                class=""
-              >
-                register.form.counts.picknick
-              </td>
-              <td
-                class=""
-              >
-                7
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <table
-          class="ui celled collapsing very basic table RegistrationsProducts__Table"
-        >
-          <tbody
-            class=""
-          >
-            <tr
-              class=""
-            >
-              <td
-                class=""
-              >
-                register.form.counts.sleeping
-              </td>
-              <td
-                class=""
-              >
-                8
-              </td>
-            </tr>
-            <tr
-              class=""
-            >
-              <td
-                class=""
-              >
-                register.form.counts.camping
-              </td>
-              <td
-                class=""
-              >
-                14
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <table
-          class="ui celled collapsing very basic table RegistrationsProducts__Table"
-        >
-          <tbody
-            class=""
-          >
-            <tr
-              class=""
-            >
-              <td
-                class=""
-              >
-                register.form.counts.itemSize1
-              </td>
-              <td
-                class=""
-              >
-                5
-              </td>
-            </tr>
-            <tr
-              class=""
-            >
-              <td
-                class=""
-              >
-                register.form.counts.itemSize2
-              </td>
-              <td
-                class=""
-              >
-                6
-              </td>
-            </tr>
-            <tr
-              class=""
-            >
-              <td
-                class=""
-              >
-                register.form.counts.itemSize3
-              </td>
-              <td
-                class=""
-              >
-                20
-              </td>
-            </tr>
-            <tr
-              class=""
-            >
-              <td
-                class=""
-              >
-                register.form.counts.itemSize4
-              </td>
-              <td
-                class=""
-              >
-                7
-              </td>
-            </tr>
-          </tbody>
-        </table>
       </div>
       <table
         class="ui celled compact table"
@@ -429,200 +343,50 @@ exports[`RegistrationsPage should show the details 1`] = `
         registrations.page.title
       </h1>
       <div
-        class="ui segment RegistrationsOverview"
+        class="ui segment"
       >
         <div
-          class="RegistrationsOverview__Total"
-          data-testid="registrations-total"
+          class="RegistrationsOverview"
         >
-          <strong>
-            registrations.total
-            :
-          </strong>
-           
-          3
+          <div
+            class="RegistrationsOverview__Total"
+            data-testid="registrations-total"
+          >
+            <strong>
+              registrations.total
+              :
+            </strong>
+             
+            3
+          </div>
+          <div
+            class="RegistrationsOverview_MoreDetails"
+          >
+            <button
+              class="ui vk icon button"
+              data-testid="toggle-products"
+            >
+              <i
+                aria-hidden="true"
+                class="magnify icon"
+              />
+            </button>
+          </div>
+          <div
+            class="RegistrationsOverview__Export"
+          >
+            <button
+              class="ui vk icon right labeled button"
+              data-testid="download-registrations"
+            >
+              registrations.download
+              <i
+                aria-hidden="true"
+                class="download icon"
+              />
+            </button>
+          </div>
         </div>
-        <div
-          class="RegistrationsOverview__Export"
-        >
-          <button
-            class="ui icon button"
-            data-testid="download-registrations"
-          >
-            <i
-              aria-hidden="true"
-              class="download icon"
-            />
-          </button>
-        </div>
-      </div>
-      <div
-        class="ui segment RegistrationsProducts"
-      >
-        <table
-          class="ui celled collapsing very basic table RegistrationsProducts__Table"
-        >
-          <tbody
-            class=""
-          >
-            <tr
-              class=""
-            >
-              <td
-                class=""
-              >
-                register.form.counts.dinner
-              </td>
-              <td
-                class=""
-              >
-                7
-              </td>
-            </tr>
-            <tr
-              class=""
-            >
-              <td
-                class=""
-              >
-                register.form.counts.vegetarian
-              </td>
-              <td
-                class=""
-              >
-                7
-              </td>
-            </tr>
-            <tr
-              class=""
-            >
-              <td
-                class=""
-              >
-                register.form.counts.breakfast
-              </td>
-              <td
-                class=""
-              >
-                4
-              </td>
-            </tr>
-            <tr
-              class=""
-            >
-              <td
-                class=""
-              >
-                register.form.counts.picknick
-              </td>
-              <td
-                class=""
-              >
-                7
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <table
-          class="ui celled collapsing very basic table RegistrationsProducts__Table"
-        >
-          <tbody
-            class=""
-          >
-            <tr
-              class=""
-            >
-              <td
-                class=""
-              >
-                register.form.counts.sleeping
-              </td>
-              <td
-                class=""
-              >
-                8
-              </td>
-            </tr>
-            <tr
-              class=""
-            >
-              <td
-                class=""
-              >
-                register.form.counts.camping
-              </td>
-              <td
-                class=""
-              >
-                14
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <table
-          class="ui celled collapsing very basic table RegistrationsProducts__Table"
-        >
-          <tbody
-            class=""
-          >
-            <tr
-              class=""
-            >
-              <td
-                class=""
-              >
-                register.form.counts.itemSize1
-              </td>
-              <td
-                class=""
-              >
-                5
-              </td>
-            </tr>
-            <tr
-              class=""
-            >
-              <td
-                class=""
-              >
-                register.form.counts.itemSize2
-              </td>
-              <td
-                class=""
-              >
-                6
-              </td>
-            </tr>
-            <tr
-              class=""
-            >
-              <td
-                class=""
-              >
-                register.form.counts.itemSize3
-              </td>
-              <td
-                class=""
-              >
-                20
-              </td>
-            </tr>
-            <tr
-              class=""
-            >
-              <td
-                class=""
-              >
-                register.form.counts.itemSize4
-              </td>
-              <td
-                class=""
-              >
-                7
-              </td>
-            </tr>
-          </tbody>
-        </table>
       </div>
       <table
         class="ui celled compact table"
@@ -812,6 +576,439 @@ exports[`RegistrationsPage should show the details 1`] = `
                   </dt>
                 </dl>
               </div>
+            </td>
+          </tr>
+          <tr
+            class=""
+          >
+            <td
+              class=""
+            >
+              KON-5C26335
+            </td>
+            <td
+              class=""
+            >
+              2018-12-28 14:29:48
+            </td>
+            <td
+              class=""
+            >
+              1080
+               CHF
+            </td>
+            <td
+              class=""
+            >
+              <strong>
+                Cayla
+                 
+                Konopelski
+              </strong>
+              <address>
+                <div>
+                  Parker Expressway
+                   
+                  5A
+                </div>
+                <div>
+                  1018
+                   
+                  Port Margueritemouth
+                </div>
+              </address>
+            </td>
+            <td
+              class="collapsing"
+            >
+              <button
+                class="ui black icon button"
+                data-testid="details-2"
+              >
+                <i
+                  aria-hidden="true"
+                  class="magnify icon"
+                />
+              </button>
+            </td>
+          </tr>
+          <tr
+            class=""
+          >
+            <td
+              class=""
+            >
+              STR-5C26337
+            </td>
+            <td
+              class=""
+            >
+              2018-12-28 14:30:19
+            </td>
+            <td
+              class=""
+            >
+              745
+               CHF
+            </td>
+            <td
+              class=""
+            >
+              <strong>
+                Paige
+                 
+                Streich
+              </strong>
+              <address>
+                <div>
+                  Randi Knolls
+                   
+                  5A
+                </div>
+                <div>
+                  1018
+                   
+                  Nolanside
+                </div>
+              </address>
+            </td>
+            <td
+              class="collapsing"
+            >
+              <button
+                class="ui black icon button"
+                data-testid="details-3"
+              >
+                <i
+                  aria-hidden="true"
+                  class="magnify icon"
+                />
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`RegistrationsPage should show the products 1`] = `
+<body
+  class=""
+>
+  <div>
+    <div
+      class="RegistrationPage"
+    >
+      <h1
+        class="ui header"
+      >
+        registrations.page.title
+      </h1>
+      <div
+        class="ui segment"
+      >
+        <div
+          class="RegistrationsOverview"
+        >
+          <div
+            class="RegistrationsOverview__Total"
+            data-testid="registrations-total"
+          >
+            <strong>
+              registrations.total
+              :
+            </strong>
+             
+            3
+          </div>
+          <div
+            class="RegistrationsOverview_MoreDetails"
+          >
+            <button
+              class="ui vk icon button"
+              data-testid="toggle-products"
+            >
+              <i
+                aria-hidden="true"
+                class="minus icon"
+              />
+            </button>
+          </div>
+          <div
+            class="RegistrationsOverview__Export"
+          >
+            <button
+              class="ui vk icon right labeled button"
+              data-testid="download-registrations"
+            >
+              registrations.download
+              <i
+                aria-hidden="true"
+                class="download icon"
+              />
+            </button>
+          </div>
+        </div>
+        <div
+          class="ui segment RegistrationsProducts"
+        >
+          <table
+            class="ui celled collapsing very basic table RegistrationsProducts__Table"
+          >
+            <tbody
+              class=""
+            >
+              <tr
+                class=""
+              >
+                <td
+                  class=""
+                >
+                  register.form.counts.dinner
+                </td>
+                <td
+                  class=""
+                >
+                  7
+                </td>
+              </tr>
+              <tr
+                class=""
+              >
+                <td
+                  class=""
+                >
+                  register.form.counts.vegetarian
+                </td>
+                <td
+                  class=""
+                >
+                  7
+                </td>
+              </tr>
+              <tr
+                class=""
+              >
+                <td
+                  class=""
+                >
+                  register.form.counts.breakfast
+                </td>
+                <td
+                  class=""
+                >
+                  4
+                </td>
+              </tr>
+              <tr
+                class=""
+              >
+                <td
+                  class=""
+                >
+                  register.form.counts.picknick
+                </td>
+                <td
+                  class=""
+                >
+                  7
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <table
+            class="ui celled collapsing very basic table RegistrationsProducts__Table"
+          >
+            <tbody
+              class=""
+            >
+              <tr
+                class=""
+              >
+                <td
+                  class=""
+                >
+                  register.form.counts.sleeping
+                </td>
+                <td
+                  class=""
+                >
+                  8
+                </td>
+              </tr>
+              <tr
+                class=""
+              >
+                <td
+                  class=""
+                >
+                  register.form.counts.camping
+                </td>
+                <td
+                  class=""
+                >
+                  14
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <table
+            class="ui celled collapsing very basic table RegistrationsProducts__Table"
+          >
+            <tbody
+              class=""
+            >
+              <tr
+                class=""
+              >
+                <td
+                  class=""
+                >
+                  register.form.counts.itemSize1
+                </td>
+                <td
+                  class=""
+                >
+                  5
+                </td>
+              </tr>
+              <tr
+                class=""
+              >
+                <td
+                  class=""
+                >
+                  register.form.counts.itemSize2
+                </td>
+                <td
+                  class=""
+                >
+                  6
+                </td>
+              </tr>
+              <tr
+                class=""
+              >
+                <td
+                  class=""
+                >
+                  register.form.counts.itemSize3
+                </td>
+                <td
+                  class=""
+                >
+                  20
+                </td>
+              </tr>
+              <tr
+                class=""
+              >
+                <td
+                  class=""
+                >
+                  register.form.counts.itemSize4
+                </td>
+                <td
+                  class=""
+                >
+                  7
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <table
+        class="ui celled compact table"
+      >
+        <thead
+          class=""
+        >
+          <tr
+            class=""
+          >
+            <th
+              class=""
+            >
+              registrations.reference
+            </th>
+            <th
+              class=""
+            >
+              registrations.date
+            </th>
+            <th
+              class=""
+            >
+              register.form.counts.total
+            </th>
+            <th
+              class=""
+            >
+              registrations.identification
+            </th>
+            <th
+              class=""
+            />
+          </tr>
+        </thead>
+        <tbody
+          class=""
+        >
+          <tr
+            class=""
+          >
+            <td
+              class=""
+            >
+              ROO-5C26315
+            </td>
+            <td
+              class=""
+            >
+              2018-12-28 14:21:04
+            </td>
+            <td
+              class=""
+            >
+              65
+               CHF
+            </td>
+            <td
+              class=""
+            >
+              <strong>
+                Tia
+                 
+                Roob
+              </strong>
+              <address>
+                <div>
+                  Maggie Haven
+                   
+                  5A
+                </div>
+                <div>
+                  1018
+                   
+                  Barrowshaven
+                </div>
+              </address>
+            </td>
+            <td
+              class="collapsing"
+            >
+              <button
+                class="ui black icon button"
+                data-testid="details-1"
+              >
+                <i
+                  aria-hidden="true"
+                  class="magnify icon"
+                />
+              </button>
             </td>
           </tr>
           <tr

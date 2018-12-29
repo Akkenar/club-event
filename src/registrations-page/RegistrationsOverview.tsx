@@ -42,6 +42,7 @@ const RegistrationsOverview = ({
                 color="vk"
                 onClick={toggleProducts}
                 data-testid="toggle-products"
+                title={getKey('registrations.details', messages)}
               >
                 {showProducts ? <Icon name="minus" /> : <Icon name="magnify" />}
               </Button>
@@ -53,6 +54,7 @@ const RegistrationsOverview = ({
                 icon={true}
                 onClick={save}
                 data-testid="download-registrations"
+                title={getKey('registrations.download', messages)}
               >
                 {getKey('registrations.download', messages)}
                 <Icon name="download" />

@@ -62,6 +62,7 @@
   "registrations.date": "Date d'inscription",
   "registrations.identification": "Identification",
   "registrations.download": "Télécharger",
+  "registrations.details": "Détail",
   "login.page.title": "Accéder aux inscriptions",
   "login.form.username": "Nom d'utilisateur",
   "login.form.password": "Mot de passe",

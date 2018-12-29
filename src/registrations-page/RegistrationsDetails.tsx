@@ -90,8 +90,13 @@ const RegistrationsDetails = ({ registrations }: RegistrationsDetailsProps) => {
                   color="black"
                   icon={true}
                   onClick={showDetails(registration)}
+                  title={getKey('registrations.details', messages)}
                 >
-                  <Icon name="magnify" />
+                  {registration === details ? (
+                    <Icon name="minus" />
+                  ) : (
+                    <Icon name="magnify" />
+                  )}
                 </Button>
               </Table.Cell>
             </Table.Row>

@@ -8,6 +8,7 @@ import LanguageContext from './core/intl/LanguageContext';
 import provideLanguage from './core/intl/provideLanguage';
 
 import './App.scss';
+import './style/font.scss';
 import './style/main.scss';
 import './style/semantic.scss';
 

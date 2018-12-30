@@ -5,7 +5,7 @@ import AppRouting from './AppRouting';
 import FooterAsync from './core/footer/FooterAsync';
 import HeaderAsync from './core/header/HeaderAsync';
 import LanguageContext from './core/intl/LanguageContext';
-import provideLanguage from './core/intl/provideLanguage';
+import provideTranslations from './core/intl/provideTranslations';
 
 import './App.scss';
 import './style/font.scss';
@@ -38,6 +38,6 @@ const AppContainer = () => {
   );
 };
 
-const App = provideLanguage(AppContainer);
+const App = provideTranslations(AppContainer);
 
 export default App;

@@ -5,6 +5,7 @@ import { setPageLanguage } from '../page.lib';
 import { importLanguage } from './importLanguage';
 import { IntlType } from './intl.type';
 import LanguageContext from './LanguageContext';
+import LanguageInRoute from './LanguageInRoute';
 
 interface ProvideMessagesState extends IntlType {
   language: string | null;
@@ -47,8 +48,10 @@ const changeLanguage = (
   });
 };
 
-export default function provideMessages(Component: React.ComponentType<any>) {
-  const MessageProvider = ({ match }: ProvideMessagesProps) => {
+export default function provideTranslations(
+  Component: React.ComponentType<any>
+) {
+  const TranslationsProvider = ({ match }: ProvideMessagesProps) => {
     const [state, setState] = useState(INITIAL_STATE);
     const { language, messages } = state;
 
@@ -81,5 +84,5 @@ export default function provideMessages(Component: React.ComponentType<any>) {
     );
   };
 
-  return MessageProvider;
+  return () => <LanguageInRoute component={TranslationsProvider} />;
 }

@@ -1,12 +1,12 @@
-import * as confirmation from '../../../translations/fr/confirmation.md';
-import * as information from '../../../translations/fr/information.md';
-import * as messages from '../../../translations/fr/messages.json';
+import confirmation from '../../../translations/fr/confirmation.md';
+import information from '../../../translations/fr/information.md';
+import { default as messages } from '../../../translations/fr/messages.json';
 import { IntlType } from './intl.type';
 
 const intl: IntlType = {
   confirmation,
   information,
-  messages: (messages as any).default,
+  messages,
 };
 
 export default intl;

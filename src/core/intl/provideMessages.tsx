@@ -21,8 +21,8 @@ export default function provideMessages(Component: any) {
       super(props);
 
       this.state = {
-        confirmation: null,
-        information: null,
+        confirmation: '',
+        information: '',
         language: null,
         messages: {},
       };

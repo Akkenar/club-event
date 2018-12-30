@@ -3,14 +3,13 @@ export interface IntlKey {
 }
 
 export interface IntlType {
-  confirmation: any;
-  messages: any;
-  information: any;
+  confirmation: string;
+  messages: IntlKey;
+  information: string;
 }
 
 export interface IntlContext {
   language: string;
   messages: IntlKey;
-  // TODO add proper type
-  handleChangeLanguage?: any;
+  handleChangeLanguage?: (language: string) => void;
 }

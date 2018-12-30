@@ -1,10 +1,10 @@
 declare module '*.md' {
-  const value: any;
+  const value: string;
   export default value;
 }
 
 declare module '*.json' {
-  const value: any;
+  const value: { default: { [key: string]: string } };
   export default value;
 }
 

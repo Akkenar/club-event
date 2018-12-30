@@ -21,10 +21,11 @@ const HomePage = () => {
   return (
     <Fragment>
       <Header as="h1">{getKey('home.page.title', messages)}</Header>
-      <Logo big={true} />
+      <Logo big={true} width={320} height={232} />
       <InformationSection />
       <LazyImage
         width={320}
+        height={212}
         src={imgTop}
         srcwebp={imgwebpTop}
         alt={'Photo: Arnaud Conne'}

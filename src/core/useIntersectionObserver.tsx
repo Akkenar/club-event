@@ -38,7 +38,7 @@ function startObserving(
 
 export function useIntersectionObserver(): [
   boolean,
-  ((element: HTMLElement) => void) | null
+  ((element: HTMLElement | any) => void) | null
 ] {
   const [isDisplayed, setIsDisplayed] = useState<boolean>(false);
   const [observer, setObserver] = useState<IntersectionObserver | null>(null);

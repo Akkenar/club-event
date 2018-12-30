@@ -1,8 +1,13 @@
+import { useContext } from 'react';
 import * as React from 'react';
 import { useEffect, useState } from 'react';
+import getKey from '../intl/getKey';
+import LanguageContext from '../intl/LanguageContext';
+import { useIntersectionObserver } from '../useIntersectionObserver';
 
 const CONTAINER_ID = 'recaptcha-container';
 const SCRIPT_ID = 'recaptcha-script';
+const CAPTCHA_SIZE = { height: 78, width: 302 };
 
 function appendRecaptchaScript() {
   const script = document.createElement('script');
@@ -28,7 +33,14 @@ function renderCaptcha() {
 
 const Recaptcha = () => {
   const [loaded, setLoaded] = useState(false);
+  const [isDisplayed, handleRef] = useIntersectionObserver();
+  const { messages } = useContext(LanguageContext);
+
   useEffect(() => {
+    if (!isDisplayed) {
+      return;
+    }
+
     // In case the script is not loaded.
     if (!document.getElementById(SCRIPT_ID)) {
       // Global callback hooked to the recaptcha script src to only render
@@ -47,7 +59,19 @@ const Recaptcha = () => {
     }
   });
 
-  return <div id={CONTAINER_ID} className="g-recaptcha" />;
+  if (!isDisplayed) {
+    return (
+      <div style={CAPTCHA_SIZE} ref={handleRef}>
+        {getKey('loading', messages)}
+      </div>
+    );
+  }
+
+  return (
+    <div style={CAPTCHA_SIZE} id={CONTAINER_ID} className="g-recaptcha">
+      {getKey('loading', messages)}
+    </div>
+  );
 };
 
 export default Recaptcha;

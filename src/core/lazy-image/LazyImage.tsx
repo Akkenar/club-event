@@ -1,9 +1,9 @@
 import * as React from 'react';
 import Image from './Image';
 
+import { useIntersectionObserver } from '../useIntersectionObserver';
 import './LazyImage.scss';
 import Placeholder from './Placeholder';
-import { useIntersectionObserver } from './useIntersectionObserver';
 
 interface LazyImageProps {
   src: any;

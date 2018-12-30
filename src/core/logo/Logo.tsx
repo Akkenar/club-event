@@ -7,8 +7,8 @@ import LanguageContext from '../intl/LanguageContext';
 import './Logo.scss';
 
 export interface LogoType {
-  height?: number;
-  width?: number;
+  height: number;
+  width: number;
   inverted?: boolean;
   big?: boolean;
   className?: string;
@@ -19,10 +19,10 @@ const Logo = ({ height, width, inverted, big, className = '' }: LogoType) => {
 
   const invertedClassname = inverted ? 'Logo--inverted' : '';
   const bigClassname = big ? 'Logo--big' : '';
+  const clazz = `Logo ${invertedClassname} ${bigClassname} ${className || ''}`;
   return (
     <img
-      className={`Logo ${invertedClassname} ${bigClassname} ${className ||
-        ''}`.trim()}
+      className={clazz.trim()}
       height={height}
       width={width}
       src={logo as any}

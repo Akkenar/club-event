@@ -62,9 +62,10 @@ exports[`LoginPage should match snapshot 1`] = `
             data-testid="backend-error"
           />
           <div
-            class="g-recaptcha"
-            id="recaptcha-container"
-          />
+            style="height: 78px; width: 302px;"
+          >
+            loading
+          </div>
           <div
             class="LoginForm__submit-button-container"
           >

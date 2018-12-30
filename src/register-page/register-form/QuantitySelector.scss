@@ -1,0 +1,53 @@
+@import url('../../../node_modules/semantic-ui-css/components/button.min.css');
+@import url('../../../node_modules/semantic-ui-css/components/icon.min.css');
+
+$height: 2.7em;
+
+.QuantitySelector {
+  margin: 1em;
+  padding: 0.3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.QuantitySelector__Container {
+  width: 100%;
+}
+
+.QuantitySelector__Label {
+  font-weight: bold;
+}
+
+.QuantitySelector__Controls {
+  display: flex;
+}
+
+.QuantitySelector__Button {
+  margin: 0 !important;
+  height: $height;
+}
+
+.QuantitySelector__Button--minus {
+  border-bottom-right-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+}
+
+.QuantitySelector__Button--plus {
+  border-bottom-left-radius: 0 !important;
+  border-top-left-radius: 0 !important;
+}
+
+.QuantitySelector__Quantity {
+  border-radius: 0 !important;
+  height: $height;
+  -moz-appearance: textfield !important;
+  text-align: right;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}

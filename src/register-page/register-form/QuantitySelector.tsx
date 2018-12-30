@@ -1,55 +1,90 @@
 import * as React from 'react';
-import { useContext } from 'react';
-import { Form } from 'semantic-ui-react';
+import { ChangeEvent, useContext } from 'react';
+import { Button, Form, Icon, Segment } from 'semantic-ui-react';
 import getKey from '../../core/intl/getKey';
 import LanguageContext from '../../core/intl/LanguageContext';
 import { PRICES } from '../prices';
 import { Registration } from '../register.type';
 
+import './QuantitySelector.scss';
+
+export type SetQuantityType = (name: string, quantity: number) => void;
+
 export interface QuantitySelectorProps {
   name: string;
-  handleChange: any;
+  setQuantity: SetQuantityType;
   state: Registration;
+}
+
+function parseProduct(state: Registration, name: string): number {
+  const value = state.products[name];
+  if (!value) {
+    return 0;
+  }
+  return parseInt(value.toString(), 10);
 }
 
 const QuantitySelector = ({
   name,
-  handleChange,
+  setQuantity,
   state,
 }: QuantitySelectorProps) => {
   const { messages } = useContext(LanguageContext);
   const itemPrice = PRICES[name] as number;
+  const quantity = parseProduct(state, name);
 
-  const getOption = (index: number) => (
-    <option value={index}>
-      {index} (CHF {index * itemPrice})
-    </option>
-  );
+  const addOne = () => setQuantity(name, quantity + 1);
+  const removeOne = () => setQuantity(name, quantity - 1);
+  const setCustom = (event: ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value ? parseInt(event.target.value, 10) : 0;
+    if (!isNaN(value)) {
+      setQuantity(name, value);
+    }
+  };
 
   return (
-    <Form.Field>
-      <label htmlFor={name}>
-        {getKey(`register.form.counts.${name}`, messages)} (CHF {itemPrice})
-      </label>
-      <select
-        id={name}
-        name={name}
-        value={state.products[name]}
-        onChange={handleChange}
-        data-testid={name}
-      >
-        <option value="0">0</option>
-        {getOption(1)}
-        {getOption(2)}
-        {getOption(3)}
-        {getOption(4)}
-        {getOption(5)}
-        {getOption(6)}
-        {getOption(7)}
-        {getOption(8)}
-        {getOption(9)}
-        {getOption(10)}
-      </select>
+    <Form.Field className="QuantitySelector full-width">
+      <Segment className="QuantitySelector__Container">
+        <label className="QuantitySelector__Label" htmlFor={name}>
+          {getKey(`register.form.counts.${name}`, messages)} (CHF {itemPrice})
+        </label>
+        <div className="QuantitySelector__Controls">
+          <Button
+            type="button"
+            className="QuantitySelector__Button QuantitySelector__Button--minus"
+            icon={true}
+            data-testid={`${name}-minus`}
+            onClick={removeOne}
+            title="Minus"
+            disabled={quantity === 0}
+          >
+            <Icon name="minus" />
+          </Button>
+          <input
+            type="number"
+            pattern="[0-9]*"
+            min={0}
+            max={100}
+            data-testid={name}
+            id={name}
+            className="QuantitySelector__Quantity"
+            value={quantity || ''}
+            onChange={setCustom}
+            minLength={1}
+            maxLength={3}
+          />
+          <Button
+            type="button"
+            className="QuantitySelector__Button QuantitySelector__Button--plus"
+            icon={true}
+            data-testid={`${name}-plus`}
+            onClick={addOne}
+            title="Plus"
+          >
+            <Icon name="plus" />
+          </Button>
+        </div>
+      </Segment>
     </Form.Field>
   );
 };

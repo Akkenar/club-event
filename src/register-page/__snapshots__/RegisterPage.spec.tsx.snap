@@ -243,300 +243,236 @@ exports[`RegisterPage should match the snapshot 1`] = `
             class="equal width fields"
           >
             <div
-              class="field"
+              class="field QuantitySelector full-width"
             >
-              <label
-                for="dinner"
+              <div
+                class="ui segment QuantitySelector__Container"
               >
-                register.form.counts.dinner
-                 (CHF 
-                45
-                )
-              </label>
-              <select
-                data-testid="dinner"
-                id="dinner"
-                name="dinner"
-              >
-                <option
-                  value="0"
+                <label
+                  class="QuantitySelector__Label"
+                  for="dinner"
                 >
-                  0
-                </option>
-                <option
-                  value="1"
+                  register.form.counts.dinner
+                   (CHF 
+                  45
+                  )
+                </label>
+                <div
+                  class="QuantitySelector__Controls"
                 >
-                  1 (CHF 45)
-                </option>
-                <option
-                  value="2"
-                >
-                  2 (CHF 90)
-                </option>
-                <option
-                  value="3"
-                >
-                  3 (CHF 135)
-                </option>
-                <option
-                  value="4"
-                >
-                  4 (CHF 180)
-                </option>
-                <option
-                  value="5"
-                >
-                  5 (CHF 225)
-                </option>
-                <option
-                  value="6"
-                >
-                  6 (CHF 270)
-                </option>
-                <option
-                  value="7"
-                >
-                  7 (CHF 315)
-                </option>
-                <option
-                  value="8"
-                >
-                  8 (CHF 360)
-                </option>
-                <option
-                  value="9"
-                >
-                  9 (CHF 405)
-                </option>
-                <option
-                  value="10"
-                >
-                  10 (CHF 450)
-                </option>
-              </select>
+                  <button
+                    class="ui icon disabled button QuantitySelector__Button QuantitySelector__Button--minus"
+                    data-testid="dinner-minus"
+                    disabled=""
+                    tabindex="-1"
+                    title="Minus"
+                    type="button"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="minus icon"
+                    />
+                  </button>
+                  <input
+                    class="QuantitySelector__Quantity"
+                    data-testid="dinner"
+                    id="dinner"
+                    max="100"
+                    maxlength="3"
+                    min="0"
+                    minlength="1"
+                    pattern="[0-9]*"
+                    type="number"
+                    value=""
+                  />
+                  <button
+                    class="ui icon button QuantitySelector__Button QuantitySelector__Button--plus"
+                    data-testid="dinner-plus"
+                    title="Plus"
+                    type="button"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="plus icon"
+                    />
+                  </button>
+                </div>
+              </div>
             </div>
             <div
-              class="field"
+              class="field QuantitySelector full-width"
             >
-              <label
-                for="vegetarian"
+              <div
+                class="ui segment QuantitySelector__Container"
               >
-                register.form.counts.vegetarian
-                 (CHF 
-                45
-                )
-              </label>
-              <select
-                data-testid="vegetarian"
-                id="vegetarian"
-                name="vegetarian"
-              >
-                <option
-                  value="0"
+                <label
+                  class="QuantitySelector__Label"
+                  for="vegetarian"
                 >
-                  0
-                </option>
-                <option
-                  value="1"
+                  register.form.counts.vegetarian
+                   (CHF 
+                  45
+                  )
+                </label>
+                <div
+                  class="QuantitySelector__Controls"
                 >
-                  1 (CHF 45)
-                </option>
-                <option
-                  value="2"
-                >
-                  2 (CHF 90)
-                </option>
-                <option
-                  value="3"
-                >
-                  3 (CHF 135)
-                </option>
-                <option
-                  value="4"
-                >
-                  4 (CHF 180)
-                </option>
-                <option
-                  value="5"
-                >
-                  5 (CHF 225)
-                </option>
-                <option
-                  value="6"
-                >
-                  6 (CHF 270)
-                </option>
-                <option
-                  value="7"
-                >
-                  7 (CHF 315)
-                </option>
-                <option
-                  value="8"
-                >
-                  8 (CHF 360)
-                </option>
-                <option
-                  value="9"
-                >
-                  9 (CHF 405)
-                </option>
-                <option
-                  value="10"
-                >
-                  10 (CHF 450)
-                </option>
-              </select>
+                  <button
+                    class="ui icon disabled button QuantitySelector__Button QuantitySelector__Button--minus"
+                    data-testid="vegetarian-minus"
+                    disabled=""
+                    tabindex="-1"
+                    title="Minus"
+                    type="button"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="minus icon"
+                    />
+                  </button>
+                  <input
+                    class="QuantitySelector__Quantity"
+                    data-testid="vegetarian"
+                    id="vegetarian"
+                    max="100"
+                    maxlength="3"
+                    min="0"
+                    minlength="1"
+                    pattern="[0-9]*"
+                    type="number"
+                    value=""
+                  />
+                  <button
+                    class="ui icon button QuantitySelector__Button QuantitySelector__Button--plus"
+                    data-testid="vegetarian-plus"
+                    title="Plus"
+                    type="button"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="plus icon"
+                    />
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
           <div
             class="equal width fields"
           >
             <div
-              class="field"
+              class="field QuantitySelector full-width"
             >
-              <label
-                for="breakfast"
+              <div
+                class="ui segment QuantitySelector__Container"
               >
-                register.form.counts.breakfast
-                 (CHF 
-                10
-                )
-              </label>
-              <select
-                data-testid="breakfast"
-                id="breakfast"
-                name="breakfast"
-              >
-                <option
-                  value="0"
+                <label
+                  class="QuantitySelector__Label"
+                  for="breakfast"
                 >
-                  0
-                </option>
-                <option
-                  value="1"
+                  register.form.counts.breakfast
+                   (CHF 
+                  10
+                  )
+                </label>
+                <div
+                  class="QuantitySelector__Controls"
                 >
-                  1 (CHF 10)
-                </option>
-                <option
-                  value="2"
-                >
-                  2 (CHF 20)
-                </option>
-                <option
-                  value="3"
-                >
-                  3 (CHF 30)
-                </option>
-                <option
-                  value="4"
-                >
-                  4 (CHF 40)
-                </option>
-                <option
-                  value="5"
-                >
-                  5 (CHF 50)
-                </option>
-                <option
-                  value="6"
-                >
-                  6 (CHF 60)
-                </option>
-                <option
-                  value="7"
-                >
-                  7 (CHF 70)
-                </option>
-                <option
-                  value="8"
-                >
-                  8 (CHF 80)
-                </option>
-                <option
-                  value="9"
-                >
-                  9 (CHF 90)
-                </option>
-                <option
-                  value="10"
-                >
-                  10 (CHF 100)
-                </option>
-              </select>
+                  <button
+                    class="ui icon disabled button QuantitySelector__Button QuantitySelector__Button--minus"
+                    data-testid="breakfast-minus"
+                    disabled=""
+                    tabindex="-1"
+                    title="Minus"
+                    type="button"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="minus icon"
+                    />
+                  </button>
+                  <input
+                    class="QuantitySelector__Quantity"
+                    data-testid="breakfast"
+                    id="breakfast"
+                    max="100"
+                    maxlength="3"
+                    min="0"
+                    minlength="1"
+                    pattern="[0-9]*"
+                    type="number"
+                    value=""
+                  />
+                  <button
+                    class="ui icon button QuantitySelector__Button QuantitySelector__Button--plus"
+                    data-testid="breakfast-plus"
+                    title="Plus"
+                    type="button"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="plus icon"
+                    />
+                  </button>
+                </div>
+              </div>
             </div>
             <div
-              class="field"
+              class="field QuantitySelector full-width"
             >
-              <label
-                for="picknick"
+              <div
+                class="ui segment QuantitySelector__Container"
               >
-                register.form.counts.picknick
-                 (CHF 
-                10
-                )
-              </label>
-              <select
-                data-testid="picknick"
-                id="picknick"
-                name="picknick"
-              >
-                <option
-                  value="0"
+                <label
+                  class="QuantitySelector__Label"
+                  for="picknick"
                 >
-                  0
-                </option>
-                <option
-                  value="1"
+                  register.form.counts.picknick
+                   (CHF 
+                  10
+                  )
+                </label>
+                <div
+                  class="QuantitySelector__Controls"
                 >
-                  1 (CHF 10)
-                </option>
-                <option
-                  value="2"
-                >
-                  2 (CHF 20)
-                </option>
-                <option
-                  value="3"
-                >
-                  3 (CHF 30)
-                </option>
-                <option
-                  value="4"
-                >
-                  4 (CHF 40)
-                </option>
-                <option
-                  value="5"
-                >
-                  5 (CHF 50)
-                </option>
-                <option
-                  value="6"
-                >
-                  6 (CHF 60)
-                </option>
-                <option
-                  value="7"
-                >
-                  7 (CHF 70)
-                </option>
-                <option
-                  value="8"
-                >
-                  8 (CHF 80)
-                </option>
-                <option
-                  value="9"
-                >
-                  9 (CHF 90)
-                </option>
-                <option
-                  value="10"
-                >
-                  10 (CHF 100)
-                </option>
-              </select>
+                  <button
+                    class="ui icon disabled button QuantitySelector__Button QuantitySelector__Button--minus"
+                    data-testid="picknick-minus"
+                    disabled=""
+                    tabindex="-1"
+                    title="Minus"
+                    type="button"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="minus icon"
+                    />
+                  </button>
+                  <input
+                    class="QuantitySelector__Quantity"
+                    data-testid="picknick"
+                    id="picknick"
+                    max="100"
+                    maxlength="3"
+                    min="0"
+                    minlength="1"
+                    pattern="[0-9]*"
+                    type="number"
+                    value=""
+                  />
+                  <button
+                    class="ui icon button QuantitySelector__Button QuantitySelector__Button--plus"
+                    data-testid="picknick-plus"
+                    title="Plus"
+                    type="button"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="plus icon"
+                    />
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
           <h3
@@ -551,150 +487,118 @@ exports[`RegisterPage should match the snapshot 1`] = `
             class="equal width fields"
           >
             <div
-              class="field"
+              class="field QuantitySelector full-width"
             >
-              <label
-                for="sleeping"
+              <div
+                class="ui segment QuantitySelector__Container"
               >
-                register.form.counts.sleeping
-                 (CHF 
-                15
-                )
-              </label>
-              <select
-                data-testid="sleeping"
-                id="sleeping"
-                name="sleeping"
-              >
-                <option
-                  value="0"
+                <label
+                  class="QuantitySelector__Label"
+                  for="sleeping"
                 >
-                  0
-                </option>
-                <option
-                  value="1"
+                  register.form.counts.sleeping
+                   (CHF 
+                  15
+                  )
+                </label>
+                <div
+                  class="QuantitySelector__Controls"
                 >
-                  1 (CHF 15)
-                </option>
-                <option
-                  value="2"
-                >
-                  2 (CHF 30)
-                </option>
-                <option
-                  value="3"
-                >
-                  3 (CHF 45)
-                </option>
-                <option
-                  value="4"
-                >
-                  4 (CHF 60)
-                </option>
-                <option
-                  value="5"
-                >
-                  5 (CHF 75)
-                </option>
-                <option
-                  value="6"
-                >
-                  6 (CHF 90)
-                </option>
-                <option
-                  value="7"
-                >
-                  7 (CHF 105)
-                </option>
-                <option
-                  value="8"
-                >
-                  8 (CHF 120)
-                </option>
-                <option
-                  value="9"
-                >
-                  9 (CHF 135)
-                </option>
-                <option
-                  value="10"
-                >
-                  10 (CHF 150)
-                </option>
-              </select>
+                  <button
+                    class="ui icon disabled button QuantitySelector__Button QuantitySelector__Button--minus"
+                    data-testid="sleeping-minus"
+                    disabled=""
+                    tabindex="-1"
+                    title="Minus"
+                    type="button"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="minus icon"
+                    />
+                  </button>
+                  <input
+                    class="QuantitySelector__Quantity"
+                    data-testid="sleeping"
+                    id="sleeping"
+                    max="100"
+                    maxlength="3"
+                    min="0"
+                    minlength="1"
+                    pattern="[0-9]*"
+                    type="number"
+                    value=""
+                  />
+                  <button
+                    class="ui icon button QuantitySelector__Button QuantitySelector__Button--plus"
+                    data-testid="sleeping-plus"
+                    title="Plus"
+                    type="button"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="plus icon"
+                    />
+                  </button>
+                </div>
+              </div>
             </div>
             <div
-              class="field"
+              class="field QuantitySelector full-width"
             >
-              <label
-                for="camping"
+              <div
+                class="ui segment QuantitySelector__Container"
               >
-                register.form.counts.camping
-                 (CHF 
-                10
-                )
-              </label>
-              <select
-                data-testid="camping"
-                id="camping"
-                name="camping"
-              >
-                <option
-                  value="0"
+                <label
+                  class="QuantitySelector__Label"
+                  for="camping"
                 >
-                  0
-                </option>
-                <option
-                  value="1"
+                  register.form.counts.camping
+                   (CHF 
+                  10
+                  )
+                </label>
+                <div
+                  class="QuantitySelector__Controls"
                 >
-                  1 (CHF 10)
-                </option>
-                <option
-                  value="2"
-                >
-                  2 (CHF 20)
-                </option>
-                <option
-                  value="3"
-                >
-                  3 (CHF 30)
-                </option>
-                <option
-                  value="4"
-                >
-                  4 (CHF 40)
-                </option>
-                <option
-                  value="5"
-                >
-                  5 (CHF 50)
-                </option>
-                <option
-                  value="6"
-                >
-                  6 (CHF 60)
-                </option>
-                <option
-                  value="7"
-                >
-                  7 (CHF 70)
-                </option>
-                <option
-                  value="8"
-                >
-                  8 (CHF 80)
-                </option>
-                <option
-                  value="9"
-                >
-                  9 (CHF 90)
-                </option>
-                <option
-                  value="10"
-                >
-                  10 (CHF 100)
-                </option>
-              </select>
+                  <button
+                    class="ui icon disabled button QuantitySelector__Button QuantitySelector__Button--minus"
+                    data-testid="camping-minus"
+                    disabled=""
+                    tabindex="-1"
+                    title="Minus"
+                    type="button"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="minus icon"
+                    />
+                  </button>
+                  <input
+                    class="QuantitySelector__Quantity"
+                    data-testid="camping"
+                    id="camping"
+                    max="100"
+                    maxlength="3"
+                    min="0"
+                    minlength="1"
+                    pattern="[0-9]*"
+                    type="number"
+                    value=""
+                  />
+                  <button
+                    class="ui icon button QuantitySelector__Button QuantitySelector__Button--plus"
+                    data-testid="camping-plus"
+                    title="Plus"
+                    type="button"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="plus icon"
+                    />
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
           <h3
@@ -709,296 +613,236 @@ exports[`RegisterPage should match the snapshot 1`] = `
             class="equal width fields"
           >
             <div
-              class="field"
+              class="field QuantitySelector full-width"
             >
-              <label
-                for="itemSize1"
+              <div
+                class="ui segment QuantitySelector__Container"
               >
-                register.form.counts.itemSize1
-                 (CHF 
-                20
-                )
-              </label>
-              <select
-                data-testid="itemSize1"
-                id="itemSize1"
-                name="itemSize1"
-              >
-                <option
-                  value="0"
+                <label
+                  class="QuantitySelector__Label"
+                  for="itemSize1"
                 >
-                  0
-                </option>
-                <option
-                  value="1"
+                  register.form.counts.itemSize1
+                   (CHF 
+                  20
+                  )
+                </label>
+                <div
+                  class="QuantitySelector__Controls"
                 >
-                  1 (CHF 20)
-                </option>
-                <option
-                  value="2"
-                >
-                  2 (CHF 40)
-                </option>
-                <option
-                  value="3"
-                >
-                  3 (CHF 60)
-                </option>
-                <option
-                  value="4"
-                >
-                  4 (CHF 80)
-                </option>
-                <option
-                  value="5"
-                >
-                  5 (CHF 100)
-                </option>
-                <option
-                  value="6"
-                >
-                  6 (CHF 120)
-                </option>
-                <option
-                  value="7"
-                >
-                  7 (CHF 140)
-                </option>
-                <option
-                  value="8"
-                >
-                  8 (CHF 160)
-                </option>
-                <option
-                  value="9"
-                >
-                  9 (CHF 180)
-                </option>
-                <option
-                  value="10"
-                >
-                  10 (CHF 200)
-                </option>
-              </select>
+                  <button
+                    class="ui icon disabled button QuantitySelector__Button QuantitySelector__Button--minus"
+                    data-testid="itemSize1-minus"
+                    disabled=""
+                    tabindex="-1"
+                    title="Minus"
+                    type="button"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="minus icon"
+                    />
+                  </button>
+                  <input
+                    class="QuantitySelector__Quantity"
+                    data-testid="itemSize1"
+                    id="itemSize1"
+                    max="100"
+                    maxlength="3"
+                    min="0"
+                    minlength="1"
+                    pattern="[0-9]*"
+                    type="number"
+                    value=""
+                  />
+                  <button
+                    class="ui icon button QuantitySelector__Button QuantitySelector__Button--plus"
+                    data-testid="itemSize1-plus"
+                    title="Plus"
+                    type="button"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="plus icon"
+                    />
+                  </button>
+                </div>
+              </div>
             </div>
             <div
-              class="field"
+              class="field QuantitySelector full-width"
             >
-              <label
-                for="itemSize2"
+              <div
+                class="ui segment QuantitySelector__Container"
               >
-                register.form.counts.itemSize2
-                 (CHF 
-                20
-                )
-              </label>
-              <select
-                data-testid="itemSize2"
-                id="itemSize2"
-                name="itemSize2"
+                <label
+                  class="QuantitySelector__Label"
+                  for="itemSize2"
+                >
+                  register.form.counts.itemSize2
+                   (CHF 
+                  20
+                  )
+                </label>
+                <div
+                  class="QuantitySelector__Controls"
+                >
+                  <button
+                    class="ui icon disabled button QuantitySelector__Button QuantitySelector__Button--minus"
+                    data-testid="itemSize2-minus"
+                    disabled=""
+                    tabindex="-1"
+                    title="Minus"
+                    type="button"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="minus icon"
+                    />
+                  </button>
+                  <input
+                    class="QuantitySelector__Quantity"
+                    data-testid="itemSize2"
+                    id="itemSize2"
+                    max="100"
+                    maxlength="3"
+                    min="0"
+                    minlength="1"
+                    pattern="[0-9]*"
+                    type="number"
+                    value=""
+                  />
+                  <button
+                    class="ui icon button QuantitySelector__Button QuantitySelector__Button--plus"
+                    data-testid="itemSize2-plus"
+                    title="Plus"
+                    type="button"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="plus icon"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="equal width fields"
+          >
+            <div
+              class="field QuantitySelector full-width"
+            >
+              <div
+                class="ui segment QuantitySelector__Container"
               >
-                <option
-                  value="0"
+                <label
+                  class="QuantitySelector__Label"
+                  for="itemSize3"
                 >
-                  0
-                </option>
-                <option
-                  value="1"
+                  register.form.counts.itemSize3
+                   (CHF 
+                  20
+                  )
+                </label>
+                <div
+                  class="QuantitySelector__Controls"
                 >
-                  1 (CHF 20)
-                </option>
-                <option
-                  value="2"
-                >
-                  2 (CHF 40)
-                </option>
-                <option
-                  value="3"
-                >
-                  3 (CHF 60)
-                </option>
-                <option
-                  value="4"
-                >
-                  4 (CHF 80)
-                </option>
-                <option
-                  value="5"
-                >
-                  5 (CHF 100)
-                </option>
-                <option
-                  value="6"
-                >
-                  6 (CHF 120)
-                </option>
-                <option
-                  value="7"
-                >
-                  7 (CHF 140)
-                </option>
-                <option
-                  value="8"
-                >
-                  8 (CHF 160)
-                </option>
-                <option
-                  value="9"
-                >
-                  9 (CHF 180)
-                </option>
-                <option
-                  value="10"
-                >
-                  10 (CHF 200)
-                </option>
-              </select>
+                  <button
+                    class="ui icon disabled button QuantitySelector__Button QuantitySelector__Button--minus"
+                    data-testid="itemSize3-minus"
+                    disabled=""
+                    tabindex="-1"
+                    title="Minus"
+                    type="button"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="minus icon"
+                    />
+                  </button>
+                  <input
+                    class="QuantitySelector__Quantity"
+                    data-testid="itemSize3"
+                    id="itemSize3"
+                    max="100"
+                    maxlength="3"
+                    min="0"
+                    minlength="1"
+                    pattern="[0-9]*"
+                    type="number"
+                    value=""
+                  />
+                  <button
+                    class="ui icon button QuantitySelector__Button QuantitySelector__Button--plus"
+                    data-testid="itemSize3-plus"
+                    title="Plus"
+                    type="button"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="plus icon"
+                    />
+                  </button>
+                </div>
+              </div>
             </div>
             <div
-              class="field"
+              class="field QuantitySelector full-width"
             >
-              <label
-                for="itemSize3"
+              <div
+                class="ui segment QuantitySelector__Container"
               >
-                register.form.counts.itemSize3
-                 (CHF 
-                20
-                )
-              </label>
-              <select
-                data-testid="itemSize3"
-                id="itemSize3"
-                name="itemSize3"
-              >
-                <option
-                  value="0"
+                <label
+                  class="QuantitySelector__Label"
+                  for="itemSize4"
                 >
-                  0
-                </option>
-                <option
-                  value="1"
+                  register.form.counts.itemSize4
+                   (CHF 
+                  20
+                  )
+                </label>
+                <div
+                  class="QuantitySelector__Controls"
                 >
-                  1 (CHF 20)
-                </option>
-                <option
-                  value="2"
-                >
-                  2 (CHF 40)
-                </option>
-                <option
-                  value="3"
-                >
-                  3 (CHF 60)
-                </option>
-                <option
-                  value="4"
-                >
-                  4 (CHF 80)
-                </option>
-                <option
-                  value="5"
-                >
-                  5 (CHF 100)
-                </option>
-                <option
-                  value="6"
-                >
-                  6 (CHF 120)
-                </option>
-                <option
-                  value="7"
-                >
-                  7 (CHF 140)
-                </option>
-                <option
-                  value="8"
-                >
-                  8 (CHF 160)
-                </option>
-                <option
-                  value="9"
-                >
-                  9 (CHF 180)
-                </option>
-                <option
-                  value="10"
-                >
-                  10 (CHF 200)
-                </option>
-              </select>
-            </div>
-            <div
-              class="field"
-            >
-              <label
-                for="itemSize4"
-              >
-                register.form.counts.itemSize4
-                 (CHF 
-                20
-                )
-              </label>
-              <select
-                data-testid="itemSize4"
-                id="itemSize4"
-                name="itemSize4"
-              >
-                <option
-                  value="0"
-                >
-                  0
-                </option>
-                <option
-                  value="1"
-                >
-                  1 (CHF 20)
-                </option>
-                <option
-                  value="2"
-                >
-                  2 (CHF 40)
-                </option>
-                <option
-                  value="3"
-                >
-                  3 (CHF 60)
-                </option>
-                <option
-                  value="4"
-                >
-                  4 (CHF 80)
-                </option>
-                <option
-                  value="5"
-                >
-                  5 (CHF 100)
-                </option>
-                <option
-                  value="6"
-                >
-                  6 (CHF 120)
-                </option>
-                <option
-                  value="7"
-                >
-                  7 (CHF 140)
-                </option>
-                <option
-                  value="8"
-                >
-                  8 (CHF 160)
-                </option>
-                <option
-                  value="9"
-                >
-                  9 (CHF 180)
-                </option>
-                <option
-                  value="10"
-                >
-                  10 (CHF 200)
-                </option>
-              </select>
+                  <button
+                    class="ui icon disabled button QuantitySelector__Button QuantitySelector__Button--minus"
+                    data-testid="itemSize4-minus"
+                    disabled=""
+                    tabindex="-1"
+                    title="Minus"
+                    type="button"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="minus icon"
+                    />
+                  </button>
+                  <input
+                    class="QuantitySelector__Quantity"
+                    data-testid="itemSize4"
+                    id="itemSize4"
+                    max="100"
+                    maxlength="3"
+                    min="0"
+                    minlength="1"
+                    pattern="[0-9]*"
+                    type="number"
+                    value=""
+                  />
+                  <button
+                    class="ui icon button QuantitySelector__Button QuantitySelector__Button--plus"
+                    data-testid="itemSize4-plus"
+                    title="Plus"
+                    type="button"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="plus icon"
+                    />
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
           <div

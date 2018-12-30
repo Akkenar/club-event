@@ -42,9 +42,9 @@ async function setPersonalData(page) {
 async function setProductData(page) {
   const keys = Object.keys(products);
   for (const key of keys) {
-    const selector = `*[name=${key}]`;
+    const selector = `*[data-testid=${key}]`;
     await page.waitForSelector(selector);
-    await page.select(selector, products[key].toString());
+    await page.type(selector, products[key].toString());
   }
 }
 

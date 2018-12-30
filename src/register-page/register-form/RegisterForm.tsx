@@ -1,20 +1,21 @@
 import * as React from 'react';
 import { useContext } from 'react';
+import { Redirect } from 'react-router-dom';
 import { Button, Form, Header, Message, Segment } from 'semantic-ui-react';
 import getKey from '../../core/intl/getKey';
 import LanguageContext from '../../core/intl/LanguageContext';
 import Recaptcha from '../../core/recaptcha/Recaptcha';
-
-import { Redirect } from 'react-router-dom';
 import Products from './Products';
+import { SetQuantityType } from './QuantitySelector';
+
 import './RegisterForm.scss';
 
 export interface RegisterFormProps {
   handleSubmit: any;
   handleChange: any;
-  handleChangeProduct: any;
+  handleChangeProduct: SetQuantityType;
   state: any;
-  total: any;
+  total: number;
 }
 
 const RegisterForm = ({
@@ -217,7 +218,7 @@ const RegisterForm = ({
       </Segment>
       <Segment>
         <Products
-          handleChange={handleChangeProduct}
+          setQuantity={handleChangeProduct}
           state={state}
           total={total}
         />

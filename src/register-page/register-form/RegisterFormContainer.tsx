@@ -85,12 +85,10 @@ class RegisterFormContainer extends React.Component<
     }));
   }
 
-  public handleChangeProduct(event: any) {
-    const { target } = event;
-    const { name, value } = target;
-
+  public handleChangeProduct(name: string, quantity: number) {
+    const validQuantity = Math.min(100, Math.max(0, quantity));
     this.setState(state => ({
-      products: { ...state.products, [name]: value },
+      products: { ...state.products, [name]: validQuantity },
     }));
   }
 

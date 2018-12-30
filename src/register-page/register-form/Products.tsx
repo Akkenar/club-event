@@ -4,15 +4,15 @@ import { Form, Header, Message } from 'semantic-ui-react';
 import getKey from '../../core/intl/getKey';
 import LanguageContext from '../../core/intl/LanguageContext';
 import { Registration } from '../register.type';
-import QuantitySelector from './QuantitySelector';
+import QuantitySelector, { SetQuantityType } from './QuantitySelector';
 
 export interface ProductsProps {
-  handleChange: any;
+  setQuantity: SetQuantityType;
   state: Registration;
   total: number;
 }
 
-const Products = ({ state, handleChange, total }: ProductsProps) => {
+const Products = ({ state, setQuantity, total }: ProductsProps) => {
   const { messages } = useContext(LanguageContext);
 
   return (
@@ -29,24 +29,24 @@ const Products = ({ state, handleChange, total }: ProductsProps) => {
         <QuantitySelector
           state={state}
           name="dinner"
-          handleChange={handleChange}
+          setQuantity={setQuantity}
         />
         <QuantitySelector
           state={state}
           name="vegetarian"
-          handleChange={handleChange}
+          setQuantity={setQuantity}
         />
       </Form.Group>
       <Form.Group widths="equal">
         <QuantitySelector
           state={state}
           name="breakfast"
-          handleChange={handleChange}
+          setQuantity={setQuantity}
         />
         <QuantitySelector
           state={state}
           name="picknick"
-          handleChange={handleChange}
+          setQuantity={setQuantity}
         />
       </Form.Group>
       <Header dividing={true} as="h3">
@@ -57,12 +57,12 @@ const Products = ({ state, handleChange, total }: ProductsProps) => {
         <QuantitySelector
           state={state}
           name="sleeping"
-          handleChange={handleChange}
+          setQuantity={setQuantity}
         />
         <QuantitySelector
           state={state}
           name="camping"
-          handleChange={handleChange}
+          setQuantity={setQuantity}
         />
       </Form.Group>
       <Header dividing={true} as="h3">
@@ -73,22 +73,24 @@ const Products = ({ state, handleChange, total }: ProductsProps) => {
         <QuantitySelector
           state={state}
           name="itemSize1"
-          handleChange={handleChange}
+          setQuantity={setQuantity}
         />
         <QuantitySelector
           state={state}
           name="itemSize2"
-          handleChange={handleChange}
+          setQuantity={setQuantity}
         />
+      </Form.Group>
+      <Form.Group widths="equal">
         <QuantitySelector
           state={state}
           name="itemSize3"
-          handleChange={handleChange}
+          setQuantity={setQuantity}
         />
         <QuantitySelector
           state={state}
           name="itemSize4"
-          handleChange={handleChange}
+          setQuantity={setQuantity}
         />
       </Form.Group>
       <Message

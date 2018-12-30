@@ -8,7 +8,7 @@ export async function postData<T extends ApiResponse>(
 ): Promise<T> {
   try {
     // Default options are marked with *
-    const response = await fetch(url, {
+    const response = await window.fetch(url, {
       body: JSON.stringify(data),
       cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
       credentials: 'same-origin', // include, *same-origin, omit
@@ -22,7 +22,7 @@ export async function postData<T extends ApiResponse>(
     });
 
     const text = await response.text();
-    console.log(`[API POST] Data from ${url}`, text || 'NO DATA');
+    console.log(`[API POST] Data from ${url}`, text);
     return JSON.parse(text);
   } catch (e) {
     console.error(`[API POST] Error posting data to ${url}`, e);
@@ -32,7 +32,7 @@ export async function postData<T extends ApiResponse>(
 
 export async function getData<T>(url: string): Promise<T> {
   try {
-    const response = await fetch(url, {
+    const response = await window.fetch(url, {
       cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
       credentials: 'same-origin', // include, *same-origin, omit
       headers: {
@@ -45,7 +45,7 @@ export async function getData<T>(url: string): Promise<T> {
     });
 
     const text = await response.text();
-    console.log(`[API GET] Data from ${url}`, text || 'NO DATA');
+    console.log(`[API GET] Data from ${url}`, text);
     return JSON.parse(text);
   } catch (e) {
     console.error(`[API GET] Error getting data from ${url}`, e);

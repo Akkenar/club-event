@@ -1,11 +1,32 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`LazyImage should match snapshot with image 1`] = `
+<body>
+  <div>
+    <picture>
+      <source
+        srcset="bar"
+        type="image/webp"
+      />
+      <img
+        alt="alt"
+        class="LazyImage no-print test"
+        data-testid="lazyloaded-image"
+        src="foo"
+        title="alt"
+      />
+    </picture>
+  </div>
+</body>
+`;
+
 exports[`LazyImage should match snapshot with placeholder 1`] = `
 <body>
   <div>
     <svg
       aria-label="al"
       class="LazyImage test"
+      data-testid="lazyloaded-placeholder"
       viewBox="0 0 1024 1024"
       xmlns="http://www.w3.org/2000/svg"
     >

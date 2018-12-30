@@ -14,12 +14,13 @@ const Image = ({ src, srcwebp, width, height, alt, className }: ImageProps) => {
     <picture>
       <source type="image/webp" srcSet={srcwebp} />
       <img
+        data-testid="lazyloaded-image"
         className={className}
         title={alt}
         src={src}
         width={width}
         height={height}
-        alt={alt || ''}
+        alt={alt}
       />
     </picture>
   );

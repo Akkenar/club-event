@@ -36,3 +36,11 @@ export function setValidInputData(
     });
   });
 }
+
+export const mockGlobalProperty = (globalObject: any) => (key: string) => (
+  value: any
+) => {
+  const original = globalObject[key];
+  Object.defineProperty(globalObject, key, { value, writable: true });
+  return () => mockGlobalProperty(globalObject)(key)(original);
+};

@@ -1,4 +1,6 @@
+import { useEffect, useState } from 'react';
 import * as React from 'react';
+import { match as matchType } from 'react-router-dom';
 import { setPageLanguage } from '../page.lib';
 import { importLanguage } from './importLanguage';
 import { IntlType } from './intl.type';
@@ -9,63 +11,75 @@ interface ProvideMessagesState extends IntlType {
 }
 
 interface ProvideMessagesProps {
-  match: any;
+  match: matchType<{ language: string }>;
 }
 
-export default function provideMessages(Component: any) {
-  return class LanguageAndMessages extends React.Component<
-    ProvideMessagesProps,
-    ProvideMessagesState
-  > {
-    constructor(props: ProvideMessagesProps) {
-      super(props);
+const INITIAL_STATE: ProvideMessagesState = {
+  confirmation: '',
+  information: '',
+  language: null,
+  messages: {},
+};
 
-      this.state = {
-        confirmation: '',
-        information: '',
-        language: null,
-        messages: {},
-      };
+const changeLanguage = (
+  lang: string,
+  currentLanguage: string | null,
+  setState: (
+    cb: (previousState: ProvideMessagesState) => ProvideMessagesState
+  ) => void
+) => {
+  if (!lang || lang === currentLanguage) {
+    // No need to change anything if the language is already the one we want.
+    return;
+  }
 
-      this.handleChangeLanguage = this.handleChangeLanguage.bind(this);
-    }
+  // For a11y reasons
+  setPageLanguage(lang);
 
-    public handleChangeLanguage(lang: string) {
-      // For a11y reasons
-      setPageLanguage(lang);
+  // Code splitting
+  importLanguage(lang).then(module => {
+    const { messages, confirmation, information } = module.default;
+    const newState = {
+      language: lang,
+      messages: { ...messages, confirmation, information },
+    };
+    setState(previousState => ({ ...previousState, ...newState }));
+  });
+};
 
-      // Code splitting
-      importLanguage(lang).then(module => {
-        const { messages, confirmation, information } = module.default;
-        const newMessages = { ...messages, confirmation, information };
-        this.setState({
-          language: lang,
-          messages: newMessages,
-        });
-      });
-    }
+export default function provideMessages(Component: React.ComponentType<any>) {
+  const MessageProvider = ({ match }: ProvideMessagesProps) => {
+    const [state, setState] = useState(INITIAL_STATE);
+    const { language, messages } = state;
 
-    public componentDidMount() {
-      this.handleChangeLanguage(this.props.match.params.language);
-    }
+    // Because we'll pass this function to the language switcher
+    const handleChangeLanguage = (nextLang: string) =>
+      changeLanguage(nextLang, language, setState);
 
-    public render() {
-      const { messages, language } = this.state;
+    useEffect(() => {
+      // Initial value from the route, if required.
       if (!language) {
-        return null;
+        handleChangeLanguage(match.params.language);
       }
+    });
 
-      const value = {
-        handleChangeLanguage: this.handleChangeLanguage,
-        language,
-        messages,
-      };
-
-      return (
-        <LanguageContext.Provider value={value}>
-          <Component />
-        </LanguageContext.Provider>
-      );
+    if (!language) {
+      // While the page is loading
+      return null;
     }
+
+    const value = {
+      handleChangeLanguage,
+      language,
+      messages,
+    };
+
+    return (
+      <LanguageContext.Provider value={value}>
+        <Component />
+      </LanguageContext.Provider>
+    );
   };
+
+  return MessageProvider;
 }

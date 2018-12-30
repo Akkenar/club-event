@@ -1,14 +1,18 @@
-export function importLanguage(language: string) {
+import { IntlType } from './intl.type';
+
+export function importLanguage(
+  language: string
+): Promise<{ default: IntlType }> {
   switch (language) {
     case 'en':
-      return import(/* webpackChunkName: 'en' */ './en');
+      return import(/* webpackChunkName: 'en' */ './languages/en');
     case 'de':
-      return import(/* webpackChunkName: 'de' */ './de');
+      return import(/* webpackChunkName: 'de' */ './languages/de');
     case 'fr':
-      return import(/* webpackChunkName: 'fr' */ './fr');
+      return import(/* webpackChunkName: 'fr' */ './languages/fr');
     case 'it':
-      return import(/* webpackChunkName: 'it' */ './it');
+      return import(/* webpackChunkName: 'it' */ './languages/it');
     default:
-      throw new Error(`${language} not supported`);
+      return Promise.reject(`${language} not supported`);
   }
 }

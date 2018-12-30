@@ -1,4 +1,6 @@
-function getKey(key: string, messages: any): string {
+import { IntlKey } from './intl.type';
+
+function getKey(key: string, messages: IntlKey): string {
   if (!messages) {
     return key;
   }

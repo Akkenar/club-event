@@ -1,8 +1,9 @@
 import * as React from 'react';
+import { DEFAULT_LANGUAGE } from './getDefaultLanguage';
 import { IntlContext } from './intl.type';
-import { DEFAULT_LANGUAGE } from './provideLanguageInRoute';
 
 const LanguageContext = React.createContext<IntlContext>({
+  handleChangeLanguage: () => ({}),
   language: DEFAULT_LANGUAGE,
   messages: {},
 });

@@ -11,5 +11,5 @@ export interface IntlType {
 export interface IntlContext {
   language: string;
   messages: IntlKey;
-  handleChangeLanguage?: (language: string) => void;
+  handleChangeLanguage: (language: string) => void;
 }

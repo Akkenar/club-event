@@ -1,16 +1,14 @@
 import * as React from 'react';
 
 export interface PlaceholderProps {
-  src: string;
   height?: number;
   width?: number;
   alt: string;
-  handleRef: any;
+  handleRef?: any;
   className?: string;
 }
 
 const Placeholder = ({
-  src,
   height,
   width,
   alt,

@@ -3,7 +3,9 @@ import { useContext } from 'react';
 import * as logo from '../../assets/logo.svg';
 import getKey from '../intl/getKey';
 import LanguageContext from '../intl/LanguageContext';
+import Placeholder from '../lazy-image/Placeholder';
 
+import { useImageLoading } from '../useImageLoading';
 import './Logo.scss';
 
 export interface LogoType {
@@ -16,10 +18,23 @@ export interface LogoType {
 
 const Logo = ({ height, width, inverted, big, className = '' }: LogoType) => {
   const { messages } = useContext(LanguageContext);
+  const isLoaded = useImageLoading(logo as any);
 
   const invertedClassname = inverted ? 'Logo--inverted' : '';
   const bigClassname = big ? 'Logo--big' : '';
   const clazz = `Logo ${invertedClassname} ${bigClassname} ${className || ''}`;
+
+  if (!isLoaded) {
+    return (
+      <Placeholder
+        className={clazz.trim()}
+        width={width}
+        height={height}
+        alt={getKey('logo.alt', messages)}
+      />
+    );
+  }
+
   return (
     <img
       className={clazz.trim()}

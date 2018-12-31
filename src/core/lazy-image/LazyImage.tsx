@@ -33,7 +33,6 @@ const LazyImage = ({
     return (
       <Placeholder
         className={`LazyImage ${className || ''}`}
-        src={src}
         height={height}
         width={width}
         alt={alt}

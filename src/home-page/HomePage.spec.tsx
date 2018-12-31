@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import { render } from 'react-testing-library';
+import { render, waitForElement } from 'react-testing-library';
+import { forceLoadImage } from '../test-utils/test-utils.lib';
 import HomePage from './HomePage';
 
 const HomePageWithRouter = () => (
@@ -9,9 +10,12 @@ const HomePageWithRouter = () => (
   </BrowserRouter>
 );
 
+forceLoadImage();
+
 describe('HomePage', () => {
-  it('should match the snapshot', () => {
+  it('should match the snapshot', async () => {
     const wrapper = render(<HomePageWithRouter />);
+    await waitForElement(() => wrapper.queryByTitle('logo.alt'));
     expect(wrapper.baseElement).toMatchSnapshot();
   });
 

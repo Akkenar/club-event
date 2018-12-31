@@ -6,11 +6,14 @@
     "sourceMap": true,
     "noImplicitAny": true,
     "module": "esnext",
-    "target": "es6",
+    "target": "es5",
+    "allowJs": true,
     "jsx": "react",
     "resolveJsonModule": true,
     "moduleResolution": "node",
-    "esModuleInterop": true
+    "esModuleInterop": false,
+    "lib": ["es5", "es6", "dom"],
+    "allowSyntheticDefaultImports": true
   },
   "include": ["./src/**/*"],
   "exclude": ["**/*.spec.tsx"],

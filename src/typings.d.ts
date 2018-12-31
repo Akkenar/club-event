@@ -4,7 +4,12 @@ declare module '*.md' {
 }
 
 declare module '*.json' {
-  const value: { default: { [key: string]: string } };
+  const value: any;
+  export default value;
+}
+
+declare module 'messages.json' {
+  const value: any;
   export default value;
 }
 

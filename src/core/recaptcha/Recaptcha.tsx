@@ -9,12 +9,13 @@ const CONTAINER_ID = 'recaptcha-container';
 const SCRIPT_ID = 'recaptcha-script';
 const CAPTCHA_SIZE = { height: 78, width: 302 };
 
-function appendRecaptchaScript() {
+function appendRecaptchaScript(language: string) {
+  const src = `https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit&hl=${language}`;
+
   const script = document.createElement('script');
   script.type = 'text/javascript';
   script.id = SCRIPT_ID;
-  script.src =
-    'https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit';
+  script.src = src;
   document.head.appendChild(script);
 }
 
@@ -34,7 +35,7 @@ function renderCaptcha() {
 const Recaptcha = () => {
   const [loaded, setLoaded] = useState(false);
   const [isDisplayed, handleRef] = useIntersectionObserver();
-  const { messages } = useContext(LanguageContext);
+  const { messages, language } = useContext(LanguageContext);
 
   useEffect(() => {
     if (!isDisplayed) {
@@ -51,7 +52,7 @@ const Recaptcha = () => {
       };
 
       // Append the script.
-      appendRecaptchaScript();
+      appendRecaptchaScript(language);
     } else if (!loaded) {
       // Direct render.
       renderCaptcha();

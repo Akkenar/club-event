@@ -1,4 +1,8 @@
 import mockRegistrations from '../../mocks/registrations.json';
+jest.mock('file-saver', () => ({
+  saveAs: jest.fn(),
+}));
+import { saveAs } from 'file-saver';
 import { convertToCsv, exportToCsv } from './csv.lib';
 
 describe('csv', () => {
@@ -9,9 +13,16 @@ describe('csv', () => {
     expect(result).toMatchSnapshot();
   });
 
+  it('should handle empty registrations', () => {
+    expect(convertToCsv([])).toBeNull();
+    expect(convertToCsv(null as any)).toBeNull();
+  });
+
   it('should download the data', () => {
-    const createElementSpy = jest.spyOn(document, 'createElement');
     exportToCsv(mockRegistrations as any);
-    expect(createElementSpy).toHaveBeenCalledWith('a');
+    expect(saveAs).toHaveBeenCalledWith(
+      new Blob([mockRegistrations as any]),
+      'inscriptions.csv'
+    );
   });
 });

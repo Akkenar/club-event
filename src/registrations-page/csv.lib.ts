@@ -1,5 +1,6 @@
 // tslint:disable object-literal-sort-keys
-import { Errors, Products, Registration } from '../register-page/register.type';
+import { saveAs } from 'file-saver';
+import { Registration } from '../register-page/register.type';
 
 const LINE_DELIMITER = '\r\n';
 const COL_DELIMITER = '\t';
@@ -36,23 +37,6 @@ const productsToDisplay: { [key: string]: string } = {
   itemSize4: 'T-Shirt 4',
 };
 
-function addFilePrefix(data: string) {
-  if (!data.match(/^data:text\/csv/i)) {
-    return 'data:text/csv;charset=utf-8,' + data;
-  }
-
-  return data;
-}
-
-function downloadFile(data: string, filename: string) {
-  const encodedData = encodeURI(addFilePrefix(data));
-
-  const link = document.createElement('a');
-  link.setAttribute('href', encodedData);
-  link.setAttribute('download', filename);
-  link.click();
-}
-
 function toString(value: any): string {
   if (typeof value === 'string') {
     return value;
@@ -88,15 +72,9 @@ export function convertToCsv(registrations: Registration[]): string | null {
     return null;
   }
 
-  // Body
-  const firstLine = registrations[0];
-  if (!firstLine) {
-    return null;
-  }
-
   // Header
   const header =
-    Object.keys(firstLine)
+    Object.keys(registrations[0])
       .map(key => personalData[key])
       .join(COL_DELIMITER) +
     COL_DELIMITER +
@@ -113,6 +91,6 @@ export function convertToCsv(registrations: Registration[]): string | null {
 export function exportToCsv(registrations: Registration[]) {
   const data = convertToCsv(registrations);
   if (data) {
-    downloadFile(data, 'inscriptions.csv');
+    saveAs(new Blob([data]), 'inscriptions.csv');
   }
 }

@@ -35,8 +35,9 @@ const QuantitySelector = ({
 
   const addOne = () => setQuantity(name, quantity + 1);
   const removeOne = () => setQuantity(name, quantity - 1);
+  const removeAll = () => setQuantity(name, 0);
   const setCustom = (event: ChangeEvent<HTMLInputElement>) => {
-    const value = event.target.value ? parseInt(event.target.value, 10) : 0;
+    const value = parseInt(event.target.value, 10);
     if (!isNaN(value)) {
       setQuantity(name, value);
     }
@@ -60,6 +61,17 @@ const QuantitySelector = ({
           >
             <Icon name="minus" />
           </Button>
+          {quantity ? (
+            <button
+              onClick={removeAll}
+              type="button"
+              title="Remove"
+              className="QuantitySelector__Clear"
+              data-testid={`${name}-clear`}
+            >
+              <Icon name="remove" />
+            </button>
+          ) : null}
           <input
             type="number"
             pattern="[0-9]*"

@@ -18,15 +18,30 @@ $height: 2.7em;
 
 .QuantitySelector__Label {
   font-weight: bold;
+  display: block;
+  margin-bottom: 3px;
 }
 
 .QuantitySelector__Controls {
   display: flex;
+  position: relative;
 }
 
 .QuantitySelector__Button {
   margin: 0 !important;
   height: $height;
+}
+
+.QuantitySelector__Clear {
+  background: none;
+  border: none;
+  position: absolute;
+  top: 0;
+  left: 2.8em;
+  height: $height;
+  width: $height;
+  color: #666666;
+  cursor: pointer;
 }
 
 .QuantitySelector__Button--minus {
@@ -49,5 +64,8 @@ $height: 2.7em;
   &::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
+  }
+  &::-ms-clear {
+    display: none;
   }
 }

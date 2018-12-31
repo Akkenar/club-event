@@ -81,7 +81,7 @@ describe('e2e', () => {
 
     await page.waitForSelector('h1');
     const html = await page.$eval('h1', e => e.innerHTML);
-    expect(html).toBe('Register to the event');
+    expect(html).toBe('Register to the meeting');
   });
 
   it(
@@ -102,7 +102,7 @@ describe('e2e', () => {
       await page.evaluate(() => console.log(`url is ${window.location.href}`));
 
       const html = await page.$eval('h1', e => e.innerHTML);
-      expect(html).toBe('Confirmation Page');
+      expect(html).toBe('Confirmation');
     },
     timeout
   );

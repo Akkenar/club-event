@@ -1,40 +1,44 @@
 <p>
-  Merci de votre inscription. Vous trouverez les informations de payment
-  ci-dessous.
+  Thank you for registering. You'll find the payment information on the below
+  section.
 </p>
 
-<h2>Payement</h2>
+<h2>Payment</h2>
 <ul>
   <li><b>Total</b> : CHF {total}</li>
   <li>
     <p>
       <b>IBAN CH07 0900 0000 1002 9734 1</b> <br />
       BIC POFICHBEXXX <br />
-      Titulaire du compte : Speleo Club Cheseaux, 1033 Cheseaux-sur-Lausanne
-      <br />
+      For: Speleo Club Cheseaux, 1033 Cheseaux-sur-Lausanne <br />
     </p>
   </li>
-  <li><b>Référence à mentionner</b> : {reference}</li>
+  <li><b>Reference to use during payment</b> : {reference}</li>
 </ul>
 
-<p>En cas de soucis, merci de contacter ad-sss-info@speleo-lausanne.ch</p>
+<p>
+  In you have any question, please contact
+  <a href="mailto:ad-sss-info@speleo-lausanne.ch"
+    >ad-sss-info@speleo-lausanne.ch</a
+  >
+</p>
 
-<h2>Votre inscription</h2>
+<h2>Your registration</h2>
 <table>
   <thead>
     <tr>
-      <th>Champs</th>
-      <th>Valeur</th>
+      <th>Field</th>
+      <th>Value</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Prénom</td>
+      <td>First Name</td>
       <td>{firstName}</td>
     </tr>
 
     <tr>
-      <td>Nom</td>
+      <td>Last Name</td>
       <td>{lastName}</td>
     </tr>
 
@@ -44,7 +48,7 @@
     </tr>
 
     <tr>
-      <td>Adresse</td>
+      <td>Address</td>
       <td>
         <address>
           <div>{street} {no}</div>
@@ -54,12 +58,12 @@
     </tr>
 
     <tr>
-      <td>Souper</td>
+      <td>Dinner</td>
       <td>{dinner}</td>
     </tr>
 
     <tr>
-      <td>Souper végétarian</td>
+      <td>Dinner (vegetarian)</td>
       <td>{vegetarian}</td>
     </tr>
 
@@ -69,18 +73,38 @@
     </tr>
 
     <tr>
-      <td>Petit-Déjeuné</td>
+      <td>Breakfast</td>
       <td>{breakfast}</td>
     </tr>
 
     <tr>
-      <td>Nuit en abris PC</td>
+      <td>Booking for the night (bunker)</td>
       <td>{sleeping}</td>
     </tr>
 
     <tr>
-      <td>Nuit au camping</td>
+      <td>Booking for the night (camping)</td>
       <td>{camping}</td>
+    </tr>
+
+    <tr>
+      <td>T-Shirt Size 1</td>
+      <td>{itemSize1}</td>
+    </tr>
+
+    <tr>
+      <td>T-Shirt Size 2</td>
+      <td>{itemSize2}</td>
+    </tr>
+
+    <tr>
+      <td>T-Shirt Size 3</td>
+      <td>{itemSize3}</td>
+    </tr>
+
+    <tr>
+      <td>T-Shirt Size 4</td>
+      <td>{itemSize4}</td>
     </tr>
   </tbody>
 </table>

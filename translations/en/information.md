@@ -1,4 +1,7 @@
-2019 AD of the Swiss Speleology Society
+The [Groupe Spéléo Lausanne (GSL)](http://www.speleo-lausanne.ch) and the [Spéléo-Club Cheseaux (SCC)](http://www.speleo-cheseaux.ch)
+welcome you to the 2019 annual meeting of the SSS delegates in Vallobre.
+
+Please register with the button at the bottom of the page.
 
 ## When?
 

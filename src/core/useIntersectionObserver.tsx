@@ -22,24 +22,22 @@ function changeStateOnIntersect(
 
 function startObserving(
   isDisplayed: boolean,
-  observer: IntersectionObserver | null,
+  observer: IntersectionObserver,
   element: HTMLElement
 ) {
   if (!element || isDisplayed) {
     return;
   }
 
-  if (!observer) {
-    throw new Error('Observer not initialized');
-  }
-
   observer.observe(element);
 }
 
-export function useIntersectionObserver(): [
-  boolean,
-  ((element: HTMLElement | any) => void) | null
-] {
+export interface UseIntersectionObserver {
+  isDisplayed: boolean;
+  startObserving: ((element: HTMLElement | any) => void) | null;
+}
+
+export function useIntersectionObserver(): UseIntersectionObserver {
   const [isDisplayed, setIsDisplayed] = useState<boolean>(false);
   const [observer, setObserver] = useState<IntersectionObserver | null>(null);
 
@@ -62,10 +60,10 @@ export function useIntersectionObserver(): [
   });
 
   // Return the callback to invoke on the element.
-  return [
+  return {
     isDisplayed,
-    observer
+    startObserving: observer
       ? (element: HTMLElement) => startObserving(isDisplayed, observer, element)
       : null,
-  ];
+  };
 }

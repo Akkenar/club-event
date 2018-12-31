@@ -34,7 +34,7 @@ function renderCaptcha() {
 
 const Recaptcha = () => {
   const [loaded, setLoaded] = useState(false);
-  const [isDisplayed, handleRef] = useIntersectionObserver();
+  const { isDisplayed, startObserving } = useIntersectionObserver();
   const { messages, language } = useContext(LanguageContext);
 
   useEffect(() => {
@@ -62,7 +62,7 @@ const Recaptcha = () => {
 
   if (!isDisplayed) {
     return (
-      <div style={CAPTCHA_SIZE} ref={handleRef}>
+      <div style={CAPTCHA_SIZE} ref={startObserving}>
         {getKey('loading', messages)}
       </div>
     );

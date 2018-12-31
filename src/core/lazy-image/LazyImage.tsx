@@ -22,9 +22,9 @@ const LazyImage = ({
   alt,
   className,
 }: LazyImageProps) => {
-  const [isDisplayed, handleRef] = useIntersectionObserver();
+  const { isDisplayed, startObserving } = useIntersectionObserver();
 
-  if (!handleRef) {
+  if (!startObserving) {
     // While the observer is created.
     return null;
   }
@@ -37,7 +37,7 @@ const LazyImage = ({
         height={height}
         width={width}
         alt={alt}
-        handleRef={handleRef}
+        handleRef={startObserving}
       />
     );
   }

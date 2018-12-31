@@ -5,12 +5,12 @@ import LanguageContext from '../../core/intl/LanguageContext';
 import { useIntersectionObserver } from '../../core/useIntersectionObserver';
 
 const MapIframe = () => {
-  const [isDisplayed, handleRef] = useIntersectionObserver();
+  const { isDisplayed, startObserving } = useIntersectionObserver();
   const { messages } = useContext(LanguageContext);
 
   if (!isDisplayed) {
     return (
-      <div data-testid="iframe-placeholder" ref={handleRef}>
+      <div data-testid="iframe-placeholder" ref={startObserving}>
         {getKey('loading', messages)}
       </div>
     );

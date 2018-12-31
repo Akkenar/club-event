@@ -23,7 +23,7 @@ CREATE TABLE inscriptions
   npa       varchar(255) not null,
   locality  varchar(255) not null,
   total     smallint unsigned not null,
-  products  JSON not null,
+  products  BLOB,
   constraint inscriptions_key primary key (id)
 );
 

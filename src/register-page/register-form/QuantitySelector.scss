@@ -60,11 +60,18 @@ $height: 2.7em;
   -moz-appearance: textfield !important;
   text-align: right;
 
+  // Hack to bloody ensure that the width of the input is consistent with Firefox
+  // and Chrome on mobile.
+  min-width: 0;
+
+  // We don't want the spinner as we have a custom feature for that
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
   }
+
+  // We're adding a clear button for ALL browsers.
   &::-ms-clear {
     display: none;
   }

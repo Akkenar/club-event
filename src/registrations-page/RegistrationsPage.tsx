@@ -16,7 +16,9 @@ const RegistrationsPage = () => {
 
   return (
     <div className="RegistrationPage">
-      <Header as="h1">{getKey('registrations.page.title', messages)}</Header>
+      <Header as="h1" data-testid="main-title">
+        {getKey('registrations.page.title', messages)}
+      </Header>
       <RegistrationsContainer />
     </div>
   );

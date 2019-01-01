@@ -48,13 +48,9 @@ export const mockGlobalProperty = (globalObject: any) => (key: string) => (
 export function forceLoadImage() {
   Object.defineProperty(Image.prototype, 'onload', {
     configurable: true,
-    get(): () => void {
-      return this.onloadImpl;
-    },
     set(fn: () => void) {
-      this.onloadImpl = fn;
       // Call the function directly to simulate the loading
-      this.onloadImpl();
+      fn();
     },
   });
 }

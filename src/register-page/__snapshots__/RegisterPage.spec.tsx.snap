@@ -6,6 +6,7 @@ exports[`RegisterPage should match the snapshot 1`] = `
     <div>
       <h1
         class="ui header"
+        data-testid="main-title"
       >
         register.page.title
       </h1>

@@ -8,6 +8,7 @@ exports[`ConfirmationPage should match the snapshot 1`] = `
     >
       <h1
         class="ui header"
+        data-testid="main-title"
       >
         confirmation.page.title
       </h1>

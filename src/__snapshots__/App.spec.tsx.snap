@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App should match the snapshot 1`] = `
+exports[`App should render the home page by default 1`] = `
 <body>
   <div>
     <div
@@ -16,7 +16,87 @@ exports[`App should match the snapshot 1`] = `
       <header
         class="App__Header no-print"
       >
-        <div />
+        <div>
+          <div
+            class="ui inverted Header menu"
+          >
+            <a
+              aria-current="page"
+              class="active"
+              color="white"
+              href="/en/home"
+            >
+              <svg
+                aria-label="logo.alt"
+                class="Logo Logo--inverted  Header__logo"
+                data-testid="lazyloaded-placeholder"
+                height="45"
+                viewBox="0 0 1024 1024"
+                width="60"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d=""
+                />
+              </svg>
+            </a>
+            <div
+              aria-expanded="false"
+              class="ui dropdown link item right LanguageSwitcher"
+              role="listbox"
+              tabindex="0"
+            >
+              <div
+                aria-live="polite"
+                class="text"
+                role="alert"
+              >
+                current.language
+              </div>
+              <i
+                aria-hidden="true"
+                class="dropdown icon"
+              />
+              <div
+                class="menu transition"
+              >
+                <a
+                  class="item"
+                  href="/fr/home"
+                  role="option"
+                  title="Français"
+                >
+                  FR
+                </a>
+                <a
+                  class="item"
+                  href="/de/home"
+                  role="option"
+                  title="Deutsch"
+                >
+                  DE
+                </a>
+                <a
+                  class="item"
+                  href="/it/home"
+                  role="option"
+                  title="Italianno"
+                >
+                  IT
+                </a>
+                <a
+                  aria-current="page"
+                  class="item active"
+                  href="/en/home"
+                  role="option"
+                  title="English"
+                >
+                  EN
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </header>
       <main
         class="App__Main"
@@ -24,15 +104,81 @@ exports[`App should match the snapshot 1`] = `
         <div
           class="App__MainContainer"
         >
-          <div
-            data-testid="mock"
-          />
+          <div>
+            <h1
+              class="ui header"
+              data-testid="main-title"
+            >
+              home.page.title
+            </h1>
+            <svg
+              aria-label="logo.alt"
+              class="Logo  Logo--big"
+              data-testid="lazyloaded-placeholder"
+              height="232"
+              viewBox="0 0 1024 1024"
+              width="320"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d=""
+              />
+            </svg>
+            <div />
+            <div
+              data-testid="iframe-placeholder"
+            >
+              loading
+            </div>
+            <h2
+              class="ui header"
+            >
+              home.page.register
+            </h2>
+            <div
+              class="ui warning message"
+            >
+              home.page.startofregistration
+            </div>
+            <svg
+              aria-label="Photo: Arnaud Conne"
+              class="LazyImage "
+              data-testid="lazyloaded-placeholder"
+              height="212"
+              viewBox="0 0 1024 1024"
+              width="320"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d=""
+              />
+            </svg>
+          </div>
         </div>
       </main>
       <footer
         class="App__Footer no-print"
       >
-        <div />
+        <div>
+          <div
+            class="ui inverted Footer menu"
+          >
+            <div
+              class="item"
+            >
+              © GSL 2019
+            </div>
+            <div
+              class="item"
+            >
+              <a
+                href="mailto:ad-sss-info@speleo-lausanne.ch"
+              >
+                Contact
+              </a>
+            </div>
+          </div>
+        </div>
       </footer>
     </div>
   </div>

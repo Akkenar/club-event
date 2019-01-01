@@ -19,7 +19,9 @@ const HomePage = () => {
 
   return (
     <Fragment>
-      <Header as="h1">{getKey('home.page.title', messages)}</Header>
+      <Header as="h1" data-testid="main-title">
+        {getKey('home.page.title', messages)}
+      </Header>
       <Logo big={true} width={320} height={232} />
       <InformationSection />
       <LazyImage

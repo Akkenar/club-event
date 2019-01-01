@@ -56,7 +56,9 @@ const ConfirmationPage = () => {
 
   return (
     <div className="ConfirmationPage">
-      <Header as="h1">{getKey('confirmation.page.title', messages)}</Header>
+      <Header as="h1" data-testid="main-title">
+        {getKey('confirmation.page.title', messages)}
+      </Header>
       <div dangerouslySetInnerHTML={{ __html: confirmationMessage }} />
       <Header as="h2">
         {getKey('confirmation.page.recap.title', messages)}

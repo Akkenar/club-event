@@ -16,7 +16,9 @@ const RegisterPage = () => {
 
   return (
     <div>
-      <Header as="h1">{getKey('register.page.title', messages)}</Header>
+      <Header as="h1" data-testid="main-title">
+        {getKey('register.page.title', messages)}
+      </Header>
       <RegisterFormContainer />
     </div>
   );

@@ -10,6 +10,7 @@ exports[`RegistrationsPage should handle no registrations 1`] = `
     >
       <h1
         class="ui header"
+        data-testid="main-title"
       >
         registrations.page.title
       </h1>
@@ -47,6 +48,7 @@ exports[`RegistrationsPage should match the snapshot 1`] = `
     >
       <h1
         class="ui header"
+        data-testid="main-title"
       >
         registrations.page.title
       </h1>
@@ -317,6 +319,7 @@ exports[`RegistrationsPage should show the details 1`] = `
     >
       <h1
         class="ui header"
+        data-testid="main-title"
       >
         registrations.page.title
       </h1>
@@ -686,6 +689,7 @@ exports[`RegistrationsPage should show the products 1`] = `
     >
       <h1
         class="ui header"
+        data-testid="main-title"
       >
         registrations.page.title
       </h1>

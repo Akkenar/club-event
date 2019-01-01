@@ -11,6 +11,7 @@ exports[`LoginPage should match snapshot 1`] = `
       >
         <h1
           class="ui header"
+          data-testid="main-title"
         >
           login.page.title
         </h1>

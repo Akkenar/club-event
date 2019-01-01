@@ -78,7 +78,9 @@ const LoginForm = () => {
     <Fragment>
       {isLoading ? <Loader /> : null}
       <Segment>
-        <Header as={'h1'}>{getKey('login.page.title', messages)}</Header>
+        <Header as="h1" data-testid="main-title">
+          {getKey('login.page.title', messages)}
+        </Header>
         <Form onSubmit={handleSubmit} noValidate={true} className="LoginForm">
           <Form.Field>
             <label htmlFor="username">

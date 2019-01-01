@@ -83,7 +83,7 @@ export default {
     // Disable the verbose output on build
     children: false,
     entrypoints: false,
-    warnings: false,
+    warnings: true,
     modules: false,
     // Only display css and js assets
     excludeAssets: name => name.startsWith('api/') || !name.match(cssOrJsRegex),
@@ -144,23 +144,51 @@ export default {
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
       {
-        test: [/\.webp$/, /\.jpe?g$/, /\.png$/],
-        loader: require.resolve('url-loader'),
-        options: {
-          limit: 10000,
-          name: 'assets/media/[name].[hash:8].[ext]',
-        },
+        test: [/\.webp$/, /\.jpe?g$/, /\.png$/, /\.svg$/],
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              limit: 10000,
+              name: 'assets/media/[name].[hash:8].[ext]',
+            },
+          },
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              mozjpeg: {
+                progressive: true,
+                quality: 65,
+              },
+              optipng: {
+                enabled: false,
+              },
+              pngquant: {
+                quality: '65-90',
+                speed: 4,
+              },
+              // the webp option will enable WEBP
+              webp: {
+                quality: 75,
+              },
+            },
+          },
+        ],
       },
       {
-        test: [/\.eot$/, /\.ttf$/, /\.svg$/, /\.woff$/, /\.woff2$/],
-        loader: require.resolve('file-loader'),
-        options: {
-          name: 'assets/fonts/[name].[hash:8].[ext]',
-        },
+        test: [/\.eot$/, /\.ttf$/, /\.woff$/, /\.woff2$/],
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'assets/fonts/[name].[hash:8].[ext]',
+            },
+          },
+        ],
       },
       {
         test: [/\.md/],
-        loader: [
+        use: [
           {
             loader: 'html-loader',
           },

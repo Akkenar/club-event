@@ -14,13 +14,13 @@ import './Header.scss';
 const Nav = (props: any) => <NavLink {...props} activeClassName={'active'} />;
 
 const Header = () => {
+  // Only at this state we can hide the SSR. Doing it before will introduce a flicker.
+  hideSSRHeader();
   const { language, messages } = useContext(LanguageContext);
 
-  // Not the best place, but works fine
   useEffect(() => {
+    // Not the best place, but works fine
     setPageDescription(getKey('description', messages));
-    // Only at this state we can hide the SSR. Doing it before will introduce a flicker.
-    hideSSRHeader();
   });
 
   const getUrlWithLanguage = (url: string) => {

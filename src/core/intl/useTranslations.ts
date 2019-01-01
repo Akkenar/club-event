@@ -36,9 +36,10 @@ export function useTranslations(targetLanguage: string): IntlType {
   ] = useState<IntlType>(INITIAL_STATE);
 
   useEffect(() => {
-    // Don't change the language if it's already set.
+    // Only reload the language it it's different than tht target one.
+    // This avoids to have this effect ran more than needed.
     if (language !== targetLanguage) {
-      // Read the value from the route, always. This is the source of through
+      // Read the value from the route, always. This is the source of truth.
       changeLanguage(targetLanguage, setState);
     }
   });

@@ -1,8 +1,17 @@
+@import '../style/mixins';
+
 .RegistrationsProducts {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  align-items: center;
+
+  @include on-wide {
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  @include on-narrow {
+    flex-direction: column;
+  }
 }
 
 .RegistrationsProducts__Table {

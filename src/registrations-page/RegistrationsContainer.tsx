@@ -8,7 +8,6 @@ import { Registration } from '../register-page/register.type';
 import { getRegistrations } from './registrations.service';
 import RegistrationsDetails from './RegistrationsDetails';
 import RegistrationsOverview from './RegistrationsOverview';
-import RegistrationsProducts from './RegistrationsProducts';
 
 const INITIAL_STATE: Registration[] = [];
 

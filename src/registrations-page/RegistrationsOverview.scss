@@ -1,19 +1,45 @@
 @import url('../../node_modules/semantic-ui-css/components/button.min.css');
 @import url('../../node_modules/semantic-ui-css/components/icon.min.css');
+@import '../style/mixins';
 
 .RegistrationsOverview {
   display: flex;
+  flex-wrap: wrap;
+
+  @include on-narrow {
+    flex-direction: column;
+  }
 }
 
 .RegistrationsOverview__Export {
-  margin-left: auto;
-  margin-right: 0;
+  @include on-medium-and-wide {
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  @include on-narrow {
+    margin-top: 0.5em;
+  }
 }
 
 .RegistrationsOverview__Total {
-  margin-top: 0.5em;
+  @include on-medium-and-wide {
+    margin-top: 0.5em;
+  }
 }
 
 .RegistrationsOverview_MoreDetails {
-  margin-left: 1em;
+  @include on-medium-and-wide {
+    margin-left: 1em;
+  }
+
+  @include on-narrow {
+    margin-top: 0.5em;
+  }
+}
+
+.RegistrationsOverview__Button {
+  @include on-narrow {
+    width: 100%;
+  }
 }

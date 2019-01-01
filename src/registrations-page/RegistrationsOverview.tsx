@@ -38,6 +38,7 @@ const RegistrationsOverview = ({
           <Fragment>
             <div className="RegistrationsOverview_MoreDetails">
               <Button
+                className="RegistrationsOverview__Button"
                 icon={true}
                 color="vk"
                 onClick={toggleProducts}
@@ -49,6 +50,7 @@ const RegistrationsOverview = ({
             </div>
             <div className="RegistrationsOverview__Export">
               <Button
+                className="RegistrationsOverview__Button"
                 labelPosition="right"
                 color="vk"
                 icon={true}

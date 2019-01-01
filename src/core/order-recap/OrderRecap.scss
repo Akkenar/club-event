@@ -17,6 +17,10 @@
   font-weight: bold;
   margin: 0.2em 0;
 
+  @include on-narrow {
+    padding-top: 0.3em;
+  }
+
   @include on-medium-and-wide {
     flex: 0 0 35%;
     text-align: right;
@@ -32,11 +36,17 @@
 .OrderRecap__value {
   flex: 0 0 65%;
   margin: 0.2em 0 0.2em auto;
+  font-weight: 400;
 
   @include on-medium-and-wide {
     padding-left: 1em;
     text-align: left;
     text-overflow: ellipsis;
     overflow: hidden;
+  }
+
+  @include on-narrow {
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   }
 }

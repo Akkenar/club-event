@@ -1,6 +1,6 @@
-import { Fragment, useContext } from 'react';
 import * as React from 'react';
-import { Header, Segment, Statistic, Table } from 'semantic-ui-react';
+import { useContext } from 'react';
+import { Segment, Table } from 'semantic-ui-react';
 import getKey from '../core/intl/getKey';
 import LanguageContext from '../core/intl/LanguageContext';
 import { Registration } from '../register-page/register.type';

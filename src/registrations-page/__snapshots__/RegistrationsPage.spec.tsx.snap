@@ -71,7 +71,7 @@ exports[`RegistrationsPage should match the snapshot 1`] = `
             class="RegistrationsOverview_MoreDetails"
           >
             <button
-              class="ui vk icon button"
+              class="ui vk icon button RegistrationsOverview__Button"
               data-testid="toggle-products"
               title="registrations.details"
             >
@@ -85,7 +85,7 @@ exports[`RegistrationsPage should match the snapshot 1`] = `
             class="RegistrationsOverview__Export"
           >
             <button
-              class="ui vk icon right labeled button"
+              class="ui vk icon right labeled button RegistrationsOverview__Button"
               data-testid="download-registrations"
               title="registrations.download"
             >
@@ -341,7 +341,7 @@ exports[`RegistrationsPage should show the details 1`] = `
             class="RegistrationsOverview_MoreDetails"
           >
             <button
-              class="ui vk icon button"
+              class="ui vk icon button RegistrationsOverview__Button"
               data-testid="toggle-products"
               title="registrations.details"
             >
@@ -355,7 +355,7 @@ exports[`RegistrationsPage should show the details 1`] = `
             class="RegistrationsOverview__Export"
           >
             <button
-              class="ui vk icon right labeled button"
+              class="ui vk icon right labeled button RegistrationsOverview__Button"
               data-testid="download-registrations"
               title="registrations.download"
             >
@@ -710,7 +710,7 @@ exports[`RegistrationsPage should show the products 1`] = `
             class="RegistrationsOverview_MoreDetails"
           >
             <button
-              class="ui vk icon button"
+              class="ui vk icon button RegistrationsOverview__Button"
               data-testid="toggle-products"
               title="registrations.details"
             >
@@ -724,7 +724,7 @@ exports[`RegistrationsPage should show the products 1`] = `
             class="RegistrationsOverview__Export"
           >
             <button
-              class="ui vk icon right labeled button"
+              class="ui vk icon right labeled button RegistrationsOverview__Button"
               data-testid="download-registrations"
               title="registrations.download"
             >

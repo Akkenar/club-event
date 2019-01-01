@@ -18,7 +18,7 @@ const LanguageSwitcher = () => {
 
   // So we don't use a Lambda in the jsx.
   const changeLanguage = (language: string) => () =>
-    handleChangeLanguage(language);
+    handleChangeLanguage && handleChangeLanguage(language);
 
   return (
     <Dropdown

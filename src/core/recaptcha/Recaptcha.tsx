@@ -33,30 +33,37 @@ function renderCaptcha() {
 }
 
 const Recaptcha = () => {
-  const [loaded, setLoaded] = useState(false);
+  const [isLoaded, setLoaded] = useState(false);
+  const [isScriptAdded, setScriptAdded] = useState(
+    !!document.getElementById(SCRIPT_ID)
+  );
   const { isDisplayed, startObserving } = useIntersectionObserver();
   const { messages, language } = useContext(LanguageContext);
+  const loadRecaptcha = () => {
+    renderCaptcha();
+    setLoaded(true);
+  };
 
   useEffect(() => {
-    if (!isDisplayed) {
+    if (!isDisplayed || !language || isLoaded) {
       return;
     }
 
     // In case the script is not loaded.
-    if (!document.getElementById(SCRIPT_ID)) {
+    if (!isScriptAdded) {
       // Global callback hooked to the recaptcha script src to only render
       // the captcha when the script is loaded.
-      (window as any).onloadCallback = () => {
-        renderCaptcha();
-        setLoaded(true);
-      };
+      (window as any).onloadCallback = loadRecaptcha;
 
       // Append the script.
       appendRecaptchaScript(language);
-    } else if (!loaded) {
-      // Direct render.
-      renderCaptcha();
-      setLoaded(true);
+
+      setScriptAdded(true);
+    } else if (!isLoaded) {
+      // In case the script is already added, loaded, but the captcha needs rendering
+      // anyway. Typically when the user navigates from one page with captcha to another
+      // with captcha.
+      loadRecaptcha();
     }
   });
 
@@ -69,7 +76,12 @@ const Recaptcha = () => {
   }
 
   return (
-    <div style={CAPTCHA_SIZE} id={CONTAINER_ID} className="g-recaptcha">
+    <div
+      style={CAPTCHA_SIZE}
+      id={CONTAINER_ID}
+      className="g-recaptcha"
+      data-testid={`recaptcha--${isLoaded}`}
+    >
       {getKey('loading', messages)}
     </div>
   );

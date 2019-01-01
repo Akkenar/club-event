@@ -4,9 +4,9 @@
   max-width: 900px;
   margin: 0 auto;
   // To compensate for the header and footer.
-  min-height: calc(100vh - 123px);
+  min-height: calc(100vh - 95px);
 }
 
 .App__MainContainer {
-  margin: 2em;
+  padding: 2em;
 }

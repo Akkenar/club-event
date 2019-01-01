@@ -34,3 +34,10 @@ export function setFocusOnError() {
     }
   }, 0);
 }
+
+export function hideSSRHeader() {
+  const ssr = document.getElementById('ssr-header');
+  if (ssr) {
+    ssr.remove();
+  }
+}

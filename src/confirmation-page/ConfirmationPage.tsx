@@ -35,7 +35,7 @@ function supportsPrint() {
 }
 
 const ConfirmationPage = () => {
-  const { messages } = useContext(LanguageContext);
+  const { messages, confirmation } = useContext(LanguageContext);
   useEffect(() => {
     setPageTitle(getKey('confirmation.page.title', messages));
   });
@@ -43,7 +43,7 @@ const ConfirmationPage = () => {
   // From the register form.
   const registration = getSimpleStore();
   const { total, reference } = registration;
-  const confirmationMessage = format(messages.confirmation, total, reference);
+  const confirmationMessage = format(confirmation, total, reference);
 
   const printButton = supportsPrint() ? (
     <Button

@@ -10,11 +10,11 @@ import MapIframe from './MapIframe';
 import './InformationSection.scss';
 
 const InformationSection = () => {
-  const { messages, language } = useContext(LanguageContext);
+  const { messages, information, language } = useContext(LanguageContext);
 
   return (
     <Fragment>
-      <div dangerouslySetInnerHTML={{ __html: messages.information }} />
+      <div dangerouslySetInnerHTML={{ __html: information }} />
       <MapIframe />
       <Header as="h2">{getKey('home.page.register', messages)}</Header>
       {configuration.registration.enabled ? (

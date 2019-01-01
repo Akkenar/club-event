@@ -7,10 +7,17 @@ import RegisterPageAsync from './register-page/RegisterPageAsync';
 import RegistrationsPageAsync from './registrations-page/RegistrationsPageAsync';
 
 interface AppRoutingProps {
-  language: string;
+  language?: string;
 }
 
 const AppRouting = ({ language }: AppRoutingProps) => {
+  if (!language) {
+    // We absolutely need a language to load the content of the routing.
+    // When the page loads, it's acceptable not to have the content at the
+    // user cannot interact with content that is not localised.
+    return null;
+  }
+
   const page = (pageName: string): string => `/${language}/${pageName}`;
   return (
     <Switch>

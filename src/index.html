@@ -30,6 +30,16 @@
   </head>
   <body>
     <noscript> You need to enable JavaScript to run this app.</noscript>
+    <!-- Fake SSR to just display the header as it will be. -->
+    <div class="SsrHeader" id="ssr-header">
+      <style>
+        .SsrHeader {
+          height: 50px;
+          background-color: #1b1c1d;
+          width: 100%;
+        }
+      </style>
+    </div>
     <div id="root"></div>
   </body>
 </html>

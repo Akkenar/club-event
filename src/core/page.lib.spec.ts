@@ -1,5 +1,6 @@
 import {
   goToTop,
+  hideSSRHeader,
   setFocusOnError,
   setPageDescription,
   setPageLanguage,
@@ -9,6 +10,7 @@ import {
 function mockDocument() {
   document.head.innerHTML = '<meta name="description" content="" />';
   document.body.innerHTML =
+    '<div id="ssr-header"></div>' +
     '<div id="top" tabindex="-1">' +
     '<input id="input" aria-invalid="true"/>' +
     '</div>';
@@ -67,5 +69,13 @@ describe('page.lib', () => {
     setPageLanguage('fr');
     const html = document.querySelector('html');
     expect(html && html.getAttribute('lang')).toBe('fr');
+  });
+
+  it('should hide the ssr header', () => {
+    mockDocument();
+    expect(document.getElementById('ssr-header')).toBeTruthy();
+
+    hideSSRHeader();
+    expect(document.getElementById('ssr-header')).toBeFalsy();
   });
 });

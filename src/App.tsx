@@ -1,13 +1,13 @@
 import * as React from 'react';
 import { useContext } from 'react';
 import { BrowserRouter } from 'react-router-dom';
+
+import './App.scss';
 import AppRouting from './AppRouting';
 import FooterAsync from './core/footer/FooterAsync';
 import HeaderAsync from './core/header/HeaderAsync';
 import LanguageContext from './core/intl/LanguageContext';
 import provideTranslations from './core/intl/provideTranslations';
-
-import './App.scss';
 import './style/font.scss';
 import './style/main.scss';
 import './style/semantic.scss';

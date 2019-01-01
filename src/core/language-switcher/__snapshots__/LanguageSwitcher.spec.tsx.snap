@@ -23,34 +23,39 @@ exports[`LanguageSwitcher should match snapshot 1`] = `
       <div
         class="menu transition"
       >
-        <button
-          class="item LanguageSwitcher__button"
+        <a
+          class="item"
+          href="/fr/home"
           role="option"
           title="Français"
         >
           FR
-        </button>
-        <button
-          class="item LanguageSwitcher__button"
+        </a>
+        <a
+          class="item"
+          href="/de/home"
           role="option"
           title="Deutsch"
         >
           DE
-        </button>
-        <button
-          class="item LanguageSwitcher__button"
+        </a>
+        <a
+          class="item"
+          href="/it/home"
           role="option"
           title="Italianno"
         >
           IT
-        </button>
-        <button
-          class="item LanguageSwitcher__button"
+        </a>
+        <a
+          aria-current="page"
+          class="item active"
+          href="/en/home"
           role="option"
           title="English"
         >
           EN
-        </button>
+        </a>
       </div>
     </div>
   </div>

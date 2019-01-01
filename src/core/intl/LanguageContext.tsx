@@ -1,11 +1,8 @@
 import * as React from 'react';
-import { IntlContext } from './intl.type';
+import { IntlType } from './intl.type';
 
-const LanguageContext = React.createContext<IntlContext>({
+const LanguageContext = React.createContext<IntlType>({
   confirmation: '',
-  handleChangeLanguage: () => {
-    /* noop */
-  },
   information: '',
   messages: {},
 });

@@ -1,72 +1,22 @@
-import { useContext } from 'react';
 import * as React from 'react';
-import { useEffect, useState } from 'react';
+import { useContext } from 'react';
 import getKey from '../intl/getKey';
 import LanguageContext from '../intl/LanguageContext';
 import { useIntersectionObserver } from '../useIntersectionObserver';
+import { useCaptchaScript } from './useCaptchaScript';
 
-const CONTAINER_ID = 'recaptcha-container';
-const SCRIPT_ID = 'recaptcha-script';
 const CAPTCHA_SIZE = { height: 78, width: 302 };
 
-function appendRecaptchaScript(language: string) {
-  const src = `https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit&hl=${language}`;
-
-  const script = document.createElement('script');
-  script.type = 'text/javascript';
-  script.id = SCRIPT_ID;
-  script.src = src;
-  document.head.appendChild(script);
-}
-
-function renderCaptcha() {
-  const { grecaptcha } = window as any;
-  if (!grecaptcha) {
-    // On the unlikely case google.com couldn't be reached
-    return;
-  }
-
-  // Render the captcha
-  grecaptcha.render(CONTAINER_ID, {
-    sitekey: '6LeZ23kUAAAAALdlAuJg3X0MTmPelUzvJ4dAMpK-',
-  });
-}
-
 const Recaptcha = () => {
-  const [isLoaded, setLoaded] = useState(false);
-  const [isScriptAdded, setScriptAdded] = useState(
-    !!document.getElementById(SCRIPT_ID)
-  );
   const { isDisplayed, startObserving } = useIntersectionObserver();
   const { messages, language } = useContext(LanguageContext);
-  const loadRecaptcha = () => {
-    renderCaptcha();
-    setLoaded(true);
-  };
 
-  useEffect(() => {
-    if (!isDisplayed || !language || isLoaded) {
-      return;
-    }
+  // If no language, don't bother rendering the captcha, juste the placeholder
+  if (!language) {
+    return <div style={CAPTCHA_SIZE}>&nbsp;</div>;
+  }
 
-    // In case the script is not loaded.
-    if (!isScriptAdded) {
-      // Global callback hooked to the recaptcha script src to only render
-      // the captcha when the script is loaded.
-      (window as any).onloadCallback = loadRecaptcha;
-
-      // Append the script.
-      appendRecaptchaScript(language);
-
-      setScriptAdded(true);
-    } else if (!isLoaded) {
-      // In case the script is already added, loaded, but the captcha needs rendering
-      // anyway. Typically when the user navigates from one page with captcha to another
-      // with captcha.
-      loadRecaptcha();
-    }
-  });
-
+  // Lazy loading.
   if (!isDisplayed) {
     return (
       <div style={CAPTCHA_SIZE} ref={startObserving}>
@@ -75,11 +25,18 @@ const Recaptcha = () => {
     );
   }
 
+  // Google captcha shenanigan with all script and render.
+  const { isLoaded, isScriptAdded, containerId } = useCaptchaScript(language);
+  if (!isScriptAdded) {
+    // Nothing, so when we change the language, the element in the DOM is deleted.
+    return null;
+  }
+
+  // Container for the captcha, the ID matters.
   return (
     <div
       style={CAPTCHA_SIZE}
-      id={CONTAINER_ID}
-      className="g-recaptcha"
+      id={containerId}
       data-testid={`recaptcha--${isLoaded}`}
     >
       {getKey('loading', messages)}

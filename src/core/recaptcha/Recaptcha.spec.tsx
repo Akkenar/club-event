@@ -1,12 +1,11 @@
 import * as React from 'react';
-import { Fragment } from 'react';
 import { render, waitForElement } from 'react-testing-library';
 import { mockGlobalProperty } from '../../test-utils/test-utils.lib';
-import { IntlContext } from '../intl/intl.type';
+import { IntlType } from '../intl/intl.type';
 import LanguageContext from '../intl/LanguageContext';
 import Recaptcha from './Recaptcha';
 
-const languageContextValue: IntlContext = {
+const languageContextValue: IntlType = {
   confirmation: '',
   information: '',
   language: 'en',

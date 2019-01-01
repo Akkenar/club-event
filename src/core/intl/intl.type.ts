@@ -12,7 +12,3 @@ export interface IntlType {
   // load the language bundle.
   language?: string;
 }
-
-export interface IntlContext extends IntlType {
-  handleChangeLanguage?: (language: string) => void;
-}

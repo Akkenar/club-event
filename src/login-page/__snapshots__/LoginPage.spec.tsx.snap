@@ -64,7 +64,7 @@ exports[`LoginPage should match snapshot 1`] = `
           <div
             style="height: 78px; width: 302px;"
           >
-            loading
+             
           </div>
           <div
             class="LoginForm__submit-button-container"

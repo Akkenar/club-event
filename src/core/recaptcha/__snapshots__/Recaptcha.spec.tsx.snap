@@ -4,7 +4,6 @@ exports[`Recaptcha should render the recaptcha 1`] = `
 <body>
   <div>
     <div
-      class="g-recaptcha"
       data-testid="recaptcha--true"
       id="recaptcha-container"
       style="height: 78px; width: 302px;"

@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { useContext } from 'react';
-import { BrowserRouter } from 'react-router-dom';
 
 import './App.scss';
 import AppRouting from './AppRouting';
@@ -19,21 +18,19 @@ const AppContainer = () => {
       <div id="top" tabIndex={-1} className="visually-hidden">
         Top
       </div>
-      <BrowserRouter>
-        <div className="App">
-          <header className="App__Header no-print">
-            <HeaderAsync />
-          </header>
-          <main className="App__Main">
-            <div className="App__MainContainer">
-              <AppRouting language={language} />
-            </div>
-          </main>
-          <footer className="App__Footer no-print">
-            <FooterAsync />
-          </footer>
-        </div>
-      </BrowserRouter>
+      <div className="App">
+        <header className="App__Header no-print">
+          <HeaderAsync />
+        </header>
+        <main className="App__Main">
+          <div className="App__MainContainer">
+            {language ? <AppRouting /> : null}
+          </div>
+        </main>
+        <footer className="App__Footer no-print">
+          <FooterAsync />
+        </footer>
+      </div>
     </React.Fragment>
   );
 };

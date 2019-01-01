@@ -1,55 +1,37 @@
 import * as React from 'react';
+import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import { render } from 'react-testing-library';
+import { IntlType } from '../intl/intl.type';
 import LanguageContext from '../intl/LanguageContext';
 import LanguageSwitcher from './LanguageSwitcher';
 
-const context = {
+const context: IntlType = {
   confirmation: '',
-  handleChangeLanguage: jest.fn(),
   information: '',
   language: 'en',
   messages: {},
 };
 
-const LanguageSwitcherWithContext = () => {
-  return (
+const LanguageSwitcherWithRouter = () => {
+  const Component = () => (
     <LanguageContext.Provider value={context}>
       <LanguageSwitcher />
     </LanguageContext.Provider>
+  );
+
+  return (
+    <BrowserRouter>
+      <Switch>
+        <Route path="/:language/:page" component={Component} />
+        <Redirect path="/" exact={true} to="/en/home" />
+      </Switch>
+    </BrowserRouter>
   );
 };
 
 describe('LanguageSwitcher', () => {
   it('should match snapshot', () => {
-    const wrapper = render(<LanguageSwitcherWithContext />);
+    const wrapper = render(<LanguageSwitcherWithRouter />);
     expect(wrapper.baseElement).toMatchSnapshot();
-  });
-
-  it('should switch language when activating fr', () => {
-    const wrapper = render(<LanguageSwitcherWithContext />);
-
-    wrapper.queryByText('FR').click();
-    expect(context.handleChangeLanguage).toHaveBeenCalledWith('fr');
-  });
-
-  it('should switch language when activating en', () => {
-    const wrapper = render(<LanguageSwitcherWithContext />);
-
-    wrapper.queryByText('EN').click();
-    expect(context.handleChangeLanguage).toHaveBeenCalledWith('en');
-  });
-
-  it('should switch language when activating it', () => {
-    const wrapper = render(<LanguageSwitcherWithContext />);
-
-    wrapper.queryByText('IT').click();
-    expect(context.handleChangeLanguage).toHaveBeenCalledWith('it');
-  });
-
-  it('should switch language when activating de', () => {
-    const wrapper = render(<LanguageSwitcherWithContext />);
-
-    wrapper.queryByText('DE').click();
-    expect(context.handleChangeLanguage).toHaveBeenCalledWith('de');
   });
 });

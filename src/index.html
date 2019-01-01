@@ -15,9 +15,9 @@
     <link rel="dns-prefetch" href="https://www.google.com" />
     <link rel="preconnect" href="https://www.google.com" />
     <title>SSS AD</title>
-    <!-- Preload CSS chunks -->
+    <!-- Preload or prefetch CSS chunks -->
     <% (htmlWebpackPlugin.files.preloadChunks || []).forEach(chunk => { %>
-    <link rel="preload" as="style" href="<%= chunk.href %>" />
+    <link rel="<%= chunk.rel %>" as="style" href="<%= chunk.href %>" />
     <% }); %>
 
     <!-- Critical CSS files -->

@@ -5,14 +5,14 @@ exports[`LazyImage should match snapshot with image 1`] = `
   <div>
     <picture>
       <source
-        srcset="bar"
+        srcset="foo.webp"
         type="image/webp"
       />
       <img
         alt="alt"
         class="LazyImage no-print test"
         data-testid="lazyloaded-image"
-        src="foo"
+        src="foo.jpg"
         title="alt"
       />
     </picture>

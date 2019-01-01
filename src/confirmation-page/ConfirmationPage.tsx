@@ -2,7 +2,6 @@ import * as React from 'react';
 import { useContext, useEffect } from 'react';
 import { Button, Header } from 'semantic-ui-react';
 import * as img from '../assets/Zsolt-Sarkozi-Grottes-aux-Fees-17.jpg';
-import * as imgwebp from '../assets/Zsolt-Sarkozi-Grottes-aux-Fees-17.webp';
 import getKey from '../core/intl/getKey';
 import LanguageContext from '../core/intl/LanguageContext';
 import LazyImage from '../core/lazy-image/LazyImage';
@@ -69,7 +68,6 @@ const ConfirmationPage = () => {
         width={320}
         height={400}
         src={img}
-        srcwebp={imgwebp}
         alt={'Photo: Zsolt Sarkozi'}
       />
     </div>

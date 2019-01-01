@@ -6,6 +6,7 @@ import * as bundle from 'webpack-bundle-analyzer';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 import PreloadCssPlugin from './buildExtra/preload-css-webpack-plugin';
+import multi from 'multi-loader';
 
 const cssOrJsRegex = /((.*)\.)(js|css)$/;
 
@@ -144,36 +145,26 @@ export default {
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
       {
-        test: [/\.webp$/, /\.jpe?g$/, /\.png$/, /\.svg$/],
+        test: [/\.svg$/],
         use: [
           {
             loader: 'file-loader',
             options: {
-              limit: 10000,
               name: 'assets/media/[name].[hash:8].[ext]',
             },
           },
           {
             loader: 'image-webpack-loader',
-            options: {
-              mozjpeg: {
-                progressive: true,
-                quality: 65,
-              },
-              optipng: {
-                enabled: false,
-              },
-              pngquant: {
-                quality: '65-90',
-                speed: 4,
-              },
-              // the webp option will enable WEBP
-              webp: {
-                quality: 75,
-              },
-            },
           },
         ],
+      },
+      {
+        test: [/\.jpg$/],
+        // Both convert the jpg to webp, and optimize the jpg fallback.
+        loader: multi(
+          'file-loader?{name:"assets/media/[name].webp"}!image-webpack-loader?{webp:{quality:75}}',
+          'file-loader?{name:"assets/media/[name].jpg"}!image-webpack-loader'
+        ),
       },
       {
         test: [/\.eot$/, /\.ttf$/, /\.woff$/, /\.woff2$/],
@@ -216,6 +207,7 @@ export default {
     inline: true,
     port: 8081,
     disableHostCheck: true,
+    host: '0.0.0.0',
   },
 
   plugins: [...commonPlugins, ...extraPlugins],

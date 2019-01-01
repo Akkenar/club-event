@@ -48,7 +48,7 @@ describe('LazyImage', () => {
 
   it('should match snapshot with placeholder', async () => {
     const wrapper = render(
-      <LazyImage src="foo" srcwebp="bar" alt="al" className="test" />
+      <LazyImage src="foo.jpg" alt="al" className="test" />
     );
     await waitForElement(() => wrapper.getByTestId('lazyloaded-placeholder'));
     expect(wrapper.baseElement).toMatchSnapshot();
@@ -56,7 +56,7 @@ describe('LazyImage', () => {
 
   it('should match snapshot with image', async () => {
     const wrapper = render(
-      <LazyImage src="foo" srcwebp="bar" alt="alt" className="test" />
+      <LazyImage src="foo.jpg" alt="alt" className="test" />
     );
     await waitForElement(() => wrapper.getByTestId('lazyloaded-image'));
     expect(wrapper.baseElement).toMatchSnapshot();

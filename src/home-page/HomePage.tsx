@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { Fragment, useContext, useEffect } from 'react';
 import { Header } from 'semantic-ui-react';
-import * as imgTop from '../assets/Arnaud-Conne-2017_5.jpg';
-import * as imgwebpTop from '../assets/Arnaud-Conne-2017_5.webp';
+import imgTop from '../assets/Arnaud-Conne-2017_5.jpg';
 import getKey from '../core/intl/getKey';
 import LanguageContext from '../core/intl/LanguageContext';
 import LazyImage from '../core/lazy-image/LazyImage';
@@ -27,7 +26,6 @@ const HomePage = () => {
         width={320}
         height={212}
         src={imgTop}
-        srcwebp={imgwebpTop}
         alt={'Photo: Arnaud Conne'}
       />
     </Fragment>

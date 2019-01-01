@@ -4,7 +4,9 @@ import LanguageContext from '../intl/LanguageContext';
 import LanguageSwitcher from './LanguageSwitcher';
 
 const context = {
+  confirmation: '',
   handleChangeLanguage: jest.fn(),
+  information: '',
   language: 'en',
   messages: {},
 };

@@ -18,34 +18,47 @@ exports[`HomePage should match the snapshot 1`] = `
       width="320"
     />
     <div />
-    <div
-      data-testid="iframe-placeholder"
-    >
-      loading
-    </div>
+    <iframe
+      allowfullscreen=""
+      frameborder="0"
+      height="600"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2735.705437069773!2d6.377488315962078!3d46.71154597913546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478db3ee662c90db%3A0x172582dbb0e2b277!2sAuberge+Communale+de+Vallorbe!5e0!3m2!1sen!2sch!4v1541839403749"
+      style="border: 0px; margin: 1em 0px;"
+      title="Vallorbe"
+      width="100%"
+    />
     <h2
       class="ui header"
     >
       home.page.register
     </h2>
     <div
-      class="ui warning message"
+      class="InformationSection__register-container"
     >
-      home.page.startofregistration
+      <a
+        class="ui black button full-width"
+        data-testid="register-button"
+        href="/undefined/register"
+        role="button"
+      >
+        register.now
+      </a>
     </div>
-    <svg
-      aria-label="Photo: Arnaud Conne"
-      class="LazyImage "
-      data-testid="lazyloaded-placeholder"
-      height="212"
-      viewBox="0 0 1024 1024"
-      width="320"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d=""
+    <picture>
+      <source
+        srcset="test-file-stub"
+        type="image/webp"
       />
-    </svg>
+      <img
+        alt="Photo: Arnaud Conne"
+        class="LazyImage no-print "
+        data-testid="lazyloaded-image"
+        height="212"
+        src="test-file-stub"
+        title="Photo: Arnaud Conne"
+        width="320"
+      />
+    </picture>
   </div>
 </body>
 `;

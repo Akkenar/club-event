@@ -1,5 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`ConfirmationPage should handle empty registration 1`] = `
+<body>
+  <div>
+    <div
+      class="ConfirmationPage"
+    >
+      <h1
+        class="ui header"
+        data-testid="main-title"
+      >
+        confirmation.page.title
+      </h1>
+      <div>
+        Total: , reference: 
+      </div>
+      <h2
+        class="ui header"
+      >
+        confirmation.page.recap.title
+      </h2>
+      <button
+        class="ui green button ConfirmationPage__print"
+      >
+        confirmation.page.print
+      </button>
+    </div>
+  </div>
+</body>
+`;
+
 exports[`ConfirmationPage should match the snapshot 1`] = `
 <body>
   <div>
@@ -12,7 +42,9 @@ exports[`ConfirmationPage should match the snapshot 1`] = `
       >
         confirmation.page.title
       </h1>
-      <div />
+      <div>
+        Total: 100, reference: TEST-123132
+      </div>
       <h2
         class="ui header"
       >
@@ -31,7 +63,9 @@ exports[`ConfirmationPage should match the snapshot 1`] = `
           </dd>
           <dt
             class="OrderRecap__value"
-          />
+          >
+            foo
+          </dt>
           <dd
             class="OrderRecap__title"
           >
@@ -39,7 +73,9 @@ exports[`ConfirmationPage should match the snapshot 1`] = `
           </dd>
           <dt
             class="OrderRecap__value"
-          />
+          >
+            bar
+          </dt>
           <dd
             class="OrderRecap__title"
           >
@@ -47,7 +83,9 @@ exports[`ConfirmationPage should match the snapshot 1`] = `
           </dd>
           <dt
             class="OrderRecap__value"
-          />
+          >
+            GSL
+          </dt>
           <dd
             class="OrderRecap__title"
           >
@@ -58,10 +96,14 @@ exports[`ConfirmationPage should match the snapshot 1`] = `
           >
             <address>
               <div>
+                Rue de Lausanne
                  
+                5
               </div>
               <div>
+                1018
                  
+                Lausanne
               </div>
             </address>
           </dt>
@@ -74,6 +116,7 @@ exports[`ConfirmationPage should match the snapshot 1`] = `
             class="OrderRecap__value"
           >
             CHF 
+            100
           </dt>
           <dd
             class="OrderRecap__title"

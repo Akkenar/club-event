@@ -37,11 +37,6 @@ const RegistrationsProducts = ({
   registrations,
 }: RegistrationsProductsProps) => {
   const { messages } = useContext(LanguageContext);
-
-  if (!registrations || !registrations.length) {
-    return null;
-  }
-
   const getProduct = (productName: string) =>
     getProductCount(productName, registrations);
 

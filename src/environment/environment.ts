@@ -5,4 +5,7 @@ export default {
     registrations: '/mocks/registrations.json',
   },
   isProduction: false,
+  registration: {
+    enabled: true,
+  },
 };

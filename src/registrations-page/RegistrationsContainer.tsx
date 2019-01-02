@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Fragment, useContext, useEffect, useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import { ApiResponse, Results } from '../core/api.type';
+import { DEFAULT_LANGUAGE } from '../core/intl/getDefaultLanguage';
 import LanguageContext from '../core/intl/LanguageContext';
 import Loader from '../core/loader/Loader';
 import { Registration } from '../register-page/register.type';
@@ -23,7 +24,7 @@ const RegistrationsContainer = () => {
 
   if ((registrations as ApiResponse).result === Results.UNAUTHORIZED) {
     // Probably because not logged.
-    return <Redirect to={`/${language}/login`} />;
+    return <Redirect to={`/${language || DEFAULT_LANGUAGE}/login`} />;
   }
 
   if (registrations === INITIAL_STATE) {

@@ -14,14 +14,24 @@ interface RegistrationsDetailsProps {
 
 const INITIAL_STATE: Registration | null = null;
 
-const getDetails = (registration: Registration | null) => {
-  if (!registration) {
+const getDetails = (
+  registration: Registration,
+  details: Registration | null
+) => {
+  // To satisfy Typescript constraint, details can be null.
+  if (!details) {
     return null;
   }
+
+  // Not the current registration.
+  if (registration !== details) {
+    return null;
+  }
+
   return (
-    <Table.Row>
+    <Table.Row data-testid={`details-for-${details.id}`}>
       <Table.Cell colSpan={5}>
-        <OrderRecap registration={registration} />
+        <OrderRecap registration={details} />
       </Table.Cell>
     </Table.Row>
   );
@@ -100,7 +110,7 @@ const RegistrationsDetails = ({ registrations }: RegistrationsDetailsProps) => {
                 </Button>
               </Table.Cell>
             </Table.Row>
-            {registration === details ? getDetails(details) : null}
+            {getDetails(registration, details)}
           </Fragment>
         ))}
       </Table.Body>

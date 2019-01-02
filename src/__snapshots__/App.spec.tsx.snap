@@ -40,6 +40,12 @@ exports[`App should render the home page by default 1`] = `
                 />
               </svg>
             </a>
+            <a
+              class="item"
+              href="/en/register"
+            >
+              header.register
+            </a>
             <div
               aria-expanded="false"
               class="ui dropdown link item right LanguageSwitcher"
@@ -136,9 +142,16 @@ exports[`App should render the home page by default 1`] = `
               home.page.register
             </h2>
             <div
-              class="ui warning message"
+              class="InformationSection__register-container"
             >
-              home.page.startofregistration
+              <a
+                class="ui black button full-width"
+                data-testid="register-button"
+                href="/en/register"
+                role="button"
+              >
+                register.now
+              </a>
             </div>
             <svg
               aria-label="Photo: Arnaud Conne"

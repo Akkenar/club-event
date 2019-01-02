@@ -2,12 +2,14 @@
  * Simple store. No need to bother with Redux/Flux with such a simple usecase.
  * */
 
-let simpleState: any = {};
+import { Registration } from '../register-page/register.type';
 
-export function setSimpleStore(newState: any) {
-  simpleState = { ...simpleState, ...newState };
+let registration: Registration | null = null;
+
+export function setSimpleStore(newRegistration: Registration) {
+  registration = newRegistration ? { ...newRegistration } : null;
 }
 
-export function getSimpleStore(): any {
-  return simpleState;
+export function getSimpleStore(): Registration | null {
+  return registration;
 }

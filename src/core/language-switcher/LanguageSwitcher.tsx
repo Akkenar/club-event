@@ -13,7 +13,7 @@ interface LanguageSwitcherProps {
 
 const LanguageSwitcher = ({ match }: LanguageSwitcherProps) => {
   const { messages } = useContext(LanguageContext);
-  const { page } = match.params;
+  const { page = 'home' } = match.params;
 
   return (
     <Dropdown

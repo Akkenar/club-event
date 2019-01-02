@@ -465,6 +465,7 @@ exports[`RegistrationsPage should show the details 1`] = `
           </tr>
           <tr
             class=""
+            data-testid="details-for-1"
           >
             <td
               class=""

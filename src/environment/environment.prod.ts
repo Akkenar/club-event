@@ -5,4 +5,7 @@ export default {
     registrations: '/api/getRegistrations.php',
   },
   isProduction: true,
+  registration: {
+    enabled: false,
+  },
 };

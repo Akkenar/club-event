@@ -25,4 +25,9 @@ describe('csv', () => {
       'inscriptions.csv'
     );
   });
+
+  it('should handle empty data', () => {
+    exportToCsv(null as any);
+    expect(saveAs).not.toHaveBeenCalledTimes(1);
+  });
 });

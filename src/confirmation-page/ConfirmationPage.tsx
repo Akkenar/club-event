@@ -13,7 +13,7 @@ import './ConfirmationPage.scss';
 
 function format(
   confirmation: string,
-  total: string,
+  total: number | null,
   reference: string
 ): string {
   if (!confirmation) {
@@ -21,7 +21,7 @@ function format(
   }
 
   return confirmation
-    .replace('%TOTAL%', total)
+    .replace('%TOTAL%', (total || '').toString())
     .replace('%REFERENCE%', reference);
 }
 
@@ -41,18 +41,8 @@ const ConfirmationPage = () => {
 
   // From the register form.
   const registration = getSimpleStore();
-  const { total, reference } = registration;
+  const { total = null, reference = '' } = registration || {};
   const confirmationMessage = format(confirmation, total, reference);
-
-  const printButton = supportsPrint() ? (
-    <Button
-      color="green"
-      onClick={printPage}
-      className="ConfirmationPage__print"
-    >
-      {getKey('confirmation.page.print', messages)}
-    </Button>
-  ) : null;
 
   return (
     <div className="ConfirmationPage">
@@ -63,8 +53,15 @@ const ConfirmationPage = () => {
       <Header as="h2">
         {getKey('confirmation.page.recap.title', messages)}
       </Header>
-      <OrderRecap registration={registration} />
-      {printButton}
+      {registration ? <OrderRecap registration={registration} /> : null}
+      <Button
+        disabled={!supportsPrint()}
+        color="green"
+        onClick={printPage}
+        className="ConfirmationPage__print"
+      >
+        {getKey('confirmation.page.print', messages)}
+      </Button>
       <LazyImage
         className="no-print"
         width={320}

@@ -3,7 +3,7 @@ import { Fragment } from 'react';
 import { BrowserRouter, NavLink, Route } from 'react-router-dom';
 import { render, waitForElement } from 'react-testing-library';
 import App, { AppContainer } from './App';
-import { ApiResponse, Results } from './core/api.type';
+import { Results } from './core/api.type';
 import LanguageContext from './core/intl/LanguageContext';
 import { BASE_URL_WITH_LANG } from './core/intl/provideTranslations';
 import { mockResponse } from './test-utils/test-utils.lib';

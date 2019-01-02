@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header should match snapshot without registration 1`] = `
+<body>
+  <div>
+    <div
+      class="ui inverted Header menu"
+    >
+      <a
+        color="white"
+        href="#/de/home"
+      >
+        <svg
+          aria-label="logo.alt"
+          class="Logo Logo--inverted  Header__logo"
+          data-testid="lazyloaded-placeholder"
+          height="45"
+          viewBox="0 0 1024 1024"
+          width="60"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d=""
+          />
+        </svg>
+      </a>
+      <a
+        class="item"
+        href="#/de/register"
+      >
+        header.register
+      </a>
+      <div
+        aria-expanded="false"
+        class="ui dropdown link item right LanguageSwitcher"
+        role="listbox"
+        tabindex="0"
+      >
+        <div
+          aria-live="polite"
+          class="text"
+          role="alert"
+        >
+          current.language
+        </div>
+        <i
+          aria-hidden="true"
+          class="dropdown icon"
+        />
+        <div
+          class="menu transition"
+        >
+          <a
+            class="item"
+            href="#/fr/home"
+            role="option"
+            title="Français"
+          >
+            FR
+          </a>
+          <a
+            class="item"
+            href="#/de/home"
+            role="option"
+            title="Deutsch"
+          >
+            DE
+          </a>
+          <a
+            class="item"
+            href="#/it/home"
+            role="option"
+            title="Italianno"
+          >
+            IT
+          </a>
+          <a
+            class="item"
+            href="#/en/home"
+            role="option"
+            title="English"
+          >
+            EN
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

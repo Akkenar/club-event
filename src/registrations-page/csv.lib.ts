@@ -38,20 +38,12 @@ const productsToDisplay: { [key: string]: string } = {
 };
 
 function toString(value: any): string {
-  if (typeof value === 'string') {
-    return value;
-  }
-
-  if (typeof value === 'number') {
-    return value.toString();
-  }
-
   if (typeof value === 'object') {
     // Counts the items rather than displaying the object as a string
     return Object.keys(value).length.toString();
   }
 
-  return '';
+  return (value || '').toString();
 }
 
 function toCsvLine(lineData: any) {

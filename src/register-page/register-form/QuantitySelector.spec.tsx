@@ -1,6 +1,6 @@
 import { Fragment, useState } from 'react';
 import * as React from 'react';
-import { fireEvent, render } from 'react-testing-library';
+import { fireEvent, render, waitForElement } from 'react-testing-library';
 import QuantitySelector from './QuantitySelector';
 
 const StatefulWrapper = () => {
@@ -25,7 +25,7 @@ const StatefulWrapper = () => {
 };
 
 describe('QuantitySelector', () => {
-  it('should accept custom valid quantities', () => {
+  it('should accept custom valid quantities', async () => {
     const wrapper = render(<StatefulWrapper />);
 
     fireEvent.change(wrapper.queryByTestId('test'), {
@@ -45,11 +45,22 @@ describe('QuantitySelector', () => {
     expect(wrapper.getByTestId('value').innerHTML).toEqual('0');
   });
 
-  it('should handle custom empty quantities', () => {
+  it('should handle custom null quantities', () => {
     const wrapper = render(<StatefulWrapper />);
 
     fireEvent.change(wrapper.queryByTestId('test'), {
       target: { value: null },
+    });
+
+    expect(wrapper.getByTestId('value').innerHTML).toEqual('0');
+  });
+
+  it('should handle custom empty quantities', async () => {
+    const wrapper = render(<StatefulWrapper />);
+    await waitForElement(() => wrapper.queryByTestId('test'));
+
+    fireEvent.change(wrapper.queryByTestId('test'), {
+      target: { value: '' },
     });
 
     expect(wrapper.getByTestId('value').innerHTML).toEqual('0');

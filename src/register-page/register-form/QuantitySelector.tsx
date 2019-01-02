@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { ChangeEvent, useContext } from 'react';
-import { Button, Form, Icon, Segment } from 'semantic-ui-react';
+import { ChangeEvent, useContext, useState } from 'react';
+import { Button, Form, Icon, Segment, Transition } from 'semantic-ui-react';
 import getKey from '../../core/intl/getKey';
 import LanguageContext from '../../core/intl/LanguageContext';
 import { PRICES } from '../prices';
@@ -30,16 +30,24 @@ const QuantitySelector = ({
   state,
 }: QuantitySelectorProps) => {
   const { messages } = useContext(LanguageContext);
+  const [hasAnimation, triggerAnimation] = useState<boolean>(true);
   const itemPrice = PRICES[name] as number;
   const quantity = parseProduct(state, name);
 
-  const addOne = () => setQuantity(name, quantity + 1);
-  const removeOne = () => setQuantity(name, quantity - 1);
-  const removeAll = () => setQuantity(name, 0);
+  const changeQuantity = (targetQuantity: number) => {
+    triggerAnimation(!hasAnimation);
+    setQuantity(name, targetQuantity);
+  };
+
+  const addOne = () => changeQuantity(quantity + 1);
+  const removeOne = () => changeQuantity(quantity - 1);
+  const removeAll = () => changeQuantity(0);
   const setCustom = (event: ChangeEvent<HTMLInputElement>) => {
     const value = parseInt(event.target.value, 10);
     if (!isNaN(value)) {
-      setQuantity(name, value);
+      changeQuantity(value);
+    } else {
+      changeQuantity(0);
     }
   };
 
@@ -72,19 +80,21 @@ const QuantitySelector = ({
               <Icon name="remove" />
             </button>
           ) : null}
-          <input
-            type="number"
-            pattern="[0-9]*"
-            min={0}
-            max={100}
-            data-testid={name}
-            id={name}
-            className="QuantitySelector__Quantity"
-            value={quantity || ''}
-            onChange={setCustom}
-            minLength={1}
-            maxLength={3}
-          />
+          <Transition animation="glow" duration={300} visible={hasAnimation}>
+            <input
+              type="number"
+              pattern="[0-9]*"
+              min={0}
+              max={100}
+              data-testid={name}
+              id={name}
+              className="QuantitySelector__Quantity"
+              value={quantity || ''}
+              onChange={setCustom}
+              minLength={1}
+              maxLength={3}
+            />
+          </Transition>
           <Button
             type="button"
             className="QuantitySelector__Button QuantitySelector__Button--plus"

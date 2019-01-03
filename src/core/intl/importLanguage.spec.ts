@@ -1,4 +1,4 @@
-import { importLanguage } from './importLanguage';
+import { importLanguage, preloadAllLanguages } from './importLanguage';
 
 jest.mock('./languages/en', () => ({}));
 jest.mock('./languages/fr', () => ({}));
@@ -43,6 +43,18 @@ describe('importLanguage', () => {
   it('should throw an error if the language is not supported', done => {
     importLanguage('zz').catch(e => {
       expect(e).toEqual('zz not supported');
+      done();
+    });
+  });
+
+  it('should preload all the languages', done => {
+    preloadAllLanguages().then(data => {
+      expect(data).toEqual([
+        expectedLanguageObject,
+        expectedLanguageObject,
+        expectedLanguageObject,
+        expectedLanguageObject,
+      ]);
       done();
     });
   });

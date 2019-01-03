@@ -1,3 +1,10 @@
+export enum LANGUAGE {
+  EN = 'en',
+  FR = 'fr',
+  DE = 'de',
+  IT = 'it',
+}
+
 export interface IntlKey {
   [key: string]: string;
 }

@@ -6,6 +6,7 @@ exports[`LanguageSwitcher should match snapshot 1`] = `
     <div
       aria-expanded="false"
       class="ui dropdown link item right LanguageSwitcher"
+      data-testid="language-switcher"
       role="listbox"
       tabindex="0"
     >

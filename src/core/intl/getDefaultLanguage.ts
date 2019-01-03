@@ -1,7 +1,8 @@
-export const DEFAULT_LANGUAGE = 'de';
-const SUPPORTED_LANGUAGES = ['fr', 'en', 'it', DEFAULT_LANGUAGE];
+import { LANGUAGE } from './intl.type';
 
-export function getDefaultLanguage() {
+export const DEFAULT_LANGUAGE = LANGUAGE.DE;
+
+export function getDefaultLanguage(): LANGUAGE {
   try {
     const locale: string =
       (navigator.languages && navigator.languages[0]) ||
@@ -13,11 +14,7 @@ export function getDefaultLanguage() {
     }
 
     const language = locale.split('-')[0];
-    if (SUPPORTED_LANGUAGES.indexOf(language) === -1) {
-      return DEFAULT_LANGUAGE;
-    }
-
-    return language;
+    return (LANGUAGE as any)[language.toUpperCase()] || DEFAULT_LANGUAGE;
   } catch (e) {
     // In case something really goes wrong.
     return DEFAULT_LANGUAGE;

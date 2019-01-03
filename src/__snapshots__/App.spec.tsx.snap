@@ -49,6 +49,7 @@ exports[`App should render the home page by default 1`] = `
             <div
               aria-expanded="false"
               class="ui dropdown link item right LanguageSwitcher"
+              data-testid="language-switcher"
               role="listbox"
               tabindex="0"
             >

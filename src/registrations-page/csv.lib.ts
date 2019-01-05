@@ -31,10 +31,6 @@ const productsToDisplay: { [key: string]: string } = {
   picknick: 'Pick Nick',
   sleeping: 'Nuit PC',
   camping: 'Nuit Camping',
-  itemSize1: 'T-Shirt 1',
-  itemSize2: 'T-Shirt 2',
-  itemSize3: 'T-Shirt 3',
-  itemSize4: 'T-Shirt 4',
 };
 
 function toString(value: any): string {

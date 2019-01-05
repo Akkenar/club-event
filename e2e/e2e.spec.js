@@ -20,10 +20,6 @@ const personalData = {
 const products = {
   dinner: faker.random.number(10),
   picknick: faker.random.number(10),
-  itemSize1: faker.random.number(10),
-  itemSize2: faker.random.number(10),
-  itemSize3: faker.random.number(10),
-  itemSize4: faker.random.number(10),
   breakfast: faker.random.number(10),
   camping: faker.random.number(10),
   sleeping: faker.random.number(10),

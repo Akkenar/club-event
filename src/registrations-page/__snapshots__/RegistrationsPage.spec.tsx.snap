@@ -549,16 +549,6 @@ exports[`RegistrationsPage should show the details 1`] = `
                   >
                     1
                   </dt>
-                  <dd
-                    class="OrderRecap__title"
-                  >
-                    register.form.counts.itemSize3
-                  </dd>
-                  <dt
-                    class="OrderRecap__value"
-                  >
-                    1
-                  </dt>
                 </dl>
               </div>
             </td>
@@ -840,70 +830,6 @@ exports[`RegistrationsPage should show the products 1`] = `
                   class=""
                 >
                   14
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <table
-            class="ui celled collapsing very basic table RegistrationsProducts__Table"
-          >
-            <tbody
-              class=""
-            >
-              <tr
-                class=""
-              >
-                <td
-                  class=""
-                >
-                  register.form.counts.itemSize1
-                </td>
-                <td
-                  class=""
-                >
-                  5
-                </td>
-              </tr>
-              <tr
-                class=""
-              >
-                <td
-                  class=""
-                >
-                  register.form.counts.itemSize2
-                </td>
-                <td
-                  class=""
-                >
-                  6
-                </td>
-              </tr>
-              <tr
-                class=""
-              >
-                <td
-                  class=""
-                >
-                  register.form.counts.itemSize3
-                </td>
-                <td
-                  class=""
-                >
-                  20
-                </td>
-              </tr>
-              <tr
-                class=""
-              >
-                <td
-                  class=""
-                >
-                  register.form.counts.itemSize4
-                </td>
-                <td
-                  class=""
-                >
-                  7
                 </td>
               </tr>
             </tbody>

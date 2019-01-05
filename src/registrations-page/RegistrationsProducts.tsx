@@ -96,39 +96,6 @@ const RegistrationsProducts = ({
           </Table.Row>
         </Table.Body>
       </Table>
-      <Table
-        className="RegistrationsProducts__Table"
-        basic="very"
-        celled={true}
-        collapsing={true}
-      >
-        <Table.Body>
-          <Table.Row>
-            <Table.Cell>
-              {getKey('register.form.counts.itemSize1', messages)}
-            </Table.Cell>
-            <Table.Cell>{getProduct('itemSize1')}</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell>
-              {getKey('register.form.counts.itemSize2', messages)}
-            </Table.Cell>
-            <Table.Cell>{getProduct('itemSize2')}</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell>
-              {getKey('register.form.counts.itemSize3', messages)}
-            </Table.Cell>
-            <Table.Cell>{getProduct('itemSize3')}</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell>
-              {getKey('register.form.counts.itemSize4', messages)}
-            </Table.Cell>
-            <Table.Cell>{getProduct('itemSize4')}</Table.Cell>
-          </Table.Row>
-        </Table.Body>
-      </Table>
     </Segment>
   );
 };

@@ -69,30 +69,6 @@ const Products = ({ state, setQuantity, total }: ProductsProps) => {
         {getKey('register.form.goodies', messages)}
       </Header>
       <p>{getKey('register.form.goodies.description', messages)}</p>
-      <Form.Group widths="equal">
-        <QuantitySelector
-          state={state}
-          name="itemSize1"
-          setQuantity={setQuantity}
-        />
-        <QuantitySelector
-          state={state}
-          name="itemSize2"
-          setQuantity={setQuantity}
-        />
-      </Form.Group>
-      <Form.Group widths="equal">
-        <QuantitySelector
-          state={state}
-          name="itemSize3"
-          setQuantity={setQuantity}
-        />
-        <QuantitySelector
-          state={state}
-          name="itemSize4"
-          setQuantity={setQuantity}
-        />
-      </Form.Group>
       <Message
         error={true}
         visible={state.errors && state.errors.total}

@@ -151,46 +151,6 @@ exports[`ConfirmationPage should match the snapshot 1`] = `
           <dd
             class="OrderRecap__title"
           >
-            register.form.counts.itemSize1
-          </dd>
-          <dt
-            class="OrderRecap__value"
-          >
-            2
-          </dt>
-          <dd
-            class="OrderRecap__title"
-          >
-            register.form.counts.itemSize2
-          </dd>
-          <dt
-            class="OrderRecap__value"
-          >
-            2
-          </dt>
-          <dd
-            class="OrderRecap__title"
-          >
-            register.form.counts.itemSize3
-          </dd>
-          <dt
-            class="OrderRecap__value"
-          >
-            2
-          </dt>
-          <dd
-            class="OrderRecap__title"
-          >
-            register.form.counts.itemSize4
-          </dd>
-          <dt
-            class="OrderRecap__value"
-          >
-            2
-          </dt>
-          <dd
-            class="OrderRecap__title"
-          >
             register.form.counts.picknick
           </dd>
           <dt

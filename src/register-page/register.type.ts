@@ -4,10 +4,6 @@ export interface Products {
   breakfast?: number | string;
   camping?: number | string;
   dinner?: number | string;
-  itemSize1?: number | string;
-  itemSize2?: number | string;
-  itemSize3?: number | string;
-  itemSize4?: number | string;
   picknick?: number | string;
   sleeping?: number | string;
   vegetarian?: number | string;

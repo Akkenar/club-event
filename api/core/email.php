@@ -84,10 +84,6 @@ function getBody($total, $reference, $language, $data)
   setVarIfExists($globalTPL, $products, 'camping');
   setVarIfExists($globalTPL, $products, 'picknick');
   setVarIfExists($globalTPL, $products, 'breakfast');
-  setVarIfExists($globalTPL, $products, 'itemSize1');
-  setVarIfExists($globalTPL, $products, 'itemSize2');
-  setVarIfExists($globalTPL, $products, 'itemSize3');
-  setVarIfExists($globalTPL, $products, 'itemSize4');
 
   return $globalTPL->finish($globalTPL->parse('email', 'email', true));
 }

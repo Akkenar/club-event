@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`csv should convert all registrations to CSV 1`] = `
-"Identifiant technique	Date	Référence	Langue	Prénom	Nom	Email	Club	Address	Numéro	NPA	Localité	A payer	Nombre de types de commande	Petit Déjeuner	Souper	Souper	Pick Nick	Nuit PC	Nuit Camping	T-Shirt 1	T-Shirt 2	T-Shirt 3	T-Shirt 4
-1	2018-12-28 14:21:04	ROO-5C26315	fr	Tia	Roob	pierredominique.putallaz@gmail.com	GSL	Maggie Haven	5A	1018	Barrowshaven	65	2		1							1	
-2	2018-12-28 14:29:48	KON-5C26335	fr	Cayla	Konopelski	pierredominique.putallaz@gmail.com	GSL	Parker Expressway	5A	1018	Port Margueritemouth	1080	10	4	6	4	2	6	6	5	5	9	2
-3	2018-12-28 14:30:19	STR-5C26337	de	Paige	Streich	pierredominique.putallaz@gmail.com	GSL	Randi Knolls	5A	1018	Nolanside	745	8		0	3	5	2	8		1	10	5"
+"Identifiant technique	Date	Référence	Langue	Prénom	Nom	Email	Club	Address	Numéro	NPA	Localité	A payer	Nombre de types de commande	Petit Déjeuner	Souper	Souper	Pick Nick	Nuit PC	Nuit Camping
+1	2018-12-28 14:21:04	ROO-5C26315	fr	Tia	Roob	pierredominique.putallaz@gmail.com	GSL	Maggie Haven	5A	1018	Barrowshaven	65	1		1				
+2	2018-12-28 14:29:48	KON-5C26335	fr	Cayla	Konopelski	pierredominique.putallaz@gmail.com	GSL	Parker Expressway	5A	1018	Port Margueritemouth	1080	6	4	6	4	2	6	6
+3	2018-12-28 14:30:19	STR-5C26337	de	Paige	Streich	pierredominique.putallaz@gmail.com	GSL	Randi Knolls	5A	1018	Nolanside	745	5		0	3	5	2	8"
 `;

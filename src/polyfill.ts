@@ -14,3 +14,4 @@ import 'core-js/es6/symbol';
 import 'core-js/es6/weak-map';
 import 'intersection-observer';
 import 'whatwg-fetch';
+import './core/remove.polyfill';

@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
-import puppeteer from 'puppeteer';
-import faker from 'faker';
+const puppeteer = require('puppeteer');
+const faker = require('faker');
 
 const registerPageUrl = 'http://php/en/register?ignoreCaptcha';
 const loginPageUrl = 'http://php/en/login?ignoreCaptcha';

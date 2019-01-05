@@ -1,12 +1,12 @@
-import webpack from 'webpack';
-import path from 'path';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import * as bundle from 'webpack-bundle-analyzer';
-import CopyWebpackPlugin from 'copy-webpack-plugin';
-import OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin';
-import PreloadCssPlugin from './buildExtra/preload-css-webpack-plugin';
-import multi from 'multi-loader';
+const webpack = require('webpack');
+const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const bundle = require('webpack-bundle-analyzer');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const PreloadCssPlugin = require('./buildExtra/preload-css-webpack-plugin');
+const multi = require('multi-loader');
 
 const cssOrJsRegex = /((.*)\.)(js|css)$/;
 
@@ -75,7 +75,7 @@ const commonPlugins = [
 
 const extraPlugins = isProduction ? prodPlugins : devPlugins;
 
-export default {
+module.exports = {
   name: 'client',
   target: 'web',
   mode: isProduction ? 'production' : 'development',
@@ -91,6 +91,7 @@ export default {
   },
 
   resolve: {
+    // .js must also be resolved for node_modules dependencies
     extensions: ['.js', '.ts', '.tsx', '.json', '.scss'],
   },
 
@@ -133,11 +134,6 @@ export default {
 
   module: {
     rules: [
-      {
-        test: /\.jsx?$/,
-        exclude: /node_modules/,
-        use: ['babel-loader'],
-      },
       { test: /\.tsx?$/, loader: 'awesome-typescript-loader' },
       { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' },
       {

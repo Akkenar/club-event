@@ -10,7 +10,11 @@ const MapIframe = () => {
 
   if (!isDisplayed) {
     return (
-      <div data-testid="iframe-placeholder" ref={startObserving}>
+      <div
+        data-testid="iframe-placeholder"
+        ref={startObserving}
+        style={{ height: '600px', width: '100%' }}
+      >
         {getKey('loading', messages)}
       </div>
     );

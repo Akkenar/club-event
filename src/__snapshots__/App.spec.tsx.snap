@@ -134,6 +134,7 @@ exports[`App should render the home page by default 1`] = `
             <div />
             <div
               data-testid="iframe-placeholder"
+              style="height: 600px; width: 100%;"
             >
               loading
             </div>

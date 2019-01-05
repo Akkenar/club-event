@@ -12,12 +12,12 @@ describe('date.lib', () => {
     expect(formatDate(undefined)).toEqual('');
   });
 
+  it('should handle invalid dates', () => {
+    expect(formatDate('rubbish')).toEqual('rubbish');
+  });
+
   it('should handle missing Intl', () => {
     mockGlobalProperty(window)('Intl')(undefined);
     expect(formatDate(TEST_DATE)).toEqual(TEST_DATE);
-  });
-
-  it('should handle invalid dates', () => {
-    expect(formatDate('rubbish')).toEqual('rubbish');
   });
 });

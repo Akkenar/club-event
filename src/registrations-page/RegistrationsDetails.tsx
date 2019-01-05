@@ -1,6 +1,7 @@
 import { Fragment, useContext, useState } from 'react';
 import * as React from 'react';
 import { Button, Icon, Table } from 'semantic-ui-react';
+import { formatDate } from '../core/date.lib';
 import getKey from '../core/intl/getKey';
 import LanguageContext from '../core/intl/LanguageContext';
 import OrderRecap from '../core/order-recap/OrderRecap';
@@ -79,7 +80,7 @@ const RegistrationsDetails = ({ registrations }: RegistrationsDetailsProps) => {
           <Fragment key={registration.id}>
             <Table.Row>
               <Table.Cell>{registration.reference}</Table.Cell>
-              <Table.Cell>{registration.date}</Table.Cell>
+              <Table.Cell>{formatDate(registration.date)}</Table.Cell>
               <Table.Cell>{registration.total} CHF</Table.Cell>
               <Table.Cell>
                 <strong>

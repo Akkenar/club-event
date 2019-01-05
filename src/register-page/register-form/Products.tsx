@@ -65,10 +65,6 @@ const Products = ({ state, setQuantity, total }: ProductsProps) => {
           setQuantity={setQuantity}
         />
       </Form.Group>
-      <Header dividing={true} as="h3">
-        {getKey('register.form.goodies', messages)}
-      </Header>
-      <p>{getKey('register.form.goodies.description', messages)}</p>
       <Message
         error={true}
         visible={state.errors && state.errors.total}

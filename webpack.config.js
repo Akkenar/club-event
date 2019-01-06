@@ -136,7 +136,19 @@ module.exports = {
 
   module: {
     rules: [
-      { test: /\.tsx?$/, loader: 'awesome-typescript-loader' },
+      {
+        test: /\.tsx?$/,
+        use: [
+          {
+            loader: 'awesome-typescript-loader',
+            options: {
+              useCache: true,
+              reportFiles: ['src/**/*.{ts,tsx}'],
+              forceIsolatedModules: true,
+            },
+          },
+        ],
+      },
       { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' },
       {
         test: /\.s?css$/,

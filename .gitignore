@@ -10,3 +10,4 @@ coverage
 api/configuration/configuration.local.properties
 api/configuration/configuration.properties
 api/vendor
+.awcache

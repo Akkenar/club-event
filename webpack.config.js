@@ -28,7 +28,9 @@ const prodPlugins = [
     },
     canPrint: true,
   }),
-  new PreloadCssPlugin(),
+  new PreloadCssPlugin({
+    chunkNames: ['header', 'footer'],
+  }),
   new webpack.NormalModuleReplacementPlugin(
     /src\/environment\/environment\.ts/,
     './environment.prod.ts'

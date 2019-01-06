@@ -15,11 +15,6 @@
     <link rel="dns-prefetch" href="https://www.google.com" />
     <link rel="preconnect" href="https://www.google.com" />
     <title>SSS AD</title>
-    <!-- Preload or prefetch CSS chunks -->
-    <% (htmlWebpackPlugin.files.preloadChunks || []).forEach(chunk => { %>
-    <link rel="<%= chunk.rel %>" as="style" href="<%= chunk.href %>" />
-    <% }); %>
-
     <!-- Critical CSS files -->
     <% htmlWebpackPlugin.files.css.forEach(css => { %>
     <link href="<%= css %>" rel="stylesheet" />
@@ -28,6 +23,11 @@
     <!-- Load JS -->
     <% Object.values(htmlWebpackPlugin.files.chunks).forEach(chunk => { %>
     <script src="<%= chunk.entry %>" async defer></script>
+    <% }); %>
+
+    <!-- Preload CSS chunks -->
+    <% (htmlWebpackPlugin.files.preloadChunks || []).forEach(chunk => { %>
+    <link rel="<%= chunk.rel %>" as="style" href="<%= chunk.href %>" />
     <% }); %>
   </head>
   <body>

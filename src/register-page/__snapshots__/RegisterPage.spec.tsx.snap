@@ -259,6 +259,15 @@ exports[`RegisterPage should match the snapshot 1`] = `
                   )
                 </label>
                 <div
+                  aria-atomic="true"
+                  aria-hidden="true"
+                  aria-live="polite"
+                  aria-relevant="all"
+                  class="visually-hidden"
+                >
+                  0
+                </div>
+                <div
                   class="QuantitySelector__Controls"
                 >
                   <button
@@ -266,7 +275,7 @@ exports[`RegisterPage should match the snapshot 1`] = `
                     data-testid="dinner-minus"
                     disabled=""
                     tabindex="-1"
-                    title="Minus"
+                    title="quantityselector.remove"
                     type="button"
                   >
                     <i
@@ -289,7 +298,7 @@ exports[`RegisterPage should match the snapshot 1`] = `
                   <button
                     class="ui icon button QuantitySelector__Button QuantitySelector__Button--plus"
                     data-testid="dinner-plus"
-                    title="Plus"
+                    title="quantityselector.add"
                     type="button"
                   >
                     <i
@@ -316,6 +325,15 @@ exports[`RegisterPage should match the snapshot 1`] = `
                   )
                 </label>
                 <div
+                  aria-atomic="true"
+                  aria-hidden="true"
+                  aria-live="polite"
+                  aria-relevant="all"
+                  class="visually-hidden"
+                >
+                  0
+                </div>
+                <div
                   class="QuantitySelector__Controls"
                 >
                   <button
@@ -323,7 +341,7 @@ exports[`RegisterPage should match the snapshot 1`] = `
                     data-testid="vegetarian-minus"
                     disabled=""
                     tabindex="-1"
-                    title="Minus"
+                    title="quantityselector.remove"
                     type="button"
                   >
                     <i
@@ -346,7 +364,7 @@ exports[`RegisterPage should match the snapshot 1`] = `
                   <button
                     class="ui icon button QuantitySelector__Button QuantitySelector__Button--plus"
                     data-testid="vegetarian-plus"
-                    title="Plus"
+                    title="quantityselector.add"
                     type="button"
                   >
                     <i
@@ -377,6 +395,15 @@ exports[`RegisterPage should match the snapshot 1`] = `
                   )
                 </label>
                 <div
+                  aria-atomic="true"
+                  aria-hidden="true"
+                  aria-live="polite"
+                  aria-relevant="all"
+                  class="visually-hidden"
+                >
+                  0
+                </div>
+                <div
                   class="QuantitySelector__Controls"
                 >
                   <button
@@ -384,7 +411,7 @@ exports[`RegisterPage should match the snapshot 1`] = `
                     data-testid="breakfast-minus"
                     disabled=""
                     tabindex="-1"
-                    title="Minus"
+                    title="quantityselector.remove"
                     type="button"
                   >
                     <i
@@ -407,7 +434,7 @@ exports[`RegisterPage should match the snapshot 1`] = `
                   <button
                     class="ui icon button QuantitySelector__Button QuantitySelector__Button--plus"
                     data-testid="breakfast-plus"
-                    title="Plus"
+                    title="quantityselector.add"
                     type="button"
                   >
                     <i
@@ -434,6 +461,15 @@ exports[`RegisterPage should match the snapshot 1`] = `
                   )
                 </label>
                 <div
+                  aria-atomic="true"
+                  aria-hidden="true"
+                  aria-live="polite"
+                  aria-relevant="all"
+                  class="visually-hidden"
+                >
+                  0
+                </div>
+                <div
                   class="QuantitySelector__Controls"
                 >
                   <button
@@ -441,7 +477,7 @@ exports[`RegisterPage should match the snapshot 1`] = `
                     data-testid="picknick-minus"
                     disabled=""
                     tabindex="-1"
-                    title="Minus"
+                    title="quantityselector.remove"
                     type="button"
                   >
                     <i
@@ -464,7 +500,7 @@ exports[`RegisterPage should match the snapshot 1`] = `
                   <button
                     class="ui icon button QuantitySelector__Button QuantitySelector__Button--plus"
                     data-testid="picknick-plus"
-                    title="Plus"
+                    title="quantityselector.add"
                     type="button"
                   >
                     <i
@@ -503,6 +539,15 @@ exports[`RegisterPage should match the snapshot 1`] = `
                   )
                 </label>
                 <div
+                  aria-atomic="true"
+                  aria-hidden="true"
+                  aria-live="polite"
+                  aria-relevant="all"
+                  class="visually-hidden"
+                >
+                  0
+                </div>
+                <div
                   class="QuantitySelector__Controls"
                 >
                   <button
@@ -510,7 +555,7 @@ exports[`RegisterPage should match the snapshot 1`] = `
                     data-testid="sleeping-minus"
                     disabled=""
                     tabindex="-1"
-                    title="Minus"
+                    title="quantityselector.remove"
                     type="button"
                   >
                     <i
@@ -533,7 +578,7 @@ exports[`RegisterPage should match the snapshot 1`] = `
                   <button
                     class="ui icon button QuantitySelector__Button QuantitySelector__Button--plus"
                     data-testid="sleeping-plus"
-                    title="Plus"
+                    title="quantityselector.add"
                     type="button"
                   >
                     <i
@@ -560,6 +605,15 @@ exports[`RegisterPage should match the snapshot 1`] = `
                   )
                 </label>
                 <div
+                  aria-atomic="true"
+                  aria-hidden="true"
+                  aria-live="polite"
+                  aria-relevant="all"
+                  class="visually-hidden"
+                >
+                  0
+                </div>
+                <div
                   class="QuantitySelector__Controls"
                 >
                   <button
@@ -567,7 +621,7 @@ exports[`RegisterPage should match the snapshot 1`] = `
                     data-testid="camping-minus"
                     disabled=""
                     tabindex="-1"
-                    title="Minus"
+                    title="quantityselector.remove"
                     type="button"
                   >
                     <i
@@ -590,7 +644,7 @@ exports[`RegisterPage should match the snapshot 1`] = `
                   <button
                     class="ui icon button QuantitySelector__Button QuantitySelector__Button--plus"
                     data-testid="camping-plus"
-                    title="Plus"
+                    title="quantityselector.add"
                     type="button"
                   >
                     <i

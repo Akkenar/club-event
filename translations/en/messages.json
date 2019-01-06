@@ -50,5 +50,8 @@
   "register.form.error.recaptcha": "Captcha invalid",
   "confirmation.page.title": "Confirmation",
   "confirmation.page.print": "Print the page",
-  "confirmation.page.recap.title": "Your registration"
+  "confirmation.page.recap.title": "Your registration",
+  "quantityselector.add": "Add one to {name}",
+  "quantityselector.remove": "Remove one from {name}",
+  "quantityselector.clear": "Clear {name}"
 }

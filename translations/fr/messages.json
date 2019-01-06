@@ -61,5 +61,8 @@
   "login.page.title": "Accéder aux inscriptions",
   "login.form.username": "Nom d'utilisateur",
   "login.form.password": "Mot de passe",
-  "login.form.submit": "S'authentifier"
+  "login.form.submit": "S'authentifier",
+  "quantityselector.add": "Ajouter un {name}",
+  "quantityselector.remove": "Supprimer un {name}",
+  "quantityselector.clear": "Supprimer tous les {name}"
 }

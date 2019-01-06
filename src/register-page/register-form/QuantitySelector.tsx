@@ -51,12 +51,30 @@ const QuantitySelector = ({
     }
   };
 
+  const label = getKey(`register.form.counts.${name}`, messages);
+  const addLabel = getKey(`quantityselector.add`, messages, { name: label });
+  const removeLabel = getKey(`quantityselector.remove`, messages, {
+    name: label,
+  });
+  const clearLabel = getKey(`quantityselector.clear`, messages, {
+    name: label,
+  });
+
   return (
     <Form.Field className="QuantitySelector full-width">
       <Segment className="QuantitySelector__Container">
         <label className="QuantitySelector__Label" htmlFor={name}>
-          {getKey(`register.form.counts.${name}`, messages)} (CHF {itemPrice})
+          {label} (CHF {itemPrice})
         </label>
+        <div
+          className="visually-hidden"
+          aria-hidden="true"
+          aria-live="polite"
+          aria-relevant="all"
+          aria-atomic="true"
+        >
+          {quantity}
+        </div>
         <div className="QuantitySelector__Controls">
           <Button
             type="button"
@@ -64,7 +82,7 @@ const QuantitySelector = ({
             icon={true}
             data-testid={`${name}-minus`}
             onClick={removeOne}
-            title="Minus"
+            title={removeLabel}
             disabled={quantity === 0}
           >
             <Icon name="minus" />
@@ -73,7 +91,7 @@ const QuantitySelector = ({
             <button
               onClick={removeAll}
               type="button"
-              title="Remove"
+              title={clearLabel}
               className="QuantitySelector__Clear"
               data-testid={`${name}-clear`}
             >
@@ -101,7 +119,7 @@ const QuantitySelector = ({
             icon={true}
             data-testid={`${name}-plus`}
             onClick={addOne}
-            title="Plus"
+            title={addLabel}
           >
             <Icon name="plus" />
           </Button>

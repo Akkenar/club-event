@@ -14,7 +14,7 @@ const personalData: { [key: string]: string } = {
   total: 'A payer',
   language: 'Langue',
   club: 'Club',
-  email: 'Email',
+  email: 'E-mail',
   firstName: 'Prénom',
   lastName: 'Nom',
   locality: 'Localité',

@@ -22,7 +22,6 @@ export async function postData<T extends ApiResponse>(
     });
 
     const text = await response.text();
-    console.log(`[API POST] Data from ${url}`, text);
     return JSON.parse(text);
   } catch (e) {
     console.error(`[API POST] Error posting data to ${url}`, e);
@@ -45,7 +44,6 @@ export async function getData<T>(url: string): Promise<T> {
     });
 
     const text = await response.text();
-    console.log(`[API GET] Data from ${url}`, text);
     return JSON.parse(text);
   } catch (e) {
     console.error(`[API GET] Error getting data from ${url}`, e);

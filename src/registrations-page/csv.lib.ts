@@ -28,7 +28,7 @@ const productsToDisplay: { [key: string]: string } = {
   breakfast: 'Petit Déjeuner',
   dinner: 'Souper',
   vegetarian: 'Souper',
-  picknick: 'Pick Nick',
+  picknick: 'Pique-nique',
   sleeping: 'Nuit PC',
   camping: 'Nuit Camping',
 };

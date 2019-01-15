@@ -97,6 +97,14 @@ exports[`RegistrationsPage should match the snapshot 1`] = `
                 class="download icon"
               />
             </button>
+            <button
+              class="ui icon button RegistrationsOverview__Button"
+            >
+              <i
+                aria-hidden="true"
+                class="question icon"
+              />
+            </button>
           </div>
         </div>
       </div>
@@ -366,6 +374,14 @@ exports[`RegistrationsPage should show the details 1`] = `
               <i
                 aria-hidden="true"
                 class="download icon"
+              />
+            </button>
+            <button
+              class="ui icon button RegistrationsOverview__Button"
+            >
+              <i
+                aria-hidden="true"
+                class="question icon"
               />
             </button>
           </div>
@@ -727,6 +743,14 @@ exports[`RegistrationsPage should show the products 1`] = `
               <i
                 aria-hidden="true"
                 class="download icon"
+              />
+            </button>
+            <button
+              class="ui icon button RegistrationsOverview__Button"
+            >
+              <i
+                aria-hidden="true"
+                class="question icon"
               />
             </button>
           </div>

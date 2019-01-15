@@ -6,6 +6,7 @@ import getKey from '../core/intl/getKey';
 import LanguageContext from '../core/intl/LanguageContext';
 import { Registration } from '../register-page/register.type';
 import { exportToCsv } from './csv.lib';
+import RegistrationsDownloadHelp from './RegistrationsDownloadHelp';
 import RegistrationsProducts from './RegistrationsProducts';
 
 import './RegistrationsOverview.scss';
@@ -61,6 +62,7 @@ const RegistrationsOverview = ({
                 {getKey('registrations.download', messages)}
                 <Icon name="download" />
               </Button>
+              <RegistrationsDownloadHelp className="RegistrationsOverview__Button" />
             </div>
           </Fragment>
         ) : null}

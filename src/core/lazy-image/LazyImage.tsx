@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Image from './Image';
 
+import { Fragment } from 'react';
 import { useIntersectionObserver } from '../useIntersectionObserver';
 import './LazyImage.scss';
 import Placeholder from './Placeholder';
@@ -34,13 +35,18 @@ const LazyImage = ({ src, width, height, alt, className }: LazyImageProps) => {
   }
 
   return (
-    <Image
-      className={`LazyImage no-print ${className || ''}`}
-      src={src}
-      height={height}
-      width={width}
-      alt={alt}
-    />
+    <div className={`LazyImage no-print ${className || ''}`}>
+      <Image
+        className="LazyImage__Image"
+        src={src}
+        height={height}
+        width={width}
+        alt={alt}
+      />
+      <div className="LazyImage__Legend" aria-hidden="true">
+        {alt}
+      </div>
+    </div>
   );
 };
 

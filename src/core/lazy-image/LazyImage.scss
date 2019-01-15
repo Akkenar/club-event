@@ -1,5 +1,12 @@
 .LazyImage {
+  margin: 2em 0;
+}
+
+.LazyImage__Image {
   width: 100%;
   height: auto;
-  margin: 2em 0;
+}
+
+.LazyImage__Legend {
+  font-style: italic;
 }

@@ -44,21 +44,33 @@ exports[`HomePage should match the snapshot 1`] = `
         register.now
       </a>
     </div>
-    <picture>
-      <source
-        srcset="test-file-stub"
-        type="image/webp"
-      />
-      <img
-        alt="Photo: Arnaud Conne"
-        class="LazyImage no-print "
-        data-testid="lazyloaded-image"
-        height="212"
-        src="test-file-stub"
-        title="Photo: Arnaud Conne"
-        width="320"
-      />
-    </picture>
+    <div
+      class="LazyImage no-print "
+    >
+      <picture
+        style="display: block;"
+      >
+        <source
+          srcset="test-file-stub"
+          type="image/webp"
+        />
+        <img
+          alt="Photo: Arnaud Conne"
+          class="LazyImage__Image"
+          data-testid="lazyloaded-image"
+          height="212"
+          src="test-file-stub"
+          title="Photo: Arnaud Conne"
+          width="320"
+        />
+      </picture>
+      <div
+        aria-hidden="true"
+        class="LazyImage__Legend"
+      >
+        Photo: Arnaud Conne
+      </div>
+    </div>
   </div>
 </body>
 `;

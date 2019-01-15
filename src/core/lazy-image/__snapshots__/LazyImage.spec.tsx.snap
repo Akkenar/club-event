@@ -3,19 +3,31 @@
 exports[`LazyImage should match snapshot with image 1`] = `
 <body>
   <div>
-    <picture>
-      <source
-        srcset="foo.webp"
-        type="image/webp"
-      />
-      <img
-        alt="alt"
-        class="LazyImage no-print test"
-        data-testid="lazyloaded-image"
-        src="foo.jpg"
-        title="alt"
-      />
-    </picture>
+    <div
+      class="LazyImage no-print test"
+    >
+      <picture
+        style="display: block;"
+      >
+        <source
+          srcset="foo.webp"
+          type="image/webp"
+        />
+        <img
+          alt="alt"
+          class="LazyImage__Image"
+          data-testid="lazyloaded-image"
+          src="foo.jpg"
+          title="alt"
+        />
+      </picture>
+      <div
+        aria-hidden="true"
+        class="LazyImage__Legend"
+      >
+        alt
+      </div>
+    </div>
   </div>
 </body>
 `;

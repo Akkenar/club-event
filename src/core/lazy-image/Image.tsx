@@ -17,7 +17,7 @@ const Image = ({ src, width, height, alt, className }: ImageProps) => {
   const webpUrl = src.replace('.jpg', '.webp');
 
   return (
-    <picture>
+    <picture style={{ display: 'block' }}>
       <source type="image/webp" srcSet={webpUrl} />
       <img
         data-testid="lazyloaded-image"

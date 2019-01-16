@@ -8,7 +8,7 @@
     "build": "NODE_ENV=production webpack --config webpack.config.js",
     "inspect": "NODE_ENV=inspect webpack --config webpack.config.js",
     "start": "webpack-dev-server --config webpack.config.js",
-    "test": "jest --silent",
+    "test": "TZ=Europe/Paris jest --silent",
     "test:e2e": "sh e2e/e2e.sh",
     "e2e": "jest -c e2e/jest.e2e.config.js",
     "lint": "npm-run-all lint:*",

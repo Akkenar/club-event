@@ -46,5 +46,12 @@ RedirectMatch 403 \.properties$
   Header set Cache-Control "max-age=31536000, public"
 </filesMatch>
 
+# the index.html must not be cached if we want to have proper refresh of assets.
+<filesMatch "\.(html)$">
+  Header set Cache-Control "no-cache, no-store, must-revalidate"
+  Header set Pragma "no-cache"
+  Header set Expires 0
+</filesMatch>
+
 # Because the hosting provider doesn't enable this by default
 php_value allow_url_fopen On

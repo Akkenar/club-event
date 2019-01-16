@@ -28,7 +28,7 @@ validateCaptcha($DATA['recaptcha']);
 syslog(LOG_INFO, 'captcha validated');
 
 // Compute the total based on the prices
-$total = getTotal($DATA, $prices);
+$total = getTotal($DATA);
 syslog(LOG_INFO, 'Total: ' . $total);
 
 // Generate a reference number based on the last name to ease payment reconciliation

@@ -121,7 +121,7 @@ exports[`ConfirmationPage should match the snapshot 1`] = `
           <dd
             class="OrderRecap__title"
           >
-            register.form.counts.breakfast
+            register.form.counts.breakfast (CHF 10)
           </dd>
           <dt
             class="OrderRecap__value"
@@ -131,7 +131,7 @@ exports[`ConfirmationPage should match the snapshot 1`] = `
           <dd
             class="OrderRecap__title"
           >
-            register.form.counts.camping
+            register.form.counts.camping (CHF 10)
           </dd>
           <dt
             class="OrderRecap__value"
@@ -141,7 +141,7 @@ exports[`ConfirmationPage should match the snapshot 1`] = `
           <dd
             class="OrderRecap__title"
           >
-            register.form.counts.dinner
+            register.form.counts.dinner (CHF 45)
           </dd>
           <dt
             class="OrderRecap__value"
@@ -151,7 +151,7 @@ exports[`ConfirmationPage should match the snapshot 1`] = `
           <dd
             class="OrderRecap__title"
           >
-            register.form.counts.dinnerKid
+            register.form.counts.dinnerKid (CHF 20)
           </dd>
           <dt
             class="OrderRecap__value"
@@ -161,7 +161,7 @@ exports[`ConfirmationPage should match the snapshot 1`] = `
           <dd
             class="OrderRecap__title"
           >
-            register.form.counts.picknick
+            register.form.counts.picknick (CHF 10)
           </dd>
           <dt
             class="OrderRecap__value"
@@ -171,7 +171,7 @@ exports[`ConfirmationPage should match the snapshot 1`] = `
           <dd
             class="OrderRecap__title"
           >
-            register.form.counts.sleeping
+            register.form.counts.sleeping (CHF 15)
           </dd>
           <dt
             class="OrderRecap__value"
@@ -181,7 +181,7 @@ exports[`ConfirmationPage should match the snapshot 1`] = `
           <dd
             class="OrderRecap__title"
           >
-            register.form.counts.vegetarian
+            register.form.counts.vegetarian (CHF 45)
           </dd>
           <dt
             class="OrderRecap__value"
@@ -191,7 +191,7 @@ exports[`ConfirmationPage should match the snapshot 1`] = `
           <dd
             class="OrderRecap__title"
           >
-            register.form.counts.vegetarianKid
+            register.form.counts.vegetarianKid (CHF 20)
           </dd>
           <dt
             class="OrderRecap__value"

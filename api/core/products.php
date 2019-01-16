@@ -12,21 +12,21 @@ $prices = array(
   'picknick' => 10
 );
 
-function getTotal($data, $prices)
+function getTotal($data)
 {
   $products = $data['products'];
 
   // Food
-  $dinner = getTotalForItem($products, $prices, 'dinner');
-  $vegetarian = getTotalForItem($products, $prices, 'vegetarian');
-  $dinnerKid = getTotalForItem($products, $prices, 'dinnerKid');
-  $vegetarianKid = getTotalForItem($products, $prices, 'vegetarianKid');
-  $picknick = getTotalForItem($products, $prices, 'picknick');
-  $breakfast = getTotalForItem($products, $prices, 'breakfast');
+  $dinner = getTotalForItem($products, 'dinner');
+  $vegetarian = getTotalForItem($products, 'vegetarian');
+  $dinnerKid = getTotalForItem($products, 'dinnerKid');
+  $vegetarianKid = getTotalForItem($products, 'vegetarianKid');
+  $picknick = getTotalForItem($products, 'picknick');
+  $breakfast = getTotalForItem($products, 'breakfast');
 
   // Accommodation
-  $camping = getTotalForItem($products, $prices, 'camping');
-  $sleeping = getTotalForItem($products, $prices, 'sleeping');
+  $camping = getTotalForItem($products, 'camping');
+  $sleeping = getTotalForItem($products, 'sleeping');
 
   return $dinner +
     $vegetarian +
@@ -38,11 +38,22 @@ function getTotal($data, $prices)
     $breakfast;
 }
 
-function getTotalForItem($data, $prices, $itemName)
+function getTotalForItem($data, $itemName)
 {
   if (!array_key_exists($itemName, $data)) {
     return 0;
   }
 
-  return intval($data[$itemName]) * $prices[$itemName];
+  return intval($data[$itemName]) * getPriceFor($itemName);
+}
+
+/**
+ * @param $itemName
+ *
+ * @return mixed
+ */
+function getPriceFor($itemName)
+{
+  global $prices;
+  return $prices[$itemName];
 }

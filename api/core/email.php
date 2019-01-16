@@ -2,6 +2,7 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 require_once 'config.php';
+require_once 'products.php';
 
 $globalTPL = new HTML_Template_PHPLIB(__DIR__ . '/../../translations', 'keep');
 
@@ -78,24 +79,28 @@ function getBody($total, $reference, $language, $data)
   $globalTPL->setVar('locality', $data['locality']);
 
   $products = $data['products'];
-  setVarIfExists($globalTPL, $products, 'dinner');
-  setVarIfExists($globalTPL, $products, 'vegetarian');
-  setVarIfExists($globalTPL, $products, 'dinnerKid');
-  setVarIfExists($globalTPL, $products, 'vegetarianKid');
-  setVarIfExists($globalTPL, $products, 'sleeping');
-  setVarIfExists($globalTPL, $products, 'camping');
-  setVarIfExists($globalTPL, $products, 'picknick');
-  setVarIfExists($globalTPL, $products, 'breakfast');
+  setProductVariable($globalTPL, $products, 'dinner');
+  setProductVariable($globalTPL, $products, 'vegetarian');
+  setProductVariable($globalTPL, $products, 'dinnerKid');
+  setProductVariable($globalTPL, $products, 'vegetarianKid');
+  setProductVariable($globalTPL, $products, 'sleeping');
+  setProductVariable($globalTPL, $products, 'camping');
+  setProductVariable($globalTPL, $products, 'picknick');
+  setProductVariable($globalTPL, $products, 'breakfast');
 
   return $globalTPL->finish($globalTPL->parse('email', 'email', true));
 }
 
-function setVarIfExists($globalTPL, $products, $key)
+function setProductVariable($globalTPL, $products, $productName)
 {
-  if (array_key_exists($key, $products)) {
-    $globalTPL->setVar($key, $products[$key]);
+  // Product name
+  if (array_key_exists($productName, $products)) {
+    $globalTPL->setVar($productName, $products[$productName]);
   } else {
-    $globalTPL->setVar($key, '0');
+    $globalTPL->setVar($productName, '0');
   }
+
+  // Product price
+  $globalTPL->setVar($productName . '-price', getPriceFor($productName));
 }
 ?>

@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import { Segment, Table } from 'semantic-ui-react';
 import getKey from '../core/intl/getKey';
 import LanguageContext from '../core/intl/LanguageContext';
+import { PRICES } from '../register-page/prices';
 import { Registration } from '../register-page/register.type';
 
 import './RegistrationsProducts.scss';
@@ -40,6 +41,13 @@ const RegistrationsProducts = ({
   const getProduct = (productName: string) =>
     getProductCount(productName, registrations);
 
+  const getProductLabel = (productName: string) => {
+    const label = getKey(`register.form.counts.${productName}`, messages);
+    const price = PRICES[productName];
+
+    return `${label} (CHF ${price})`;
+  };
+
   return (
     <Segment className="RegistrationsProducts">
       <Table
@@ -50,39 +58,27 @@ const RegistrationsProducts = ({
       >
         <Table.Body>
           <Table.Row>
-            <Table.Cell>
-              {getKey('register.form.counts.dinner', messages)}
-            </Table.Cell>
+            <Table.Cell>{getProductLabel('dinner')}</Table.Cell>
             <Table.Cell>{getProduct('dinner')}</Table.Cell>
           </Table.Row>
           <Table.Row>
-            <Table.Cell>
-              {getKey('register.form.counts.vegetarian', messages)}
-            </Table.Cell>
+            <Table.Cell>{getProductLabel('vegetarian')}</Table.Cell>
             <Table.Cell>{getProduct('vegetarian')}</Table.Cell>
           </Table.Row>
           <Table.Row>
-            <Table.Cell>
-              {getKey('register.form.counts.dinnerKid', messages)}
-            </Table.Cell>
+            <Table.Cell>{getProductLabel('dinnerKid')}</Table.Cell>
             <Table.Cell>{getProduct('dinnerKid')}</Table.Cell>
           </Table.Row>
           <Table.Row>
-            <Table.Cell>
-              {getKey('register.form.counts.vegetarianKid', messages)}
-            </Table.Cell>
+            <Table.Cell>{getProductLabel('vegetarianKid')}</Table.Cell>
             <Table.Cell>{getProduct('vegetarianKid')}</Table.Cell>
           </Table.Row>
           <Table.Row>
-            <Table.Cell>
-              {getKey('register.form.counts.breakfast', messages)}
-            </Table.Cell>
+            <Table.Cell>{getProductLabel('breakfast')}</Table.Cell>
             <Table.Cell>{getProduct('breakfast')}</Table.Cell>
           </Table.Row>
           <Table.Row>
-            <Table.Cell>
-              {getKey('register.form.counts.picknick', messages)}
-            </Table.Cell>
+            <Table.Cell>{getProductLabel('picknick')}</Table.Cell>
             <Table.Cell>{getProduct('picknick')}</Table.Cell>
           </Table.Row>
         </Table.Body>
@@ -95,15 +91,11 @@ const RegistrationsProducts = ({
       >
         <Table.Body>
           <Table.Row>
-            <Table.Cell>
-              {getKey('register.form.counts.sleeping', messages)}
-            </Table.Cell>
+            <Table.Cell>{getProductLabel('sleeping')}</Table.Cell>
             <Table.Cell>{getProduct('sleeping')}</Table.Cell>
           </Table.Row>
           <Table.Row>
-            <Table.Cell>
-              {getKey('register.form.counts.camping', messages)}
-            </Table.Cell>
+            <Table.Cell>{getProductLabel('camping')}</Table.Cell>
             <Table.Cell>{getProduct('camping')}</Table.Cell>
           </Table.Row>
         </Table.Body>

@@ -558,7 +558,7 @@ exports[`RegistrationsPage should show the details 1`] = `
                   <dd
                     class="OrderRecap__title"
                   >
-                    register.form.counts.dinner
+                    register.form.counts.dinner (CHF 45)
                   </dd>
                   <dt
                     class="OrderRecap__value"
@@ -568,7 +568,7 @@ exports[`RegistrationsPage should show the details 1`] = `
                   <dd
                     class="OrderRecap__title"
                   >
-                    register.form.counts.dinnerKid
+                    register.form.counts.dinnerKid (CHF 20)
                   </dd>
                   <dt
                     class="OrderRecap__value"
@@ -780,7 +780,7 @@ exports[`RegistrationsPage should show the products 1`] = `
                 <td
                   class=""
                 >
-                  register.form.counts.dinner
+                  register.form.counts.dinner (CHF 45)
                 </td>
                 <td
                   class=""
@@ -794,7 +794,7 @@ exports[`RegistrationsPage should show the products 1`] = `
                 <td
                   class=""
                 >
-                  register.form.counts.vegetarian
+                  register.form.counts.vegetarian (CHF 45)
                 </td>
                 <td
                   class=""
@@ -808,7 +808,7 @@ exports[`RegistrationsPage should show the products 1`] = `
                 <td
                   class=""
                 >
-                  register.form.counts.dinnerKid
+                  register.form.counts.dinnerKid (CHF 20)
                 </td>
                 <td
                   class=""
@@ -822,7 +822,7 @@ exports[`RegistrationsPage should show the products 1`] = `
                 <td
                   class=""
                 >
-                  register.form.counts.vegetarianKid
+                  register.form.counts.vegetarianKid (CHF 20)
                 </td>
                 <td
                   class=""
@@ -836,7 +836,7 @@ exports[`RegistrationsPage should show the products 1`] = `
                 <td
                   class=""
                 >
-                  register.form.counts.breakfast
+                  register.form.counts.breakfast (CHF 10)
                 </td>
                 <td
                   class=""
@@ -850,7 +850,7 @@ exports[`RegistrationsPage should show the products 1`] = `
                 <td
                   class=""
                 >
-                  register.form.counts.picknick
+                  register.form.counts.picknick (CHF 10)
                 </td>
                 <td
                   class=""
@@ -872,7 +872,7 @@ exports[`RegistrationsPage should show the products 1`] = `
                 <td
                   class=""
                 >
-                  register.form.counts.sleeping
+                  register.form.counts.sleeping (CHF 15)
                 </td>
                 <td
                   class=""
@@ -886,7 +886,7 @@ exports[`RegistrationsPage should show the products 1`] = `
                 <td
                   class=""
                 >
-                  register.form.counts.camping
+                  register.form.counts.camping (CHF 10)
                 </td>
                 <td
                   class=""

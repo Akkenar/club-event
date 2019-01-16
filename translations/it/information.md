@@ -7,6 +7,6 @@ hanno il piacere di invitarvi all'assemblea dei delegati della Società Speleolo
 
 ## Dove ?
 
-Albergo Comunale di Vallorbe</br>
+Salle du Casino</br>
 Place du Pont 3</br>
 1337 Vallorbe</br>

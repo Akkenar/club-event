@@ -8,6 +8,6 @@ ont le plaisir de vous inviter à l'assemblée 2019 des délégués de la Socié
 
 ## Où ?
 
-Auberge Communale de Vallorbe</br>
+Salle du Casino</br>
 Place du Pont 3</br>
 1337 Vallorbe</br>

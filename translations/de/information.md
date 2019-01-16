@@ -7,6 +7,6 @@ freuen sich, Sie zur Delegiertenversammlung 2019 der Schweizerischen Gesellschaf
 
 ## Wo ?
 
-Auberge Communale de Vallorbe</br>
+Salle du Casino</br>
 Place du Pont 3</br>
 1337 Vallorbe</br>

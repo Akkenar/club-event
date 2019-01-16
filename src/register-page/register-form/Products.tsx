@@ -40,6 +40,18 @@ const Products = ({ state, setQuantity, total }: ProductsProps) => {
       <Form.Group widths="equal">
         <QuantitySelector
           state={state}
+          name="dinnerKid"
+          setQuantity={setQuantity}
+        />
+        <QuantitySelector
+          state={state}
+          name="vegetarianKid"
+          setQuantity={setQuantity}
+        />
+      </Form.Group>
+      <Form.Group widths="equal">
+        <QuantitySelector
+          state={state}
           name="breakfast"
           setQuantity={setQuantity}
         />

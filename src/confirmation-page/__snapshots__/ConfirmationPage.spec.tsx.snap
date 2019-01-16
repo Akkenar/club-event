@@ -151,6 +151,16 @@ exports[`ConfirmationPage should match the snapshot 1`] = `
           <dd
             class="OrderRecap__title"
           >
+            register.form.counts.dinnerKid
+          </dd>
+          <dt
+            class="OrderRecap__value"
+          >
+            1
+          </dt>
+          <dd
+            class="OrderRecap__title"
+          >
             register.form.counts.picknick
           </dd>
           <dt
@@ -177,6 +187,16 @@ exports[`ConfirmationPage should match the snapshot 1`] = `
             class="OrderRecap__value"
           >
             4
+          </dt>
+          <dd
+            class="OrderRecap__title"
+          >
+            register.form.counts.vegetarianKid
+          </dd>
+          <dt
+            class="OrderRecap__value"
+          >
+            1
           </dt>
         </dl>
       </div>

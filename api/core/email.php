@@ -80,6 +80,8 @@ function getBody($total, $reference, $language, $data)
   $products = $data['products'];
   setVarIfExists($globalTPL, $products, 'dinner');
   setVarIfExists($globalTPL, $products, 'vegetarian');
+  setVarIfExists($globalTPL, $products, 'dinnerKid');
+  setVarIfExists($globalTPL, $products, 'vegetarianKid');
   setVarIfExists($globalTPL, $products, 'sleeping');
   setVarIfExists($globalTPL, $products, 'camping');
   setVarIfExists($globalTPL, $products, 'picknick');

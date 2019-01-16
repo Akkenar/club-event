@@ -5,7 +5,9 @@ export const PRICES: Products = {
   breakfast: 10,
   camping: 10,
   dinner: 45,
+  dinnerKid: 20,
   picknick: 10,
   sleeping: 15,
   vegetarian: 45,
+  vegetarianKid: 20,
 };

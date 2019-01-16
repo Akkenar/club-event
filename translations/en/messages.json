@@ -42,6 +42,8 @@
   "register.form.counts.description": "You can book accommodations and food for the meeting",
   "register.form.counts.dinner": "Dinner",
   "register.form.counts.vegetarian": "Dinner (vegetarian)",
+  "register.form.counts.dinnerKid": "Dinner (Kid)",
+  "register.form.counts.vegetarianKid": "Dinner (Kid) (vegetarian)",
   "register.form.counts.sleeping": "Sleeping",
   "register.form.counts.camping": "Camping",
   "register.form.counts.breakfast": "Breakfast",

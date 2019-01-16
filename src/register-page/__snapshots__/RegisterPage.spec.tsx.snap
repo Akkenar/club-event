@@ -387,6 +387,142 @@ exports[`RegisterPage should match the snapshot 1`] = `
               >
                 <label
                   class="QuantitySelector__Label"
+                  for="dinnerKid"
+                >
+                  register.form.counts.dinnerKid
+                   (CHF 
+                  20
+                  )
+                </label>
+                <div
+                  aria-atomic="true"
+                  aria-hidden="true"
+                  aria-live="polite"
+                  aria-relevant="all"
+                  class="visually-hidden"
+                >
+                  0
+                </div>
+                <div
+                  class="QuantitySelector__Controls"
+                >
+                  <button
+                    class="ui icon disabled button QuantitySelector__Button QuantitySelector__Button--minus"
+                    data-testid="dinnerKid-minus"
+                    disabled=""
+                    tabindex="-1"
+                    title="quantityselector.remove"
+                    type="button"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="minus icon"
+                    />
+                  </button>
+                  <input
+                    class="glow QuantitySelector__Quantity"
+                    data-testid="dinnerKid"
+                    id="dinnerKid"
+                    max="100"
+                    maxlength="3"
+                    min="0"
+                    minlength="1"
+                    pattern="[0-9]*"
+                    type="number"
+                    value=""
+                  />
+                  <button
+                    class="ui icon button QuantitySelector__Button QuantitySelector__Button--plus"
+                    data-testid="dinnerKid-plus"
+                    title="quantityselector.add"
+                    type="button"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="plus icon"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="field QuantitySelector full-width"
+            >
+              <div
+                class="ui segment QuantitySelector__Container"
+              >
+                <label
+                  class="QuantitySelector__Label"
+                  for="vegetarianKid"
+                >
+                  register.form.counts.vegetarianKid
+                   (CHF 
+                  20
+                  )
+                </label>
+                <div
+                  aria-atomic="true"
+                  aria-hidden="true"
+                  aria-live="polite"
+                  aria-relevant="all"
+                  class="visually-hidden"
+                >
+                  0
+                </div>
+                <div
+                  class="QuantitySelector__Controls"
+                >
+                  <button
+                    class="ui icon disabled button QuantitySelector__Button QuantitySelector__Button--minus"
+                    data-testid="vegetarianKid-minus"
+                    disabled=""
+                    tabindex="-1"
+                    title="quantityselector.remove"
+                    type="button"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="minus icon"
+                    />
+                  </button>
+                  <input
+                    class="glow QuantitySelector__Quantity"
+                    data-testid="vegetarianKid"
+                    id="vegetarianKid"
+                    max="100"
+                    maxlength="3"
+                    min="0"
+                    minlength="1"
+                    pattern="[0-9]*"
+                    type="number"
+                    value=""
+                  />
+                  <button
+                    class="ui icon button QuantitySelector__Button QuantitySelector__Button--plus"
+                    data-testid="vegetarianKid-plus"
+                    title="quantityselector.add"
+                    type="button"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="plus icon"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="equal width fields"
+          >
+            <div
+              class="field QuantitySelector full-width"
+            >
+              <div
+                class="ui segment QuantitySelector__Container"
+              >
+                <label
+                  class="QuantitySelector__Label"
                   for="breakfast"
                 >
                   register.form.counts.breakfast

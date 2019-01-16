@@ -13,7 +13,7 @@
     "npa": "1018",
     "locality": "Barrowshaven",
     "total": "65",
-    "products": { "dinner": "1" }
+    "products": { "dinner": "1", "dinnerKid": "2" }
   },
   {
     "id": "2",
@@ -35,7 +35,8 @@
       "picknick": "2",
       "sleeping": "6",
       "breakfast": "4",
-      "vegetarian": "4"
+      "vegetarian": "4",
+      "vegetarianKid": "4"
     }
   },
   {

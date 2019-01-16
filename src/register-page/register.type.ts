@@ -4,9 +4,11 @@ export interface Products {
   breakfast?: number | string;
   camping?: number | string;
   dinner?: number | string;
+  dinnerKid?: number | string;
   picknick?: number | string;
   sleeping?: number | string;
   vegetarian?: number | string;
+  vegetarianKid?: number | string;
   [key: string]: number | string | undefined;
 }
 

@@ -42,6 +42,8 @@
   "register.form.submit": "Inviare la vostra iscrizione",
   "register.form.counts.dinner": "Cena",
   "register.form.counts.vegetarian": "Cena (vegetariana)",
+  "register.form.counts.dinnerKid": "Cena (Bambino)",
+  "register.form.counts.vegetarianKid": "Cena (Bambino) (vegetariana)",
   "register.form.counts.sleeping": "Notte all'alloggio della Protezione Civile",
   "register.form.counts.camping": "Campeggio",
   "register.form.counts.breakfast": "Colazione",

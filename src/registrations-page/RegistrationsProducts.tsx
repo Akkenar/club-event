@@ -63,6 +63,18 @@ const RegistrationsProducts = ({
           </Table.Row>
           <Table.Row>
             <Table.Cell>
+              {getKey('register.form.counts.dinnerKid', messages)}
+            </Table.Cell>
+            <Table.Cell>{getProduct('dinnerKid')}</Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.Cell>
+              {getKey('register.form.counts.vegetarianKid', messages)}
+            </Table.Cell>
+            <Table.Cell>{getProduct('vegetarianKid')}</Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.Cell>
               {getKey('register.form.counts.breakfast', messages)}
             </Table.Cell>
             <Table.Cell>{getProduct('breakfast')}</Table.Cell>

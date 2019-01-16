@@ -27,7 +27,9 @@ const personalData: { [key: string]: string } = {
 const productsToDisplay: { [key: string]: string } = {
   breakfast: 'Petit Déjeuner',
   dinner: 'Souper',
+  dinnerKid: 'Souper (enfant)',
   vegetarian: 'Souper',
+  vegetarianKid: 'Souper (enfant)',
   picknick: 'Pique-nique',
   sleeping: 'Nuit PC',
   camping: 'Nuit Camping',

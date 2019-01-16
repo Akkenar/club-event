@@ -19,11 +19,13 @@ const personalData = {
 
 const products = {
   dinner: faker.random.number(10),
+  dinnerKid: faker.random.number(10),
   picknick: faker.random.number(10),
   breakfast: faker.random.number(10),
   camping: faker.random.number(10),
   sleeping: faker.random.number(10),
   vegetarian: faker.random.number(10),
+  vegetarianKid: faker.random.number(10),
 };
 
 async function setPersonalData(page) {

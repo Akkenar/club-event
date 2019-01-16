@@ -16,6 +16,7 @@ const validData = {
   camping: '1',
   club: 'Club',
   dinner: '1',
+  dinnerKid: '1',
   email: 'foo@bar.ch',
   firstName: 'Foo',
   lastName: 'Bar',
@@ -26,6 +27,7 @@ const validData = {
   sleeping: '1',
   street: 'Rue de Lausanne',
   vegetarian: '1',
+  vegetarianKid: '1',
 };
 
 const ContainerWithRouter = () => {

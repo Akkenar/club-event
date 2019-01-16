@@ -4,6 +4,8 @@
 $prices = array(
   'dinner' => 45,
   'vegetarian' => 45,
+  'dinnerKid' => 20,
+  'vegetarianKid' => 20,
   'sleeping' => 15,
   'breakfast' => 10,
   'camping' => 10,
@@ -17,6 +19,8 @@ function getTotal($data, $prices)
   // Food
   $dinner = getTotalForItem($products, $prices, 'dinner');
   $vegetarian = getTotalForItem($products, $prices, 'vegetarian');
+  $dinnerKid = getTotalForItem($products, $prices, 'dinnerKid');
+  $vegetarianKid = getTotalForItem($products, $prices, 'vegetarianKid');
   $picknick = getTotalForItem($products, $prices, 'picknick');
   $breakfast = getTotalForItem($products, $prices, 'breakfast');
 
@@ -24,7 +28,14 @@ function getTotal($data, $prices)
   $camping = getTotalForItem($products, $prices, 'camping');
   $sleeping = getTotalForItem($products, $prices, 'sleeping');
 
-  return $dinner + $vegetarian + $sleeping + $camping + $picknick + $breakfast;
+  return $dinner +
+    $vegetarian +
+    $dinnerKid +
+    $vegetarianKid +
+    $sleeping +
+    $camping +
+    $picknick +
+    $breakfast;
 }
 
 function getTotalForItem($data, $prices, $itemName)

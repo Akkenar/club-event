@@ -55,5 +55,6 @@
   "confirmation.page.recap.title": "Your registration",
   "quantityselector.add": "Add one to {name}",
   "quantityselector.remove": "Remove one from {name}",
-  "quantityselector.clear": "Clear {name}"
+  "quantityselector.clear": "Clear {name}",
+  "noprice": "to be paid on-site"
 }

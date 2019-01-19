@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { Fragment, useContext } from 'react';
 import { Segment } from 'semantic-ui-react';
-import { PRICES } from '../../register-page/prices';
-import { Products, Registration } from '../../register-page/register.type';
+import { Registration } from '../../register-page/register.type';
 import getKey from '../intl/getKey';
 import LanguageContext from '../intl/LanguageContext';
+import ProductLabel from '../ProductLabel';
 
 import './OrderRecap.scss';
 
@@ -27,19 +27,14 @@ const OrderRecap = ({ registration }: OrderRecapProps) => {
     products,
   } = registration;
 
-  const getProductLabel = (productName: string) => {
-    const label = getKey(`register.form.counts.${productName}`, messages);
-    const price = PRICES[productName];
-
-    return `${label} (CHF ${price})`;
-  };
-
   const productContent =
     products &&
     Object.keys(products).map(name => {
       return (
         <Fragment key={name}>
-          <dd className="OrderRecap__title">{getProductLabel(name)}</dd>
+          <dd className="OrderRecap__title">
+            <ProductLabel name={name} />
+          </dd>
           <dt className="OrderRecap__value">{products[name]}</dt>
         </Fragment>
       );

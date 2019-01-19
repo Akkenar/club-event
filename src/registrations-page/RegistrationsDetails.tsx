@@ -81,7 +81,7 @@ const RegistrationsDetails = ({ registrations }: RegistrationsDetailsProps) => {
             <Table.Row>
               <Table.Cell>{registration.reference}</Table.Cell>
               <Table.Cell>{formatDate(registration.date)}</Table.Cell>
-              <Table.Cell>{registration.total} CHF</Table.Cell>
+              <Table.Cell>CHF {registration.total}</Table.Cell>
               <Table.Cell>
                 <strong>
                   {registration.firstName} {registration.lastName}

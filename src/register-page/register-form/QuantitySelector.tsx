@@ -3,7 +3,7 @@ import { ChangeEvent, useContext, useState } from 'react';
 import { Button, Form, Icon, Segment, Transition } from 'semantic-ui-react';
 import getKey from '../../core/intl/getKey';
 import LanguageContext from '../../core/intl/LanguageContext';
-import { PRICES } from '../prices';
+import ProductLabel from '../../core/ProductLabel';
 import { Registration } from '../register.type';
 
 import './QuantitySelector.scss';
@@ -31,7 +31,6 @@ const QuantitySelector = ({
 }: QuantitySelectorProps) => {
   const { messages } = useContext(LanguageContext);
   const [hasAnimation, triggerAnimation] = useState<boolean>(true);
-  const itemPrice = PRICES[name] as number;
   const quantity = parseProduct(state, name);
 
   const changeQuantity = (targetQuantity: number) => {
@@ -64,7 +63,7 @@ const QuantitySelector = ({
     <Form.Field className="QuantitySelector full-width">
       <Segment className="QuantitySelector__Container">
         <label className="QuantitySelector__Label" htmlFor={name}>
-          {label} (CHF {itemPrice})
+          <ProductLabel name={name} />
         </label>
         <div
           className="visually-hidden"

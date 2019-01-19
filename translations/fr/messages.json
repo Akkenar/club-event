@@ -66,5 +66,6 @@
   "login.form.submit": "S'authentifier",
   "quantityselector.add": "Ajouter un {name}",
   "quantityselector.remove": "Supprimer un {name}",
-  "quantityselector.clear": "Supprimer tous les {name}"
+  "quantityselector.clear": "Supprimer tous les {name}",
+  "noprice": "à payer sur place"
 }

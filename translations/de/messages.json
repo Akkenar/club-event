@@ -51,5 +51,6 @@
   "register.form.counts.total": "Gesamtpreis",
   "confirmation.page.title": "Anmeldungsbestätigung",
   "confirmation.page.print": "Seite drucken",
-  "confirmation.page.recap.title": "Ihre Anmeldung"
+  "confirmation.page.recap.title": "Ihre Anmeldung",
+  "noprice": "vor Ort zu bezahlen"
 }

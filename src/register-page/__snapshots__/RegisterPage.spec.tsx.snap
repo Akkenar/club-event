@@ -253,10 +253,7 @@ exports[`RegisterPage should match the snapshot 1`] = `
                   class="QuantitySelector__Label"
                   for="dinner"
                 >
-                  register.form.counts.dinner
-                   (CHF 
-                  45
-                  )
+                  register.form.counts.dinner (CHF 45)
                 </label>
                 <div
                   aria-atomic="true"
@@ -319,10 +316,7 @@ exports[`RegisterPage should match the snapshot 1`] = `
                   class="QuantitySelector__Label"
                   for="vegetarian"
                 >
-                  register.form.counts.vegetarian
-                   (CHF 
-                  45
-                  )
+                  register.form.counts.vegetarian (CHF 45)
                 </label>
                 <div
                   aria-atomic="true"
@@ -389,10 +383,7 @@ exports[`RegisterPage should match the snapshot 1`] = `
                   class="QuantitySelector__Label"
                   for="dinnerKid"
                 >
-                  register.form.counts.dinnerKid
-                   (CHF 
-                  20
-                  )
+                  register.form.counts.dinnerKid (CHF 20)
                 </label>
                 <div
                   aria-atomic="true"
@@ -455,10 +446,7 @@ exports[`RegisterPage should match the snapshot 1`] = `
                   class="QuantitySelector__Label"
                   for="vegetarianKid"
                 >
-                  register.form.counts.vegetarianKid
-                   (CHF 
-                  20
-                  )
+                  register.form.counts.vegetarianKid (CHF 20)
                 </label>
                 <div
                   aria-atomic="true"
@@ -525,10 +513,7 @@ exports[`RegisterPage should match the snapshot 1`] = `
                   class="QuantitySelector__Label"
                   for="breakfast"
                 >
-                  register.form.counts.breakfast
-                   (CHF 
-                  10
-                  )
+                  register.form.counts.breakfast (CHF 10)
                 </label>
                 <div
                   aria-atomic="true"
@@ -591,10 +576,7 @@ exports[`RegisterPage should match the snapshot 1`] = `
                   class="QuantitySelector__Label"
                   for="picknick"
                 >
-                  register.form.counts.picknick
-                   (CHF 
-                  10
-                  )
+                  register.form.counts.picknick (noprice)
                 </label>
                 <div
                   aria-atomic="true"
@@ -669,10 +651,7 @@ exports[`RegisterPage should match the snapshot 1`] = `
                   class="QuantitySelector__Label"
                   for="sleeping"
                 >
-                  register.form.counts.sleeping
-                   (CHF 
-                  15
-                  )
+                  register.form.counts.sleeping (CHF 15)
                 </label>
                 <div
                   aria-atomic="true"
@@ -735,10 +714,7 @@ exports[`RegisterPage should match the snapshot 1`] = `
                   class="QuantitySelector__Label"
                   for="camping"
                 >
-                  register.form.counts.camping
-                   (CHF 
-                  10
-                  )
+                  register.form.counts.camping (CHF 10)
                 </label>
                 <div
                   aria-atomic="true"
@@ -794,6 +770,7 @@ exports[`RegisterPage should match the snapshot 1`] = `
           </div>
           <div
             class="ui error message"
+            data-testid="total-error"
           >
             <div
               class="content"

@@ -161,8 +161,8 @@ exports[`RegistrationsPage should match the snapshot 1`] = `
             <td
               class=""
             >
+              CHF 
               65
-               CHF
             </td>
             <td
               class=""
@@ -216,8 +216,8 @@ exports[`RegistrationsPage should match the snapshot 1`] = `
             <td
               class=""
             >
+              CHF 
               1080
-               CHF
             </td>
             <td
               class=""
@@ -271,8 +271,8 @@ exports[`RegistrationsPage should match the snapshot 1`] = `
             <td
               class=""
             >
+              CHF 
               745
-               CHF
             </td>
             <td
               class=""
@@ -440,8 +440,8 @@ exports[`RegistrationsPage should show the details 1`] = `
             <td
               class=""
             >
+              CHF 
               65
-               CHF
             </td>
             <td
               class=""
@@ -595,8 +595,8 @@ exports[`RegistrationsPage should show the details 1`] = `
             <td
               class=""
             >
+              CHF 
               1080
-               CHF
             </td>
             <td
               class=""
@@ -650,8 +650,8 @@ exports[`RegistrationsPage should show the details 1`] = `
             <td
               class=""
             >
+              CHF 
               745
-               CHF
             </td>
             <td
               class=""
@@ -850,7 +850,7 @@ exports[`RegistrationsPage should show the products 1`] = `
                 <td
                   class=""
                 >
-                  register.form.counts.picknick (CHF 10)
+                  register.form.counts.picknick (noprice)
                 </td>
                 <td
                   class=""
@@ -951,8 +951,8 @@ exports[`RegistrationsPage should show the products 1`] = `
             <td
               class=""
             >
+              CHF 
               65
-               CHF
             </td>
             <td
               class=""
@@ -1006,8 +1006,8 @@ exports[`RegistrationsPage should show the products 1`] = `
             <td
               class=""
             >
+              CHF 
               1080
-               CHF
             </td>
             <td
               class=""
@@ -1061,8 +1061,8 @@ exports[`RegistrationsPage should show the products 1`] = `
             <td
               class=""
             >
+              CHF 
               745
-               CHF
             </td>
             <td
               class=""

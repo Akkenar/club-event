@@ -51,5 +51,6 @@
   "register.form.counts.total": "Prezzo totale",
   "confirmation.page.title": "Conferma della vostra iscrizione",
   "confirmation.page.print": "Stampare la pagina",
-  "confirmation.page.recap.title": "La vostra iscrizione"
+  "confirmation.page.recap.title": "La vostra iscrizione",
+  "noprice": "da pagare sul posto"
 }

@@ -90,4 +90,28 @@ describe('RegisterFormContainer', () => {
 
     expect(wrapper.queryByTestId('backend-error')).toHaveClass('visible');
   });
+
+  it('should display an error if there are no products selected', () => {
+    const wrapper = render(<ContainerWithRouter />);
+
+    wrapper.queryByText('register.form.submit').click();
+
+    expect(wrapper.queryByTestId('total-error')).toHaveClass('visible');
+  });
+
+  it('should display not an error if only pick-nic is selected', () => {
+    const wrapper = render(<ContainerWithRouter />);
+
+    // Set data in the fields.
+    setValidInputData(
+      {
+        picknick: 2,
+      },
+      wrapper
+    );
+
+    wrapper.queryByText('register.form.submit').click();
+
+    expect(wrapper.queryByTestId('total-error')).not.toHaveClass('visible');
+  });
 });

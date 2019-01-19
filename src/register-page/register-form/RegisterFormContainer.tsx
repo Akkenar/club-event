@@ -157,7 +157,7 @@ class RegisterFormContainer extends React.Component<
       npa: !this.state.npa,
       recaptcha: !getCaptchaResponse(),
       street: !this.state.street,
-      total: !this.getTotalPrice(),
+      total: this.getTotalError(),
     };
 
     this.setState({
@@ -188,6 +188,12 @@ class RegisterFormContainer extends React.Component<
         />
       </Fragment>
     );
+  }
+
+  private getTotalError(): boolean {
+    // PickNic is a special case as the price is 0. This isn't great
+    // but gets us over the line.
+    return !this.getTotalPrice() && !this.state.products.picknick;
   }
 }
 

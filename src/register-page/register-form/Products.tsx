@@ -78,6 +78,7 @@ const Products = ({ state, setQuantity, total }: ProductsProps) => {
         />
       </Form.Group>
       <Message
+        data-testid="total-error"
         error={true}
         visible={state.errors && state.errors.total}
         content={getKey('register.form.error.total', messages)}

@@ -6,6 +6,6 @@ export default {
   },
   isProduction: true,
   registration: {
-    enabled: false,
+    enabled: true,
   },
 };

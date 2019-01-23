@@ -59,7 +59,7 @@ class RegisterFormContainer extends React.Component<
   any,
   RegisterFormContainerState
 > {
-  constructor(props: any) {
+  public constructor(props: any) {
     super(props);
 
     this.state = DEFAULT_STATE;

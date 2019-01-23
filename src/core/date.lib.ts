@@ -1,4 +1,3 @@
-// tslint:disable object-literal-sort-keys
 const toDateTimeOptions = {
   year: 'numeric',
   month: 'numeric',

@@ -6,7 +6,7 @@ import './Loader.scss';
 const BODY_HAS_DIMMER_CLASS = 'has-dimmer';
 
 class Loader extends React.Component {
-  constructor(props: any) {
+  public constructor(props: any) {
     super(props);
 
     this.show();

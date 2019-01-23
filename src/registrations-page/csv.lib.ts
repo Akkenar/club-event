@@ -1,4 +1,3 @@
-// tslint:disable object-literal-sort-keys
 import { saveAs } from 'file-saver';
 import { Registration } from '../register-page/register.type';
 

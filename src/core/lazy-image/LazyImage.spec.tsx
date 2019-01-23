@@ -5,36 +5,34 @@ import LazyImage from './LazyImage';
 
 const fakeElements = [{ isIntersecting: true }, { isIntersecting: false }];
 
-/* tslint:disable */
 class IntersectionObserverMock {
-  constructor(cb: any) {
+  public constructor(cb: any) {
     // Hack to invoke the triggering of the intersection when we want it.
     setTimeout(() => cb(fakeElements), 100);
   }
 
-  observe() {
+  public observe() {
     // Nothing.
   }
 
-  unobserve() {
+  public unobserve() {
     // Nothing.
   }
 
-  disconnect() {
+  public disconnect() {
     // Nothing.
   }
 }
 
 class IntersectionObserverEntryMock {
-  intersectionRatio() {
+  public intersectionRatio() {
     // Nothing.
   }
 
-  isIntersecting() {
+  public isIntersecting() {
     // Nothing.
   }
 }
-/* tslint:enable */
 
 describe('LazyImage', () => {
   beforeEach(() => {

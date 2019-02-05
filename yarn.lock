@@ -138,13 +138,13 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@prettier/plugin-php@0.9.0":
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/@prettier/plugin-php/-/plugin-php-0.9.0.tgz#c83e5d57af08c2f01016800d708bfad755276d4a"
-  integrity sha512-x3RS9P2W8jRseHa1wecmZnzh9w2kLUJIR6//CroHZtagFSgnGLRNvReDZLlT1PJtTMPVacluPOjY2BFPapO9bw==
+"@prettier/plugin-php@0.10.0":
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/@prettier/plugin-php/-/plugin-php-0.10.0.tgz#e1f7ee7c4b9ecd4c1149ffdc44f98979ec9dd548"
+  integrity sha512-hIJjgv5lfxd7pr25Py4DRQ219Txpy39lMXB/mJMgGB3yp8pvXFgnoPCArnbTZ5od5BQbckUmb6Kwh4YcMS8vUw==
   dependencies:
-    mem "^3.0.1"
-    php-parser glayzzle/php-parser#ca007c812e9920bcf1ae9fd24f1a92f5d5906a5e
+    mem "^4.0.0"
+    php-parser "github:glayzzle/php-parser#71485979b688d12fb130d3e853fdc00348671e00"
 
 "@semantic-ui-react/event-stack@^3.0.1":
   version "3.0.1"
@@ -5797,14 +5797,6 @@ media-typer@0.3.0:
   resolved "https://registry.yarnpkg.com/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
   integrity sha1-hxDXrwqmJvj/+hzgAWhUUmMlV0g=
 
-mem@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/mem/-/mem-3.0.1.tgz#152410d0d7e835e4a4363e626238d9e5be3d6f5a"
-  integrity sha512-QKs47bslvOE0NbXOqG6lMxn6Bk0Iuw0vfrIeLykmQle2LkCw1p48dZDdzE+D88b/xqRJcZGcMNeDvSVma+NuIQ==
-  dependencies:
-    mimic-fn "^1.0.0"
-    p-is-promise "^1.1.0"
-
 mem@^4.0.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/mem/-/mem-4.1.0.tgz#aeb9be2d21f47e78af29e4ac5978e8afa2ca5b8a"
@@ -6895,10 +6887,10 @@ performance-now@^2.1.0:
   resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
   integrity sha1-Ywn04OX6kT7BxpMHrjZLSzd8nns=
 
-php-parser@glayzzle/php-parser#ca007c812e9920bcf1ae9fd24f1a92f5d5906a5e:
-  version "3.0.0-prerelease.5"
-  uid ca007c812e9920bcf1ae9fd24f1a92f5d5906a5e
-  resolved "https://codeload.github.com/glayzzle/php-parser/tar.gz/ca007c812e9920bcf1ae9fd24f1a92f5d5906a5e"
+"php-parser@github:glayzzle/php-parser#71485979b688d12fb130d3e853fdc00348671e00":
+  version "3.0.0-prerelease.8"
+  uid "71485979b688d12fb130d3e853fdc00348671e00"
+  resolved "https://codeload.github.com/glayzzle/php-parser/tar.gz/71485979b688d12fb130d3e853fdc00348671e00"
 
 pidtree@^0.3.0:
   version "0.3.0"

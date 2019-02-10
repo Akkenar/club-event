@@ -89,7 +89,7 @@ class PreloadCssChunks {
           // As per documentation, invoke the callback without error and with the mutated
           // Webpack HTML plugin data
           callback(null, htmlPluginData);
-        }
+        },
       );
     });
   }

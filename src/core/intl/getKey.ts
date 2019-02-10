@@ -14,7 +14,7 @@ function replaceAll(value: string, placeholders?: { [key: string]: string }) {
 function getKey(
   key: string,
   messages: IntlKey,
-  placeholders?: { [key: string]: string }
+  placeholders?: { [key: string]: string },
 ): string {
   if (!messages) {
     return key;

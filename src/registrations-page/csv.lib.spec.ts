@@ -22,7 +22,7 @@ describe('csv', () => {
     exportToCsv(mockRegistrations as any);
     expect(saveAs).toHaveBeenCalledWith(
       new Blob([mockRegistrations as any]),
-      'inscriptions.csv'
+      'inscriptions.csv',
     );
   });
 

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { HashRouter } from 'react-router-dom';
-import { render } from 'react-testing-library';
+import { render, waitForElement } from 'react-testing-library';
+import { forceLoadImage } from '../../test-utils/test-utils.lib';
 import Header from './Header';
 
 const HeaderWithRouter = () => (
@@ -9,9 +10,12 @@ const HeaderWithRouter = () => (
   </HashRouter>
 );
 
+forceLoadImage();
+
 describe('Header', () => {
-  it('should match snapshot without registration', () => {
+  it('should match snapshot without registration', async () => {
     const wrapper = render(<HeaderWithRouter />);
+    await waitForElement(() => wrapper.getByTestId('logo'));
     expect(wrapper.baseElement).toMatchSnapshot();
   });
 });

@@ -3,6 +3,7 @@ import * as React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { render, wait, waitForElement } from 'react-testing-library';
 import { Results } from '../core/api.type';
+import { mockInterestObservable } from '../test-utils/intersectObservable-utils.lib';
 import {
   mockGrecaptcha,
   mockResponse,
@@ -21,6 +22,10 @@ const LoginPageWithRouter = () => {
 };
 
 describe('LoginPage', () => {
+  beforeEach(() => {
+    mockInterestObservable();
+  });
+
   it('should match snapshot', () => {
     const wrapper = render(<LoginPageWithRouter />);
     expect(wrapper.baseElement).toMatchSnapshot();
@@ -45,7 +50,7 @@ describe('LoginPage', () => {
 
     // Wait for the loader to be dismissed
     await wait(() =>
-      expect(wrapper.queryByTestId('loader')).not.toBeInTheDocument()
+      expect(wrapper.queryByTestId('loader')).not.toBeInTheDocument(),
     );
 
     // Should have been redirected.
@@ -64,7 +69,7 @@ describe('LoginPage', () => {
 
     // Wait for the loader to be dismissed
     await wait(() =>
-      expect(wrapper.queryByTestId('loader')).not.toBeInTheDocument()
+      expect(wrapper.queryByTestId('loader')).not.toBeInTheDocument(),
     );
 
     expect(wrapper.queryByTestId('backend-error')).toHaveClass('visible');

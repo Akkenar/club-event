@@ -13,7 +13,7 @@ interface RegistrationsProductsProps {
 
 function getProductCount(
   productName: string,
-  registrations: Registration[]
+  registrations: Registration[],
 ): number {
   return (
     registrations

@@ -23,11 +23,11 @@ function getAllRegistration()
 {
   connectDb();
 
-  $sql = "SELECT * from inscriptions";
+  $sql = 'SELECT * from inscriptions';
   $response = sendRequestDB($sql);
 
   $data = array();
-  while (($row = $response->fetch_assoc())) {
+  while ($row = $response->fetch_assoc()) {
     // To avoid the nesting of JSON (a json as a string in a JSON)
     $row['products'] = json_decode($row['products']);
     $data[] = $row;

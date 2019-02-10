@@ -1,11 +1,16 @@
 import * as React from 'react';
 import { render } from 'react-testing-library';
+import { mockInterestObservable } from '../test-utils/intersectObservable-utils.lib';
 import { mockGrecaptcha } from '../test-utils/test-utils.lib';
 import RegisterPage from './RegisterPage';
 
 mockGrecaptcha();
 
 describe('RegisterPage', () => {
+  beforeEach(() => {
+    mockInterestObservable();
+  });
+
   it('should match the snapshot', () => {
     const wrapper = render(<RegisterPage />);
     expect(wrapper.baseElement).toMatchSnapshot();

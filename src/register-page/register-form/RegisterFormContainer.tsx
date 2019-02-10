@@ -20,7 +20,7 @@ import {
 import RegisterForm from './RegisterForm';
 
 const emailRegex = new RegExp(
-  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
 );
 
 const DEFAULT_STATE = {
@@ -103,7 +103,7 @@ class RegisterFormContainer extends React.Component<
 
   public handleSuccess(
     { result, total, reference }: RegistrationResult,
-    data: Registration
+    data: Registration,
   ) {
     // To be able to share data between pages.
     setSimpleStore({ ...data, total, reference });

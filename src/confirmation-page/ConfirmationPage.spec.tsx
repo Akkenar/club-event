@@ -4,6 +4,7 @@ import { render } from 'react-testing-library';
 import { IntlType } from '../core/intl/intl.type';
 import LanguageContext from '../core/intl/LanguageContext';
 import { setSimpleStore } from '../core/simpleStore';
+import { mockInterestObservable } from '../test-utils/intersectObservable-utils.lib';
 import { mockGlobalProperty } from '../test-utils/test-utils.lib';
 import ConfirmationPage from './ConfirmationPage';
 
@@ -48,6 +49,7 @@ describe('ConfirmationPage', () => {
       street: 'Rue de Lausanne',
       total: 100,
     });
+    mockInterestObservable();
   });
 
   it('should match the snapshot', () => {
@@ -80,7 +82,7 @@ describe('ConfirmationPage', () => {
 
     const wrapper = render(<ConfirmationPage />);
     expect(wrapper.getByText('confirmation.page.print')).toHaveClass(
-      'disabled'
+      'disabled',
     );
   });
 });

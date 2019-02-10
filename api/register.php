@@ -37,14 +37,14 @@ syslog(LOG_INFO, 'Reference: ' . $reference);
 
 // Save the data
 saveData($db, $DATA, $reference, $total, $language);
-syslog(LOG_INFO, "Data saved for " . $reference);
+syslog(LOG_INFO, 'Data saved for ' . $reference);
 
 // At this stage we don't need the Db anymore
 disconnectDB();
 
 // Confirm the registration to the user
 sendEmail($email, $total, $reference, $language, $DATA);
-syslog(LOG_INFO, "Email send for " . $reference);
+syslog(LOG_INFO, 'Email send for ' . $reference);
 
 // Success!
 $result = [];
@@ -54,7 +54,7 @@ $result['total'] = $total;
 $result['email'] = $email;
 echo json_encode($result);
 
-syslog(LOG_INFO, "Registration successful for " . $reference);
+syslog(LOG_INFO, 'Registration successful for ' . $reference);
 closelog();
 
 function saveData($db, $data, $reference, $total, $language)

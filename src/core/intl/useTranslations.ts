@@ -11,7 +11,7 @@ const INITIAL_STATE: IntlType = {
 
 const changeLanguage = (
   language: string,
-  setState: (cb: (previousState: IntlType) => IntlType) => void
+  setState: (cb: (previousState: IntlType) => IntlType) => void,
 ) => {
   // For a11y reasons
   setPageLanguage(language);

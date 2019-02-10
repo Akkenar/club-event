@@ -4,7 +4,7 @@ import { ApiResponse, Results } from './api.type';
 
 export async function postData<T extends ApiResponse>(
   url: string,
-  data: any
+  data: any,
 ): Promise<T> {
   try {
     // Default options are marked with *

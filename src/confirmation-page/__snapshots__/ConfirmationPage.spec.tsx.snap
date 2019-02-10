@@ -25,6 +25,19 @@ exports[`ConfirmationPage should handle empty registration 1`] = `
       >
         confirmation.page.print
       </button>
+      <svg
+        aria-label="Photo: Zsolt Sarkozi"
+        class="LazyImage no-print"
+        data-testid="lazyloaded-placeholder"
+        height="400"
+        viewBox="0 0 1024 1024"
+        width="320"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d=""
+        />
+      </svg>
     </div>
   </div>
 </body>
@@ -205,6 +218,19 @@ exports[`ConfirmationPage should match the snapshot 1`] = `
       >
         confirmation.page.print
       </button>
+      <svg
+        aria-label="Photo: Zsolt Sarkozi"
+        class="LazyImage no-print"
+        data-testid="lazyloaded-placeholder"
+        height="400"
+        viewBox="0 0 1024 1024"
+        width="320"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d=""
+        />
+      </svg>
     </div>
   </div>
 </body>

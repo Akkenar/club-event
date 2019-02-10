@@ -2,6 +2,7 @@ import 'jest-dom/extend-expect';
 import * as React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { render, wait, waitForElement } from 'react-testing-library';
+import { mockInterestObservable } from '../../test-utils/intersectObservable-utils.lib';
 import {
   mockGrecaptcha,
   mockResponse,
@@ -39,11 +40,15 @@ const ContainerWithRouter = () => {
 };
 
 describe('RegisterFormContainer', () => {
+  beforeEach(() => {
+    mockInterestObservable();
+  });
+
   it('should add errors to all fields when the form is empty', () => {
     const wrapper = render(<RegisterFormContainer />);
 
     expect(wrapper.queryByTestId('validation-error')).not.toHaveClass(
-      'visible'
+      'visible',
     );
     wrapper.queryByText('register.form.submit').click();
     expect(wrapper.queryByTestId('validation-error')).toHaveClass('visible');
@@ -64,7 +69,7 @@ describe('RegisterFormContainer', () => {
 
     // Wait for the loader to be dismissed
     await wait(() =>
-      expect(wrapper.queryByTestId('loader')).not.toBeInTheDocument()
+      expect(wrapper.queryByTestId('loader')).not.toBeInTheDocument(),
     );
 
     // Should have been redirected.
@@ -85,7 +90,7 @@ describe('RegisterFormContainer', () => {
 
     // Wait for the loader to be dismissed
     await wait(() =>
-      expect(wrapper.queryByTestId('loader')).not.toBeInTheDocument()
+      expect(wrapper.queryByTestId('loader')).not.toBeInTheDocument(),
     );
 
     expect(wrapper.queryByTestId('backend-error')).toHaveClass('visible');
@@ -107,7 +112,7 @@ describe('RegisterFormContainer', () => {
       {
         picknick: 2,
       },
-      wrapper
+      wrapper,
     );
 
     wrapper.queryByText('register.form.submit').click();

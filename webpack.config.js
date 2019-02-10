@@ -33,7 +33,7 @@ const prodPlugins = [
   }),
   new webpack.NormalModuleReplacementPlugin(
     /src\/environment\/environment\.ts/,
-    './environment.prod.ts'
+    './environment.prod.ts',
   ),
 ];
 
@@ -173,7 +173,7 @@ module.exports = {
         // Both convert the jpg to webp, and optimize the jpg fallback.
         loader: multi(
           'file-loader?{name:"assets/media/[name].webp"}!image-webpack-loader?{webp:{quality:75}}',
-          'file-loader?{name:"assets/media/[name].jpg"}!image-webpack-loader'
+          'file-loader?{name:"assets/media/[name].jpg"}!image-webpack-loader',
         ),
       },
       {

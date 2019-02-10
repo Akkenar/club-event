@@ -10,19 +10,15 @@ exports[`Header should match snapshot without registration 1`] = `
         color="white"
         href="#/de/home"
       >
-        <svg
-          aria-label="logo.alt"
+        <img
+          alt="logo.alt"
           class="Logo Logo--inverted  Header__logo"
-          data-testid="lazyloaded-placeholder"
+          data-testid="logo"
           height="45"
-          viewBox="0 0 1024 1024"
+          src="[object Object]"
+          title="logo.alt"
           width="60"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d=""
-          />
-        </svg>
+        />
       </a>
       <a
         class="item"

@@ -39,22 +39,29 @@ export interface UseCaptchaScriptType {
 }
 
 export function useCaptchaScript(
-  language: string | null | undefined
+  language: string | null | undefined,
+  // To make sure we don't have any conditional hooks
+  loadCaptcha: boolean,
 ): UseCaptchaScriptType {
   const [loadedForLanguage, setLoaded] = useState<string | null>(null);
   const [scriptAddedForLanguage, setScriptAdded] = useState<string | null>(
-    null
+    null,
   );
 
+  // To make sure we only render the captcha when there is a language and
+  // when the caller says we can (e.g. lazy loading).
+  const shouldLoadCaptcha = loadCaptcha && !!language;
+
   const loadRecaptcha = () => {
-    if (language) {
+    if (shouldLoadCaptcha) {
       renderCaptcha();
+      // @ts-ignore
       setLoaded(language);
     }
   };
 
   useEffect(() => {
-    if (!language || scriptAddedForLanguage === language) {
+    if (!shouldLoadCaptcha || scriptAddedForLanguage === language) {
       return;
     }
 
@@ -63,14 +70,16 @@ export function useCaptchaScript(
     (window as any).onloadCallback = loadRecaptcha;
 
     // Append the script.
+    // @ts-ignore
     appendRecaptchaScript(language);
 
+    // @ts-ignore
     setScriptAdded(language);
   });
 
   return {
     containerId: CONTAINER_ID,
-    isLoaded: loadedForLanguage === language,
-    isScriptAdded: scriptAddedForLanguage === language,
+    isLoaded: loadedForLanguage === language && loadCaptcha,
+    isScriptAdded: scriptAddedForLanguage === language && loadCaptcha,
   };
 }

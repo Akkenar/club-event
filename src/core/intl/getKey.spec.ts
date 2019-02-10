@@ -27,7 +27,7 @@ describe('getKey', () => {
     });
 
     expect(result).toEqual(
-      'Foo 0  this is a test {test} (test) 0 {notreplaced}'
+      'Foo 0  this is a test {test} (test) 0 {notreplaced}',
     );
   });
 });

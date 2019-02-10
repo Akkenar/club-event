@@ -12,6 +12,7 @@ export function mockResponse(response: any) {
   const mock = typeof response === 'string' ? { result: response } : response;
 
   // Mock the fetch data as JSDom doesn't implement fetch.
+  // @ts-ignore
   window.fetch = jest.fn(() =>
     Promise.resolve({
       text: () =>
@@ -21,13 +22,13 @@ export function mockResponse(response: any) {
             resolve(mockResult);
           }, 50);
         }),
-    })
+    }),
   );
 }
 
 export function setValidInputData(
   validData: any,
-  { getByTestId }: { getByTestId: any }
+  { getByTestId }: { getByTestId: any },
 ) {
   Object.keys(validData).forEach((key: string) => {
     fireEvent.change(getByTestId(key), {
@@ -38,7 +39,7 @@ export function setValidInputData(
 }
 
 export const mockGlobalProperty = (globalObject: any) => (key: string) => (
-  value: any
+  value: any,
 ) => {
   const original = globalObject[key];
   Object.defineProperty(globalObject, key, { value, writable: true });

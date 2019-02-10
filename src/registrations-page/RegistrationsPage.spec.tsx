@@ -82,7 +82,7 @@ describe('RegistrationsPage', () => {
 
     // Wait for the loader to be dismissed
     await wait(() =>
-      expect(wrapper.queryByTestId('loader')).not.toBeInTheDocument()
+      expect(wrapper.queryByTestId('loader')).not.toBeInTheDocument(),
     );
 
     expect(window.location.href).toEqual('http://localhost/#/de/login');

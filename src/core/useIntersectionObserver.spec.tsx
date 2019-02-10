@@ -46,10 +46,10 @@ const TestComponent = () => {
 describe('useIntersectionObserver', () => {
   beforeEach(() => {
     mockGlobalProperty(window)('IntersectionObserver')(
-      IntersectionObserverMock
+      IntersectionObserverMock,
     );
     mockGlobalProperty(window)('IntersectionObserverEntry')(
-      IntersectionObserverEntryMock
+      IntersectionObserverEntryMock,
     );
   });
 

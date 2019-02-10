@@ -37,6 +37,7 @@ const Logo = ({ height, width, inverted, big, className = '' }: LogoType) => {
 
   return (
     <img
+      data-testid="logo"
       className={clazz.trim()}
       height={height}
       width={width}

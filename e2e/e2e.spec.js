@@ -68,9 +68,9 @@ describe('e2e', () => {
     page.on('console', msg => console.log('PAGE LOG:', msg.text()));
   }, timeout);
 
-  afterEach(() => {
+  afterEach(async () => {
     if (browser) {
-      browser.close();
+      await browser.close();
     }
   });
 
@@ -102,7 +102,7 @@ describe('e2e', () => {
       const html = await page.$eval('h1', e => e.innerHTML);
       expect(html).toBe('Confirmation');
     },
-    timeout
+    timeout,
   );
 
   it(
@@ -123,10 +123,10 @@ describe('e2e', () => {
       await page.waitForSelector('.RegistrationsOverview__Total');
       const totalRegistrations = await page.$eval(
         '.RegistrationsOverview__Total',
-        e => e.innerText
+        e => e.innerText,
       );
       expect(totalRegistrations).toEqual('registrations.total: 1');
     },
-    timeout
+    timeout,
   );
 });

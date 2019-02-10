@@ -7,7 +7,7 @@ const OBSERVER_OPTIONS = {
 function changeStateOnIntersect(
   entries: IntersectionObserverEntry[],
   observer: IntersectionObserver,
-  setState: (state: boolean) => void
+  setState: (state: boolean) => void,
 ) {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -23,7 +23,7 @@ function changeStateOnIntersect(
 function startObserving(
   isDisplayed: boolean,
   observer: IntersectionObserver,
-  element: HTMLElement
+  element: HTMLElement,
 ) {
   if (!element || isDisplayed) {
     return;
@@ -43,7 +43,7 @@ export function useIntersectionObserver(): UseIntersectionObserver {
 
   const handleIntersect = (
     entries: IntersectionObserverEntry[],
-    currentObserver: IntersectionObserver
+    currentObserver: IntersectionObserver,
   ) => changeStateOnIntersect(entries, currentObserver, setIsDisplayed);
 
   useEffect(() => {
@@ -53,7 +53,7 @@ export function useIntersectionObserver(): UseIntersectionObserver {
 
     const observerInstance = new IntersectionObserver(
       handleIntersect,
-      OBSERVER_OPTIONS
+      OBSERVER_OPTIONS,
     );
 
     setObserver(observerInstance);

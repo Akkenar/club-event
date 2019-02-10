@@ -17,7 +17,7 @@ interface ProvideMessagesProps {
 }
 
 export default function provideTranslations(
-  Component: React.ComponentType<any>
+  Component: React.ComponentType<any>,
 ) {
   /**
    * The provided, depends on the routing and the language.

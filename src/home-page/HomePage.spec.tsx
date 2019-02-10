@@ -1,8 +1,9 @@
 import 'jest-dom/extend-expect';
 import * as React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import { render, waitForElement } from 'react-testing-library';
+import { act, render, waitForElement } from 'react-testing-library';
 import environment from '../environment/environment';
+import { mockInterestObservable } from '../test-utils/intersectObservable-utils.lib';
 import { forceLoadImage } from '../test-utils/test-utils.lib';
 import HomePage from './HomePage';
 
@@ -15,8 +16,17 @@ const HomePageWithRouter = () => (
 forceLoadImage();
 
 describe('HomePage', () => {
+  let showAsyncElements: () => void;
+  beforeEach(() => {
+    showAsyncElements = mockInterestObservable();
+  });
+
   it('should match the snapshot', async () => {
     const wrapper = render(<HomePageWithRouter />);
+
+    act(() => {
+      showAsyncElements();
+    });
 
     // Wait for the logo.
     await waitForElement(() => wrapper.queryByTitle('logo.alt'));

@@ -7,7 +7,7 @@ import LanguageContext from './intl/LanguageContext';
 function formatPrice(
   label: string,
   price: number | string = 0,
-  noPriceLabel: string
+  noPriceLabel: string,
 ) {
   const priceNumber = parseInt(price.toString(), 10);
   if (priceNumber > 0) {

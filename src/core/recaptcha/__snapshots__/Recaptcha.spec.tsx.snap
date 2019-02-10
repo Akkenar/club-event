@@ -1,11 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Recaptcha should render the recaptcha 1`] = `
+exports[`Recaptcha should render the recaptcha when in view 1`] = `
 <body>
   <div>
     <div
       data-testid="recaptcha--true"
       id="recaptcha-container"
+      style="height: 78px; width: 302px;"
+    >
+      loading
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Recaptcha should render the recaptcha when not in view 1`] = `
+<body>
+  <div>
+    <div
+      data-testid="captcha-loading"
       style="height: 78px; width: 302px;"
     >
       loading

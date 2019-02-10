@@ -10,23 +10,29 @@ const CAPTCHA_SIZE = { height: 78, width: 302 };
 const Recaptcha = () => {
   const { isDisplayed, startObserving } = useIntersectionObserver();
   const { messages, language } = useContext(LanguageContext);
+  const { isLoaded, isScriptAdded, containerId } = useCaptchaScript(
+    language,
+    isDisplayed,
+  );
 
-  // If no language, don't bother rendering the captcha, juste the placeholder
+  // If no language, don't bother rendering the captcha, just the placeholder
   if (!language) {
     return <div style={CAPTCHA_SIZE}>&nbsp;</div>;
   }
 
-  // Lazy loading.
+  // Lazy loading, if enabled.
   if (!isDisplayed) {
     return (
-      <div style={CAPTCHA_SIZE} ref={startObserving}>
+      <div
+        style={CAPTCHA_SIZE}
+        ref={startObserving}
+        data-testid="captcha-loading"
+      >
         {getKey('loading', messages)}
       </div>
     );
   }
 
-  // Google captcha shenanigan with all script and render.
-  const { isLoaded, isScriptAdded, containerId } = useCaptchaScript(language);
   if (!isScriptAdded) {
     // Nothing, so when we change the language, the element in the DOM is deleted.
     return null;

@@ -18,7 +18,7 @@ export function formatDate(date: string | undefined): string {
 
   try {
     return Intl.DateTimeFormat(DEFAULT_LOCALE, toDateTimeOptions).format(
-      new Date(date)
+      new Date(date),
     );
   } catch (e) {
     return date;

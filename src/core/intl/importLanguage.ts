@@ -1,7 +1,7 @@
 import { IntlType, LANGUAGE } from './intl.type';
 
 export function importLanguage(
-  language: string
+  language: string,
 ): Promise<{ default: IntlType }> {
   switch (language) {
     case LANGUAGE.EN:
@@ -19,6 +19,6 @@ export function importLanguage(
 
 export function preloadAllLanguages(): Promise<any> {
   return Promise.all(
-    Object.keys(LANGUAGE).map(lang => importLanguage((LANGUAGE as any)[lang]))
+    Object.keys(LANGUAGE).map(lang => importLanguage((LANGUAGE as any)[lang])),
   );
 }

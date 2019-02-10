@@ -61,7 +61,7 @@ const RegisterForm = ({
               name="firstName"
               placeholder={getKey(
                 'register.form.firstName.placeholder',
-                messages
+                messages,
               )}
               value={state.firstName}
               onChange={handleChange}
@@ -80,7 +80,7 @@ const RegisterForm = ({
               name="lastName"
               placeholder={getKey(
                 'register.form.lastName.placeholder',
-                messages
+                messages,
               )}
               value={state.lastName}
               onChange={handleChange}
@@ -143,7 +143,7 @@ const RegisterForm = ({
               name="street"
               placeholder={getKey(
                 'register.form.address.street.placeholder',
-                messages
+                messages,
               )}
               value={state.street}
               onChange={handleChange}
@@ -163,7 +163,7 @@ const RegisterForm = ({
               name="no"
               placeholder={getKey(
                 'register.form.address.no.placeholder',
-                messages
+                messages,
               )}
               value={state.no}
               onChange={handleChange}
@@ -184,7 +184,7 @@ const RegisterForm = ({
               name="npa"
               placeholder={getKey(
                 'register.form.address.npa.placeholder',
-                messages
+                messages,
               )}
               value={state.npa}
               onChange={handleChange}
@@ -205,7 +205,7 @@ const RegisterForm = ({
               name="locality"
               placeholder={getKey(
                 'register.form.address.locality.placeholder',
-                messages
+                messages,
               )}
               value={state.locality}
               onChange={handleChange}

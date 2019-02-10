@@ -27,7 +27,7 @@ checkLoginOrDie($username, $password);
 session_start();
 
 // Set the session data if the script reaches this point
-$_SESSION['group'] = "admin";
+$_SESSION['group'] = 'admin';
 $_SESSION['username'] = $username;
 
 // Cleanup before exiting.

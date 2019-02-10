@@ -3,6 +3,7 @@ import { getData, postData } from './data.lib';
 const URL = '/test';
 
 function mockFetch() {
+  // @ts-ignore
   window.fetch = jest.fn(() =>
     Promise.resolve({
       text: () =>
@@ -12,7 +13,7 @@ function mockFetch() {
             resolve(mockResult);
           }, 50);
         }),
-    })
+    }),
   );
 }
 

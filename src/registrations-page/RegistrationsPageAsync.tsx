@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Suspense } from 'react';
 
 const Lazy = React.lazy(() =>
-  import(/* webpackChunkName: 'registrations', webpackPrefetch: true */ './RegistrationsPage')
+  import(/* webpackChunkName: 'registrations', webpackPrefetch: true */ './RegistrationsPage'),
 );
 
 function RegistrationsPageAsync() {

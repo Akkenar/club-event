@@ -6,7 +6,7 @@ function validateCaptcha($recaptchaResponse)
 {
   $config = readConfig();
   if ($config['recaptcha.ignore'] && $recaptchaResponse === 'no-captcha') {
-    error_log("Ignoring captcha", 0);
+    error_log('Ignoring captcha', 0);
     // By configuration.
     return;
   }

@@ -12,6 +12,7 @@ exports[`HomePage should match the snapshot 1`] = `
     <img
       alt="logo.alt"
       class="Logo  Logo--big"
+      data-testid="logo"
       height="232"
       src="[object Object]"
       title="logo.alt"

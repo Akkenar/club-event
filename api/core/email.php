@@ -44,7 +44,7 @@ function sendEmail($email, $total, $reference, $language, $data)
   // Set email format to HTML
   $mail->isHTML(true);
 
-  $mail->Subject = utf8_decode("AD SSS 2019 - Zahlung/Paiement");
+  $mail->Subject = utf8_decode('AD SSS 2019 - Zahlung/Paiement');
   $mail->Body = $message;
 
   if ($config['email.ignore']) {

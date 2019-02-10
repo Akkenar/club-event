@@ -14,7 +14,7 @@ import './ConfirmationPage.scss';
 function format(
   confirmation: string,
   total: number | null,
-  reference: string
+  reference: string,
 ): string {
   if (!confirmation) {
     return confirmation;

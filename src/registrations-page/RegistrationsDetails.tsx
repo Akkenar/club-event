@@ -17,7 +17,7 @@ const INITIAL_STATE: Registration | null = null;
 
 const getDetails = (
   registration: Registration,
-  details: Registration | null
+  details: Registration | null,
 ) => {
   // To satisfy Typescript constraint, details can be null.
   if (!details) {

@@ -25,7 +25,7 @@ const validData = {
   no: '1',
   npa: '1018',
   picknick: '1',
-  sleeping: '1',
+  sleepingAtGym: '1',
   street: 'Rue de Lausanne',
   vegetarian: '1',
   vegetarianKid: '1',

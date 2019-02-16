@@ -68,7 +68,7 @@ const Products = ({ state, setQuantity, total }: ProductsProps) => {
       <Form.Group widths="equal">
         <QuantitySelector
           state={state}
-          name="sleeping"
+          name="sleepingAtGym"
           setQuantity={setQuantity}
         />
         <QuantitySelector

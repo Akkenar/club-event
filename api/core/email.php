@@ -83,7 +83,7 @@ function getBody($total, $reference, $language, $data)
   setProductVariable($globalTPL, $products, 'vegetarian');
   setProductVariable($globalTPL, $products, 'dinnerKid');
   setProductVariable($globalTPL, $products, 'vegetarianKid');
-  setProductVariable($globalTPL, $products, 'sleeping');
+  setProductVariable($globalTPL, $products, 'sleepingAtGym');
   setProductVariable($globalTPL, $products, 'camping');
   setProductVariable($globalTPL, $products, 'picknick');
   setProductVariable($globalTPL, $products, 'breakfast');

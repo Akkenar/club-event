@@ -660,9 +660,9 @@ exports[`RegisterPage should match the snapshot 1`] = `
               >
                 <label
                   class="QuantitySelector__Label"
-                  for="sleeping"
+                  for="sleepingAtGym"
                 >
-                  register.form.counts.sleeping (CHF 15)
+                  register.form.counts.sleepingAtGym (CHF 10)
                 </label>
                 <div
                   aria-atomic="true"
@@ -678,7 +678,7 @@ exports[`RegisterPage should match the snapshot 1`] = `
                 >
                   <button
                     class="ui icon disabled button QuantitySelector__Button QuantitySelector__Button--minus"
-                    data-testid="sleeping-minus"
+                    data-testid="sleepingAtGym-minus"
                     disabled=""
                     tabindex="-1"
                     title="quantityselector.remove"
@@ -691,8 +691,8 @@ exports[`RegisterPage should match the snapshot 1`] = `
                   </button>
                   <input
                     class="glow QuantitySelector__Quantity"
-                    data-testid="sleeping"
-                    id="sleeping"
+                    data-testid="sleepingAtGym"
+                    id="sleepingAtGym"
                     max="100"
                     maxlength="3"
                     min="0"
@@ -703,7 +703,7 @@ exports[`RegisterPage should match the snapshot 1`] = `
                   />
                   <button
                     class="ui icon button QuantitySelector__Button QuantitySelector__Button--plus"
-                    data-testid="sleeping-plus"
+                    data-testid="sleepingAtGym-plus"
                     title="quantityselector.add"
                     type="button"
                   >

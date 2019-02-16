@@ -31,6 +31,7 @@ const productsToDisplay: { [key: string]: string } = {
   vegetarianKid: 'Souper (enfant)',
   picknick: 'Pique-nique',
   sleeping: 'Nuit PC',
+  sleepingAtGym: 'Nuit Salle de Gym',
   camping: 'Nuit Camping',
 };
 

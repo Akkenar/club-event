@@ -872,12 +872,12 @@ exports[`RegistrationsPage should show the products 1`] = `
                 <td
                   class=""
                 >
-                  register.form.counts.sleeping (CHF 15)
+                  register.form.counts.sleepingAtGym (CHF 10)
                 </td>
                 <td
                   class=""
                 >
-                  8
+                  6
                 </td>
               </tr>
               <tr

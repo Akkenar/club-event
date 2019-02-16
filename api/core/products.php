@@ -7,6 +7,7 @@ $prices = array(
   'dinnerKid' => 20,
   'vegetarianKid' => 20,
   'sleeping' => 15,
+  'sleepingAtGym' => 10,
   'breakfast' => 10,
   'camping' => 10,
   'picknick' => 0,
@@ -26,13 +27,13 @@ function getTotal($data)
 
   // Accommodation
   $camping = getTotalForItem($products, 'camping');
-  $sleeping = getTotalForItem($products, 'sleeping');
+  $sleepingAtGym = getTotalForItem($products, 'sleepingAtGym');
 
   return $dinner +
     $vegetarian +
     $dinnerKid +
     $vegetarianKid +
-    $sleeping +
+    $sleepingAtGym +
     $camping +
     $picknick +
     $breakfast;

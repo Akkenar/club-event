@@ -56,5 +56,6 @@
   "quantityselector.add": "Add one to {name}",
   "quantityselector.remove": "Remove one from {name}",
   "quantityselector.clear": "Clear {name}",
-  "noprice": "to be paid on-site"
+  "noprice": "to be paid on-site",
+  "register.warning": "Dinner is guaranteed only for registrations payed before the <strong>Sunday 28 of april</strong>."
 }

@@ -67,5 +67,6 @@
   "quantityselector.add": "Ajouter un {name}",
   "quantityselector.remove": "Supprimer un {name}",
   "quantityselector.clear": "Supprimer tous les {name}",
-  "noprice": "à payer sur place"
+  "noprice": "à payer sur place",
+  "register.warning": "Le repas est garanti uniquement pour les inscriptions avant le <strong>dimanche 28 avril</strong>."
 }

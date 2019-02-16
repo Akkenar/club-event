@@ -39,7 +39,7 @@ describe('ConfirmationPage', () => {
         dinner: 4,
         dinnerKid: 1,
         picknick: 1,
-        sleeping: 1,
+        sleepingAtGym: 1,
         vegetarian: 4,
         vegetarianKid: 1,
       },

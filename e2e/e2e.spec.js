@@ -23,7 +23,7 @@ const products = {
   picknick: faker.random.number(10),
   breakfast: faker.random.number(10),
   camping: faker.random.number(10),
-  sleeping: faker.random.number(10),
+  sleepingAtGym: faker.random.number(10),
   vegetarian: faker.random.number(10),
   vegetarianKid: faker.random.number(10),
 };

@@ -96,9 +96,9 @@ const RegistrationsProducts = ({
         <Table.Body>
           <Table.Row>
             <Table.Cell>
-              <ProductLabel name="sleeping" />
+              <ProductLabel name="sleepingAtGym" />
             </Table.Cell>
-            <Table.Cell>{getProduct('sleeping')}</Table.Cell>
+            <Table.Cell>{getProduct('sleepingAtGym')}</Table.Cell>
           </Table.Row>
           <Table.Row>
             <Table.Cell>

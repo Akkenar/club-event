@@ -18,9 +18,10 @@ import {
   RegistrationResult,
 } from '../register.type';
 import RegisterForm from './RegisterForm';
+import { IntlType } from '../../core/intl/intl.type';
 
 const emailRegex = new RegExp(
-  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+  /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
 );
 
 const DEFAULT_STATE = {
@@ -56,10 +57,14 @@ export interface RegisterFormContainerState {
 }
 
 class RegisterFormContainer extends React.Component<
-  any,
-  RegisterFormContainerState
+  {},
+  RegisterFormContainerState,
+  IntlType
 > {
-  public constructor(props: any) {
+  public static contextType = LanguageContext;
+  public context!: React.ContextType<typeof LanguageContext>;
+
+  public constructor(props: {}) {
     super(props);
 
     this.state = DEFAULT_STATE;
@@ -196,7 +201,5 @@ class RegisterFormContainer extends React.Component<
     return !this.getTotalPrice() && !this.state.products.picknick;
   }
 }
-
-RegisterFormContainer.contextType = LanguageContext;
 
 export default RegisterFormContainer;

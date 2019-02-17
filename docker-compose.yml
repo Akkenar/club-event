@@ -30,6 +30,11 @@ services:
      - MYSQL_DATABASE=adsss
      - MYSQL_TCP_PORT=3307
 
+  chrome:
+    image: browserless/chrome
+    ports:
+      - "3000:3000"
+
   e2e:
     build:
       context: .
@@ -40,9 +45,11 @@ services:
     links:
       - php
       - db
+      - chrome
     depends_on:
       - php
       - db
+      - chrome
     dns:
       - 8.8.8.8
 

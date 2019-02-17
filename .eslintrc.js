@@ -30,6 +30,14 @@ module.exports = {
     // Handled by Prettier
     '@typescript-eslint/indent': 0,
     quotes: 0,
+    // Hooks
+    'react-hooks/rules-of-hooks': 'error',
+    // Jest
+    'jest/no-disabled-tests': 'warn',
+    'jest/no-focused-tests': 'error',
+    'jest/no-identical-title': 'error',
+    'jest/prefer-to-have-length': 'warn',
+    'jest/valid-expect': 'error',
   },
   globals: {
     grecaptcha: true,

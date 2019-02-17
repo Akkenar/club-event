@@ -36,15 +36,15 @@ const RegisterForm = ({
     return <Redirect to={`/${language}/confirmation`} />;
   }
 
-  const warningMessage = () => (
-    <div
-      dangerouslySetInnerHTML={{ __html: getKey('register.warning', messages) }}
-    />
-  );
-
   return (
     <Form onSubmit={handleSubmit} noValidate={true} className="RegisterForm">
-      <Message warning={true} visible={true} content={warningMessage} />
+      <Message warning={true} visible={true}>
+        <span
+          dangerouslySetInnerHTML={{
+            __html: getKey('register.warning', messages),
+          }}
+        />
+      </Message>
       <Message
         error={true}
         data-testid="backend-error"

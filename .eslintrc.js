@@ -24,9 +24,10 @@ module.exports = {
   },
   plugins: ['react', '@typescript-eslint', 'prettier', 'jest', 'react-hooks'],
   rules: {
-    '@typescript-eslint/no-var-requires': 0,
+    // Buggy, a lot of false positive with React
     '@typescript-eslint/no-unused-vars': 0,
-    'no-useless-escape': 1,
+    // Too painful not to be able to use "any"
+    '@typescript-eslint/no-explicit-any': 0,
     // Handled by Prettier
     '@typescript-eslint/indent': 0,
     quotes: 0,

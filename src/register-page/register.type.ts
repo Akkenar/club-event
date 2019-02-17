@@ -21,7 +21,7 @@ export interface Registration {
   reference?: string;
   date?: string;
   total?: number;
-  language: string;
+  language?: string;
   recaptcha: string;
   club: string;
   email: string;

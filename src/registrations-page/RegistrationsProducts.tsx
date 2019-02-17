@@ -1,7 +1,5 @@
 import * as React from 'react';
-import { useContext } from 'react';
 import { Segment, Table } from 'semantic-ui-react';
-import LanguageContext from '../core/intl/LanguageContext';
 import ProductLabel from '../core/ProductLabel';
 import { Registration } from '../register-page/register.type';
 
@@ -36,7 +34,6 @@ function getProductCount(
 const RegistrationsProducts = ({
   registrations,
 }: RegistrationsProductsProps) => {
-  const { messages } = useContext(LanguageContext);
   const getProduct = (productName: string) =>
     getProductCount(productName, registrations);
 

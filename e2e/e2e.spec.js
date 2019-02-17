@@ -1,10 +1,12 @@
 /* eslint-disable no-console */
 /* eslint-disable @typescript-eslint/no-var-requires */
-const puppeteer = require('puppeteer');
+const puppeteer = require('puppeteer-core');
 const faker = require('faker');
 
+// The url must match what's defined in the docker-compose file
 const registerPageUrl = 'http://php/en/register?ignoreCaptcha';
 const loginPageUrl = 'http://php/en/login?ignoreCaptcha';
+const chromeWsUrl = 'ws://chrome:3000';
 
 const timeout = 60 * 60 * 1000;
 const personalData = {
@@ -52,10 +54,8 @@ describe('e2e', () => {
   let page;
 
   beforeEach(async () => {
-    browser = await puppeteer.launch({
-      // Must be headless and with no sandbox for Docker integration.
-      headless: true,
-      args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    browser = await puppeteer.connect({
+      browserWSEndpoint: chromeWsUrl,
     });
     page = await browser.newPage();
 

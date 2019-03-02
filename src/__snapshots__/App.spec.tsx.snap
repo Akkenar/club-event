@@ -117,16 +117,19 @@ exports[`App should render the home page by default 1`] = `
             >
               <button
                 class="item"
+                data-testid="home.menu.schedule"
               >
                 Home Menu Schedule
               </button>
               <button
                 class="item"
+                data-testid="home.menu.sponsors"
               >
                 Home Menu Sponsors
               </button>
               <button
                 class="item"
+                data-testid="home.menu.register"
               >
                 Home Menu Register
               </button>
@@ -200,6 +203,7 @@ exports[`App should render the home page by default 1`] = `
                   Comptoire des Techniques Verticales
                 </div>
                 <a
+                  class="Sponsor__link"
                   href="https://techniquesverticales.ch"
                   target="_blank"
                 >
@@ -225,6 +229,7 @@ exports[`App should render the home page by default 1`] = `
                   Office du Tourisme de Vallorbe
                 </div>
                 <a
+                  class="Sponsor__link"
                   href="http://www.vallorbe.ch"
                   target="_blank"
                 >
@@ -250,6 +255,7 @@ exports[`App should render the home page by default 1`] = `
                   Grottes de Vallorbes
                 </div>
                 <a
+                  class="Sponsor__link"
                   href="https://grottesdevallorbe.ch"
                   target="_blank"
                 >
@@ -275,6 +281,7 @@ exports[`App should render the home page by default 1`] = `
                   IMSA
                 </div>
                 <a
+                  class="Sponsor__link"
                   href="http://www.neon-imsa.ch"
                   target="_blank"
                 >
@@ -300,6 +307,7 @@ exports[`App should render the home page by default 1`] = `
                   Technicongress
                 </div>
                 <a
+                  class="Sponsor__link"
                   href="https://www.technicongres.ch/"
                   target="_blank"
                 >

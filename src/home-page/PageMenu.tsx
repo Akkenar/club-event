@@ -13,13 +13,24 @@ const PageMenu = () => {
     const goTo = () => {
       const element = document.getElementById(normalizeTitle(targetTitleLabel));
       if (element) {
-        element.focus();
-        element.scrollTo();
+        element.focus({ preventScroll: true });
+        // Smoother result if the scroll is done at the end of the event loop.
+        setTimeout(() => {
+          window.scrollTo(
+            0,
+            window.pageYOffset + element.getBoundingClientRect().top,
+          );
+        }, 0);
       }
     };
 
     return (
-      <Menu.Item as="button" name={getKey(labelKey, messages)} onClick={goTo} />
+      <Menu.Item
+        data-testid={labelKey}
+        as="button"
+        name={getKey(labelKey, messages)}
+        onClick={goTo}
+      />
     );
   };
 

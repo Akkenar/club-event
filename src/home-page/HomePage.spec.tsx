@@ -1,8 +1,7 @@
 import 'jest-dom/extend-expect';
 import * as React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import { act, render, waitForElement } from 'react-testing-library';
-import environment from '../environment/environment';
+import { act, render, waitForElement, wait } from 'react-testing-library';
 import { mockInterestObservable } from '../test-utils/intersectObservable-utils.lib';
 import { forceLoadImage } from '../test-utils/test-utils.lib';
 import HomePage from './HomePage';
@@ -41,5 +40,24 @@ describe('HomePage', () => {
     // Will be set by side effect through a hook
     render(<HomePageWithRouter />);
     expect(document.title).toEqual('home.page.title');
+  });
+
+  it('should navigate with the page menu', async () => {
+    window.scrollTo = jest.fn();
+    const wrapper = render(<HomePageWithRouter />);
+
+    act(() => {
+      showAsyncElements();
+    });
+
+    // One of the menu item.
+    await wrapper.getByTestId('home.menu.register').click();
+
+    // Because the scroll is at the end of the event loop.
+    await wait();
+
+    // The focus should be on the element.
+    expect(document.activeElement.innerHTML).toEqual('home.page.register');
+    expect(window.scrollTo).toHaveBeenCalledTimes(1);
   });
 });

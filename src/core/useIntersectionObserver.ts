@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 const OBSERVER_OPTIONS = {
-  rootMargin: '0px 0px 0px 50px',
+  rootMargin: '0px 0px 0px 150px',
 };
 
 function changeStateOnIntersect(

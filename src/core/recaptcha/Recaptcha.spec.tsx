@@ -10,6 +10,7 @@ import Recaptcha from './Recaptcha';
 const languageContextValue: IntlType = {
   confirmation: '',
   information: '',
+  schedule: '',
   language: 'en',
   messages: {},
 };

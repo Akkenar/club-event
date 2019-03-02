@@ -15,6 +15,7 @@ import { preloadAllLanguages } from '../intl/importLanguage';
 const context: IntlType = {
   confirmation: '',
   information: '',
+  schedule: '',
   language: 'en',
   messages: {},
 };

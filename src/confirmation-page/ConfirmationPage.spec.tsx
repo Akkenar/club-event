@@ -12,6 +12,7 @@ const languageContextValue: IntlType = {
   // To assert replacement.
   confirmation: 'Total: %TOTAL%, reference: %REFERENCE%',
   information: '',
+  schedule: '',
   language: 'en',
   messages: {},
 };

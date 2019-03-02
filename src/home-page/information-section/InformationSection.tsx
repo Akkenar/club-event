@@ -5,9 +5,10 @@ import { Button, Header } from 'semantic-ui-react';
 import getKey from '../../core/intl/getKey';
 import LanguageContext from '../../core/intl/LanguageContext';
 import environment from '../../environment/environment';
+import MapIframe from './MapIframe';
+import SponsorsSection from '../sponsors-section/SponsorsSection';
 
 import './InformationSection.scss';
-import MapIframe from './MapIframe';
 
 const InformationSection = () => {
   const { messages, information, language } = useContext(LanguageContext);
@@ -21,6 +22,7 @@ const InformationSection = () => {
     <Fragment>
       <div dangerouslySetInnerHTML={{ __html: information }} />
       <MapIframe />
+      <SponsorsSection />
       <Header as="h2">{getKey('home.page.register', messages)}</Header>
       <div className="InformationSection__register-container">
         <Button

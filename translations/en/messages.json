@@ -57,5 +57,6 @@
   "quantityselector.remove": "Remove one from {name}",
   "quantityselector.clear": "Clear {name}",
   "noprice": "to be paid on-site",
-  "register.warning": "Dinner is guaranteed only for registrations payed before the <strong>Sunday 28 of april</strong>."
+  "register.warning": "Dinner is guaranteed only for registrations payed before the <strong>Sunday 28 of april</strong>.",
+  "home.page.sponsors": "Many thanks to our sponsors"
 }

@@ -1,0 +1,29 @@
+@import '../../style/mixins';
+
+.SponsorsSection {
+  margin-top: 1em;
+}
+
+.SponsorsSection__container {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+
+  // Responsive Columns system
+  > * {
+    flex-grow: 1;
+    padding: 0.5em;
+
+    @include on-narrow {
+      flex-basis: 100%;
+    }
+
+    @include on-medium {
+      flex-basis: 50%;
+    }
+
+    @include on-wide {
+      flex-basis: 33%;
+    }
+  }
+}

@@ -138,6 +138,144 @@ exports[`App should render the home page by default 1`] = `
             >
               loading
             </div>
+            <section
+              class="SponsorsSection"
+            >
+              <h2
+                class="ui header"
+              >
+                home.page.sponsors
+              </h2>
+              <div
+                class="SponsorsSection__container"
+              >
+                <div
+                  class="Sponsor"
+                >
+                  <div
+                    class="Sponsor__name"
+                  >
+                    Comptoire des Techniques Verticales
+                  </div>
+                  <a
+                    href="https://techniquesverticales.ch"
+                    target="_blank"
+                  >
+                    <svg
+                      aria-label="Comptoire des Techniques Verticales"
+                      class="LazyImage Sponsor__logo"
+                      data-testid="lazyloaded-placeholder"
+                      viewBox="0 0 1024 1024"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d=""
+                      />
+                    </svg>
+                  </a>
+                </div>
+                <div
+                  class="Sponsor"
+                >
+                  <div
+                    class="Sponsor__name"
+                  >
+                    Office du Tourisme de Vallorbe
+                  </div>
+                  <a
+                    href="http://www.vallorbe.ch"
+                    target="_blank"
+                  >
+                    <svg
+                      aria-label="Office du Tourisme de Vallorbe"
+                      class="LazyImage Sponsor__logo"
+                      data-testid="lazyloaded-placeholder"
+                      viewBox="0 0 1024 1024"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d=""
+                      />
+                    </svg>
+                  </a>
+                </div>
+                <div
+                  class="Sponsor"
+                >
+                  <div
+                    class="Sponsor__name"
+                  >
+                    Grottes de Vallorbes
+                  </div>
+                  <a
+                    href="https://grottesdevallorbe.ch"
+                    target="_blank"
+                  >
+                    <svg
+                      aria-label="Grottes de Vallorbes"
+                      class="LazyImage Sponsor__logo"
+                      data-testid="lazyloaded-placeholder"
+                      viewBox="0 0 1024 1024"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d=""
+                      />
+                    </svg>
+                  </a>
+                </div>
+                <div
+                  class="Sponsor"
+                >
+                  <div
+                    class="Sponsor__name"
+                  >
+                    IMSA
+                  </div>
+                  <a
+                    href="http://www.neon-imsa.ch"
+                    target="_blank"
+                  >
+                    <svg
+                      aria-label="IMSA"
+                      class="LazyImage Sponsor__logo"
+                      data-testid="lazyloaded-placeholder"
+                      viewBox="0 0 1024 1024"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d=""
+                      />
+                    </svg>
+                  </a>
+                </div>
+                <div
+                  class="Sponsor"
+                >
+                  <div
+                    class="Sponsor__name"
+                  >
+                    Technicongress
+                  </div>
+                  <a
+                    href="https://www.technicongres.ch/"
+                    target="_blank"
+                  >
+                    <svg
+                      aria-label="Technicongress"
+                      class="LazyImage Sponsor__logo"
+                      data-testid="lazyloaded-placeholder"
+                      viewBox="0 0 1024 1024"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d=""
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </section>
             <h2
               class="ui header"
             >

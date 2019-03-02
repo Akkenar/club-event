@@ -12,9 +12,17 @@ interface LazyImageProps {
   height?: number;
   alt: string;
   className?: string;
+  withLegend?: boolean;
 }
 
-const LazyImage = ({ src, width, height, alt, className }: LazyImageProps) => {
+const LazyImage = ({
+  src,
+  width,
+  height,
+  alt,
+  className,
+  withLegend = true,
+}: LazyImageProps) => {
   const { isDisplayed, startObserving } = useIntersectionObserver();
 
   if (!startObserving) {
@@ -43,9 +51,11 @@ const LazyImage = ({ src, width, height, alt, className }: LazyImageProps) => {
         width={width}
         alt={alt}
       />
-      <div className="LazyImage__Legend" aria-hidden="true">
-        {alt}
-      </div>
+      {withLegend ? (
+        <div className="LazyImage__Legend" aria-hidden="true">
+          {alt}
+        </div>
+      ) : null}
     </div>
   );
 };

@@ -42,10 +42,4 @@ describe('HomePage', () => {
     render(<HomePageWithRouter />);
     expect(document.title).toEqual('home.page.title');
   });
-
-  it('should disable the button if the registrations are not open', () => {
-    environment.registration.enabled = false;
-    const wrapper = render(<HomePageWithRouter />);
-    expect(wrapper.getByTestId('register-button')).toHaveClass('disabled');
-  });
 });

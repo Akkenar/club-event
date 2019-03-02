@@ -54,5 +54,9 @@
   "confirmation.page.recap.title": "La vostra iscrizione",
   "noprice": "da pagare sul posto",
   "register.warning": "il pasto è garantito solo per le registrazioni prima di <strong>domenica 28 aprile</strong>.",
-  "home.page.sponsors": "Grazie ai nostri sponsor"
+  "home.page.sponsors": "Grazie ai nostri sponsor",
+  "home.page.schedule": "Programma",
+  "home.menu.register": "Registrazioni",
+  "home.menu.schedule": "Programma",
+  "home.menu.sponsors": "Sponsor"
 }

@@ -6,6 +6,7 @@ import { IntlType } from './intl.type';
 const INITIAL_STATE: IntlType = {
   confirmation: '',
   information: '',
+  schedule: '',
   messages: {},
 };
 
@@ -18,10 +19,11 @@ const changeLanguage = (
 
   // Code splitting
   importLanguage(language).then(module => {
-    const { messages, confirmation, information } = module.default;
+    const { messages, confirmation, information, schedule } = module.default;
     const newState: IntlType = {
       confirmation,
       information,
+      schedule,
       language,
       messages,
     };
@@ -31,7 +33,7 @@ const changeLanguage = (
 
 export function useTranslations(targetLanguage: string): IntlType {
   const [
-    { language, messages, information, confirmation },
+    { language, messages, information, confirmation, schedule },
     setState,
   ] = useState<IntlType>(INITIAL_STATE);
 
@@ -47,6 +49,7 @@ export function useTranslations(targetLanguage: string): IntlType {
   return {
     confirmation,
     information,
+    schedule,
     language,
     messages,
   };

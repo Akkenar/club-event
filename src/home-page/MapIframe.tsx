@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { useContext } from 'react';
-import getKey from '../../core/intl/getKey';
-import LanguageContext from '../../core/intl/LanguageContext';
-import { useIntersectionObserver } from '../../core/useIntersectionObserver';
+import getKey from '../core/intl/getKey';
+import LanguageContext from '../core/intl/LanguageContext';
+import { useIntersectionObserver } from '../core/useIntersectionObserver';
 
 const MapIframe = () => {
   const { isDisplayed, startObserving } = useIntersectionObserver();

@@ -41,6 +41,7 @@ const Menu = () => {
 const mockLanguageContext = {
   confirmation: '',
   information: '',
+  schedule: '<table></table>',
   language: 'en',
   messages: {},
 };
@@ -82,7 +83,7 @@ describe('App', () => {
     });
 
     await waitForElement(() => wrapper.queryByTestId('main-title'));
-    expect(wrapper.getByTestId('main-title').innerHTML).toEqual(
+    expect(wrapper.getByTestId('main-title').innerHTML).toContain(
       'home.page.title',
     );
   });

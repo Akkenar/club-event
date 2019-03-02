@@ -69,5 +69,9 @@
   "quantityselector.clear": "Supprimer tous les {name}",
   "noprice": "à payer sur place",
   "register.warning": "Le repas est garanti uniquement pour les inscriptions avant le <strong>dimanche 28 avril</strong>.",
-  "home.page.sponsors": "Merci à nos sponsors"
+  "home.page.sponsors": "Merci à nos sponsors",
+  "home.page.schedule": "Horaire",
+  "home.menu.register": "Inscription",
+  "home.menu.schedule": "Horaire",
+  "home.menu.sponsors": "Sponsors"
 }

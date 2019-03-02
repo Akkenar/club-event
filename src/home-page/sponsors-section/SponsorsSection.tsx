@@ -1,9 +1,10 @@
 import * as React from 'react';
-import { useContext } from 'react';
+import { useContext, Fragment } from 'react';
 import Sponsor from './Sponsor';
 import { Header } from 'semantic-ui-react';
 import getKey from '../../core/intl/getKey';
 import LanguageContext from '../../core/intl/LanguageContext';
+import ScrollableAnchor from '../../core/scrollable-anchor/ScrollableAnchor';
 
 import logo1 from '../../assets/comptoir-des-techniques-verticales-logo.jpg';
 import logo2 from '../../assets/vallorbe.jpg';
@@ -17,8 +18,10 @@ const SponsorsSection = () => {
   const { messages } = useContext(LanguageContext);
 
   return (
-    <section className="SponsorsSection">
-      <Header as="h2">{getKey('home.page.sponsors', messages)}</Header>
+    <Fragment>
+      <Header as="h2">
+        <ScrollableAnchor text={getKey('home.page.sponsors', messages)} />
+      </Header>
       <div className="SponsorsSection__container">
         <Sponsor
           name="Comptoire des Techniques Verticales"
@@ -42,7 +45,7 @@ const SponsorsSection = () => {
           url="https://www.technicongres.ch/"
         />
       </div>
-    </section>
+    </Fragment>
   );
 };
 

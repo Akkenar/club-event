@@ -33,13 +33,9 @@ const Header = () => {
       <Nav to={getUrlWithLanguage('home')} color="white">
         <Logo className="Header__logo" width={60} height={45} inverted={true} />
       </Nav>
-
-      {environment.registration.enabled ? (
-        <Menu.Item as={Nav} name="register" to={getUrlWithLanguage('register')}>
-          {getKey('header.register', messages)}
-        </Menu.Item>
-      ) : null}
-
+      <Menu.Item as={Nav} name="register" to={getUrlWithLanguage('register')}>
+        {getKey('header.register', messages)}
+      </Menu.Item>
       <LanguageSwitcher />
     </Menu>
   );

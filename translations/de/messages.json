@@ -54,5 +54,9 @@
   "confirmation.page.recap.title": "Ihre Anmeldung",
   "noprice": "vor Ort zu bezahlen",
   "register.warning": "Das Essen ist nur für Anmeldungen vor dem <strong>Sonntag 28. April</strong> garantiert.",
-  "home.page.sponsors": "Ein herzliches Dankeschön an alle unsere Sponsoren"
+  "home.page.sponsors": "Ein herzliches Dankeschön an alle unsere Sponsoren",
+  "home.page.schedule": "Zeitplan",
+  "home.menu.register": "Anmeldung",
+  "home.menu.schedule": "Zeitplan",
+  "home.menu.sponsors": "Sponsoren"
 }

@@ -33,6 +33,7 @@ module.exports = {
     quotes: 0,
     // Hooks
     'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
     // Jest
     'jest/no-disabled-tests': 'warn',
     'jest/no-focused-tests': 'error',

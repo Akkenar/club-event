@@ -31,6 +31,8 @@ module.exports = {
     // Handled by Prettier
     '@typescript-eslint/indent': 0,
     quotes: 0,
+    // Too much of a pain, considering components are functions.
+    '@typescript-eslint/explicit-function-return-type': 0,
     // Hooks
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',

@@ -57,8 +57,6 @@ export function useIntersectionObserver(): UseIntersectionObserver {
     );
 
     setObserver(observerInstance);
-
-    return () => observerInstance.disconnect();
   }, [isDisplayed, observer, setObserver, setIsDisplayed]);
 
   // Return the callback to invoke on the element.

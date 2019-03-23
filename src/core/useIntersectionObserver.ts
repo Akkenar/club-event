@@ -41,12 +41,12 @@ export function useIntersectionObserver(): UseIntersectionObserver {
   const [isDisplayed, setIsDisplayed] = useState<boolean>(false);
   const [observer, setObserver] = useState<IntersectionObserver | null>(null);
 
-  const handleIntersect = (
-    entries: IntersectionObserverEntry[],
-    currentObserver: IntersectionObserver,
-  ) => changeStateOnIntersect(entries, currentObserver, setIsDisplayed);
-
   useEffect(() => {
+    const handleIntersect = (
+      entries: IntersectionObserverEntry[],
+      currentObserver: IntersectionObserver,
+    ) => changeStateOnIntersect(entries, currentObserver, setIsDisplayed);
+
     if (isDisplayed || !!observer) {
       return;
     }
@@ -57,7 +57,9 @@ export function useIntersectionObserver(): UseIntersectionObserver {
     );
 
     setObserver(observerInstance);
-  });
+
+    return () => observerInstance.disconnect();
+  }, [isDisplayed, observer, setObserver, setIsDisplayed]);
 
   // Return the callback to invoke on the element.
   return {

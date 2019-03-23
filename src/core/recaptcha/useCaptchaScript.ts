@@ -52,15 +52,15 @@ export function useCaptchaScript(
   // when the caller says we can (e.g. lazy loading).
   const shouldLoadCaptcha = loadCaptcha && !!language;
 
-  const loadRecaptcha = () => {
-    if (shouldLoadCaptcha) {
-      renderCaptcha();
-      // @ts-ignore
-      setLoaded(language);
-    }
-  };
-
   useEffect(() => {
+    const loadRecaptcha = () => {
+      if (shouldLoadCaptcha) {
+        renderCaptcha();
+        // @ts-ignore
+        setLoaded(language);
+      }
+    };
+
     if (!shouldLoadCaptcha || scriptAddedForLanguage === language) {
       return;
     }
@@ -75,7 +75,14 @@ export function useCaptchaScript(
 
     // @ts-ignore
     setScriptAdded(language);
-  });
+  }, [
+    shouldLoadCaptcha,
+    scriptAddedForLanguage,
+    language,
+    loadCaptcha,
+    setScriptAdded,
+    setLoaded,
+  ]);
 
   return {
     containerId: CONTAINER_ID,

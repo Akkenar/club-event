@@ -44,7 +44,7 @@ export function useTranslations(targetLanguage: string): IntlType {
       // Read the value from the route, always. This is the source of truth.
       changeLanguage(targetLanguage, setState);
     }
-  });
+  }, [language, targetLanguage, setState]);
 
   return {
     confirmation,

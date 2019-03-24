@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const OBSERVER_OPTIONS = {
   rootMargin: '0px 0px 0px 150px',
@@ -37,33 +37,37 @@ export interface UseIntersectionObserver {
   startObserving: ((element: HTMLElement | any) => void) | null;
 }
 
+/**
+ * Provides a boolean `isDisplayed` and a function to start observing
+ * a DOMElement.
+ */
 export function useIntersectionObserver(): UseIntersectionObserver {
+  // Internal state
   const [isDisplayed, setIsDisplayed] = useState<boolean>(false);
-  const [observer, setObserver] = useState<IntersectionObserver | null>(null);
 
+  // Closed function to encapsulate the state
+  const handleIntersect = (
+    entries: IntersectionObserverEntry[],
+    currentObserver: IntersectionObserver,
+  ) => changeStateOnIntersect(entries, currentObserver, setIsDisplayed);
+
+  // Share the same instance of IntersectionObserver between renders.
+  const observer = useRef(
+    new IntersectionObserver(handleIntersect, OBSERVER_OPTIONS),
+  );
+
+  // Cleanup routine
   useEffect(() => {
-    const handleIntersect = (
-      entries: IntersectionObserverEntry[],
-      currentObserver: IntersectionObserver,
-    ) => changeStateOnIntersect(entries, currentObserver, setIsDisplayed);
-
-    if (isDisplayed || !!observer) {
-      return;
-    }
-
-    const observerInstance = new IntersectionObserver(
-      handleIntersect,
-      OBSERVER_OPTIONS,
-    );
-
-    setObserver(observerInstance);
-  }, [isDisplayed, observer, setObserver, setIsDisplayed]);
+    const currentObserver = observer.current;
+    return () => currentObserver.disconnect();
+  }, [observer]);
 
   // Return the callback to invoke on the element.
   return {
     isDisplayed,
     startObserving: observer
-      ? (element: HTMLElement) => startObserving(isDisplayed, observer, element)
+      ? (element: HTMLElement) =>
+          startObserving(isDisplayed, observer.current, element)
       : null,
   };
 }

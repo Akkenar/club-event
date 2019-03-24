@@ -40,18 +40,20 @@ const getDetails = (
 
 const RegistrationsDetails = ({ registrations }: RegistrationsDetailsProps) => {
   const { messages } = useContext(LanguageContext);
-  const [details, setDetails] = useState(INITIAL_STATE);
+  const [displayedDetails, setDisplayedDetails] = useState<Registration | null>(
+    INITIAL_STATE,
+  );
 
   if (!registrations || !registrations.length) {
     return null;
   }
 
-  const showDetails = (registration: any) => () => {
-    if (details === registration) {
+  const showDetails = (registration: Registration) => () => {
+    if (displayedDetails === registration) {
       // Close the details
-      setDetails(INITIAL_STATE);
+      setDisplayedDetails(INITIAL_STATE);
     } else {
-      setDetails(registration);
+      setDisplayedDetails(registration);
     }
   };
 
@@ -103,7 +105,7 @@ const RegistrationsDetails = ({ registrations }: RegistrationsDetailsProps) => {
                   onClick={showDetails(registration)}
                   title={getKey('registrations.details', messages)}
                 >
-                  {registration === details ? (
+                  {registration === displayedDetails ? (
                     <Icon name="minus" />
                   ) : (
                     <Icon name="magnify" />
@@ -111,7 +113,7 @@ const RegistrationsDetails = ({ registrations }: RegistrationsDetailsProps) => {
                 </Button>
               </Table.Cell>
             </Table.Row>
-            {getDetails(registration, details)}
+            {getDetails(registration, displayedDetails)}
           </Fragment>
         ))}
       </Table.Body>

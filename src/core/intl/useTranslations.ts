@@ -27,6 +27,8 @@ const changeLanguage = (
       language,
       messages,
     };
+
+    // TODO use useReducer instead.
     setState(previousState => ({ ...previousState, ...newState }));
   });
 };

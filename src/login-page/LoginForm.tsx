@@ -33,6 +33,7 @@ const DEFAULT_STATE: LoginFormState = {
 };
 
 const LoginForm = () => {
+  // TODO use useReducer instead.
   const [credentials, setCredentials] = useState(DEFAULT_STATE.credentials);
   const [loginResult, setLoginResult] = useState(DEFAULT_STATE.loginResult);
   const [isLoading, setIsLoading] = useState(DEFAULT_STATE.isLoading);

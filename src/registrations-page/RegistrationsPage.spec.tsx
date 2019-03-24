@@ -1,6 +1,6 @@
 import 'jest-dom/extend-expect';
 import * as React from 'react';
-import { HashRouter } from 'react-router-dom';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 import { render, wait, waitForElement } from 'react-testing-library';
 import mockRegistrations from '../../mocks/registrations.json';
 import { Results } from '../core/api.type';
@@ -69,13 +69,20 @@ describe('RegistrationsPage', () => {
       result: Results.UNAUTHORIZED,
     });
 
+    // A fake routing with a few pages to better represent the use case
     const RegistrationsPageWithRouter = () => (
       <HashRouter>
-        <RegistrationsPage />
+        <Switch>
+          <Route path="/de/registrations" component={RegistrationsPage} />
+          <Route path="/de/login" component={() => <div>Test</div>} />
+        </Switch>
       </HashRouter>
     );
 
     const wrapper = render(<RegistrationsPageWithRouter />);
+
+    // Simulate a navigation.
+    document.location.assign('#/de/registrations');
 
     // First wait for the loader to be displayed
     await waitForElement(() => wrapper.queryByTestId('loader'));
@@ -85,6 +92,7 @@ describe('RegistrationsPage', () => {
       expect(wrapper.queryByTestId('loader')).not.toBeInTheDocument(),
     );
 
+    // Checks that the browser has been redirected properly.
     expect(window.location.href).toEqual('http://localhost/#/de/login');
   });
 });

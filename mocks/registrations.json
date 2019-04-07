@@ -13,7 +13,8 @@
     "npa": "1018",
     "locality": "Barrowshaven",
     "total": "65",
-    "products": { "dinner": "1", "dinnerKid": "2" }
+    "products": { "dinner": "1", "dinnerKid": "2" },
+    "status": "C"
   },
   {
     "id": "2",
@@ -37,7 +38,8 @@
       "breakfast": "4",
       "vegetarian": "4",
       "vegetarianKid": "4"
-    }
+    },
+    "status": "C"
   },
   {
     "id": "3",
@@ -59,6 +61,30 @@
       "picknick": "5",
       "sleeping": "2",
       "vegetarian": "3"
-    }
+    },
+    "status": "C"
+  },
+  {
+    "id": "4",
+    "date": "2018-12-28 14:30:19",
+    "reference": "FOO-324324",
+    "language": "de",
+    "firstName": "Paige",
+    "lastName": "Foo",
+    "email": "pierredominique.putallaz@gmail.com",
+    "club": "GSL",
+    "street": "Randi Knolls",
+    "no": "5A",
+    "npa": "1018",
+    "locality": "Nolanside",
+    "total": "745",
+    "products": {
+      "dinner": "10",
+      "camping": "4",
+      "picknick": "5",
+      "sleeping": "2",
+      "vegetarian": "3"
+    },
+    "status": "I"
   }
 ]

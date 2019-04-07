@@ -310,6 +310,67 @@ exports[`RegistrationsPage should match the snapshot 1`] = `
               </button>
             </td>
           </tr>
+          <tr
+            class="RegistrationsDetails__Row--inactive"
+          >
+            <td
+              class=""
+            >
+              FOO-324324
+              <span
+                class="ui red tag label"
+                style="margin-left: 2em;"
+              >
+                registrations.inactive
+              </span>
+            </td>
+            <td
+              class=""
+            >
+              12/28/2018, 14:30:19
+            </td>
+            <td
+              class=""
+            >
+              CHF 
+              745
+            </td>
+            <td
+              class=""
+            >
+              <strong>
+                Paige
+                 
+                Foo
+              </strong>
+              <address>
+                <div>
+                  Randi Knolls
+                   
+                  5A
+                </div>
+                <div>
+                  1018
+                   
+                  Nolanside
+                </div>
+              </address>
+            </td>
+            <td
+              class="collapsing"
+            >
+              <button
+                class="ui black icon button"
+                data-testid="details-4"
+                title="registrations.details"
+              >
+                <i
+                  aria-hidden="true"
+                  class="magnify icon"
+                />
+              </button>
+            </td>
+          </tr>
         </tbody>
       </table>
     </div>
@@ -689,6 +750,67 @@ exports[`RegistrationsPage should show the details 1`] = `
               </button>
             </td>
           </tr>
+          <tr
+            class="RegistrationsDetails__Row--inactive"
+          >
+            <td
+              class=""
+            >
+              FOO-324324
+              <span
+                class="ui red tag label"
+                style="margin-left: 2em;"
+              >
+                registrations.inactive
+              </span>
+            </td>
+            <td
+              class=""
+            >
+              12/28/2018, 14:30:19
+            </td>
+            <td
+              class=""
+            >
+              CHF 
+              745
+            </td>
+            <td
+              class=""
+            >
+              <strong>
+                Paige
+                 
+                Foo
+              </strong>
+              <address>
+                <div>
+                  Randi Knolls
+                   
+                  5A
+                </div>
+                <div>
+                  1018
+                   
+                  Nolanside
+                </div>
+              </address>
+            </td>
+            <td
+              class="collapsing"
+            >
+              <button
+                class="ui black icon button"
+                data-testid="details-4"
+                title="registrations.details"
+              >
+                <i
+                  aria-hidden="true"
+                  class="magnify icon"
+                />
+              </button>
+            </td>
+          </tr>
         </tbody>
       </table>
     </div>
@@ -877,7 +999,7 @@ exports[`RegistrationsPage should show the products 1`] = `
                 <td
                   class=""
                 >
-                  6
+                  8
                 </td>
               </tr>
               <tr
@@ -1091,6 +1213,67 @@ exports[`RegistrationsPage should show the products 1`] = `
               <button
                 class="ui black icon button"
                 data-testid="details-3"
+                title="registrations.details"
+              >
+                <i
+                  aria-hidden="true"
+                  class="magnify icon"
+                />
+              </button>
+            </td>
+          </tr>
+          <tr
+            class="RegistrationsDetails__Row--inactive"
+          >
+            <td
+              class=""
+            >
+              FOO-324324
+              <span
+                class="ui red tag label"
+                style="margin-left: 2em;"
+              >
+                registrations.inactive
+              </span>
+            </td>
+            <td
+              class=""
+            >
+              12/28/2018, 14:30:19
+            </td>
+            <td
+              class=""
+            >
+              CHF 
+              745
+            </td>
+            <td
+              class=""
+            >
+              <strong>
+                Paige
+                 
+                Foo
+              </strong>
+              <address>
+                <div>
+                  Randi Knolls
+                   
+                  5A
+                </div>
+                <div>
+                  1018
+                   
+                  Nolanside
+                </div>
+              </address>
+            </td>
+            <td
+              class="collapsing"
+            >
+              <button
+                class="ui black icon button"
+                data-testid="details-4"
                 title="registrations.details"
               >
                 <i

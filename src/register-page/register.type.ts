@@ -16,6 +16,11 @@ export interface Errors {
   [key: string]: boolean;
 }
 
+export enum RegistrationStatus {
+  CURRENT = 'C',
+  INACTIVE = 'I',
+}
+
 export interface Registration {
   id?: string;
   reference?: string;
@@ -34,6 +39,7 @@ export interface Registration {
   sending: boolean;
   street: string;
   errors?: Errors;
+  status?: RegistrationStatus;
 }
 
 export interface RegistrationResult extends ApiResponse {

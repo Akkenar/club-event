@@ -1,5 +1,8 @@
 import { saveAs } from 'file-saver';
-import { Registration } from '../register-page/register.type';
+import {
+  Registration,
+  RegistrationStatus,
+} from '../register-page/register.type';
 
 const LINE_DELIMITER = '\r\n';
 const COL_DELIMITER = '\t';
@@ -21,6 +24,7 @@ const personalData: { [key: string]: string } = {
   npa: 'NPA',
   street: 'Address',
   products: 'Nombre de types de commande',
+  status: "Status de l'inscription",
 };
 
 const productsToDisplay: { [key: string]: string } = {
@@ -35,7 +39,11 @@ const productsToDisplay: { [key: string]: string } = {
   camping: 'Nuit Camping',
 };
 
-function toString(value: any): string {
+function toString(value: any, key: string): string {
+  if (key === 'status') {
+    return value === RegistrationStatus.INACTIVE ? 'Annulé' : '';
+  }
+
   if (typeof value === 'object') {
     // Counts the items rather than displaying the object as a string
     return Object.keys(value).length.toString();
@@ -46,12 +54,12 @@ function toString(value: any): string {
 
 function toCsvLine(lineData: any) {
   const personalDataCsv = Object.keys(lineData)
-    .map(key => toString(lineData[key]))
+    .map(key => toString(lineData[key], key))
     .join(COL_DELIMITER);
 
   // The products object is nested, and might not contain ALL the objects.
   const productsCsv = Object.keys(productsToDisplay)
-    .map(key => toString(lineData[PRODUCT_OBJECT_KEY][key]))
+    .map(key => toString(lineData[PRODUCT_OBJECT_KEY][key], key))
     .join(COL_DELIMITER);
 
   return personalDataCsv + COL_DELIMITER + productsCsv;

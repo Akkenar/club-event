@@ -1,8 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`csv should convert all registrations to CSV 1`] = `
-"Identifiant technique	Date	Référence	Langue	Prénom	Nom	E-mail	Club	Address	Numéro	NPA	Localité	A payer	Nombre de types de commande	Petit Déjeuner	Souper	Souper (enfant)	Souper	Souper (enfant)	Pique-nique	Nuit PC	Nuit Salle de Gym	Nuit Camping
-1	2018-12-28 14:21:04	ROO-5C26315	fr	Tia	Roob	pierredominique.putallaz@gmail.com	GSL	Maggie Haven	5A	1018	Barrowshaven	65	2		1	2						
-2	2018-12-28 14:29:48	KON-5C26335	fr	Cayla	Konopelski	pierredominique.putallaz@gmail.com	GSL	Parker Expressway	5A	1018	Port Margueritemouth	1080	7	4	6		4	4	2		6	6
-3	2018-12-28 14:30:19	STR-5C26337	de	Paige	Streich	pierredominique.putallaz@gmail.com	GSL	Randi Knolls	5A	1018	Nolanside	745	5		0		3		5	2		8"
+"Identifiant technique	Date	Référence	Langue	Prénom	Nom	E-mail	Club	Address	Numéro	NPA	Localité	A payer	Nombre de types de commande	Status de l'inscription	Petit Déjeuner	Souper	Souper (enfant)	Souper	Souper (enfant)	Pique-nique	Nuit PC	Nuit Salle de Gym	Nuit Camping
+1	2018-12-28 14:21:04	ROO-5C26315	fr	Tia	Roob	pierredominique.putallaz@gmail.com	GSL	Maggie Haven	5A	1018	Barrowshaven	65	2			1	2						
+2	2018-12-28 14:29:48	KON-5C26335	fr	Cayla	Konopelski	pierredominique.putallaz@gmail.com	GSL	Parker Expressway	5A	1018	Port Margueritemouth	1080	7		4	6		4	4	2		6	6
+3	2018-12-28 14:30:19	STR-5C26337	de	Paige	Streich	pierredominique.putallaz@gmail.com	GSL	Randi Knolls	5A	1018	Nolanside	745	5			0		3		5	2		8
+4	2018-12-28 14:30:19	FOO-324324	de	Paige	Foo	pierredominique.putallaz@gmail.com	GSL	Randi Knolls	5A	1018	Nolanside	745	5	Annulé		10		3		5	2		4"
 `;

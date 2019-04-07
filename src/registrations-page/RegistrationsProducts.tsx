@@ -1,7 +1,10 @@
 import * as React from 'react';
 import { Segment, Table } from 'semantic-ui-react';
 import ProductLabel from '../core/ProductLabel';
-import { Registration } from '../register-page/register.type';
+import {
+  Registration,
+  RegistrationStatus,
+} from '../register-page/register.type';
 
 import './RegistrationsProducts.scss';
 
@@ -15,6 +18,8 @@ function getProductCount(
 ): number {
   return (
     registrations
+      // Only consider current registrations
+      .filter(regs => regs.status === RegistrationStatus.CURRENT)
       // Only look in the products for each registration.
       .map(regs => regs.products)
       // Sum all the counts for a given product.
@@ -25,7 +30,7 @@ function getProductCount(
         }
 
         // To support both number and string because the Registration
-        // type is bullshit.
+        // type is quirky.
         return total + parseInt(productCount.toString(), 10);
       }, 0)
   );
@@ -34,7 +39,7 @@ function getProductCount(
 const RegistrationsProducts = ({
   registrations,
 }: RegistrationsProductsProps) => {
-  const getProduct = (productName: string) =>
+  const getProduct = (productName: string): number =>
     getProductCount(productName, registrations);
 
   return (
@@ -95,7 +100,10 @@ const RegistrationsProducts = ({
             <Table.Cell>
               <ProductLabel name="sleepingAtGym" />
             </Table.Cell>
-            <Table.Cell>{getProduct('sleepingAtGym')}</Table.Cell>
+            <Table.Cell>
+              {// Both products are under the same category
+              getProduct('sleeping') + getProduct('sleepingAtGym')}
+            </Table.Cell>
           </Table.Row>
           <Table.Row>
             <Table.Cell>

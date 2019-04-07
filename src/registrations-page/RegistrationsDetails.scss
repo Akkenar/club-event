@@ -1,3 +1,9 @@
 @import url('../../node_modules/semantic-ui-css/components/table.min.css');
 @import url('../../node_modules/semantic-ui-css/components/button.min.css');
 @import url('../../node_modules/semantic-ui-css/components/icon.min.css');
+@import url('../../node_modules/semantic-ui-css/components/label.min.css');
+
+.RegistrationsDetails__Row--inactive {
+  text-decoration: line-through;
+  background-color: lightgray !important;
+}

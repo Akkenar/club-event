@@ -1,10 +1,12 @@
-import { Fragment, useState } from 'react';
 import * as React from 'react';
-import { useContext } from 'react';
+import { Fragment, useContext, useState } from 'react';
 import { Button, Icon, Segment } from 'semantic-ui-react';
 import getKey from '../core/intl/getKey';
 import LanguageContext from '../core/intl/LanguageContext';
-import { Registration } from '../register-page/register.type';
+import {
+  Registration,
+  RegistrationStatus,
+} from '../register-page/register.type';
 import { exportToCsv } from './csv.lib';
 import RegistrationsDownloadHelp from './RegistrationsDownloadHelp';
 import RegistrationsProducts from './RegistrationsProducts';
@@ -15,6 +17,20 @@ interface RegistrationsOverviewProps {
   registrations: Registration[];
 }
 
+function countRegistration(registrations: Registration[]) {
+  if (!registrations || !registrations.length) {
+    return 0;
+  }
+
+  return registrations.reduce((total, registration) => {
+    if (registration.status === RegistrationStatus.CURRENT) {
+      return total + 1;
+    }
+
+    return total;
+  }, 0);
+}
+
 const RegistrationsOverview = ({
   registrations,
 }: RegistrationsOverviewProps) => {
@@ -23,7 +39,8 @@ const RegistrationsOverview = ({
 
   const save = () => exportToCsv(registrations);
   const toggleProducts = () => setShowProducts(!showProducts);
-  const hasRegistrations = !!registrations && !!registrations.length;
+  const hasRegistrations =
+    !!registrations && !!countRegistration(registrations);
 
   return (
     <Segment>
@@ -33,7 +50,7 @@ const RegistrationsOverview = ({
           className="RegistrationsOverview__Total"
         >
           <strong>{getKey('registrations.total', messages)}:</strong>{' '}
-          {hasRegistrations ? registrations.length : '0'}
+          {hasRegistrations ? countRegistration(registrations) : '0'}
         </div>
         {hasRegistrations ? (
           <Fragment>

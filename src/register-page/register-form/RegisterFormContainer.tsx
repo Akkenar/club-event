@@ -64,6 +64,8 @@ class RegisterFormContainer extends React.Component<
   public static contextType = LanguageContext;
   public context!: React.ContextType<typeof LanguageContext>;
 
+  private isCancelled = false;
+
   public constructor(props: {}) {
     super(props);
 
@@ -76,7 +78,16 @@ class RegisterFormContainer extends React.Component<
     this.handleSuccess = this.handleSuccess.bind(this);
   }
 
+  public componentWillUnmount(): void {
+    // To avoid mutating state on an unmounted component.
+    this.isCancelled = true;
+  }
+
   public handleChange(event: any) {
+    if (this.isCancelled) {
+      return;
+    }
+
     const { target } = event;
     const { name } = target;
     const { value } = target;
@@ -91,6 +102,10 @@ class RegisterFormContainer extends React.Component<
   }
 
   public handleChangeProduct(name: string, quantity: number) {
+    if (this.isCancelled) {
+      return;
+    }
+
     const validQuantity = Math.min(100, Math.max(0, quantity));
     this.setState(state => ({
       products: { ...state.products, [name]: validQuantity },
@@ -98,6 +113,10 @@ class RegisterFormContainer extends React.Component<
   }
 
   public handleError() {
+    if (this.isCancelled) {
+      return;
+    }
+
     this.setState({
       sending: false,
       success: false,
@@ -110,6 +129,10 @@ class RegisterFormContainer extends React.Component<
     { result, total, reference }: RegistrationResult,
     data: Registration,
   ) {
+    if (this.isCancelled) {
+      return;
+    }
+
     // To be able to share data between pages.
     setSimpleStore({ ...data, total, reference });
 
@@ -125,6 +148,10 @@ class RegisterFormContainer extends React.Component<
   }
 
   public handleSubmit() {
+    if (this.isCancelled) {
+      return;
+    }
+
     if (this.validateForm()) {
       setFocusOnError();
       resetCaptcha();

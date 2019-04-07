@@ -21,9 +21,19 @@ export function useRegistrationsData(
       return;
     }
 
+    let isCancelled = false;
     if (registrations === initialState) {
-      getRegistrations().then(setRegistrations);
+      getRegistrations().then(value => {
+        if (!isCancelled) {
+          setRegistrations(value);
+        }
+      });
     }
+
+    // Don't update the state on an unmounted component.
+    return () => {
+      isCancelled = true;
+    };
   }, [registrations, isNotAuthorized, initialState]);
 
   return {

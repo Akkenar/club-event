@@ -16,6 +16,7 @@ import { login } from './login.service';
 import { Credentials } from './login.type';
 
 import './LoginForm.scss';
+import { DEFAULT_LANGUAGE } from '../core/intl/getDefaultLanguage';
 
 export interface LoginFormState {
   credentials: Credentials;
@@ -72,7 +73,7 @@ const LoginForm = () => {
 
   const shouldRedirect = loginResult.result === Results.SUCCESS;
   if (shouldRedirect) {
-    return <Redirect to={`/${language}/registrations`} />;
+    return <Redirect to={`/${language || DEFAULT_LANGUAGE}/registrations`} />;
   }
 
   return (

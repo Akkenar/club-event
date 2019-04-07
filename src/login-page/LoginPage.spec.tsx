@@ -1,6 +1,6 @@
 import 'jest-dom/extend-expect';
 import * as React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 import { render, wait, waitForElement } from 'react-testing-library';
 import { Results } from '../core/api.type';
 import { mockInterestObservable } from '../test-utils/intersectObservable-utils.lib';
@@ -14,10 +14,19 @@ import LoginPage from './LoginPage';
 mockGrecaptcha();
 
 const LoginPageWithRouter = () => {
+  // Simulate a navigation.
+  document.location.assign('#/de/login');
+
   return (
-    <BrowserRouter>
-      <LoginPage />
-    </BrowserRouter>
+    <HashRouter>
+      <Switch>
+        <Route path="/de/login" component={LoginPage} />
+        <Route
+          path="/de/registrations"
+          component={() => <div>Registrations</div>}
+        />
+      </Switch>
+    </HashRouter>
   );
 };
 
@@ -54,6 +63,7 @@ describe('LoginPage', () => {
     );
 
     // Should have been redirected.
+    expect(document.location.hash).toContain('registrations');
   });
 
   it('should handle login error', async () => {

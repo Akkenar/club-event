@@ -1,6 +1,6 @@
 import 'jest-dom/extend-expect';
 import * as React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 import { render, wait, waitForElement } from 'react-testing-library';
 import { mockInterestObservable } from '../../test-utils/intersectObservable-utils.lib';
 import {
@@ -32,10 +32,19 @@ const validData = {
 };
 
 const ContainerWithRouter = () => {
+  // Simulate a navigation.
+  document.location.assign('#/de/registrations');
+
   return (
-    <BrowserRouter>
-      <RegisterFormContainer />
-    </BrowserRouter>
+    <HashRouter>
+      <Switch>
+        <Route path="/de/registrations" component={RegisterFormContainer} />
+        <Route
+          path="/de/confirmation"
+          component={() => <div>Confirmation</div>}
+        />
+      </Switch>
+    </HashRouter>
   );
 };
 
@@ -73,6 +82,7 @@ describe('RegisterFormContainer', () => {
     );
 
     // Should have been redirected.
+    expect(window.location.hash).toContain('confirmation');
   });
 
   it('should handle backend error', async () => {

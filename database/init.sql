@@ -23,6 +23,7 @@ CREATE TABLE inscriptions
   npa       varchar(255) not null,
   locality  varchar(255) not null,
   total     smallint unsigned not null,
+  status    varchar(1) not null DEFAULT 'C',
   products  BLOB,
   constraint inscriptions_key primary key (id)
 );

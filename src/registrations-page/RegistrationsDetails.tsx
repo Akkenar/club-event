@@ -1,11 +1,14 @@
-import { Fragment, useContext, useState } from 'react';
 import * as React from 'react';
-import { Button, Icon, Table } from 'semantic-ui-react';
+import { Fragment, useContext, useState } from 'react';
+import { Button, Icon, Label, Table } from 'semantic-ui-react';
 import { formatDate } from '../core/date.lib';
 import getKey from '../core/intl/getKey';
 import LanguageContext from '../core/intl/LanguageContext';
 import OrderRecap from '../core/order-recap/OrderRecap';
-import { Registration } from '../register-page/register.type';
+import {
+  Registration,
+  RegistrationStatus,
+} from '../register-page/register.type';
 
 import './RegistrationsDetails.scss';
 
@@ -14,6 +17,12 @@ interface RegistrationsDetailsProps {
 }
 
 const INITIAL_STATE: Registration | null = null;
+
+function getCancelledClassName(registration: Registration): string | undefined {
+  return registration.status === RegistrationStatus.INACTIVE
+    ? 'RegistrationsDetails__Row--inactive'
+    : undefined;
+}
 
 const getDetails = (
   registration: Registration,
@@ -31,7 +40,7 @@ const getDetails = (
 
   return (
     <Table.Row data-testid={`details-for-${details.id}`}>
-      <Table.Cell colSpan={5}>
+      <Table.Cell colSpan={5} className={getCancelledClassName(details)}>
         <OrderRecap registration={details} />
       </Table.Cell>
     </Table.Row>
@@ -80,8 +89,20 @@ const RegistrationsDetails = ({ registrations }: RegistrationsDetailsProps) => {
       <Table.Body>
         {registrations.map(registration => (
           <Fragment key={registration.id}>
-            <Table.Row>
-              <Table.Cell>{registration.reference}</Table.Cell>
+            <Table.Row className={getCancelledClassName(registration)}>
+              <Table.Cell>
+                {registration.reference}
+                {registration.status === RegistrationStatus.INACTIVE ? (
+                  <Label
+                    as="span"
+                    color="red"
+                    tag={true}
+                    style={{ marginLeft: '2em' }}
+                  >
+                    {getKey('registrations.inactive', messages)}
+                  </Label>
+                ) : null}
+              </Table.Cell>
               <Table.Cell>{formatDate(registration.date)}</Table.Cell>
               <Table.Cell>CHF {registration.total}</Table.Cell>
               <Table.Cell>

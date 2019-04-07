@@ -62,5 +62,6 @@
   "home.page.schedule": "Schedule",
   "home.menu.register": "Registration",
   "home.menu.schedule": "Schedule",
-  "home.menu.sponsors": "Sponsors"
+  "home.menu.sponsors": "Sponsors",
+  "registrations.inactive": "Cancelled"
 }

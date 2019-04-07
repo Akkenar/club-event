@@ -81,6 +81,7 @@ function saveData($db, $data, $reference, $total, $language)
     no,
     npa,
     locality,
+    status,
     products
   ) VALUES(
     \"$reference\",
@@ -94,6 +95,7 @@ function saveData($db, $data, $reference, $total, $language)
     \"$no\",
     \"$npa\",
     \"$locality\",
+    \"C\",
     \"$products\"
   )";
   sendRequestDB($sql);

@@ -2,7 +2,6 @@ import * as React from 'react';
 import { render, waitForElement } from 'react-testing-library';
 import { forceLoadImage } from '../test-utils/test-utils.lib';
 import { useImageLoading } from './useImageLoading';
-import { useIntersectionObserver } from './useIntersectionObserver';
 
 const TEST_URL = '../assets/logo.svg';
 

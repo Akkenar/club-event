@@ -9,6 +9,7 @@ import Products from './Products';
 import { SetQuantityType } from './QuantitySelector';
 
 import './RegisterForm.scss';
+import { DEFAULT_LANGUAGE } from '../../core/intl/getDefaultLanguage';
 
 export interface RegisterFormProps {
   handleSubmit: any;
@@ -33,7 +34,7 @@ const RegisterForm = ({
   };
 
   if (state.success) {
-    return <Redirect to={`/${language}/confirmation`} />;
+    return <Redirect to={`/${language || DEFAULT_LANGUAGE}/confirmation`} />;
   }
 
   return (

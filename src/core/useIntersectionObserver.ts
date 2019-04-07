@@ -45,11 +45,18 @@ export function useIntersectionObserver(): UseIntersectionObserver {
   // Internal state
   const [isDisplayed, setIsDisplayed] = useState<boolean>(false);
 
+  let isCancelled = useRef(false);
+
   // Closed function to encapsulate the state
   const handleIntersect = (
     entries: IntersectionObserverEntry[],
     currentObserver: IntersectionObserver,
-  ) => changeStateOnIntersect(entries, currentObserver, setIsDisplayed);
+  ) => {
+    // Ensures that the set isn't updated on an unmounted component.
+    if (!isCancelled.current) {
+      changeStateOnIntersect(entries, currentObserver, setIsDisplayed);
+    }
+  };
 
   // Share the same instance of IntersectionObserver between renders.
   const observer = useRef(
@@ -59,7 +66,10 @@ export function useIntersectionObserver(): UseIntersectionObserver {
   // Cleanup routine
   useEffect(() => {
     const currentObserver = observer.current;
-    return () => currentObserver.disconnect();
+    return () => {
+      isCancelled.current = true;
+      currentObserver.disconnect();
+    };
   }, [observer]);
 
   // Return the callback to invoke on the element.

@@ -37,6 +37,7 @@
   "register.form.counts.description": "Sie können sich für die Mahlzeiten und die Übernachtung anmelden.",
   "register.form.food": "Mahlzeiten",
   "register.form.food.description": "Mahlzeiten für Samstag und Sonntag",
+  "register.form.food.disabled": "Geschlossen",
   "register.form.accommodation": "Unterkunft",
   "register.form.accommodation.description": "Unterkunft für Samstagabend",
   "register.form.submit": "Anmeldung abschicken",

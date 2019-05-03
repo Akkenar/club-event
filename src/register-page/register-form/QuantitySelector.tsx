@@ -14,6 +14,7 @@ export interface QuantitySelectorProps {
   name: string;
   setQuantity: SetQuantityType;
   state: Registration;
+  disabled?: boolean;
 }
 
 function parseProduct(state: Registration, name: string): number {
@@ -28,6 +29,7 @@ const QuantitySelector = ({
   name,
   setQuantity,
   state,
+  disabled,
 }: QuantitySelectorProps) => {
   const { messages } = useContext(LanguageContext);
   const [hasAnimation, triggerAnimation] = useState<boolean>(true);
@@ -60,7 +62,7 @@ const QuantitySelector = ({
   });
 
   return (
-    <Form.Field className="QuantitySelector full-width">
+    <Form.Field className="QuantitySelector full-width" disabled={disabled}>
       <Segment className="QuantitySelector__Container">
         <label className="QuantitySelector__Label" htmlFor={name}>
           <ProductLabel name={name} />

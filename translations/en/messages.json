@@ -37,6 +37,7 @@
   "register.form.accommodation.description": "Accommodation for Saturday night",
   "register.form.food": "Food",
   "register.form.food.description": "Food for Saturday or Sunday",
+  "register.form.food.disabled": "Not available anymore",
   "register.form.submit": "Register",
   "register.form.counts": "Food and accommodation",
   "register.form.counts.description": "You can book accommodations and food for the meeting",

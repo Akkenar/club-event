@@ -7,9 +7,9 @@ import LanguageContext from '../../core/intl/LanguageContext';
 import Recaptcha from '../../core/recaptcha/Recaptcha';
 import Products from './Products';
 import { SetQuantityType } from './QuantitySelector';
+import { DEFAULT_LANGUAGE } from '../../core/intl/getDefaultLanguage';
 
 import './RegisterForm.scss';
-import { DEFAULT_LANGUAGE } from '../../core/intl/getDefaultLanguage';
 
 export interface RegisterFormProps {
   handleSubmit: any;

@@ -38,6 +38,7 @@
   "register.form.counts.description": "Vous pouvez vous inscrire pour le souper ainsi que pour l'hébergement.",
   "register.form.food": "Repas",
   "register.form.food.description": "Repas pour samedi et dimanche",
+  "register.form.food.disabled": "Plus disponible",
   "register.form.accommodation": "Hébergement",
   "register.form.accommodation.description": "Hébergement pour samedi soir",
   "register.form.submit": "Soumettre votre inscription",

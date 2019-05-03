@@ -37,6 +37,7 @@
   "register.form.counts.description": "Potete iscrivervi per la cena ed il pernotto.",
   "register.form.food": "Pasti",
   "register.form.food.description": "Pasti per Sabato e Domenica",
+  "register.form.food.disabled": "Chiuso",
   "register.form.accommodation": "Alloggio",
   "register.form.accommodation.description": "Alloggio per Sabato notte",
   "register.form.submit": "Inviare la vostra iscrizione",

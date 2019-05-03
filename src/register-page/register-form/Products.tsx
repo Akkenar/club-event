@@ -5,6 +5,7 @@ import getKey from '../../core/intl/getKey';
 import LanguageContext from '../../core/intl/LanguageContext';
 import { Registration } from '../register.type';
 import QuantitySelector, { SetQuantityType } from './QuantitySelector';
+import environment from '../../environment/environment';
 
 export interface ProductsProps {
   setQuantity: SetQuantityType;
@@ -14,6 +15,7 @@ export interface ProductsProps {
 
 const Products = ({ state, setQuantity, total }: ProductsProps) => {
   const { messages } = useContext(LanguageContext);
+  const isFoodRegistrationEnabled = environment.registration.tier1.enabled;
 
   return (
     <React.Fragment>
@@ -25,16 +27,21 @@ const Products = ({ state, setQuantity, total }: ProductsProps) => {
         {getKey('register.form.food', messages)}
       </Header>
       <p>{getKey('register.form.food.description', messages)}</p>
+      <Message warning={true} visible={!isFoodRegistrationEnabled}>
+        {getKey('register.form.food.disabled', messages)}
+      </Message>
       <Form.Group widths="equal">
         <QuantitySelector
           state={state}
           name="dinner"
           setQuantity={setQuantity}
+          disabled={!isFoodRegistrationEnabled}
         />
         <QuantitySelector
           state={state}
           name="vegetarian"
           setQuantity={setQuantity}
+          disabled={!isFoodRegistrationEnabled}
         />
       </Form.Group>
       <Form.Group widths="equal">
@@ -42,11 +49,13 @@ const Products = ({ state, setQuantity, total }: ProductsProps) => {
           state={state}
           name="dinnerKid"
           setQuantity={setQuantity}
+          disabled={!isFoodRegistrationEnabled}
         />
         <QuantitySelector
           state={state}
           name="vegetarianKid"
           setQuantity={setQuantity}
+          disabled={!isFoodRegistrationEnabled}
         />
       </Form.Group>
       <Form.Group widths="equal">

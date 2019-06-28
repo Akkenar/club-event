@@ -1,3 +1,4 @@
+/* eslint-disable */
 (arr => {
   arr.forEach(item => {
     if (item.hasOwnProperty('remove')) {

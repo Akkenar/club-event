@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { act } from 'react-dom/test-utils';
-import { render, waitForElement } from 'react-testing-library';
+import { render, waitForElement } from '@testing-library/react';
 import { mockInterestObservable } from '../../test-utils/intersectObservable-utils.lib';
 import { mockGlobalProperty } from '../../test-utils/test-utils.lib';
 import { IntlType } from '../intl/intl.type';

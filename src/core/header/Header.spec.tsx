@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { HashRouter } from 'react-router-dom';
-import { render, waitForElement } from 'react-testing-library';
+import { render, waitForElement } from '@testing-library/react';
 import { forceLoadImage } from '../../test-utils/test-utils.lib';
 import Header from './Header';
 

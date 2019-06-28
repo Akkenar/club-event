@@ -1,7 +1,7 @@
 import 'jest-dom/extend-expect';
 import * as React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import { act, render, waitForElement, wait } from 'react-testing-library';
+import { act, render, waitForElement, wait } from '@testing-library/react';
 import { mockInterestObservable } from '../test-utils/intersectObservable-utils.lib';
 import { forceLoadImage } from '../test-utils/test-utils.lib';
 import HomePage from './HomePage';

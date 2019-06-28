@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Fragment } from 'react';
 import { BrowserRouter, NavLink, Route } from 'react-router-dom';
-import { act, render, waitForElement } from 'react-testing-library';
+import { act, render, waitForElement } from '@testing-library/react';
 import App, { AppContainer } from './App';
 import { Results } from './core/api.type';
 import LanguageContext from './core/intl/LanguageContext';

@@ -11,6 +11,7 @@ exports[`LanguageSwitcher should match snapshot 1`] = `
       tabindex="0"
     >
       <div
+        aria-atomic="true"
         aria-live="polite"
         class="text"
         role="alert"

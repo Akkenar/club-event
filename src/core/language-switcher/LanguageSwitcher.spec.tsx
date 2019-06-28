@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
-import { render } from 'react-testing-library';
+import { render } from '@testing-library/react';
 import { IntlType } from '../intl/intl.type';
 import LanguageContext from '../intl/LanguageContext';
 import { BASE_URL_WITH_LANG } from '../intl/provideTranslations';

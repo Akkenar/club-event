@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render } from 'react-testing-library';
+import { render } from '@testing-library/react';
 import { mockInterestObservable } from '../test-utils/intersectObservable-utils.lib';
 import { mockGrecaptcha } from '../test-utils/test-utils.lib';
 import RegisterPage from './RegisterPage';

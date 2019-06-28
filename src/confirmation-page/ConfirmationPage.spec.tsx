@@ -1,6 +1,6 @@
 import 'jest-dom/extend-expect';
 import * as React from 'react';
-import { render } from 'react-testing-library';
+import { render } from '@testing-library/react';
 import { IntlType } from '../core/intl/intl.type';
 import LanguageContext from '../core/intl/LanguageContext';
 import { setSimpleStore } from '../core/simpleStore';

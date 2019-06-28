@@ -70,7 +70,7 @@ Requires PHP 5.2 and Apache2.
 Thanks to the open source community for all the tools, especially:
 
 - [React](https://reactjs.org/)
-- [react-testing-library](https://github.com/kentcdodds/react-testing-library)
+- [@testing-library/react](https://github.com/kentcdodds/react-testing-library)
 - [wait-for-it.sh](https://github.com/vishnubob/wait-for-it)
 - [Docker](https://www.docker.com/)
 - And others...

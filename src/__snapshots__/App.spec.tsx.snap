@@ -54,6 +54,7 @@ exports[`App should render the home page by default 1`] = `
               tabindex="0"
             >
               <div
+                aria-atomic="true"
                 aria-live="polite"
                 class="text"
                 role="alert"

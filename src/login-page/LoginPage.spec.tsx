@@ -1,7 +1,7 @@
 import 'jest-dom/extend-expect';
 import * as React from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
-import { render, wait, waitForElement } from 'react-testing-library';
+import { render, wait, waitForElement } from '@testing-library/react';
 import { Results } from '../core/api.type';
 import { mockInterestObservable } from '../test-utils/intersectObservable-utils.lib';
 import {

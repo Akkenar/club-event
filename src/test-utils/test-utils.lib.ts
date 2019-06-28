@@ -1,4 +1,4 @@
-import { fireEvent } from 'react-testing-library';
+import { fireEvent } from '@testing-library/react';
 
 export function mockGrecaptcha() {
   (window as any).grecaptcha = {

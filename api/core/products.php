@@ -10,7 +10,7 @@ $prices = array(
   'sleepingAtGym' => 10,
   'breakfast' => 10,
   'camping' => 10,
-  'picknick' => 0,
+  'picknick' => 0
 );
 
 function getTotal($data)

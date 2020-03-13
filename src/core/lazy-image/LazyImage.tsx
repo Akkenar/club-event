@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import Image from './Image';
 import { useIntersectionObserver } from '../useIntersectionObserver';
 import Placeholder from './Placeholder';

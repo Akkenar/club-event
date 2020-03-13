@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { Fragment, useContext, useEffect } from 'react';
 import { Header } from 'semantic-ui-react';
 import imgTop from '../assets/Arnaud-Conne-2017_5.jpg';

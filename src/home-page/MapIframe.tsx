@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { useContext } from 'react';
 import getKey from '../core/intl/getKey';
 import LanguageContext from '../core/intl/LanguageContext';

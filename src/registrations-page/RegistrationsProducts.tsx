@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { Segment, Table } from 'semantic-ui-react';
 import ProductLabel from '../core/ProductLabel';
 import {

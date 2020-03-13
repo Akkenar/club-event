@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { Fragment } from 'react';
 import { BrowserRouter, NavLink, Route } from 'react-router-dom';
 import { act, render, fireEvent } from '@testing-library/react';

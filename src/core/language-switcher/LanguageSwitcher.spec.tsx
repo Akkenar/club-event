@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import { render } from '@testing-library/react';
 import { IntlType } from '../intl/intl.type';

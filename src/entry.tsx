@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import * as ReactDOM from 'react-dom';
 
 // Because IE doesn't support promises, we need to load this polyfill

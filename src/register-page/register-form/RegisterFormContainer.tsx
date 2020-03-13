@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { Fragment } from 'react';
 import { Results } from '../../core/api.type';
 import LanguageContext from '../../core/intl/LanguageContext';

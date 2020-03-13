@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { normalizeTitle } from './scrollable-anchor.lib';
 
 import './ScrollableAnchor.scss';

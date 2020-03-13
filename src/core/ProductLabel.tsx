@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { Fragment, useContext } from 'react';
 import { PRICES } from '../register-page/prices';
 import getKey from './intl/getKey';

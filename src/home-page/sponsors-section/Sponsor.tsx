@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import LazyImage from '../../core/lazy-image/LazyImage';
 
 import './Sponsor.scss';

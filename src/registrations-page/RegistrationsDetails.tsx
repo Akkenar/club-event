@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { Fragment, useContext, useState } from 'react';
 import { Button, Icon, Label, Table } from 'semantic-ui-react';
 import { formatDate } from '../core/date.lib';

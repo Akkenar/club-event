@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import * as React from 'react';
+import React from 'react';
 import { render, waitForElement } from '@testing-library/react';
 import LanguageContext from './LanguageContext';
 import provideTranslations from './provideTranslations';

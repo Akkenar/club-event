@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { ChangeEvent, useContext, useState } from 'react';
 import { Button, Form, Icon, Segment, Transition } from 'semantic-ui-react';
 import getKey from '../../core/intl/getKey';

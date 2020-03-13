@@ -1,5 +1,5 @@
 import { Button, Header } from 'semantic-ui-react';
-import * as React from 'react';
+import React from 'react';
 import ScrollableAnchor from '../../core/scrollable-anchor/ScrollableAnchor';
 import { useContext } from 'react';
 import LanguageContext from '../../core/intl/LanguageContext';

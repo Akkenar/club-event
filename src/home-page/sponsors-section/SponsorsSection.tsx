@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { useContext, Fragment } from 'react';
 import Sponsor from './Sponsor';
 import { Header } from 'semantic-ui-react';

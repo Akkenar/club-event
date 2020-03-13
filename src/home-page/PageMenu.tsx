@@ -1,5 +1,5 @@
 import { Menu } from 'semantic-ui-react';
-import * as React from 'react';
+import React from 'react';
 import { useContext } from 'react';
 import getKey from '../core/intl/getKey';
 import { normalizeTitle } from '../core/scrollable-anchor/scrollable-anchor.lib';

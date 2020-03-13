@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { Fragment, useContext, useState } from 'react';
 import { Button, Icon, Segment } from 'semantic-ui-react';
 import getKey from '../core/intl/getKey';

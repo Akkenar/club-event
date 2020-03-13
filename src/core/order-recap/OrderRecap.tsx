@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { Fragment, useContext } from 'react';
 import { Segment } from 'semantic-ui-react';
 import { Registration } from '../../register-page/register.type';

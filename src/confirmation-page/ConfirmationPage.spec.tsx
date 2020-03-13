@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { render } from '@testing-library/react';
 import { IntlType } from '../core/intl/intl.type';
 import LanguageContext from '../core/intl/LanguageContext';

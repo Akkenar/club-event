@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { useContext, useEffect } from 'react';
 import { Button, Header } from 'semantic-ui-react';
 import * as img from '../assets/Zsolt-Sarkozi-Grottes-aux-Fees-17.jpg';

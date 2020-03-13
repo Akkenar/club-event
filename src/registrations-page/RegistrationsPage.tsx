@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { useContext, useEffect } from 'react';
 import { Header } from 'semantic-ui-react';
 import getKey from '../core/intl/getKey';

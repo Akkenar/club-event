@@ -1,5 +1,5 @@
 import { Fragment, useState } from 'react';
-import * as React from 'react';
+import React from 'react';
 import { fireEvent, render, waitForElement } from '@testing-library/react';
 import QuantitySelector from './QuantitySelector';
 

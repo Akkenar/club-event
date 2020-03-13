@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { Fragment, useContext } from 'react';
 import { Redirect } from 'react-router-dom';
 import { DEFAULT_LANGUAGE } from '../core/intl/getDefaultLanguage';

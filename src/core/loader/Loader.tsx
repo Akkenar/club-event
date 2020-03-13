@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { Dimmer, Loader as SemanticLoader } from 'semantic-ui-react';
 import { goToTop } from '../page.lib';
 import './Loader.scss';

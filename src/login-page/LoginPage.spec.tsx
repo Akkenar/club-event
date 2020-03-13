@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 import { render, wait, waitForElement } from '@testing-library/react';
 import { Results } from '../core/api.type';

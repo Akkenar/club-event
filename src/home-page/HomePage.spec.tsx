@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { act, render, waitForElement, wait } from '@testing-library/react';
 import { mockInterestObservable } from '../test-utils/intersectObservable-utils.lib';

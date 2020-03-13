@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { Fragment, useContext, useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import { Button, Form, Header, Message, Segment } from 'semantic-ui-react';

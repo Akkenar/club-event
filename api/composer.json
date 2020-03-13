@@ -1,6 +1,6 @@
 {
   "require": {
-    "google/recaptcha": "1.2.1",
+    "google/recaptcha": "1.2.3",
     "phpmailer/phpmailer": "5.2.*",
     "pear/html_template_phplib": "1.6.1"
   }

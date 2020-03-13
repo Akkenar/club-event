@@ -14,7 +14,7 @@ import './style/semantic.scss';
 export const AppContainer = () => {
   const { language } = useContext(LanguageContext);
   return (
-    <React.Fragment>
+    <>
       <div id="top" tabIndex={-1} className="visually-hidden">
         Top
       </div>
@@ -31,7 +31,7 @@ export const AppContainer = () => {
           <FooterAsync />
         </footer>
       </div>
-    </React.Fragment>
+    </>
   );
 };
 

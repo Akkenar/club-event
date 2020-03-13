@@ -1,10 +1,10 @@
 import React from 'react';
 import {
   BrowserRouter,
-  match as matchType,
   Redirect,
   Route,
   Switch,
+  useParams,
 } from 'react-router-dom';
 import { getDefaultLanguage } from './getDefaultLanguage';
 import LanguageContext from './LanguageContext';
@@ -12,21 +12,16 @@ import { useTranslations } from './useTranslations';
 
 export const BASE_URL_WITH_LANG = '/:language([a-z]{2})';
 
-interface ProvideMessagesProps {
-  match: matchType<{ language: string }>;
-}
-
 export default function provideTranslations(
   Component: React.ComponentType<any>,
 ) {
   /**
    * The provided, depends on the routing and the language.
-   * @param match
    * @constructor
    */
-  const TranslationsProvider = ({ match }: ProvideMessagesProps) => {
-    const targetLanguage = match.params.language;
-    const value = useTranslations(targetLanguage);
+  const TranslationsProvider = () => {
+    const { language } = useParams();
+    const value = useTranslations(language);
 
     return (
       <LanguageContext.Provider value={value}>
@@ -39,10 +34,9 @@ export default function provideTranslations(
   return () => (
     <BrowserRouter>
       <Switch>
-        <Route
-          path={`${BASE_URL_WITH_LANG}/:page`}
-          component={TranslationsProvider}
-        />
+        <Route path={`${BASE_URL_WITH_LANG}/:page`}>
+          <TranslationsProvider />
+        </Route>
         <Redirect to={`/${getDefaultLanguage()}/home`} />
       </Switch>
     </BrowserRouter>

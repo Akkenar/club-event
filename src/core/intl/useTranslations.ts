@@ -33,7 +33,7 @@ const changeLanguage = (
   });
 };
 
-export function useTranslations(targetLanguage: string): IntlType {
+export function useTranslations(targetLanguage?: string): IntlType {
   const [
     { language, messages, information, confirmation, schedule },
     setState,
@@ -42,7 +42,7 @@ export function useTranslations(targetLanguage: string): IntlType {
   useEffect(() => {
     // Only reload the language it it's different than tht target one.
     // This avoids to have this effect ran more than needed.
-    if (language !== targetLanguage) {
+    if (targetLanguage && language !== targetLanguage) {
       // Read the value from the route, always. This is the source of truth.
       changeLanguage(targetLanguage, setState);
     }

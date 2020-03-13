@@ -52,7 +52,7 @@ yarn test:e2e
 ## Contributing
 
 Push any change in a branch and use the Pull Request system to ensure
-Travis builds are being run before merging.
+builds are being run before merging.
 
 ## Releasing a version
 

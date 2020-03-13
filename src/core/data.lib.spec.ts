@@ -2,8 +2,13 @@ import { getData, postData } from './data.lib';
 
 const URL = '/test';
 
+declare global {
+  interface Window {
+    fetch: any;
+  }
+}
+
 function mockFetch() {
-  // @ts-ignore
   window.fetch = jest.fn(() =>
     Promise.resolve({
       text: () =>

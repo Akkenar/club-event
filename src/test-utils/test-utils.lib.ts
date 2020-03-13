@@ -12,7 +12,6 @@ export function mockResponse(response: any) {
   const mock = typeof response === 'string' ? { result: response } : response;
 
   // Mock the fetch data as JSDom doesn't implement fetch.
-  // @ts-ignore
   window.fetch = jest.fn(() =>
     Promise.resolve({
       text: () =>
@@ -32,7 +31,6 @@ export function setValidInputData(
 ) {
   Object.keys(validData).forEach((key: string) => {
     fireEvent.change(getByTestId(key), {
-      // @ts-ignore
       target: { value: validData[key] },
     });
   });

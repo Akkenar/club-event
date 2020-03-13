@@ -3,6 +3,13 @@ import { useEffect, useState } from 'react';
 const SCRIPT_ID = 'recaptcha-script';
 const CONTAINER_ID = 'recaptcha-container';
 
+declare global {
+  interface Window {
+    onloadCallback: any;
+    grecaptcha?: any;
+  }
+}
+
 function appendRecaptchaScript(language: string) {
   const src = `https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit&hl=${language}`;
 
@@ -20,7 +27,7 @@ function appendRecaptchaScript(language: string) {
 }
 
 function renderCaptcha() {
-  const { grecaptcha } = window as any;
+  const { grecaptcha } = window;
   if (!grecaptcha) {
     // On the unlikely case google.com couldn't be reached
     return;
@@ -51,34 +58,32 @@ export function useCaptchaScript(
   // To make sure we only render the captcha when there is a language and
   // when the caller says we can (e.g. lazy loading).
   const shouldLoadCaptcha = loadCaptcha && !!language;
+  const languageOrDefault = language || '';
 
   useEffect(() => {
     const loadRecaptcha = () => {
       if (shouldLoadCaptcha) {
         renderCaptcha();
-        // @ts-ignore
-        setLoaded(language);
+        setLoaded(languageOrDefault);
       }
     };
 
-    if (!shouldLoadCaptcha || scriptAddedForLanguage === language) {
+    if (!shouldLoadCaptcha || scriptAddedForLanguage === languageOrDefault) {
       return;
     }
 
     // Global callback hooked to the recaptcha script src to only render
     // the captcha when the script is loaded.
-    (window as any).onloadCallback = loadRecaptcha;
+    window.onloadCallback = loadRecaptcha;
 
     // Append the script.
-    // @ts-ignore
-    appendRecaptchaScript(language);
+    appendRecaptchaScript(languageOrDefault);
 
-    // @ts-ignore
-    setScriptAdded(language);
+    setScriptAdded(languageOrDefault);
   }, [
     shouldLoadCaptcha,
     scriptAddedForLanguage,
-    language,
+    languageOrDefault,
     loadCaptcha,
     setScriptAdded,
     setLoaded,

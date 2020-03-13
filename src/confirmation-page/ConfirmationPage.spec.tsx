@@ -1,4 +1,3 @@
-import 'jest-dom/extend-expect';
 import * as React from 'react';
 import { render } from '@testing-library/react';
 import { IntlType } from '../core/intl/intl.type';

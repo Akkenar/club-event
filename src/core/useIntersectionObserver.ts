@@ -45,7 +45,7 @@ export function useIntersectionObserver(): UseIntersectionObserver {
   // Internal state
   const [isDisplayed, setIsDisplayed] = useState<boolean>(false);
 
-  let isCancelled = useRef(false);
+  const isCancelled = useRef(false);
 
   // Closed function to encapsulate the state
   const handleIntersect = (

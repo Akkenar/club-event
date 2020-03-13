@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Fragment } from 'react';
 import { BrowserRouter, NavLink, Route } from 'react-router-dom';
-import { act, render, waitForElement } from '@testing-library/react';
+import { act, render, fireEvent } from '@testing-library/react';
 import App, { AppContainer } from './App';
 import { Results } from './core/api.type';
 import LanguageContext from './core/intl/LanguageContext';
@@ -64,86 +64,87 @@ describe('App', () => {
   });
 
   it('should render the home page by default', async () => {
-    const wrapper = render(<App />);
+    const { findByTestId, baseElement } = render(<App />);
     act(() => {
       showAsyncElements();
     });
 
     // Wait for the mock Home Page to be rendered to have a good overview of the App component.
-    await waitForElement(() => wrapper.queryByTestId('main-title'));
-    expect(wrapper.baseElement).toMatchSnapshot();
+    await findByTestId('main-title');
+    expect(baseElement).toMatchSnapshot();
   });
 
   it('should render the home page', async () => {
-    const wrapper = render(<AppWithMockLanguageAndRoute />);
-    wrapper.getByTestId('goto-home').click();
+    const { findByTestId, getByTestId } = render(
+      <AppWithMockLanguageAndRoute />,
+    );
+    fireEvent.click(getByTestId('goto-home'));
 
     act(() => {
       showAsyncElements();
     });
 
-    await waitForElement(() => wrapper.queryByTestId('main-title'));
-    expect(wrapper.getByTestId('main-title').innerHTML).toContain(
-      'home.page.title',
-    );
+    const element = await findByTestId('main-title');
+    expect(element.innerHTML).toContain('home.page.title');
   });
 
   it('should render the register page', async () => {
-    const wrapper = render(<AppWithMockLanguageAndRoute />);
-    wrapper.getByTestId('goto-register').click();
+    const { getByTestId, findByTestId } = render(
+      <AppWithMockLanguageAndRoute />,
+    );
+    fireEvent.click(getByTestId('goto-register'));
 
     act(() => {
       showAsyncElements();
     });
 
-    await waitForElement(() => wrapper.queryByTestId('main-title'));
-    expect(wrapper.getByTestId('main-title').innerHTML).toEqual(
-      'register.page.title',
-    );
+    const element = await findByTestId('main-title');
+    expect(element.innerHTML).toEqual('register.page.title');
   });
 
   it('should render the confirmation page', async () => {
-    const wrapper = render(<AppWithMockLanguageAndRoute />);
-    wrapper.getByTestId('goto-confirmation').click();
+    const { getByTestId, findByTestId } = render(
+      <AppWithMockLanguageAndRoute />,
+    );
+    fireEvent.click(getByTestId('goto-confirmation'));
 
     act(() => {
       showAsyncElements();
     });
 
-    await waitForElement(() => wrapper.queryByTestId('main-title'));
-    expect(wrapper.getByTestId('main-title').innerHTML).toEqual(
-      'confirmation.page.title',
-    );
+    const element = await findByTestId('main-title');
+    expect(element.innerHTML).toEqual('confirmation.page.title');
   });
 
   it('should render the login page', async () => {
-    const wrapper = render(<AppWithMockLanguageAndRoute />);
-    wrapper.getByTestId('goto-login').click();
+    const { getByTestId, findByTestId } = render(
+      <AppWithMockLanguageAndRoute />,
+    );
+    fireEvent.click(getByTestId('goto-login'));
 
     act(() => {
       showAsyncElements();
     });
 
-    await waitForElement(() => wrapper.queryByTestId('main-title'));
-    expect(wrapper.getByTestId('main-title').innerHTML).toEqual(
-      'login.page.title',
-    );
+    const element = await findByTestId('main-title');
+    expect(element.innerHTML).toEqual('login.page.title');
   });
 
   it('should render the registrations page', async () => {
     // Because the page fetches the data upon arrival.
     mockResponse(Results.SUCCESS);
 
-    const wrapper = render(<AppWithMockLanguageAndRoute />);
-    wrapper.getByTestId('goto-registrations').click();
+    const { findByTestId, getByTestId } = render(
+      <AppWithMockLanguageAndRoute />,
+    );
+    fireEvent.click(getByTestId('goto-registrations'));
 
     act(() => {
       showAsyncElements();
     });
 
-    await waitForElement(() => wrapper.queryByTestId('main-title'));
-    expect(wrapper.getByTestId('main-title').innerHTML).toEqual(
-      'registrations.page.title',
-    );
+    const element = await findByTestId('main-title');
+
+    expect(element.innerHTML).toEqual('registrations.page.title');
   });
 });

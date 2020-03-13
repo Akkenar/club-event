@@ -141,11 +141,11 @@ module.exports = {
         test: /\.tsx?$/,
         use: [
           {
-            loader: 'awesome-typescript-loader',
+            loader: 'ts-loader',
             options: {
-              useCache: true,
+              // Will ignore test dependencies
+              onlyCompileBundledFiles: true,
               reportFiles: ['src/**/*.{ts,tsx}'],
-              forceIsolatedModules: true,
             },
           },
         ],

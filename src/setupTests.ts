@@ -1,4 +1,4 @@
-import '@testing-library/react/cleanup-after-each';
+import '@testing-library/jest-dom';
 
 // eslint-disable-next-line no-console
 const consoleError = console.error;

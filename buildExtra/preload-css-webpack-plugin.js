@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const debug = require('debug')('PreloadChunks');
 
 const MODULE_NAME = 'preload-css-webpack-plugin';

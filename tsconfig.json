@@ -14,7 +14,6 @@
     "lib": ["es5", "es6", "dom"],
     "allowSyntheticDefaultImports": true
   },
-  "include": ["./src/**/*"],
-  "exclude": ["**/*.spec.tsx"],
+  "include": ["src", "e2e", "mocks", "*.js"],
   "typeRoots": ["node_modules/@types", "./src/typings.d.ts"]
 }

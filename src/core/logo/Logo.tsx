@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useContext } from 'react';
-import * as logo from '../../assets/logo.svg';
+import logo from '../../assets/logo.svg';
 import getKey from '../intl/getKey';
 import LanguageContext from '../intl/LanguageContext';
 import Placeholder from '../lazy-image/Placeholder';
@@ -18,7 +18,7 @@ export interface LogoType {
 
 const Logo = ({ height, width, inverted, big, className = '' }: LogoType) => {
   const { messages } = useContext(LanguageContext);
-  const isLoaded = useImageLoading(logo as any);
+  const isLoaded = useImageLoading(logo);
 
   const invertedClassname = inverted ? 'Logo--inverted' : '';
   const bigClassname = big ? 'Logo--big' : '';

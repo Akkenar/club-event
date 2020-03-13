@@ -15,7 +15,7 @@ exports[`Header should match snapshot without registration 1`] = `
           class="Logo Logo--inverted  Header__logo"
           data-testid="logo"
           height="45"
-          src="[object Object]"
+          src="test-file-stub"
           title="logo.alt"
           width="60"
         />

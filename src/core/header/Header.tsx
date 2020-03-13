@@ -2,7 +2,6 @@ import * as React from 'react';
 import { useContext, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Menu } from 'semantic-ui-react';
-import environment from '../../environment/environment';
 import { DEFAULT_LANGUAGE } from '../intl/getDefaultLanguage';
 import getKey from '../intl/getKey';
 import LanguageContext from '../intl/LanguageContext';

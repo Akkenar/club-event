@@ -1,4 +1,3 @@
-import 'jest-dom/extend-expect';
 import * as React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { act, render, waitForElement, wait } from '@testing-library/react';
@@ -53,11 +52,10 @@ describe('HomePage', () => {
     // One of the menu item.
     await wrapper.getByTestId('home.menu.register').click();
 
-    // Because the scroll is at the end of the event loop.
-    await wait();
-
-    // The focus should be on the element.
-    expect(document.activeElement.innerHTML).toEqual('home.page.register');
-    expect(window.scrollTo).toHaveBeenCalledTimes(1);
+    await wait(() => {
+      // The focus should be on the element.
+      expect(document.activeElement?.innerHTML).toEqual('home.page.register');
+      expect(window.scrollTo).toHaveBeenCalledTimes(1);
+    });
   });
 });

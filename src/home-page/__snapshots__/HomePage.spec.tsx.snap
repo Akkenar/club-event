@@ -42,7 +42,7 @@ exports[`HomePage should match the snapshot 1`] = `
       class="Logo  Logo--big"
       data-testid="logo"
       height="232"
-      src="[object Object]"
+      src="test-file-stub"
       title="logo.alt"
       width="320"
     />

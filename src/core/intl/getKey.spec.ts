@@ -16,7 +16,6 @@ describe('getKey', () => {
   });
 
   it('should default to the name of the key if messages are not there', () => {
-    // @ts-ignore
     expect(getKey('invalid', undefined)).toEqual('invalid');
   });
 

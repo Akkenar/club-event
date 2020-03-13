@@ -1,4 +1,4 @@
-FROM node:11
+FROM node:12
 
 # Allow wait-for-it to be run within the container
 COPY e2e/wait-for-it.sh /bin/

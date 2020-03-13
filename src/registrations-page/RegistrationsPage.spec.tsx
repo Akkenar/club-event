@@ -1,4 +1,3 @@
-import 'jest-dom/extend-expect';
 import * as React from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 import { render, wait, waitForElement } from '@testing-library/react';

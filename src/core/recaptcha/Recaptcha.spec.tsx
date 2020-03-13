@@ -22,8 +22,7 @@ const RecaptchaWithLanguage = () => (
 );
 
 // Simulate the script loading.
-// @ts-ignore
-jest.spyOn(document.head, 'appendChild').mockImplementation(() => {
+jest.spyOn(document.head, 'appendChild').mockImplementation((): any => {
   (window as any).onloadCallback();
 });
 

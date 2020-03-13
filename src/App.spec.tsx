@@ -65,8 +65,7 @@ describe('App', () => {
     showAsyncElements = mockInterestObservable();
   });
 
-  // TODO restore
-  it.skip('should render the home page by default', async () => {
+  it('should render the home page by default', async () => {
     const { findByTestId, baseElement } = render(<App />);
     act(() => {
       showAsyncElements();

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9727a24820ffce14b095b5ecdbddf3b2",
+    "content-hash": "0317e60f171b6c59e8254b4e41814d86",
     "packages": [
         {
             "name": "google/recaptcha",
@@ -55,16 +55,16 @@
         },
         {
             "name": "pear/console_getopt",
-            "version": "v1.4.1",
+            "version": "v1.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pear/Console_Getopt.git",
-                "reference": "82f05cd1aa3edf34e19aa7c8ca312ce13a6a577f"
+                "reference": "a41f8d3e668987609178c7c4a9fe48fecac53fa0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pear/Console_Getopt/zipball/82f05cd1aa3edf34e19aa7c8ca312ce13a6a577f",
-                "reference": "82f05cd1aa3edf34e19aa7c8ca312ce13a6a577f",
+                "url": "https://api.github.com/repos/pear/Console_Getopt/zipball/a41f8d3e668987609178c7c4a9fe48fecac53fa0",
+                "reference": "a41f8d3e668987609178c7c4a9fe48fecac53fa0",
                 "shasum": ""
             },
             "type": "library",
@@ -82,11 +82,6 @@
             ],
             "authors": [
                 {
-                    "name": "Greg Beaver",
-                    "email": "cellog@php.net",
-                    "role": "Helper"
-                },
-                {
                     "name": "Andrei Zmievski",
                     "email": "andrei@php.net",
                     "role": "Lead"
@@ -95,23 +90,28 @@
                     "name": "Stig Bakken",
                     "email": "stig@php.net",
                     "role": "Developer"
+                },
+                {
+                    "name": "Greg Beaver",
+                    "email": "cellog@php.net",
+                    "role": "Helper"
                 }
             ],
             "description": "More info available on: http://pear.php.net/package/Console_Getopt",
-            "time": "2015-07-20T20:28:12+00:00"
+            "time": "2019-11-20T18:27:48+00:00"
         },
         {
             "name": "pear/html_template_phplib",
-            "version": "v1.6.0",
+            "version": "v1.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pear/HTML_Template_PHPLIB.git",
-                "reference": "cfea1646644acf65b3e5c2f5f9e30e126e0b21ba"
+                "reference": "b1cf34042a532883f5ca313367fa1eda01f6aebc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pear/HTML_Template_PHPLIB/zipball/cfea1646644acf65b3e5c2f5f9e30e126e0b21ba",
-                "reference": "cfea1646644acf65b3e5c2f5f9e30e126e0b21ba",
+                "url": "https://api.github.com/repos/pear/HTML_Template_PHPLIB/zipball/b1cf34042a532883f5ca313367fa1eda01f6aebc",
+                "reference": "b1cf34042a532883f5ca313367fa1eda01f6aebc",
                 "shasum": ""
             },
             "require": {
@@ -122,45 +122,45 @@
             },
             "type": "library",
             "autoload": {
-                "psr-0": {
-                    "HTML": "./"
-                }
+                "classmap": [
+                    "HTML/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "include-path": [
                 "./"
             ],
             "license": [
-                "LGPL-2.1"
+                "LGPL-2.1-or-later"
             ],
             "authors": [
                 {
-                    "name": "Christian Weiske",
-                    "email": "cweiske@php.net",
+                    "name": "Björn Schotte",
+                    "email": "schotte@mayflower.de",
                     "role": "Lead"
                 },
                 {
-                    "name": "Björn Schotte",
-                    "email": "schotte@mayflower.de",
+                    "name": "Christian Weiske",
+                    "email": "cweiske@php.net",
                     "role": "Lead"
                 }
             ],
             "description": "preg_* based template system.",
             "homepage": "http://pear.php.net/package/HTML_Template_PHPLIB",
-            "time": "2016-01-23T14:35:07+00:00"
+            "time": "2019-12-10T09:25:31+00:00"
         },
         {
             "name": "pear/pear-core-minimal",
-            "version": "v1.10.7",
+            "version": "v1.10.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pear/pear-core-minimal.git",
-                "reference": "19a3e0fcd50492c4357372f623f55f1b144346da"
+                "reference": "625a3c429d9b2c1546438679074cac1b089116a7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pear/pear-core-minimal/zipball/19a3e0fcd50492c4357372f623f55f1b144346da",
-                "reference": "19a3e0fcd50492c4357372f623f55f1b144346da",
+                "url": "https://api.github.com/repos/pear/pear-core-minimal/zipball/625a3c429d9b2c1546438679074cac1b089116a7",
+                "reference": "625a3c429d9b2c1546438679074cac1b089116a7",
                 "shasum": ""
             },
             "require": {
@@ -191,20 +191,20 @@
                 }
             ],
             "description": "Minimal set of PEAR core files to be used as composer dependency",
-            "time": "2018-12-05T20:03:52+00:00"
+            "time": "2019-11-19T19:00:24+00:00"
         },
         {
             "name": "pear/pear_exception",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pear/PEAR_Exception.git",
-                "reference": "8c18719fdae000b690e3912be401c76e406dd13b"
+                "reference": "dbb42a5a0e45f3adcf99babfb2a1ba77b8ac36a7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pear/PEAR_Exception/zipball/8c18719fdae000b690e3912be401c76e406dd13b",
-                "reference": "8c18719fdae000b690e3912be401c76e406dd13b",
+                "url": "https://api.github.com/repos/pear/PEAR_Exception/zipball/dbb42a5a0e45f3adcf99babfb2a1ba77b8ac36a7",
+                "reference": "dbb42a5a0e45f3adcf99babfb2a1ba77b8ac36a7",
                 "shasum": ""
             },
             "require": {
@@ -220,9 +220,9 @@
                 }
             },
             "autoload": {
-                "psr-0": {
-                    "PEAR": ""
-                }
+                "classmap": [
+                    "PEAR/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "include-path": [
@@ -246,7 +246,7 @@
             "keywords": [
                 "exception"
             ],
-            "time": "2015-02-10T20:07:52+00:00"
+            "time": "2019-12-10T10:24:42+00:00"
         },
         {
             "name": "phpmailer/phpmailer",

@@ -67,9 +67,6 @@ describe('App', () => {
 
   it('should render the home page by default', async () => {
     const { findByTestId, baseElement } = render(<App />);
-    act(() => {
-      showAsyncElements();
-    });
 
     // Wait for the mock Home Page to be rendered to have a good overview of the App component.
     await findByTestId('main-title');
@@ -146,7 +143,6 @@ describe('App', () => {
     });
 
     const element = await findByTestId('main-title');
-
     expect(element.innerHTML).toEqual('registrations.page.title');
   });
 });

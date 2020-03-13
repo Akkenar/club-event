@@ -1,6 +1,6 @@
 import React from 'react';
 import { Fragment } from 'react';
-import { BrowserRouter, NavLink, Route } from 'react-router-dom';
+import { HashRouter, NavLink, Route } from 'react-router-dom';
 import { act, render, fireEvent } from '@testing-library/react';
 import App, { AppContainer } from './App';
 import { Results } from './core/api.type';
@@ -48,12 +48,14 @@ const mockLanguageContext = {
 
 const AppWithMockLanguageAndRoute = () => (
   <LanguageContext.Provider value={mockLanguageContext}>
-    <BrowserRouter>
-      <Fragment>
-        <Route path={BASE_URL_WITH_LANG} component={AppContainer} />
+    <HashRouter>
+      <>
+        <Route path={BASE_URL_WITH_LANG}>
+          <AppContainer />
+        </Route>
         <Menu />
-      </Fragment>
-    </BrowserRouter>
+      </>
+    </HashRouter>
   </LanguageContext.Provider>
 );
 
